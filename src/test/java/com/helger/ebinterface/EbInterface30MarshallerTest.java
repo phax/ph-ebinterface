@@ -1,0 +1,90 @@
+/**
+ * Copyright (C) 2006-2014 phloc systems (www.phloc.com)
+ * Copyright (C) 2014 Philip Helger (www.helger.com)
+ * philip[at]helger[dot]com
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.helger.ebinterface;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+
+import org.junit.Test;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
+import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.io.IReadableResource;
+import com.helger.commons.mock.PHTestUtils;
+import com.helger.commons.xml.serialize.DOMReader;
+import com.helger.ebinterface.v30.Ebi30InvoiceType;
+import com.helger.xmldsig.XMLDSigValidationResult;
+import com.helger.xmldsig.XMLDSigValidator;
+
+/**
+ * Test class for class {@link EbInterface30Marshaller}.
+ *
+ * @author Philip Helger
+ */
+public final class EbInterface30MarshallerTest
+{
+  @Test
+  public void testReadValid () throws SAXException
+  {
+    for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V30.getTestResources ())
+    {
+      // Read from file as XML
+      final Document aDoc = DOMReader.readXMLDOM (aExampleFile);
+      assertNotNull (aDoc);
+
+      final EbInterface30Marshaller aMarshaller = new EbInterface30Marshaller ();
+
+      // Convert to domain object
+      final Ebi30InvoiceType aInvoice = aMarshaller.read (aDoc);
+      assertNotNull (aExampleFile.getPath (), aInvoice);
+
+      // Convert again to XML document
+      final Document aDoc2 = aMarshaller.write (aInvoice);
+      assertNotNull (aExampleFile.getPath (), aDoc2);
+
+      // Convert to domain object again
+      final Ebi30InvoiceType aInvoice2 = aMarshaller.read (aDoc2);
+      assertNotNull (aExampleFile.getPath (), aInvoice2);
+
+      // Must be equals
+      PHTestUtils.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
+    }
+  }
+
+  @Test
+  public void testValidateSignature () throws Exception
+  {
+    for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V30.getTestResources ())
+    {
+      // Read from file as XML
+      final Document aDoc = DOMReader.readXMLDOM (aExampleFile);
+      assertNotNull (aDoc);
+
+      if (XMLDSigValidator.containsSignature (aDoc))
+      {
+        final XMLDSigValidationResult aSVR = XMLDSigValidator.validateSignature (aDoc);
+        assertNotNull (aSVR);
+        if (aSVR.isInvalid ())
+        {
+          assertFalse (aExampleFile.getPath (), ContainerHelper.isEmpty (aSVR.getInvalidReferenceIndices ()));
+        }
+      }
+    }
+  }
+}
