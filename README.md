@@ -2,7 +2,8 @@ ph-ebinterface
 ==============
 
 Java library encapsulating the usage of ebInterface 3.0, 3.0.2, 4.0 and 4.1 within your application. 
-See FirstSteps (English; v3.x) or ErsteSchritte (Deutsch; v3.x) for some code examples on how to read and write the different ebInterface versions. This is the follow-project for phloc-ebinterface originally residing on Google Code. 
+See [First Steps](https://github.com/phax/ph-ebinterface/wiki/FirstSteps) (English; v3.x) or 
+[Erste Schritte](https://github.com/phax/ph-ebinterface/wiki/ErsteSchritte) (Deutsch; v3.x) for some code examples on how to read and write the different ebInterface versions. This is the follow-project for phloc-ebinterface originally residing on Google Code. 
 
 Features:
 
