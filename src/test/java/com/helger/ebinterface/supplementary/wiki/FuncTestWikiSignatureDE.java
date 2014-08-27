@@ -18,6 +18,12 @@
 package com.helger.ebinterface.supplementary.wiki;
 
 import javax.annotation.Nonnull;
+import javax.xml.crypto.dsig.XMLSignatureException;
+
+import org.w3c.dom.Document;
+
+import com.helger.xmldsig.XMLDSigValidationResult;
+import com.helger.xmldsig.XMLDSigValidator;
 
 /**
  * Signatur-Routinen fürs Wiki
@@ -37,9 +43,9 @@ public final class FuncTestWikiSignatureDE
    *         wenn eine Signatur enthalten ist, und diese ungültig ist.
    */
   @Nonnull
-  public boolean hasSignatureAndIsValid (@Nonnull final org.w3c.dom.Document aDoc)
+  public static boolean hasSignatureAndIsValid (@Nonnull final Document aDoc)
   {
-    if (!com.helger.xmldsig.XMLDSigValidator.containsSignature (aDoc))
+    if (!XMLDSigValidator.containsSignature (aDoc))
     {
       // Dokument enthält keine Signatur
       return true;
@@ -48,7 +54,7 @@ public final class FuncTestWikiSignatureDE
     // Dokument enthält eine Signatur
     try
     {
-      final com.helger.xmldsig.XMLDSigValidationResult aSVR = com.helger.xmldsig.XMLDSigValidator.validateSignature (aDoc);
+      final XMLDSigValidationResult aSVR = XMLDSigValidator.validateSignature (aDoc);
       if (aSVR.isValid ())
       {
         // Enthaltene Signatur is valide
@@ -59,7 +65,7 @@ public final class FuncTestWikiSignatureDE
       if (!aSVR.getInvalidReferenceIndices ().isEmpty ())
         System.out.println ("Die folgenden Reference Indizes sind ungültig: " + aSVR.getInvalidReferenceIndices ());
     }
-    catch (final javax.xml.crypto.dsig.XMLSignatureException e)
+    catch (final XMLSignatureException e)
     {
       System.err.println ("Fehler beim Überprüfen der XMLDsig");
       e.printStackTrace (System.err);

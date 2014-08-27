@@ -17,7 +17,22 @@
  */
 package com.helger.ebinterface.supplementary.wiki;
 
+import java.io.File;
+
 import javax.annotation.Nonnull;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+
+import com.helger.commons.io.IReadableResource;
+import com.helger.ebinterface.EbInterface302Marshaller;
+import com.helger.ebinterface.EbInterface30Marshaller;
+import com.helger.ebinterface.EbInterface40Marshaller;
+import com.helger.ebinterface.EbInterface41Marshaller;
+import com.helger.ebinterface.v30.Ebi30InvoiceType;
+import com.helger.ebinterface.v302.Ebi302InvoiceType;
+import com.helger.ebinterface.v40.Ebi40InvoiceType;
+import com.helger.ebinterface.v41.Ebi41InvoiceType;
 
 /**
  * The tests contained in here are meant as copy-paste examples for the project
@@ -31,15 +46,15 @@ public final class FuncTestWikiReadWriteEN
    * Read an ebInterface 3.0 invoice from the specified file.
    *
    * @param aFile
-   *        The file to read the invoice from. May not be null.
+   *        The file to read the invoice from. May not be <code>null</code>.
    * @return The read invoice object.
    * @throws IllegalArgumentException
    *         If the content of the passed file is no valid ebInterface document
    */
   @Nonnull
-  public com.helger.ebinterface.v30.Ebi30InvoiceType readEbInterface30 (@Nonnull final java.io.File aFile)
+  public static Ebi30InvoiceType readEbInterface30 (@Nonnull final File aFile)
   {
-    final com.helger.ebinterface.v30.Ebi30InvoiceType aInvoice = new com.helger.ebinterface.EbInterface30Marshaller ().read (aFile);
+    final Ebi30InvoiceType aInvoice = new EbInterface30Marshaller ().read (aFile);
     if (aInvoice == null)
       throw new IllegalArgumentException ("The passed file is not a valid ebInterface 3.0 document. See the console for details.");
     return aInvoice;
@@ -49,16 +64,17 @@ public final class FuncTestWikiReadWriteEN
    * Read an ebInterface 3.0 invoice from the specified XML node.
    *
    * @param aNode
-   *        The existing XML node to read the invoice from. May not be null.
+   *        The existing XML node to read the invoice from. May not be
+   *        <code>null</code>.
    * @return The read invoice object.
    * @throws IllegalArgumentException
    *         If the content of the passed DOM node is no valid ebInterface
    *         document
    */
   @Nonnull
-  public com.helger.ebinterface.v30.Ebi30InvoiceType readEbInterface30 (@Nonnull final org.w3c.dom.Node aNode)
+  public static Ebi30InvoiceType readEbInterface30 (@Nonnull final Node aNode)
   {
-    final com.helger.ebinterface.v30.Ebi30InvoiceType aInvoice = new com.helger.ebinterface.EbInterface30Marshaller ().read (aNode);
+    final Ebi30InvoiceType aInvoice = new EbInterface30Marshaller ().read (aNode);
     if (aInvoice == null)
       throw new IllegalArgumentException ("The passed DOM node is not a valid ebInterface 3.0 document. See the console for details.");
     return aInvoice;
@@ -68,15 +84,15 @@ public final class FuncTestWikiReadWriteEN
    * Read an ebInterface 3.0 invoice from the specified resource.
    *
    * @param aRes
-   *        The resource to read the invoice from. May not be null.
+   *        The resource to read the invoice from. May not be <code>null</code>.
    * @return The read invoice object.
    * @throws IllegalArgumentException
    *         If the content of the passed file is no valid ebInterface document
    */
   @Nonnull
-  public com.helger.ebinterface.v30.Ebi30InvoiceType readEbInterface30 (@Nonnull final com.helger.commons.io.IReadableResource aRes)
+  public static Ebi30InvoiceType readEbInterface30 (@Nonnull final IReadableResource aRes)
   {
-    final com.helger.ebinterface.v30.Ebi30InvoiceType aInvoice = new com.helger.ebinterface.EbInterface30Marshaller ().read (aRes);
+    final Ebi30InvoiceType aInvoice = new EbInterface30Marshaller ().read (aRes);
     if (aInvoice == null)
       throw new IllegalArgumentException ("The passed resource is not a valid ebInterface 3.0 document. See the console for details.");
     return aInvoice;
@@ -86,15 +102,15 @@ public final class FuncTestWikiReadWriteEN
    * Read an ebInterface 3.0.2 invoice from the specified file.
    *
    * @param aFile
-   *        The file to read the invoice from. May not be null.
+   *        The file to read the invoice from. May not be <code>null</code>.
    * @return The read invoice object.
    * @throws IllegalArgumentException
    *         If the content of the passed file is no valid ebInterface document
    */
   @Nonnull
-  public com.helger.ebinterface.v302.Ebi302InvoiceType readEbInterface302 (@Nonnull final java.io.File aFile)
+  public static Ebi302InvoiceType readEbInterface302 (@Nonnull final File aFile)
   {
-    final com.helger.ebinterface.v302.Ebi302InvoiceType aInvoice = new com.helger.ebinterface.EbInterface302Marshaller ().read (aFile);
+    final Ebi302InvoiceType aInvoice = new EbInterface302Marshaller ().read (aFile);
     if (aInvoice == null)
       throw new IllegalArgumentException ("The passed file is not a valid ebInterface 3.0.2 document. See the console for details.");
     return aInvoice;
@@ -104,16 +120,17 @@ public final class FuncTestWikiReadWriteEN
    * Read an ebInterface 3.0.2 invoice from the specified XML node.
    *
    * @param aNode
-   *        The existing XML node to read the invoice from. May not be null.
+   *        The existing XML node to read the invoice from. May not be
+   *        <code>null</code>.
    * @return The read invoice object.
    * @throws IllegalArgumentException
    *         If the content of the passed DOM node is no valid ebInterface
    *         document
    */
   @Nonnull
-  public com.helger.ebinterface.v302.Ebi302InvoiceType readEbInterface302 (@Nonnull final org.w3c.dom.Node aNode)
+  public static Ebi302InvoiceType readEbInterface302 (@Nonnull final Node aNode)
   {
-    final com.helger.ebinterface.v302.Ebi302InvoiceType aInvoice = new com.helger.ebinterface.EbInterface302Marshaller ().read (aNode);
+    final Ebi302InvoiceType aInvoice = new EbInterface302Marshaller ().read (aNode);
     if (aInvoice == null)
       throw new IllegalArgumentException ("The passed DOM node is not a valid ebInterface 3.0.2 document. See the console for details.");
     return aInvoice;
@@ -123,15 +140,15 @@ public final class FuncTestWikiReadWriteEN
    * Read an ebInterface 3.0.2 invoice from the specified resource.
    *
    * @param aResource
-   *        The resource to read the invoice from. May not be null.
+   *        The resource to read the invoice from. May not be <code>null</code>.
    * @return The read invoice object.
    * @throws IllegalArgumentException
    *         If the content of the passed file is no valid ebInterface document
    */
   @Nonnull
-  public com.helger.ebinterface.v302.Ebi302InvoiceType readEbInterface302 (@Nonnull final com.helger.commons.io.IReadableResource aResource)
+  public static Ebi302InvoiceType readEbInterface302 (@Nonnull final IReadableResource aResource)
   {
-    final com.helger.ebinterface.v302.Ebi302InvoiceType aInvoice = new com.helger.ebinterface.EbInterface302Marshaller ().read (aResource);
+    final Ebi302InvoiceType aInvoice = new EbInterface302Marshaller ().read (aResource);
     if (aInvoice == null)
       throw new IllegalArgumentException ("The passed resource is not a valid ebInterface 3.0.2 document. See the console for details.");
     return aInvoice;
@@ -141,15 +158,15 @@ public final class FuncTestWikiReadWriteEN
    * Read an ebInterface 4.0 invoice from the specified file.
    *
    * @param aFile
-   *        The file to read the invoice from. May not be null.
+   *        The file to read the invoice from. May not be <code>null</code>.
    * @return The read invoice object.
    * @throws IllegalArgumentException
    *         If the content of the passed file is no valid ebInterface document
    */
   @Nonnull
-  public com.helger.ebinterface.v40.Ebi40InvoiceType readEbInterface40 (@Nonnull final java.io.File aFile)
+  public static Ebi40InvoiceType readEbInterface40 (@Nonnull final File aFile)
   {
-    final com.helger.ebinterface.v40.Ebi40InvoiceType aInvoice = new com.helger.ebinterface.EbInterface40Marshaller ().read (aFile);
+    final Ebi40InvoiceType aInvoice = new EbInterface40Marshaller ().read (aFile);
     if (aInvoice == null)
       throw new IllegalArgumentException ("The passed file is not a valid ebInterface 4.0 document. See the console for details.");
     return aInvoice;
@@ -159,16 +176,17 @@ public final class FuncTestWikiReadWriteEN
    * Read an ebInterface 4.0 invoice from the specified XML node.
    *
    * @param aNode
-   *        The existing XML node to read the invoice from. May not be null.
+   *        The existing XML node to read the invoice from. May not be
+   *        <code>null</code>.
    * @return The read invoice object.
    * @throws IllegalArgumentException
    *         If the content of the passed DOM node is no valid ebInterface
    *         document
    */
   @Nonnull
-  public com.helger.ebinterface.v40.Ebi40InvoiceType readEbInterface40 (@Nonnull final org.w3c.dom.Node aNode)
+  public static Ebi40InvoiceType readEbInterface40 (@Nonnull final Node aNode)
   {
-    final com.helger.ebinterface.v40.Ebi40InvoiceType aInvoice = new com.helger.ebinterface.EbInterface40Marshaller ().read (aNode);
+    final Ebi40InvoiceType aInvoice = new EbInterface40Marshaller ().read (aNode);
     if (aInvoice == null)
       throw new IllegalArgumentException ("The passed DOM node is not a valid ebInterface 4.0 document. See the console for details.");
     return aInvoice;
@@ -178,17 +196,73 @@ public final class FuncTestWikiReadWriteEN
    * Read an ebInterface 4.0 invoice from the specified resource.
    *
    * @param aResource
-   *        The resource to read the invoice from. May not be null.
+   *        The resource to read the invoice from. May not be <code>null</code>.
    * @return The read invoice object.
    * @throws IllegalArgumentException
    *         If the content of the passed file is no valid ebInterface document
    */
   @Nonnull
-  public com.helger.ebinterface.v40.Ebi40InvoiceType readEbInterface40 (@Nonnull final com.helger.commons.io.IReadableResource aResource)
+  public static Ebi40InvoiceType readEbInterface40 (@Nonnull final IReadableResource aResource)
   {
-    final com.helger.ebinterface.v40.Ebi40InvoiceType aInvoice = new com.helger.ebinterface.EbInterface40Marshaller ().read (aResource);
+    final Ebi40InvoiceType aInvoice = new EbInterface40Marshaller ().read (aResource);
     if (aInvoice == null)
       throw new IllegalArgumentException ("The passed resource is not a valid ebInterface 4.0 document. See the console for details.");
+    return aInvoice;
+  }
+
+  /**
+   * Read an ebInterface 4.1 invoice from the specified file.
+   *
+   * @param aFile
+   *        The file to read the invoice from. May not be <code>null</code>.
+   * @return The read invoice object.
+   * @throws IllegalArgumentException
+   *         If the content of the passed file is no valid ebInterface document
+   */
+  @Nonnull
+  public static Ebi41InvoiceType readEbInterface41 (@Nonnull final File aFile)
+  {
+    final Ebi41InvoiceType aInvoice = new EbInterface41Marshaller ().read (aFile);
+    if (aInvoice == null)
+      throw new IllegalArgumentException ("The passed file is not a valid ebInterface 4.1 document. See the console for details.");
+    return aInvoice;
+  }
+
+  /**
+   * Read an ebInterface 4.1 invoice from the specified XML node.
+   *
+   * @param aNode
+   *        The existing XML node to read the invoice from. May not be
+   *        <code>null</code>.
+   * @return The read invoice object.
+   * @throws IllegalArgumentException
+   *         If the content of the passed DOM node is no valid ebInterface
+   *         document
+   */
+  @Nonnull
+  public static Ebi41InvoiceType readEbInterface41 (@Nonnull final Node aNode)
+  {
+    final Ebi41InvoiceType aInvoice = new EbInterface41Marshaller ().read (aNode);
+    if (aInvoice == null)
+      throw new IllegalArgumentException ("The passed DOM node is not a valid ebInterface 4.1 document. See the console for details.");
+    return aInvoice;
+  }
+
+  /**
+   * Read an ebInterface 4.1 invoice from the specified resource.
+   *
+   * @param aResource
+   *        The resource to read the invoice from. May not be <code>null</code>.
+   * @return The read invoice object.
+   * @throws IllegalArgumentException
+   *         If the content of the passed file is no valid ebInterface document
+   */
+  @Nonnull
+  public static Ebi41InvoiceType readEbInterface41 (@Nonnull final IReadableResource aResource)
+  {
+    final Ebi41InvoiceType aInvoice = new EbInterface41Marshaller ().read (aResource);
+    if (aInvoice == null)
+      throw new IllegalArgumentException ("The passed resource is not a valid ebInterface 4.1 document. See the console for details.");
     return aInvoice;
   }
 
@@ -196,18 +270,17 @@ public final class FuncTestWikiReadWriteEN
    * Write the passed ebInterface 3.0 invoice to the specified file.
    *
    * @param aInvoice
-   *        The invoice to be written. May not be null.
+   *        The invoice to be written. May not be <code>null</code>.
    * @param aFile
-   *        The file to read the invoice from. May not be null.
+   *        The file to read the invoice from. May not be <code>null</code>.
    * @throws IllegalArgumentException
    *         If the content of the passed invoice is incomplete and cannot be
    *         written to the file
    */
   @Nonnull
-  public void writeEbInterface30File (@Nonnull final com.helger.ebinterface.v30.Ebi30InvoiceType aInvoice,
-                                      @Nonnull final java.io.File aFile)
+  public static void writeEbInterface30File (@Nonnull final Ebi30InvoiceType aInvoice, @Nonnull final File aFile)
   {
-    if (new com.helger.ebinterface.EbInterface30Marshaller ().write (aInvoice, aFile).isFailure ())
+    if (new EbInterface30Marshaller ().write (aInvoice, aFile).isFailure ())
       throw new IllegalArgumentException ("The passed invoice is not a valid ebInterface 3.0 invoice. See the console for details.");
   }
 
@@ -215,15 +288,15 @@ public final class FuncTestWikiReadWriteEN
    * Convert the passed ebInterface 3.0 invoice to an XML document.
    *
    * @param aInvoice
-   *        The invoice to be written. May not be null.
+   *        The invoice to be written. May not be <code>null</code>.
    * @throws IllegalArgumentException
    *         If the content of the passed invoice is incomplete and cannot be
    *         converted to XML
    */
   @Nonnull
-  public org.w3c.dom.Document getEbInterface30Document (@Nonnull final com.helger.ebinterface.v30.Ebi30InvoiceType aInvoice)
+  public static Document getEbInterface30Document (@Nonnull final Ebi30InvoiceType aInvoice)
   {
-    final org.w3c.dom.Document ret = new com.helger.ebinterface.EbInterface30Marshaller ().write (aInvoice);
+    final Document ret = new EbInterface30Marshaller ().write (aInvoice);
     if (ret == null)
       throw new IllegalArgumentException ("The passed invoice is not a valid ebInterface 3.0 invoice. See the console for details.");
     return ret;
@@ -233,18 +306,17 @@ public final class FuncTestWikiReadWriteEN
    * Write the passed ebInterface 3.0.2 invoice to the specified file.
    *
    * @param aInvoice
-   *        The invoice to be written. May not be null.
+   *        The invoice to be written. May not be <code>null</code>.
    * @param aFile
-   *        The file to read the invoice from. May not be null.
+   *        The file to read the invoice from. May not be <code>null</code>.
    * @throws IllegalArgumentException
    *         If the content of the passed invoice is incomplete and cannot be
    *         written to the file
    */
   @Nonnull
-  public void writeEbInterface302File (@Nonnull final com.helger.ebinterface.v302.Ebi302InvoiceType aInvoice,
-                                       @Nonnull final java.io.File aFile)
+  public static void writeEbInterface302File (@Nonnull final Ebi302InvoiceType aInvoice, @Nonnull final File aFile)
   {
-    if (new com.helger.ebinterface.EbInterface302Marshaller ().write (aInvoice, aFile).isFailure ())
+    if (new EbInterface302Marshaller ().write (aInvoice, aFile).isFailure ())
       throw new IllegalArgumentException ("The passed invoice is not a valid ebInterface 3.0.2 invoice. See the console for details.");
   }
 
@@ -252,15 +324,15 @@ public final class FuncTestWikiReadWriteEN
    * Convert the passed ebInterface 3.0.2 invoice to an XML document.
    *
    * @param aInvoice
-   *        The invoice to be written. May not be null.
+   *        The invoice to be written. May not be <code>null</code>.
    * @throws IllegalArgumentException
    *         If the content of the passed invoice is incomplete and cannot be
    *         converted to XML
    */
   @Nonnull
-  public org.w3c.dom.Document getEbInterface302Document (@Nonnull final com.helger.ebinterface.v302.Ebi302InvoiceType aInvoice)
+  public static Document getEbInterface302Document (@Nonnull final Ebi302InvoiceType aInvoice)
   {
-    final org.w3c.dom.Document ret = new com.helger.ebinterface.EbInterface302Marshaller ().write (aInvoice);
+    final Document ret = new EbInterface302Marshaller ().write (aInvoice);
     if (ret == null)
       throw new IllegalArgumentException ("The passed invoice is not a valid ebInterface 3.0.2 invoice. See the console for details.");
     return ret;
@@ -270,18 +342,17 @@ public final class FuncTestWikiReadWriteEN
    * Write the passed ebInterface 4.0 invoice to the specified file.
    *
    * @param aInvoice
-   *        The invoice to be written. May not be null.
+   *        The invoice to be written. May not be <code>null</code>.
    * @param aFile
-   *        The file to read the invoice from. May not be null.
+   *        The file to read the invoice from. May not be <code>null</code>.
    * @throws IllegalArgumentException
    *         If the content of the passed invoice is incomplete and cannot be
    *         written to the file
    */
   @Nonnull
-  public void writeEbInterface40File (@Nonnull final com.helger.ebinterface.v40.Ebi40InvoiceType aInvoice,
-                                      @Nonnull final java.io.File aFile)
+  public static void writeEbInterface40File (@Nonnull final Ebi40InvoiceType aInvoice, @Nonnull final File aFile)
   {
-    if (new com.helger.ebinterface.EbInterface40Marshaller ().write (aInvoice, aFile).isFailure ())
+    if (new EbInterface40Marshaller ().write (aInvoice, aFile).isFailure ())
       throw new IllegalArgumentException ("The passed invoice is not a valid ebInterface 4.0 invoice. See the console for details.");
   }
 
@@ -289,17 +360,53 @@ public final class FuncTestWikiReadWriteEN
    * Convert the passed ebInterface 4.0 invoice to an XML document.
    *
    * @param aInvoice
-   *        The invoice to be written. May not be null.
+   *        The invoice to be written. May not be <code>null</code>.
    * @throws IllegalArgumentException
    *         If the content of the passed invoice is incomplete and cannot be
    *         converted to XML
    */
   @Nonnull
-  public org.w3c.dom.Document getEbInterface40Document (@Nonnull final com.helger.ebinterface.v40.Ebi40InvoiceType aInvoice)
+  public static Document getEbInterface40Document (@Nonnull final Ebi40InvoiceType aInvoice)
   {
-    final org.w3c.dom.Document ret = new com.helger.ebinterface.EbInterface40Marshaller ().write (aInvoice);
+    final Document ret = new EbInterface40Marshaller ().write (aInvoice);
     if (ret == null)
       throw new IllegalArgumentException ("The passed invoice is not a valid ebInterface 4.0 invoice. See the console for details.");
+    return ret;
+  }
+
+  /**
+   * Write the passed ebInterface 4.1 invoice to the specified file.
+   *
+   * @param aInvoice
+   *        The invoice to be written. May not be <code>null</code>.
+   * @param aFile
+   *        The file to read the invoice from. May not be <code>null</code>.
+   * @throws IllegalArgumentException
+   *         If the content of the passed invoice is incomplete and cannot be
+   *         written to the file
+   */
+  @Nonnull
+  public static void writeEbInterface41File (@Nonnull final Ebi41InvoiceType aInvoice, @Nonnull final File aFile)
+  {
+    if (new EbInterface41Marshaller ().write (aInvoice, aFile).isFailure ())
+      throw new IllegalArgumentException ("The passed invoice is not a valid ebInterface 4.1 invoice. See the console for details.");
+  }
+
+  /**
+   * Convert the passed ebInterface 4.1 invoice to an XML document.
+   *
+   * @param aInvoice
+   *        The invoice to be written. May not be <code>null</code>.
+   * @throws IllegalArgumentException
+   *         If the content of the passed invoice is incomplete and cannot be
+   *         converted to XML
+   */
+  @Nonnull
+  public static Document getEbInterface41Document (@Nonnull final Ebi41InvoiceType aInvoice)
+  {
+    final Document ret = new EbInterface41Marshaller ().write (aInvoice);
+    if (ret == null)
+      throw new IllegalArgumentException ("The passed invoice is not a valid ebInterface 4.1 invoice. See the console for details.");
     return ret;
   }
 }
