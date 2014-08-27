@@ -18,12 +18,14 @@ This library is used by [WWW.E-RECHNUNG.GV.AT](http://www.e-rechnung.gv.at) - th
 Usage with Maven
 ----------------
 ```xml
-    <dependency>
-      <groupId>com.helger</groupId>
-      <artifactId>ph-ebinterface</artifactId>
-      <version>3.1.0</version>
-    </dependency>
+<dependency>
+  <groupId>com.helger</groupId>
+  <artifactId>ph-ebinterface</artifactId>
+  <version>3.1.0</version>
+</dependency>
 ```
+
+Technically this library requires [ph-commons](https://github.com/phax/ph-commons) and [ph-xmldsig](https://github.com/phax/ph-xmldsig)
 
 ---
 
