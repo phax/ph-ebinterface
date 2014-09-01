@@ -46,7 +46,7 @@ x2SPi5p6gjZTbQHv9c3NHaon2LoO77WjZoUglUWNfhBuShNw+H3KyOa12G3qXMWYFJ8=</dsig:X509C
 			<eb:ZIP>1010</eb:ZIP>
 			<eb:Country eb:CountryCode="AT">Österreich</eb:Country>
 			<eb:Phone>+4312345678</eb:Phone>
-			<eb:Email>office@phloc.com</eb:Email>
+			<eb:Email>office@helger.com</eb:Email>
 			<eb:Contact>Hr. Müller</eb:Contact>
 		</eb:Address>
 	</eb:Biller>
@@ -101,7 +101,7 @@ x2SPi5p6gjZTbQHv9c3NHaon2LoO77WjZoUglUWNfhBuShNw+H3KyOa12G3qXMWYFJ8=</dsig:X509C
 		<eb:DueDate>2011-09-12</eb:DueDate>
 	</eb:PaymentConditions>
 	<eb:PresentationDetails>
-		<eb:URL>www.phloc.com</eb:URL>
+		<eb:URL>www.helger.com</eb:URL>
 		<eb:SuppressZero>true</eb:SuppressZero>
 	</eb:PresentationDetails>
 </eb:Invoice></dsig:Object><dsig:Object Id="refetsi"><etsi:QualifyingProperties Target="#HS_signature" xmlns:etsi="http://uri.etsi.org/01903/v1.1.1#"><etsi:SignedProperties><etsi:SignedSignatureProperties><etsi:SigningTime>2012-06-18T12:13:55Z</etsi:SigningTime><etsi:SigningCertificate><etsi:Cert><etsi:CertDigest><etsi:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><etsi:DigestValue>4BqoNhCuJRGIQ5NKnHqGqKH7bgA=</etsi:DigestValue></etsi:CertDigest><etsi:IssuerSerial><dsig:X509IssuerName>CN=a-sign-corporate-03,OU=a-sign-corporate-03,O=A-Trust Ges. f. Sicherheitssysteme im elektr. Datenverkehr GmbH,C=AT</dsig:X509IssuerName><dsig:X509SerialNumber>632247</dsig:X509SerialNumber></etsi:IssuerSerial></etsi:Cert></etsi:SigningCertificate><etsi:SignaturePolicyIdentifier><etsi:SignaturePolicyImplied/></etsi:SignaturePolicyIdentifier></etsi:SignedSignatureProperties></etsi:SignedProperties></etsi:QualifyingProperties></dsig:Object></dsig:Signature>

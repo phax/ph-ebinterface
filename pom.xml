@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright (C) 2006-2014 phloc systems (www.phloc.com)
     Copyright (C) 2014 Philip Helger (www.helger.com)
     philip[at]helger[dot]com
 
@@ -31,6 +30,7 @@
   <name>ph-ebinterface</name>
   <description>ebInterface wrapper library to easily read and write ebInterface documents</description>
   <url>https://github.com/phax/ph-ebinterface</url>
+  <inceptionYear>2014</inceptionYear>
 
   <licenses>
     <license>

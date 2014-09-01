@@ -1,23 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-
-    Copyright (C) 2006-2012 phloc systems
-    http://www.phloc.com
-    office[at]phloc[dot]com
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-            http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
--->
 <eb:Invoice xmlns:eb="http://www.ebinterface.at/schema/4p0/" eb:DocumentTitle="DEMO-Rechnung"
   eb:GeneratingSystem="Händisch erzeugt" eb:DocumentType="Invoice" eb:InvoiceCurrency="EUR" eb:Language="ger"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -36,7 +17,7 @@
       <eb:ZIP>1010</eb:ZIP>
       <eb:Country eb:CountryCode="AT">Österreich</eb:Country>
       <eb:Phone>+4312345678</eb:Phone>
-      <eb:Email>office@phloc.com</eb:Email>
+      <eb:Email>office@helger.com</eb:Email>
       <eb:Contact>Hr. Müller</eb:Contact>
     </eb:Address>
   </eb:Biller>
@@ -96,7 +77,7 @@
     <eb:DueDate>2013-04-04</eb:DueDate>
   </eb:PaymentConditions>
   <eb:PresentationDetails>
-    <eb:URL>www.phloc.com</eb:URL>
+    <eb:URL>www.helger.com</eb:URL>
     <eb:SuppressZero>true</eb:SuppressZero>
   </eb:PresentationDetails>
 </eb:Invoice>

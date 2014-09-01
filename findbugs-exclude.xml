@@ -1,6 +1,5 @@
 <!--
 
-    Copyright (C) 2006-2014 phloc systems (www.phloc.com)
     Copyright (C) 2014 Philip Helger (www.helger.com)
     philip[at]helger[dot]com
 
@@ -20,18 +19,18 @@
 <FindBugsFilter>
   <!-- Docs: http://findbugs.sourceforge.net/manual/filter.html -->
   <Match>
-    <Package name="com.phloc.ebinterface.v30" />
+    <Package name="com.helger.ebinterface.v30" />
   </Match>
   <Match>
-    <Package name="com.phloc.ebinterface.v302" />
+    <Package name="com.helger.ebinterface.v302" />
   </Match>
   <Match>
-    <Package name="com.phloc.ebinterface.v40" />
+    <Package name="com.helger.ebinterface.v40" />
   </Match>
   <Match>
-    <Package name="com.phloc.ebinterface.v41" />
+    <Package name="com.helger.ebinterface.v41" />
   </Match>
   <Match>
-    <Package name="com.phloc.ebinterface.xmldsig" />
+    <Package name="com.helger.ebinterface.xmldsig" />
   </Match>
 </FindBugsFilter>
