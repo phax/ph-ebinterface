@@ -31,15 +31,16 @@ import javax.xml.transform.Templates;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.dom.DOMResult;
-import javax.xml.transform.stream.StreamResult;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.io.IReadableResource;
 import com.helger.commons.state.ESuccess;
 import com.helger.commons.xml.XMLFactory;
+import com.helger.commons.xml.transform.TransformResultFactory;
 import com.helger.commons.xml.transform.TransformSourceFactory;
 import com.helger.commons.xml.transform.XMLTransformerFactory;
 import com.helger.ebinterface.EEbInterfaceVersion;
@@ -47,7 +48,7 @@ import com.helger.ebinterface.EEbInterfaceVersion;
 /**
  * This class is responsible for visualizing ebInterface documents as HTML
  * documents.
- * 
+ *
  * @author Philip Helger
  */
 @ThreadSafe
@@ -64,7 +65,7 @@ public final class VisualizationManager
   /**
    * Get the precompiled XSLT template to be used. It is lazily initialized upon
    * first call.
-   * 
+   *
    * @return The XSLT {@link Templates} to be used to visualize invoices or
    *         <code>null</code> if the template is buggy!
    */
@@ -111,13 +112,24 @@ public final class VisualizationManager
     return ret;
   }
 
+  /**
+   * Visualize a source to a result for a certain ebInterface version using
+   * XSLT. This is the most generic method.
+   *
+   * @param eVersion
+   *        ebInterface version to use.
+   * @param aSource
+   *        Source.
+   * @param aResult
+   *        Destination
+   * @return {@link ESuccess}
+   */
   @Nonnull
   public static ESuccess visualize (@Nonnull final EEbInterfaceVersion eVersion,
                                     @Nonnull final Source aSource,
                                     @Nonnull final Result aResult)
   {
-    if (eVersion == null)
-      throw new NullPointerException ("artefact");
+    ValueEnforcer.notNull (eVersion, "version");
 
     // Get cache XSL templates
     final Templates aTemplates = getXSLTTemplates (eVersion);
@@ -138,6 +150,15 @@ public final class VisualizationManager
     }
   }
 
+  /**
+   * Visualize a source to a DOM document for a certain ebInterface version.
+   *
+   * @param eVersion
+   *        ebInterface version to use. May not be <code>null</code>.
+   * @param aSource
+   *        Source. May not be <code>null</code>.
+   * @return <code>null</code> if the XSLT could not be applied.
+   */
   @Nullable
   public static Document visualizeToDOMDocument (@Nonnull final EEbInterfaceVersion eVersion,
                                                  @Nonnull final Source aSource)
@@ -146,6 +167,15 @@ public final class VisualizationManager
     return visualize (eVersion, aSource, new DOMResult (aDoc)).isSuccess () ? aDoc : null;
   }
 
+  /**
+   * Visualize a source to a DOM document for a certain ebInterface version.
+   *
+   * @param eVersion
+   *        ebInterface version to use. May not be <code>null</code>.
+   * @param aResource
+   *        Source resource. May not be <code>null</code>.
+   * @return <code>null</code> if the XSLT could not be applied.
+   */
   @Nullable
   public static Document visualizeToDOMDocument (@Nonnull final EEbInterfaceVersion eVersion,
                                                  @Nonnull final IReadableResource aResource)
@@ -153,19 +183,43 @@ public final class VisualizationManager
     return visualizeToDOMDocument (eVersion, TransformSourceFactory.create (aResource));
   }
 
+  /**
+   * Visualize a source to a file for a certain ebInterface version.
+   *
+   * @param eVersion
+   *        ebInterface version to use. May not be <code>null</code>.
+   * @param aSource
+   *        Source. May not be <code>null</code>.
+   * @param aDestinationFile
+   *        The file to write the result to. May not be <code>null</code>.
+   * @return {@link ESuccess}
+   */
   @Nullable
   public static ESuccess visualizeToFile (@Nonnull final EEbInterfaceVersion eVersion,
                                           @Nonnull final Source aSource,
                                           @Nonnull final File aDestinationFile)
   {
-    return visualize (eVersion, aSource, new StreamResult (aDestinationFile));
+    return visualize (eVersion, aSource, TransformResultFactory.create (aDestinationFile));
   }
 
+  /**
+   * Visualize a source to a file for a certain ebInterface version.
+   *
+   * @param eVersion
+   *        ebInterface version to use. May not be <code>null</code>.
+   * @param aResource
+   *        Source resource. May not be <code>null</code>.
+   * @param aDestinationFile
+   *        The file to write the result to. May not be <code>null</code>.
+   * @return {@link ESuccess}
+   */
   @Nullable
   public static ESuccess visualizeToFile (@Nonnull final EEbInterfaceVersion eVersion,
                                           @Nonnull final IReadableResource aResource,
                                           @Nonnull final File aDestinationFile)
   {
-    return visualize (eVersion, TransformSourceFactory.create (aResource), new StreamResult (aDestinationFile));
+    return visualize (eVersion,
+                      TransformSourceFactory.create (aResource),
+                      TransformResultFactory.create (aDestinationFile));
   }
 }

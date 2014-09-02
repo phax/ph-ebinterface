@@ -37,7 +37,7 @@ import com.helger.xmldsig.XMLDSigValidationResult;
 import com.helger.xmldsig.XMLDSigValidator;
 
 /**
- * Test class for class {@link SignatureValidator}
+ * Test class for class {@link XMLDSigValidator}
  *
  * @author Philip Helger
  */

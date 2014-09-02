@@ -31,6 +31,9 @@ import com.helger.ebinterface.v40.ObjectFactory;
  */
 public class EbInterface40Marshaller extends AbstractJAXBMarshaller <Ebi40InvoiceType>
 {
+  /**
+   * Constructor
+   */
   public EbInterface40Marshaller ()
   {
     super (Ebi40InvoiceType.class, CEbInterface.EBINTERFACE_40_XSDS);

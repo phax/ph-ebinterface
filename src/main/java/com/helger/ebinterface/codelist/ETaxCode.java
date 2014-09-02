@@ -37,7 +37,7 @@ import com.helger.commons.lang.EnumHelper;
  * </p>
  * Source:
  * http://formulare.bmf.gv.at/service/formulare/inter-Steuern/pdfs/2010/U30.pdf
- * 
+ *
  * @author Philip Helger
  */
 public enum ETaxCode implements IHasID <String>
@@ -80,12 +80,18 @@ public enum ETaxCode implements IHasID <String>
     return m_sID;
   }
 
+  /**
+   * @return The assigned percentage between 0 and 100.
+   */
   @Nonnegative
   public int getPercentage ()
   {
     return m_nPerc;
   }
 
+  /**
+   * @return Description of this tax code. Never <code>null</code>.
+   */
   @Nonnull
   @Nonempty
   public String getDescription ()
@@ -93,6 +99,13 @@ public enum ETaxCode implements IHasID <String>
     return m_sDesc;
   }
 
+  /**
+   * Lookup element by ID.
+   * 
+   * @param sID
+   *        ID to lookup. May be <code>null</code>.
+   * @return <code>null</code> if no such element exists.
+   */
   @Nullable
   public static ETaxCode getFromIDOrNull (@Nullable final String sID)
   {
