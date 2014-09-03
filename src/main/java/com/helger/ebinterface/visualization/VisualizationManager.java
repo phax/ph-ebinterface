@@ -66,6 +66,8 @@ public final class VisualizationManager
    * Get the precompiled XSLT template to be used. It is lazily initialized upon
    * first call.
    *
+   * @param eVersion
+   *        The ebInterface version to be used. May not be <code>null</code>.
    * @return The XSLT {@link Templates} to be used to visualize invoices or
    *         <code>null</code> if the template is buggy!
    */
