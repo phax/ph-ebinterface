@@ -288,6 +288,7 @@ public final class FuncTestWikiReadWriteEN
    *
    * @param aInvoice
    *        The invoice to be written. May not be <code>null</code>.
+   * @return The ebInterface document as an XML DOM Document.
    * @throws IllegalArgumentException
    *         If the content of the passed invoice is incomplete and cannot be
    *         converted to XML
@@ -324,6 +325,7 @@ public final class FuncTestWikiReadWriteEN
    *
    * @param aInvoice
    *        The invoice to be written. May not be <code>null</code>.
+   * @return The ebInterface document as an XML DOM Document.
    * @throws IllegalArgumentException
    *         If the content of the passed invoice is incomplete and cannot be
    *         converted to XML
@@ -360,6 +362,7 @@ public final class FuncTestWikiReadWriteEN
    *
    * @param aInvoice
    *        The invoice to be written. May not be <code>null</code>.
+   * @return The ebInterface document as an XML DOM Document.
    * @throws IllegalArgumentException
    *         If the content of the passed invoice is incomplete and cannot be
    *         converted to XML
@@ -396,6 +399,7 @@ public final class FuncTestWikiReadWriteEN
    *
    * @param aInvoice
    *        The invoice to be written. May not be <code>null</code>.
+   * @return The ebInterface document as an XML DOM Document.
    * @throws IllegalArgumentException
    *         If the content of the passed invoice is incomplete and cannot be
    *         converted to XML

@@ -220,6 +220,7 @@ public final class FuncTestWikiReadWriteDE
    *
    * @param aInvoice
    *        Die zu schreibende Rechnung. Darf nicht <code>null</code> sein.
+   * @return Das ebInterface-Dokument als XML DOM Document.
    * @throws IllegalArgumentException
    *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
    *         nicht in einen XML DOM Knoten umgewandelt werden kann.
@@ -258,6 +259,7 @@ public final class FuncTestWikiReadWriteDE
    *
    * @param aInvoice
    *        Die zu schreibende Rechnung. Darf nicht <code>null</code> sein.
+   * @return Das ebInterface-Dokument als XML DOM Document.
    * @throws IllegalArgumentException
    *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
    *         nicht in einen XML DOM Knoten umgewandelt werden kann.
@@ -296,6 +298,7 @@ public final class FuncTestWikiReadWriteDE
    *
    * @param aInvoice
    *        Die zu schreibende Rechnung. Darf nicht <code>null</code> sein.
+   * @return Das ebInterface-Dokument als XML DOM Document.
    * @throws IllegalArgumentException
    *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
    *         nicht in einen XML DOM Knoten umgewandelt werden kann.
@@ -334,6 +337,7 @@ public final class FuncTestWikiReadWriteDE
    *
    * @param aInvoice
    *        Die zu schreibende Rechnung. Darf nicht <code>null</code> sein.
+   * @return Das ebInterface-Dokument als XML DOM Document.
    * @throws IllegalArgumentException
    *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
    *         nicht in einen XML DOM Knoten umgewandelt werden kann.
