@@ -62,6 +62,8 @@
   </developers>
   
   <properties>
+    <!-- Must be below 1.50 for compatibility with AS2 lib -->
+    <bc.version>1.49</bc.version>
     <jaxb.version>2.1.13</jaxb.version>
   </properties>
 
@@ -81,6 +83,11 @@
           <artifactId>woodstox-core-asl</artifactId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.bouncycastle</groupId>
+      <artifactId>bcprov-jdk15on</artifactId>
+      <version>${bc.version}</version>
     </dependency>
     <dependency>
       <groupId>javax.validation</groupId>
@@ -104,7 +111,7 @@
     <dependency>
       <groupId>org.bouncycastle</groupId>
       <artifactId>bcmail-jdk15on</artifactId>
-      <version>1.51</version>
+      <version>${bc.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>

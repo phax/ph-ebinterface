@@ -94,7 +94,7 @@ public final class SignatureValidatorTest
 
       // Validate the signature
       final XMLDSigValidationResult aResult = XMLDSigValidator.validateSignature (aDoc);
-      assertTrue (String.valueOf (aResult), aResult.isValid ());
+      assertTrue (sPath + " - " + String.valueOf (aResult), aResult.isValid ());
 
       if (!aDoc.getDocumentElement ().getLocalName ().equals ("Signature"))
       {
