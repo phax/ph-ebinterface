@@ -16,8 +16,7 @@ Features:
 
 This library is used by [WWW.E-RECHNUNG.GV.AT](http://www.e-rechnung.gv.at) - the Austrian Government "E-Rechnung an die öffentliche Verwaltung" solution for reading ebInterface files!
 
-Usage with Maven
-----------------
+#Usage with Maven
 ```xml
 <dependency>
   <groupId>com.helger</groupId>
