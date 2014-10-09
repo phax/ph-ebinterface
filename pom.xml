@@ -62,8 +62,7 @@
   </developers>
   
   <properties>
-    <!-- Must be below 1.50 for compatibility with AS2 lib -->
-    <bc.version>1.49</bc.version>
+    <bc.version>1.51</bc.version>
     <jaxb.version>2.1.13</jaxb.version>
   </properties>
 
