@@ -179,6 +179,7 @@
             <arg>-Xph-tostring</arg>
             <arg>-Xph-list-extension</arg>
             <arg>-Xph-bean-validation11</arg>
+            <arg>-Xph-csu</arg>
           </args>
         </configuration>
         <dependencies>
@@ -195,7 +196,7 @@
           <dependency>
             <groupId>com.helger</groupId>
             <artifactId>ph-jaxb22-plugin</artifactId>
-            <version>2.2.11</version>
+            <version>2.2.11.2</version>
           </dependency>
         </dependencies>
       </plugin>
