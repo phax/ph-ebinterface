@@ -23,7 +23,7 @@ import org.junit.Test;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.io.IReadableResource;
 import com.helger.commons.mock.PHTestUtils;
 import com.helger.commons.xml.serialize.DOMReader;
@@ -81,7 +81,7 @@ public final class EbInterface30MarshallerTest
         assertNotNull (aSVR);
         if (aSVR.isInvalid ())
         {
-          assertFalse (aExampleFile.getPath (), ContainerHelper.isEmpty (aSVR.getInvalidReferenceIndices ()));
+          assertFalse (aExampleFile.getPath (), CollectionHelper.isEmpty (aSVR.getInvalidReferenceIndices ()));
         }
       }
     }
