@@ -62,7 +62,7 @@
   </developers>
   
   <properties>
-    <bc.version>1.51</bc.version>
+    <bc.version>1.52</bc.version>
     <jaxb.version>2.1.13</jaxb.version>
   </properties>
 
