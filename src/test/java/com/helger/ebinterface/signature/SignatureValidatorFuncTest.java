@@ -41,9 +41,9 @@ import com.helger.xmldsig.XMLDSigValidator;
  *
  * @author Philip Helger
  */
-public final class SignatureValidatorTest
+public final class SignatureValidatorFuncTest
 {
-  private static final Logger s_aLogger = LoggerFactory.getLogger (SignatureValidatorTest.class);
+  private static final Logger s_aLogger = LoggerFactory.getLogger (SignatureValidatorFuncTest.class);
 
   @Ignore
   @Test

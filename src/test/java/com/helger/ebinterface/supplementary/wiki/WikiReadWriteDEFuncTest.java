@@ -37,7 +37,7 @@ import com.helger.ebinterface.v41.Ebi41InvoiceType;
  *
  * @author Philip Helger
  */
-public final class FuncTestWikiReadWriteDE
+public final class WikiReadWriteDEFuncTest
 {
   /**
    * Lese eine ebInterface 3.0 Rechnung aus einer Datei.

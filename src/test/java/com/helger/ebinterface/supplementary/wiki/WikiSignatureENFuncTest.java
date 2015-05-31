@@ -25,48 +25,48 @@ import com.helger.xmldsig.XMLDSigValidationResult;
 import com.helger.xmldsig.XMLDSigValidator;
 
 /**
- * Signatur-Routinen fürs Wiki
+ * The tests contained in here are meant as copy-paste examples for signature
+ * handling for the project Wiki.
  *
  * @author Philip Helger
  */
-public final class FuncTestWikiSignatureDE
+public final class WikiSignatureENFuncTest
 {
   /**
-   * Überprüfe die XML Signatur des angegebenen Dokuments
+   * Verify the XML signature of a document
    *
    * @param aDoc
-   *        Das existierende XML DOM Dokument mit der zu überprüfenden Signatur.
-   *        Darf nicht null sein.
-   * @return true wenn entweder keine Signatur enthalten ist oder wenn eine
-   *         gültige Signatur enthalten ist. false wird nur dann zurückgeliefert
-   *         wenn eine Signatur enthalten ist, und diese ungültig ist.
+   *        The existing XML document to validate the signature. May not be
+   *        null.
+   * @return true if no signature is contained, or if a signature is contained
+   *         and valid. false only is a signature is contained and invalid
    */
   @Nonnull
   public static boolean hasSignatureAndIsValid (@Nonnull final Document aDoc)
   {
     if (!XMLDSigValidator.containsSignature (aDoc))
     {
-      // Dokument enthält keine Signatur
+      // Document does not contain a signature
       return true;
     }
 
-    // Dokument enthält eine Signatur
+    // Document contains a signature
     try
     {
       final XMLDSigValidationResult aSVR = XMLDSigValidator.validateSignature (aDoc);
       if (aSVR.isValid ())
       {
-        // Enthaltene Signatur is valide
+        // Signature contained and valid
         return true;
       }
 
-      // Enthaltene Signatur is NICHT valide
+      // Signature contained but invalid
       if (!aSVR.getInvalidReferenceIndices ().isEmpty ())
-        System.out.println ("Die folgenden Reference Indizes sind ungültig: " + aSVR.getInvalidReferenceIndices ());
+        System.out.println ("The following reference indices are invalid: " + aSVR.getInvalidReferenceIndices ());
     }
     catch (final XMLSignatureException e)
     {
-      System.err.println ("Fehler beim Überprüfen der XMLDsig");
+      System.err.println ("Error validating XMLDsig");
       e.printStackTrace (System.err);
     }
     return false;
