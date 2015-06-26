@@ -19,7 +19,7 @@ package com.helger.ebinterface;
 import javax.annotation.Nonnull;
 import javax.xml.bind.JAXBElement;
 
-import com.helger.commons.jaxb.utils.AbstractJAXBMarshaller;
+import com.helger.commons.jaxb.AbstractJAXBMarshaller;
 import com.helger.ebinterface.v41.Ebi41InvoiceType;
 import com.helger.ebinterface.v41.ObjectFactory;
 

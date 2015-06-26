@@ -20,8 +20,8 @@ import java.io.File;
 
 import org.junit.Test;
 
-import com.helger.commons.io.IReadableResource;
 import com.helger.commons.io.file.FilenameHelper;
+import com.helger.commons.io.resource.IReadableResource;
 import com.helger.ebinterface.EEbInterfaceTestFiles;
 import com.helger.ebinterface.EEbInterfaceVersion;
 

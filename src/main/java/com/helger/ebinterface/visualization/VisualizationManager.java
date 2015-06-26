@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 import com.helger.commons.ValueEnforcer;
-import com.helger.commons.io.IReadableResource;
+import com.helger.commons.io.resource.IReadableResource;
 import com.helger.commons.state.ESuccess;
 import com.helger.commons.xml.XMLFactory;
 import com.helger.commons.xml.transform.TransformResultFactory;

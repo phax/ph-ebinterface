@@ -23,10 +23,10 @@ import org.junit.Test;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
-import com.helger.commons.collections.CollectionHelper;
-import com.helger.commons.io.IReadableResource;
-import com.helger.commons.mock.PHTestUtils;
-import com.helger.commons.xml.serialize.DOMReader;
+import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.io.resource.IReadableResource;
+import com.helger.commons.mock.CommonsTestHelper;
+import com.helger.commons.xml.serialize.read.DOMReader;
 import com.helger.ebinterface.v30.Ebi30InvoiceType;
 import com.helger.xmldsig.XMLDSigValidationResult;
 import com.helger.xmldsig.XMLDSigValidator;
@@ -62,7 +62,7 @@ public final class EbInterface30MarshallerTest
       assertNotNull (aExampleFile.getPath (), aInvoice2);
 
       // Must be equals
-      PHTestUtils.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
     }
   }
 

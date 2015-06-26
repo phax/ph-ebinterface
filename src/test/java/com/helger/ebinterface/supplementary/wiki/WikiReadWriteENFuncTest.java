@@ -23,7 +23,7 @@ import javax.annotation.Nonnull;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
-import com.helger.commons.io.IReadableResource;
+import com.helger.commons.io.resource.IReadableResource;
 import com.helger.ebinterface.EbInterface302Marshaller;
 import com.helger.ebinterface.EbInterface30Marshaller;
 import com.helger.ebinterface.EbInterface40Marshaller;

@@ -20,7 +20,7 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.id.IHasID;
 import com.helger.commons.lang.EnumHelper;
 
@@ -101,7 +101,7 @@ public enum ETaxCode implements IHasID <String>
 
   /**
    * Lookup element by ID.
-   * 
+   *
    * @param sID
    *        ID to lookup. May be <code>null</code>.
    * @return <code>null</code> if no such element exists.
