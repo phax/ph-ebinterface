@@ -19,9 +19,9 @@ package com.helger.ebinterface;
 import javax.annotation.Nonnull;
 import javax.xml.bind.JAXBElement;
 
-import com.helger.commons.jaxb.AbstractJAXBMarshaller;
 import com.helger.ebinterface.v40.Ebi40InvoiceType;
 import com.helger.ebinterface.v40.ObjectFactory;
+import com.helger.jaxb.AbstractJAXBMarshaller;
 
 /**
  * This is the reader and writer for ebInterface 4.0 documents. This class may

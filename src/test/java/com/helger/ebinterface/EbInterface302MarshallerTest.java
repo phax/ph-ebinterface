@@ -23,10 +23,10 @@ import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 import com.helger.commons.io.resource.IReadableResource;
-import com.helger.commons.jaxb.validation.CollectingValidationEventHandlerFactory;
 import com.helger.commons.mock.CommonsTestHelper;
 import com.helger.commons.xml.serialize.read.DOMReader;
 import com.helger.ebinterface.v302.Ebi302InvoiceType;
+import com.helger.jaxb.validation.CollectingValidationEventHandlerFactory;
 
 /**
  * Test class for class {@link EbInterface302Marshaller}.

@@ -21,8 +21,8 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.io.resource.IReadableResource;
-import com.helger.commons.jaxb.AbstractJAXBMarshaller;
 import com.helger.commons.string.StringHelper;
+import com.helger.jaxb.AbstractJAXBMarshaller;
 
 /**
  * This enumeration encapsulates the supported ebInterface versions in a common
