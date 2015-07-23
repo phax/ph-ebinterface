@@ -3,7 +3,8 @@ ph-ebinterface
 
 Java library encapsulating the usage of ebInterface 3.0, 3.0.2, 4.0 and 4.1 within your application. 
 See [First Steps](https://github.com/phax/ph-ebinterface/wiki/FirstSteps) (English; v3.x) or 
-[Erste Schritte](https://github.com/phax/ph-ebinterface/wiki/ErsteSchritte) (Deutsch; v3.x) for some code examples on how to read and write the different ebInterface versions. This is the follow-project for phloc-ebinterface originally residing on Google Code. 
+[Erste Schritte](https://github.com/phax/ph-ebinterface/wiki/ErsteSchritte) (Deutsch; v3.x) for some code examples on how to read and write the different ebInterface versions.
+This is the follow-on project of phloc-ebinterface originally residing on Google Code. 
 
 Features:
 
@@ -18,12 +19,15 @@ This library is used by [WWW.E-RECHNUNG.GV.AT](http://www.e-rechnung.gv.at) - th
 
 The library can e.g. be used in combination with the [E-RECHNUNG.GV.AT Webservice Client](https://github.com/phax/erechnung.gv.at-webservice-client) to automatically deliver invoices to the Austrian Government. Alternatively the library [ph-ubl](https://github.com/phax/ph-ubl) is available to read and write UBL 2.0 and 2.1 invoices (and other document types).
 
+Versions <= 3.1.3 are compatible with ph-commons < 6.0
+Versions >= 4.0.0 are compatible with ph-commons >= 6.0
+
 #Usage with Maven
 ```xml
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-ebinterface</artifactId>
-  <version>3.1.0</version>
+  <version>4.0.0</version>
 </dependency>
 ```
 
