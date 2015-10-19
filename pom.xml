@@ -62,7 +62,7 @@
   </developers>
   
   <properties>
-    <bc.version>1.52</bc.version>
+    <bc.version>1.53</bc.version>
     <jaxb.version>2.1.13</jaxb.version>
   </properties>
 
@@ -80,7 +80,7 @@
     <dependency>
       <groupId>com.helger</groupId>
       <artifactId>ph-xmldsig</artifactId>
-      <version>2.0.1</version>
+      <version>2.0.2</version>
       <exclusions>
         <exclusion>
           <groupId>org.codehaus.woodstox</groupId>

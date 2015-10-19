@@ -1,5 +1,4 @@
-ph-ebinterface
-==============
+#ph-ebinterface
 
 Java library encapsulating the usage of ebInterface 3.0, 3.0.2, 4.0 and 4.1 within your application. 
 See [First Steps](https://github.com/phax/ph-ebinterface/wiki/FirstSteps) (English; v3.x) or 
@@ -27,7 +26,7 @@ Versions >= 4.0.0 are compatible with ph-commons >= 6.0
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-ebinterface</artifactId>
-  <version>4.0.0</version>
+  <version>4.0.1</version>
 </dependency>
 ```
 
