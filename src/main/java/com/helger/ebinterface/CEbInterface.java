@@ -38,23 +38,29 @@ public final class CEbInterface
 
   /** XML Schema resources for ebInterface 3.0 */
   public static final List <? extends IReadableResource> EBINTERFACE_30_XSDS = CollectionHelper.newUnmodifiableList (XSD_XMLDSIG_RESOURCE,
-                                                                                                                    new ClassPathResource ("/schemas/ebinterface/ebinterface-3.0.xsd"));
+                                                                                                                     new ClassPathResource ("/schemas/ebinterface/ebinterface-3.0.xsd"));
 
   /** XML Schema resources for ebInterface 3.0.2 */
   public static final List <? extends IReadableResource> EBINTERFACE_302_XSDS = CollectionHelper.newUnmodifiableList (XSD_XMLDSIG_RESOURCE,
-                                                                                                                     new ClassPathResource ("/schemas/ebinterface/ebinterface-3.0.2.xsd"));
+                                                                                                                      new ClassPathResource ("/schemas/ebinterface/ebinterface-3.0.2.xsd"));
 
   /** XML Schema resources for ebInterface 4.0 */
   public static final List <? extends IReadableResource> EBINTERFACE_40_XSDS = CollectionHelper.newUnmodifiableList (XSD_XMLDSIG_RESOURCE,
-                                                                                                                    new ClassPathResource ("/schemas/ebinterface/ebInterfaceExtension-4.0.xsd"),
-                                                                                                                    new ClassPathResource ("/schemas/ebinterface/ext40/ebInterfaceExtension_SV.xsd"),
-                                                                                                                    new ClassPathResource ("/schemas/ebinterface/ebinterface-4.0.xsd"));
+                                                                                                                     new ClassPathResource ("/schemas/ebinterface/ebInterfaceExtension-4.0.xsd"),
+                                                                                                                     new ClassPathResource ("/schemas/ebinterface/ext40/ebInterfaceExtension_SV.xsd"),
+                                                                                                                     new ClassPathResource ("/schemas/ebinterface/ebinterface-4.0.xsd"));
 
   /** XML Schema resources for ebInterface 4.1 */
   public static final List <? extends IReadableResource> EBINTERFACE_41_XSDS = CollectionHelper.newUnmodifiableList (XSD_XMLDSIG_RESOURCE,
-                                                                                                                    new ClassPathResource ("/schemas/ebinterface/ebInterfaceExtension-4.1.xsd"),
-                                                                                                                    new ClassPathResource ("/schemas/ebinterface/ext41/ebInterfaceExtension_SV.xsd"),
-                                                                                                                    new ClassPathResource ("/schemas/ebinterface/ebinterface-4.1.xsd"));
+                                                                                                                     new ClassPathResource ("/schemas/ebinterface/ebInterfaceExtension-4.1.xsd"),
+                                                                                                                     new ClassPathResource ("/schemas/ebinterface/ext41/ebInterfaceExtension_SV.xsd"),
+                                                                                                                     new ClassPathResource ("/schemas/ebinterface/ebinterface-4.1.xsd"));
+
+  /** XML Schema resources for ebInterface 4.2 */
+  public static final List <? extends IReadableResource> EBINTERFACE_42_XSDS = CollectionHelper.newUnmodifiableList (XSD_XMLDSIG_RESOURCE,
+                                                                                                                     new ClassPathResource ("/schemas/ebinterface/ebInterfaceExtension-4.2.xsd"),
+                                                                                                                     new ClassPathResource ("/schemas/ebinterface/ext42/ebInterfaceExtension_SV.xsd"),
+                                                                                                                     new ClassPathResource ("/schemas/ebinterface/ebinterface-4.2.xsd"));
 
   /** Namespace URI for ebInterface 3.0 */
   public static final String EBINTERFACE_30_NS = "http://www.ebinterface.at/schema/3p0/";
@@ -67,6 +73,9 @@ public final class CEbInterface
 
   /** Namespace URI for ebInterface 4.1 */
   public static final String EBINTERFACE_41_NS = "http://www.ebinterface.at/schema/4p1/";
+
+  /** Namespace URI for ebInterface 4.2 */
+  public static final String EBINTERFACE_42_NS = "http://www.ebinterface.at/schema/4p2/";
 
   /** Stylesheet resource for ebInterface 3.0 */
   public static final IReadableResource EBINTERFACE_30_XSLT = new ClassPathResource ("/visualization/ebInterface-3.0.xslt");

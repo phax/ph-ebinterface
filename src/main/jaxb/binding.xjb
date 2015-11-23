@@ -95,6 +95,30 @@
       </nameXmlTransform>
     </schemaBindings>
   </bindings>
+  <bindings schemaLocation="../resources/schemas/ebinterface/ebinterface-4.2.xsd" node="/xs:schema">
+    <schemaBindings>
+      <package name="com.helger.ebinterface.v42" />
+      <nameXmlTransform>
+        <typeName prefix="Ebi42"/>
+      </nameXmlTransform>
+    </schemaBindings>
+  </bindings>
+  <bindings schemaLocation="../resources/schemas/ebinterface/ebInterfaceExtension-4.2.xsd" node="/xs:schema">
+    <schemaBindings>
+      <package name="com.helger.ebinterface.v42.extensions" />
+      <nameXmlTransform>
+        <typeName prefix="Ebi42"/>
+      </nameXmlTransform>
+    </schemaBindings>
+  </bindings>
+  <bindings schemaLocation="../resources/schemas/ebinterface/ext42/ebInterfaceExtension_SV.xsd" node="/xs:schema">
+    <schemaBindings>
+      <package name="com.helger.ebinterface.v42.extensions.sv" />
+      <nameXmlTransform>
+        <typeName prefix="Ebi42"/>
+      </nameXmlTransform>
+    </schemaBindings>
+  </bindings>
   <bindings schemaLocation="../resources/schemas/ebinterface/xmldsig-core-schema.xsd" node="/xs:schema">
     <schemaBindings>
       <package name="com.helger.ebinterface.xmldsig" />
