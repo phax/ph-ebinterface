@@ -89,6 +89,9 @@ public final class CEbInterface
   /** Stylesheet resource for ebInterface 4.1 */
   public static final IReadableResource EBINTERFACE_41_XSLT = new ClassPathResource ("/visualization/ebInterface-4.1.xslt");
 
+  /** Stylesheet resource for ebInterface 4.2 */
+  public static final IReadableResource EBINTERFACE_42_XSLT = new ClassPathResource ("/visualization/ebInterface-4.2.xslt");
+
   @SuppressWarnings ("unused")
   @PresentForCodeCoverage
   private static final CEbInterface s_aInstance = new CEbInterface ();

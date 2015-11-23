@@ -18,6 +18,7 @@ package com.helger.ebinterface;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
 
 import org.junit.Test;
 import org.w3c.dom.Document;
@@ -56,6 +57,7 @@ public final class EbInterface30MarshallerTest
       // Convert again to XML document
       final Document aDoc2 = aMarshaller.write (aInvoice);
       assertNotNull (aExampleFile.getPath (), aDoc2);
+      assertSame (EEbInterfaceVersion.V30, EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
 
       // Convert to domain object again
       final Ebi30InvoiceType aInvoice2 = aMarshaller.read (aDoc2);
