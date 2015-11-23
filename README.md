@@ -1,6 +1,6 @@
 #ph-ebinterface
 
-Java library encapsulating the usage of ebInterface 3.0, 3.0.2, 4.0 and 4.1 within your application. 
+Java library encapsulating the usage of ebInterface 3.0, 3.0.2, 4.0, 4.1 and 4.2 within your application. 
 See [First Steps](https://github.com/phax/ph-ebinterface/wiki/FirstSteps) (English; v3.x) or 
 [Erste Schritte](https://github.com/phax/ph-ebinterface/wiki/ErsteSchritte) (Deutsch; v3.x) for some code examples on how to read and write the different ebInterface versions.
 This is the follow-on project of phloc-ebinterface originally residing on Google Code. 
@@ -11,8 +11,15 @@ Features:
   * Read and write ebInterface 3.0.2 invoices
   * Read and write ebInterface 4.0 invoices
   * Read and write ebInterface 4.1 invoices
+  * Read and write ebInterface 4.2 invoices
   * Validate the signature of ebInterface documents
   * Visualize ebInterface documents as HTML documents
+  
+News and noteworthy:
+  * Version 4.0.2
+    * Added support for ebInterface 4.2
+  * Version 4.0.1
+    * update to BouncyCastle 1.53
 
 This library is used by [WWW.E-RECHNUNG.GV.AT](http://www.e-rechnung.gv.at) - the Austrian Government "E-Rechnung an die öffentliche Verwaltung" solution for reading ebInterface files!
 
