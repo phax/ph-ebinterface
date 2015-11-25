@@ -33,7 +33,7 @@ Versions >= 4.0.0 are compatible with ph-commons >= 6.0
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-ebinterface</artifactId>
-  <version>4.0.1</version>
+  <version>4.0.2</version>
 </dependency>
 ```
 
