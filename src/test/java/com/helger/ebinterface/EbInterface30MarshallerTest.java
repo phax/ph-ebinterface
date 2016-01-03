@@ -57,7 +57,8 @@ public final class EbInterface30MarshallerTest
       // Convert again to XML document
       final Document aDoc2 = aMarshaller.write (aInvoice);
       assertNotNull (aExampleFile.getPath (), aDoc2);
-      assertSame (EEbInterfaceVersion.V30, EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
+      assertSame (EEbInterfaceVersion.V30,
+                  EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
 
       // Convert to domain object again
       final Ebi30InvoiceType aInvoice2 = aMarshaller.read (aDoc2);

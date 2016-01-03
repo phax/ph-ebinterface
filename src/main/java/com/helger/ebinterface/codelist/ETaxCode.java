@@ -49,8 +49,7 @@ public enum ETaxCode implements IHasID <String>
   /** Wine tax rate */
   WINE_12 ("AT025", 12, "für Weinumsätze durch landwirtschaftliche Betriebe"),
   /** Special regions. Up to 2006 only */
-  @Deprecated
-  GERMANY_16 ("AT035", 16, "für Jungholz und Mittelberg"),
+  @Deprecated GERMANY_16 ("AT035", 16, "für Jungholz und Mittelberg"),
   /** Special regions. From 2007 only */
   GERMANY_19 ("AT037", 19, "für Jungholz und Mittelberg"),
   /** Add-on tax for certain farmers only */
