@@ -27,16 +27,14 @@ import com.helger.ebinterface.EEbInterfaceVersion;
 
 /**
  * Test class for class {@link VisualizationManager}
- * 
+ *
  * @author Philip Helger
  */
 public final class VisualizationManagerTest
 {
   private static File _buildHTMLFileName (final IReadableResource aExampleFile)
   {
-    return new File ("target/" +
-                     FilenameHelper.getBaseName (aExampleFile.getPath ())+
-                     ".html");
+    return new File ("target/" + FilenameHelper.getBaseName (aExampleFile.getPath ()) + ".html");
   }
 
   @Test

@@ -32,7 +32,7 @@ import com.helger.jaxb.AbstractJAXBMarshaller;
  */
 public enum EEbInterfaceVersion
 {
- /** ebInterface 3.0 */
+  /** ebInterface 3.0 */
   V30 (CEbInterface.EBINTERFACE_30_NS, CEbInterface.EBINTERFACE_30_XSLT)
   {
     @Override
@@ -41,7 +41,7 @@ public enum EEbInterfaceVersion
       return new EbInterface30Marshaller ();
     }
   },
- /** ebInterface 3.02 */
+  /** ebInterface 3.02 */
   V302 (CEbInterface.EBINTERFACE_302_NS, CEbInterface.EBINTERFACE_302_XSLT)
   {
     @Override
@@ -50,7 +50,7 @@ public enum EEbInterfaceVersion
       return new EbInterface302Marshaller ();
     }
   },
- /** ebInterface 4.0 */
+  /** ebInterface 4.0 */
   V40 (CEbInterface.EBINTERFACE_40_NS, CEbInterface.EBINTERFACE_40_XSLT)
   {
     @Override
@@ -59,7 +59,7 @@ public enum EEbInterfaceVersion
       return new EbInterface40Marshaller ();
     }
   },
- /** ebInterface 4.1 */
+  /** ebInterface 4.1 */
   V41 (CEbInterface.EBINTERFACE_41_NS, CEbInterface.EBINTERFACE_41_XSLT)
   {
     @Override
@@ -68,7 +68,7 @@ public enum EEbInterfaceVersion
       return new EbInterface41Marshaller ();
     }
   },
- /** ebInterface 4.2 */
+  /** ebInterface 4.2 */
   V42 (CEbInterface.EBINTERFACE_42_NS, CEbInterface.EBINTERFACE_42_XSLT)
   {
     @Override
