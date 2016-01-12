@@ -19,11 +19,10 @@ package com.helger.ebinterface.visualization;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.locks.ReadWriteLock;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.concurrent.GuardedBy;
 import javax.annotation.concurrent.ThreadSafe;
 import javax.xml.transform.Result;
 import javax.xml.transform.Source;
@@ -37,6 +36,7 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 import com.helger.commons.ValueEnforcer;
+import com.helger.commons.concurrent.SimpleReadWriteLock;
 import com.helger.commons.io.resource.IReadableResource;
 import com.helger.commons.state.ESuccess;
 import com.helger.commons.xml.XMLFactory;
@@ -55,9 +55,10 @@ import com.helger.ebinterface.EEbInterfaceVersion;
 public final class VisualizationManager
 {
   private static final Logger s_aLogger = LoggerFactory.getLogger (VisualizationManager.class);
+  private static final SimpleReadWriteLock s_aRWLock = new SimpleReadWriteLock ();
   // Map<NamespaceURI, Templates>
-  private static final Map <String, Templates> s_aTemplates = new HashMap <String, Templates> ();
-  private static final ReadWriteLock s_aRWLock = new ReentrantReadWriteLock ();
+  @GuardedBy ("s_aRWLock")
+  private static final Map <String, Templates> s_aTemplates = new HashMap <> ();
 
   private VisualizationManager ()
   {}
@@ -75,43 +76,27 @@ public final class VisualizationManager
   public static Templates getXSLTTemplates (@Nonnull final EEbInterfaceVersion eVersion)
   {
     final String sNamespaceURI = eVersion.getNamespaceURI ();
-    Templates ret;
-    s_aRWLock.readLock ().lock ();
-    try
-    {
-      ret = s_aTemplates.get (sNamespaceURI);
-    }
-    finally
-    {
-      s_aRWLock.readLock ().unlock ();
-    }
+    final Templates ret = s_aRWLock.readLocked ( () -> s_aTemplates.get (sNamespaceURI));
+    if (ret != null)
+      return ret;
 
-    if (ret == null)
-    {
-      s_aRWLock.writeLock ().lock ();
-      try
+    return s_aRWLock.writeLocked ( () -> {
+      // Try again in write lock
+      Templates ret2 = s_aTemplates.get (sNamespaceURI);
+      if (ret2 == null)
       {
-        // Try again in write lock
-        ret = s_aTemplates.get (sNamespaceURI);
-        if (ret == null)
-        {
-          // Definitely not present - init
-          final IReadableResource aXSLTRes = eVersion.getXSLTResource ();
-          ret = XMLTransformerFactory.newTemplates (aXSLTRes);
-          if (ret == null)
-            s_aLogger.error ("Failed to parse XSLT template " + aXSLTRes);
-          else
-            if (s_aLogger.isDebugEnabled ())
-              s_aLogger.debug ("Compiled XSLT template " + aXSLTRes);
-          s_aTemplates.put (sNamespaceURI, ret);
-        }
+        // Definitely not present - init
+        final IReadableResource aXSLTRes = eVersion.getXSLTResource ();
+        ret2 = XMLTransformerFactory.newTemplates (aXSLTRes);
+        if (ret2 == null)
+          s_aLogger.error ("Failed to parse XSLT template " + aXSLTRes);
+        else
+          if (s_aLogger.isDebugEnabled ())
+            s_aLogger.debug ("Compiled XSLT template " + aXSLTRes);
+        s_aTemplates.put (sNamespaceURI, ret2);
       }
-      finally
-      {
-        s_aRWLock.writeLock ().unlock ();
-      }
-    }
-    return ret;
+      return ret2;
+    });
   }
 
   /**
