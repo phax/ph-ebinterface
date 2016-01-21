@@ -16,9 +16,6 @@
  */
 package com.helger.ebinterface;
 
-import javax.annotation.Nonnull;
-import javax.xml.bind.JAXBElement;
-
 import com.helger.ebinterface.v41.Ebi41InvoiceType;
 import com.helger.ebinterface.v41.ObjectFactory;
 import com.helger.jaxb.AbstractJAXBMarshaller;
@@ -36,13 +33,6 @@ public class EbInterface41Marshaller extends AbstractJAXBMarshaller <Ebi41Invoic
    */
   public EbInterface41Marshaller ()
   {
-    super (Ebi41InvoiceType.class, CEbInterface.EBINTERFACE_41_XSDS);
-  }
-
-  @Override
-  @Nonnull
-  protected final JAXBElement <Ebi41InvoiceType> wrapObject (final Ebi41InvoiceType aInvoice)
-  {
-    return new ObjectFactory ().createInvoice (aInvoice);
+    super (Ebi41InvoiceType.class, CEbInterface.EBINTERFACE_41_XSDS, o -> new ObjectFactory ().createInvoice (o));
   }
 }
