@@ -53,7 +53,7 @@ public final class EbInterface41MarshallerTest
       assertNotNull (aExampleFile.getPath (), aInvoice);
 
       // Convert again to XML document
-      final Document aDoc2 = aMarshaller.write (aInvoice);
+      final Document aDoc2 = aMarshaller.getAsDocument (aInvoice);
       assertNotNull (aExampleFile.getPath (), aDoc2);
       assertSame (EEbInterfaceVersion.V41,
                   EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));

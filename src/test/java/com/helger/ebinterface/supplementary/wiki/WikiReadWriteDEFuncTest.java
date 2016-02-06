@@ -27,10 +27,12 @@ import com.helger.ebinterface.EbInterface302Marshaller;
 import com.helger.ebinterface.EbInterface30Marshaller;
 import com.helger.ebinterface.EbInterface40Marshaller;
 import com.helger.ebinterface.EbInterface41Marshaller;
+import com.helger.ebinterface.EbInterface42Marshaller;
 import com.helger.ebinterface.v30.Ebi30InvoiceType;
 import com.helger.ebinterface.v302.Ebi302InvoiceType;
 import com.helger.ebinterface.v40.Ebi40InvoiceType;
 import com.helger.ebinterface.v41.Ebi41InvoiceType;
+import com.helger.ebinterface.v42.Ebi42InvoiceType;
 
 /**
  * Diese Tests sind als copy-paste Beispiele fürs Wiki gedacht.
@@ -228,7 +230,7 @@ public final class WikiReadWriteDEFuncTest
   @Nonnull
   public static Document getEbInterface30Document (@Nonnull final Ebi30InvoiceType aInvoice)
   {
-    final Document ret = new EbInterface30Marshaller ().write (aInvoice);
+    final Document ret = new EbInterface30Marshaller ().getAsDocument (aInvoice);
     if (ret == null)
       throw new IllegalArgumentException ("Die angebene Rechnung ist keine valide ebInterface 3.0 Rechnung. Auf der Konsole befinden sich die Details.");
     return ret;
@@ -267,7 +269,7 @@ public final class WikiReadWriteDEFuncTest
   @Nonnull
   public static Document getEbInterface302Document (@Nonnull final Ebi302InvoiceType aInvoice)
   {
-    final Document ret = new EbInterface302Marshaller ().write (aInvoice);
+    final Document ret = new EbInterface302Marshaller ().getAsDocument (aInvoice);
     if (ret == null)
       throw new IllegalArgumentException ("Die angebene Rechnung ist keine valide ebInterface 3.0.2 Rechnung. Auf der Konsole befinden sich die Details.");
     return ret;
@@ -306,7 +308,7 @@ public final class WikiReadWriteDEFuncTest
   @Nonnull
   public static Document getEbInterface40Document (@Nonnull final Ebi40InvoiceType aInvoice)
   {
-    final Document ret = new EbInterface40Marshaller ().write (aInvoice);
+    final Document ret = new EbInterface40Marshaller ().getAsDocument (aInvoice);
     if (ret == null)
       throw new IllegalArgumentException ("Die angebene Rechnung ist keine valide ebInterface 4.0 Rechnung. Auf der Konsole befinden sich die Details.");
     return ret;
@@ -345,9 +347,48 @@ public final class WikiReadWriteDEFuncTest
   @Nonnull
   public static Document getEbInterface41Document (@Nonnull final Ebi41InvoiceType aInvoice)
   {
-    final Document ret = new EbInterface41Marshaller ().write (aInvoice);
+    final Document ret = new EbInterface41Marshaller ().getAsDocument (aInvoice);
     if (ret == null)
       throw new IllegalArgumentException ("Die angebene Rechnung ist keine valide ebInterface 4.1 Rechnung. Auf der Konsole befinden sich die Details.");
+    return ret;
+  }
+
+  /**
+   * Schreibt die angegebene ebInterface 4.2 Rechnung in die angegebene Datei.
+   *
+   * @param aInvoice
+   *        Die zu schreibende Rechnung. Darf nicht <code>null</code> sein.
+   * @param aFile
+   *        Die Zieldatei in die geschrieben werden soll. Darf nicht
+   *        <code>null</code> sein.
+   * @throws IllegalArgumentException
+   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
+   *         nicht auf die Platte geschrieben werden kann.
+   */
+  @Nonnull
+  public static void writeEbInterface42File (@Nonnull final Ebi42InvoiceType aInvoice, @Nonnull final File aFile)
+  {
+    if (new EbInterface42Marshaller ().write (aInvoice, aFile).isFailure ())
+      throw new IllegalArgumentException ("Die angebene Rechnung ist keine valide ebInterface 4.2 Rechnung. Auf der Konsole befinden sich die Details.");
+  }
+
+  /**
+   * Konvertiert die angegebene ebInterface 4.2 Rechnung in ein XML DOM
+   * Dokument.
+   *
+   * @param aInvoice
+   *        Die zu schreibende Rechnung. Darf nicht <code>null</code> sein.
+   * @return Das ebInterface-Dokument als XML DOM Document.
+   * @throws IllegalArgumentException
+   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
+   *         nicht in einen XML DOM Knoten umgewandelt werden kann.
+   */
+  @Nonnull
+  public static Document getEbInterface42Document (@Nonnull final Ebi42InvoiceType aInvoice)
+  {
+    final Document ret = new EbInterface42Marshaller ().getAsDocument (aInvoice);
+    if (ret == null)
+      throw new IllegalArgumentException ("Die angebene Rechnung ist keine valide ebInterface 4.2 Rechnung. Auf der Konsole befinden sich die Details.");
     return ret;
   }
 }

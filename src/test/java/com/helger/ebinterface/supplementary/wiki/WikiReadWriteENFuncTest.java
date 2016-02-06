@@ -28,10 +28,12 @@ import com.helger.ebinterface.EbInterface302Marshaller;
 import com.helger.ebinterface.EbInterface30Marshaller;
 import com.helger.ebinterface.EbInterface40Marshaller;
 import com.helger.ebinterface.EbInterface41Marshaller;
+import com.helger.ebinterface.EbInterface42Marshaller;
 import com.helger.ebinterface.v30.Ebi30InvoiceType;
 import com.helger.ebinterface.v302.Ebi302InvoiceType;
 import com.helger.ebinterface.v40.Ebi40InvoiceType;
 import com.helger.ebinterface.v41.Ebi41InvoiceType;
+import com.helger.ebinterface.v42.Ebi42InvoiceType;
 
 /**
  * The tests contained in here are meant as copy-paste examples for the project
@@ -296,7 +298,7 @@ public final class WikiReadWriteENFuncTest
   @Nonnull
   public static Document getEbInterface30Document (@Nonnull final Ebi30InvoiceType aInvoice)
   {
-    final Document ret = new EbInterface30Marshaller ().write (aInvoice);
+    final Document ret = new EbInterface30Marshaller ().getAsDocument (aInvoice);
     if (ret == null)
       throw new IllegalArgumentException ("The passed invoice is not a valid ebInterface 3.0 invoice. See the console for details.");
     return ret;
@@ -333,7 +335,7 @@ public final class WikiReadWriteENFuncTest
   @Nonnull
   public static Document getEbInterface302Document (@Nonnull final Ebi302InvoiceType aInvoice)
   {
-    final Document ret = new EbInterface302Marshaller ().write (aInvoice);
+    final Document ret = new EbInterface302Marshaller ().getAsDocument (aInvoice);
     if (ret == null)
       throw new IllegalArgumentException ("The passed invoice is not a valid ebInterface 3.0.2 invoice. See the console for details.");
     return ret;
@@ -370,7 +372,7 @@ public final class WikiReadWriteENFuncTest
   @Nonnull
   public static Document getEbInterface40Document (@Nonnull final Ebi40InvoiceType aInvoice)
   {
-    final Document ret = new EbInterface40Marshaller ().write (aInvoice);
+    final Document ret = new EbInterface40Marshaller ().getAsDocument (aInvoice);
     if (ret == null)
       throw new IllegalArgumentException ("The passed invoice is not a valid ebInterface 4.0 invoice. See the console for details.");
     return ret;
@@ -407,9 +409,46 @@ public final class WikiReadWriteENFuncTest
   @Nonnull
   public static Document getEbInterface41Document (@Nonnull final Ebi41InvoiceType aInvoice)
   {
-    final Document ret = new EbInterface41Marshaller ().write (aInvoice);
+    final Document ret = new EbInterface41Marshaller ().getAsDocument (aInvoice);
     if (ret == null)
       throw new IllegalArgumentException ("The passed invoice is not a valid ebInterface 4.1 invoice. See the console for details.");
+    return ret;
+  }
+
+  /**
+   * Write the passed ebInterface 4.2 invoice to the specified file.
+   *
+   * @param aInvoice
+   *        The invoice to be written. May not be <code>null</code>.
+   * @param aFile
+   *        The file to read the invoice from. May not be <code>null</code>.
+   * @throws IllegalArgumentException
+   *         If the content of the passed invoice is incomplete and cannot be
+   *         written to the file
+   */
+  @Nonnull
+  public static void writeEbInterface42File (@Nonnull final Ebi42InvoiceType aInvoice, @Nonnull final File aFile)
+  {
+    if (new EbInterface42Marshaller ().write (aInvoice, aFile).isFailure ())
+      throw new IllegalArgumentException ("The passed invoice is not a valid ebInterface 4.2 invoice. See the console for details.");
+  }
+
+  /**
+   * Convert the passed ebInterface 4.2 invoice to an XML document.
+   *
+   * @param aInvoice
+   *        The invoice to be written. May not be <code>null</code>.
+   * @return The ebInterface document as an XML DOM Document.
+   * @throws IllegalArgumentException
+   *         If the content of the passed invoice is incomplete and cannot be
+   *         converted to XML
+   */
+  @Nonnull
+  public static Document getEbInterface42Document (@Nonnull final Ebi42InvoiceType aInvoice)
+  {
+    final Document ret = new EbInterface42Marshaller ().getAsDocument (aInvoice);
+    if (ret == null)
+      throw new IllegalArgumentException ("The passed invoice is not a valid ebInterface 4.2 invoice. See the console for details.");
     return ret;
   }
 }
