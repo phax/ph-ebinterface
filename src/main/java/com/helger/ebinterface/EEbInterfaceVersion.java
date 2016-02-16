@@ -20,6 +20,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.factory.IFactory;
 import com.helger.commons.io.resource.IReadableResource;
 import com.helger.commons.string.StringHelper;
 import com.helger.jaxb.AbstractJAXBMarshaller;
@@ -33,58 +34,27 @@ import com.helger.jaxb.AbstractJAXBMarshaller;
 public enum EEbInterfaceVersion
 {
   /** ebInterface 3.0 */
-  V30 (CEbInterface.EBINTERFACE_30_NS, CEbInterface.EBINTERFACE_30_XSLT)
-  {
-    @Override
-    public EbInterface30Marshaller createMarshaller ()
-    {
-      return new EbInterface30Marshaller ();
-    }
-  },
+  V30 (CEbInterface.EBINTERFACE_30_NS, CEbInterface.EBINTERFACE_30_XSLT, () -> new EbInterface30Marshaller ()),
   /** ebInterface 3.02 */
-  V302 (CEbInterface.EBINTERFACE_302_NS, CEbInterface.EBINTERFACE_302_XSLT)
-  {
-    @Override
-    public EbInterface302Marshaller createMarshaller ()
-    {
-      return new EbInterface302Marshaller ();
-    }
-  },
+  V302 (CEbInterface.EBINTERFACE_302_NS, CEbInterface.EBINTERFACE_302_XSLT, () -> new EbInterface302Marshaller ()),
   /** ebInterface 4.0 */
-  V40 (CEbInterface.EBINTERFACE_40_NS, CEbInterface.EBINTERFACE_40_XSLT)
-  {
-    @Override
-    public EbInterface40Marshaller createMarshaller ()
-    {
-      return new EbInterface40Marshaller ();
-    }
-  },
+  V40 (CEbInterface.EBINTERFACE_40_NS, CEbInterface.EBINTERFACE_40_XSLT, () -> new EbInterface40Marshaller ()),
   /** ebInterface 4.1 */
-  V41 (CEbInterface.EBINTERFACE_41_NS, CEbInterface.EBINTERFACE_41_XSLT)
-  {
-    @Override
-    public EbInterface41Marshaller createMarshaller ()
-    {
-      return new EbInterface41Marshaller ();
-    }
-  },
+  V41 (CEbInterface.EBINTERFACE_41_NS, CEbInterface.EBINTERFACE_41_XSLT, () -> new EbInterface41Marshaller ()),
   /** ebInterface 4.2 */
-  V42 (CEbInterface.EBINTERFACE_42_NS, CEbInterface.EBINTERFACE_42_XSLT)
-  {
-    @Override
-    public EbInterface42Marshaller createMarshaller ()
-    {
-      return new EbInterface42Marshaller ();
-    }
-  };
+  V42 (CEbInterface.EBINTERFACE_42_NS, CEbInterface.EBINTERFACE_42_XSLT, () -> new EbInterface42Marshaller ());
 
   private final String m_sNamespaceURI;
   private final IReadableResource m_aXSLTRes;
+  private final IFactory <AbstractJAXBMarshaller <?>> m_aMarshallerSupplier;
 
-  private EEbInterfaceVersion (@Nonnull @Nonempty final String sNamespaceURI, @Nonnull final IReadableResource aXSLTRes)
+  private EEbInterfaceVersion (@Nonnull @Nonempty final String sNamespaceURI,
+                               @Nonnull final IReadableResource aXSLTRes,
+                               @Nonnull final IFactory <AbstractJAXBMarshaller <?>> aMarshallerSupplier)
   {
     m_sNamespaceURI = sNamespaceURI;
     m_aXSLTRes = aXSLTRes;
+    m_aMarshallerSupplier = aMarshallerSupplier;
   }
 
   /**
@@ -113,7 +83,10 @@ public enum EEbInterfaceVersion
    *         created.
    */
   @Nonnull
-  public abstract AbstractJAXBMarshaller <?> createMarshaller ();
+  public AbstractJAXBMarshaller <?> createMarshaller ()
+  {
+    return m_aMarshallerSupplier.get ();
+  }
 
   /**
    * Get the ebInterface version that matches the specified namespace.
