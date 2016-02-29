@@ -17,8 +17,6 @@
 package com.helger.ebinterface.visualization;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -36,6 +34,8 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 import com.helger.commons.ValueEnforcer;
+import com.helger.commons.collection.ext.CommonsHashMap;
+import com.helger.commons.collection.ext.ICommonsMap;
 import com.helger.commons.concurrent.SimpleReadWriteLock;
 import com.helger.commons.io.resource.IReadableResource;
 import com.helger.commons.state.ESuccess;
@@ -58,7 +58,7 @@ public final class VisualizationManager
   private static final SimpleReadWriteLock s_aRWLock = new SimpleReadWriteLock ();
   // Map<NamespaceURI, Templates>
   @GuardedBy ("s_aRWLock")
-  private static final Map <String, Templates> s_aTemplates = new HashMap <> ();
+  private static final ICommonsMap <String, Templates> s_aTemplates = new CommonsHashMap <> ();
 
   private VisualizationManager ()
   {}
