@@ -628,7 +628,8 @@
 	<xs:complexType name="SEPADirectDebitType">
 		<xs:sequence>
 			<xs:element ref="Type"/>
-			<xs:element ref="BIC"/>
+      <!-- Changed by AK Sitzung vom 30.3.2016  -->
+			<xs:element ref="BIC" minOccurs="0"/>
 			<xs:element ref="IBAN"/>
 			<xs:element ref="BankAccountOwner"/>
 			<xs:element ref="CreditorID"/>
