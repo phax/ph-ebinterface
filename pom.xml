@@ -180,6 +180,7 @@
             <arg>-Xph-list-extension</arg>
             <arg>-Xph-bean-validation11</arg>
             <arg>-Xph-csu</arg>
+            <arg>-Xph-cloneable</arg>
           </args>
         </configuration>
         <dependencies>

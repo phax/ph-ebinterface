@@ -66,6 +66,7 @@ public final class EbInterface30MarshallerTest
 
       // Must be equals
       CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice.clone ());
     }
   }
 
