@@ -16,14 +16,13 @@
  */
 package com.helger.ebinterface;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.ext.CommonsArrayList;
+import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.commons.io.resource.IReadableResource;
 
@@ -44,7 +43,7 @@ public enum EEbInterfaceTestFiles
                                             "valid4.xml",
                                             "valid5.xml",
                                             "valid6.xml",
-      // "valid6-signed.xml",
+  // "valid6-signed.xml",
   }),
   V302 ("/ebinterface/v302/", new String [] { "2011-0001-2011-09-12.XML",
                                               // "InvoiceExample-invalid.xml",
@@ -75,13 +74,13 @@ public enum EEbInterfaceTestFiles
                                             "testinstance-no-svnr.xml",
                                             // "testinstance-valid-billerscontractpartnernumber.xml",
                                             "testinstance-valid-schema.xml",
-      // "testinstance-valid-sv.xml",
-      // "testinstance-valid-svnr.xml",
+  // "testinstance-valid-sv.xml",
+  // "testinstance-valid-svnr.xml",
   }),
   V41 ("/ebinterface/v41/", new String [] { "testinstance-valid-schema.xml" }),
   V42 ("/ebinterface/v42/", new String [] { "testinstance-valid-schema.xml" });
 
-  private final List <IReadableResource> m_aTestFiles = new ArrayList <IReadableResource> ();
+  private final ICommonsList <IReadableResource> m_aTestFiles = new CommonsArrayList<> ();
 
   private EEbInterfaceTestFiles (final String sBaseDir, final String [] aFiles)
   {
@@ -92,7 +91,7 @@ public enum EEbInterfaceTestFiles
   @Nonnull
   @Nonempty
   @ReturnsMutableCopy
-  public List <IReadableResource> getTestResources ()
+  public ICommonsList <IReadableResource> getTestResources ()
   {
     return CollectionHelper.newList (m_aTestFiles);
   }
