@@ -20,10 +20,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.Nonempty;
-import com.helger.commons.factory.IFactory;
 import com.helger.commons.io.resource.IReadableResource;
 import com.helger.commons.string.StringHelper;
-import com.helger.jaxb.AbstractJAXBMarshaller;
 
 /**
  * This enumeration encapsulates the supported ebInterface versions in a common
@@ -34,27 +32,24 @@ import com.helger.jaxb.AbstractJAXBMarshaller;
 public enum EEbInterfaceVersion
 {
   /** ebInterface 3.0 */
-  V30 (CEbInterface.EBINTERFACE_30_NS, CEbInterface.EBINTERFACE_30_XSLT, () -> new EbInterface30Marshaller ()),
+  V30 (CEbInterface.EBINTERFACE_30_NS, CEbInterface.EBINTERFACE_30_XSLT),
   /** ebInterface 3.02 */
-  V302 (CEbInterface.EBINTERFACE_302_NS, CEbInterface.EBINTERFACE_302_XSLT, () -> new EbInterface302Marshaller ()),
+  V302 (CEbInterface.EBINTERFACE_302_NS, CEbInterface.EBINTERFACE_302_XSLT),
   /** ebInterface 4.0 */
-  V40 (CEbInterface.EBINTERFACE_40_NS, CEbInterface.EBINTERFACE_40_XSLT, () -> new EbInterface40Marshaller ()),
+  V40 (CEbInterface.EBINTERFACE_40_NS, CEbInterface.EBINTERFACE_40_XSLT),
   /** ebInterface 4.1 */
-  V41 (CEbInterface.EBINTERFACE_41_NS, CEbInterface.EBINTERFACE_41_XSLT, () -> new EbInterface41Marshaller ()),
+  V41 (CEbInterface.EBINTERFACE_41_NS, CEbInterface.EBINTERFACE_41_XSLT),
   /** ebInterface 4.2 */
-  V42 (CEbInterface.EBINTERFACE_42_NS, CEbInterface.EBINTERFACE_42_XSLT, () -> new EbInterface42Marshaller ());
+  V42 (CEbInterface.EBINTERFACE_42_NS, CEbInterface.EBINTERFACE_42_XSLT);
 
   private final String m_sNamespaceURI;
   private final IReadableResource m_aXSLTRes;
-  private final IFactory <AbstractJAXBMarshaller <?>> m_aMarshallerSupplier;
 
   private EEbInterfaceVersion (@Nonnull @Nonempty final String sNamespaceURI,
-                               @Nonnull final IReadableResource aXSLTRes,
-                               @Nonnull final IFactory <AbstractJAXBMarshaller <?>> aMarshallerSupplier)
+                               @Nonnull final IReadableResource aXSLTRes)
   {
     m_sNamespaceURI = sNamespaceURI;
     m_aXSLTRes = aXSLTRes;
-    m_aMarshallerSupplier = aMarshallerSupplier;
   }
 
   /**
@@ -75,17 +70,6 @@ public enum EEbInterfaceVersion
   public IReadableResource getXSLTResource ()
   {
     return m_aXSLTRes;
-  }
-
-  /**
-   * @return A new marshaller that reads and writes the respective invoice
-   *         objects. Each time this method is invoked, a new marshaller is
-   *         created.
-   */
-  @Nonnull
-  public AbstractJAXBMarshaller <?> createMarshaller ()
-  {
-    return m_aMarshallerSupplier.get ();
   }
 
   /**
