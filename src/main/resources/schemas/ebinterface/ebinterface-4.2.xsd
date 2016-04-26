@@ -4,9 +4,11 @@
 	<xs:import namespace="http://www.ebinterface.at/schema/4p2/extensions/ext" schemaLocation="ebInterfaceExtension-4.2.xsd"/>
 	<xs:annotation>
 		<xs:documentation>
-            schema version: 4.2
-            last update: 2015-11-04
+            schema version: 4.2u1
+            last update: 2016-04-26
             documentation: http://www.ebinterface.at/download/documentation/ebInvoice_4p2.pdf
+            
+            Change history: 4.2u1 - BIC in SEPA Direct Debit optional
         </xs:documentation>
 	</xs:annotation>
 	<!-- === Root Element === -->
@@ -628,7 +630,7 @@
 	<xs:complexType name="SEPADirectDebitType">
 		<xs:sequence>
 			<xs:element ref="Type"/>
-			<xs:element ref="BIC"/>
+			<xs:element ref="BIC" minOccurs="0"/>
 			<xs:element ref="IBAN"/>
 			<xs:element ref="BankAccountOwner"/>
 			<xs:element ref="CreditorID"/>
