@@ -19,6 +19,7 @@ Features:
 News and noteworthy:
   * Version 4.0.3
     * Made the `BIC` element in `SEPADirectDebit` of ebInterface 4.2 optional
+    * update to BouncyCastle 1.54
   * Version 4.0.2
     * Added support for ebInterface 4.2
   * Version 4.0.1
