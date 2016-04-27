@@ -3,6 +3,7 @@
 Java library encapsulating the usage of ebInterface 3.0, 3.0.2, 4.0, 4.1 and 4.2 within your application. 
 See [First Steps](https://github.com/phax/ph-ebinterface/wiki/FirstSteps) (English; v3.x) or 
 [Erste Schritte](https://github.com/phax/ph-ebinterface/wiki/ErsteSchritte) (Deutsch; v3.x) for some code examples on how to read and write the different ebInterface versions.
+
 This is the follow-on project of phloc-ebinterface originally residing on Google Code. 
 
 Features:
@@ -16,6 +17,8 @@ Features:
   * Visualize ebInterface documents as HTML documents
   
 News and noteworthy:
+  * Version 4.0.3
+    * Made the `BIC` element in `SEPADirectDebit` of ebInterface 4.2 optional
   * Version 4.0.2
     * Added support for ebInterface 4.2
   * Version 4.0.1
@@ -33,7 +36,7 @@ Versions >= 4.0.0 are compatible with ph-commons >= 6.0
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-ebinterface</artifactId>
-  <version>4.0.2</version>
+  <version>4.0.3</version>
 </dependency>
 ```
 
