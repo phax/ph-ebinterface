@@ -27,6 +27,7 @@ import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.io.resource.IReadableResource;
+import com.helger.commons.string.StringHelper;
 import com.helger.ebinterface.CEbInterface;
 import com.helger.ebinterface.v30.Ebi30InvoiceType;
 import com.helger.ebinterface.v302.Ebi302InvoiceType;
@@ -52,11 +53,11 @@ public enum EEbInterfaceDocumentType implements IJAXBDocumentType
   private final JAXBDocumentType m_aDocType;
 
   private EEbInterfaceDocumentType (@Nonnull final Class <?> aClass,
-                                   @Nonnull final List <? extends IReadableResource> aXSDPaths)
+                                    @Nonnull final List <? extends IReadableResource> aXSDPaths)
   {
     m_aDocType = new JAXBDocumentType (aClass,
                                        CollectionHelper.newListMapped (aXSDPaths, IReadableResource::getPath),
-                                       null);
+                                       s -> StringHelper.trimEnd (s, "Type"));
   }
 
   @Nonnull

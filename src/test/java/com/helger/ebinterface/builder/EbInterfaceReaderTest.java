@@ -75,6 +75,9 @@ public final class EbInterfaceReaderTest
   {
     for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V302.getTestResources ())
     {
+      if (true)
+        System.out.println (aExampleFile.getPath ());
+
       // Read from file as XML
       final Document aDoc = DOMReader.readXMLDOM (aExampleFile);
       assertNotNull (aDoc);
