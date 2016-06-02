@@ -16,10 +16,6 @@
  */
 package com.helger.ebinterface.builder;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
@@ -28,7 +24,9 @@ import javax.xml.validation.Schema;
 import com.helger.commons.annotation.PresentForCodeCoverage;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.ArrayHelper;
-import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.ext.CommonsHashMap;
+import com.helger.commons.collection.ext.ICommonsMap;
+import com.helger.commons.collection.ext.ICommonsSet;
 
 /**
  * ebInterface document type map. Provides sanity methods for accessing
@@ -40,7 +38,7 @@ import com.helger.commons.collection.CollectionHelper;
 public final class EbInterfaceDocumentTypes
 {
   /** Maps namespaces to document types */
-  private static final Map <String, EEbInterfaceDocumentType> s_aNamespace2DocType = new HashMap<> ();
+  private static final ICommonsMap <String, EEbInterfaceDocumentType> s_aNamespace2DocType = new CommonsHashMap <> ();
 
   static
   {
@@ -67,9 +65,9 @@ public final class EbInterfaceDocumentTypes
    */
   @Nonnull
   @ReturnsMutableCopy
-  public static Set <String> getAllNamespaces ()
+  public static ICommonsSet <String> getAllNamespaces ()
   {
-    return CollectionHelper.newSet (s_aNamespace2DocType.keySet ());
+    return s_aNamespace2DocType.copyOfKeySet ();
   }
 
   /**
