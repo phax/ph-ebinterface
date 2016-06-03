@@ -16,6 +16,11 @@
  */
 package com.helger.ebinterface;
 
+import java.util.List;
+
+import javax.annotation.Nonnull;
+
+import com.helger.commons.io.resource.IReadableResource;
 import com.helger.ebinterface.v41.Ebi41InvoiceType;
 import com.helger.ebinterface.v41.ObjectFactory;
 import com.helger.jaxb.AbstractJAXBMarshaller;
@@ -33,6 +38,17 @@ public class EbInterface41Marshaller extends AbstractJAXBMarshaller <Ebi41Invoic
    */
   public EbInterface41Marshaller ()
   {
-    super (Ebi41InvoiceType.class, CEbInterface.EBINTERFACE_41_XSDS, o -> new ObjectFactory ().createInvoice (o));
+    this (CEbInterface.EBINTERFACE_41_XSDS);
+  }
+
+  /**
+   * Constructor
+   *
+   * @param aXSDs
+   *        The XML schemas to be used. Handle with care.
+   */
+  public EbInterface41Marshaller (@Nonnull final List <? extends IReadableResource> aXSDs)
+  {
+    super (Ebi41InvoiceType.class, aXSDs, o -> new ObjectFactory ().createInvoice (o));
   }
 }
