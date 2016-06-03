@@ -55,7 +55,7 @@ public class EbInterfaceReaderBuilder <JAXBTYPE>
   @Nonnull
   public static <T> EbInterfaceReaderBuilder <T> create (@Nonnull final Class <T> aClass)
   {
-    return new EbInterfaceReaderBuilder <T> (aClass);
+    return new EbInterfaceReaderBuilder <> (aClass);
   }
 
   /**
@@ -70,6 +70,6 @@ public class EbInterfaceReaderBuilder <JAXBTYPE>
   @Nonnull
   public static EbInterfaceReaderBuilder <?> createGeneric (@Nonnull final EEbInterfaceDocumentType eDocType)
   {
-    return new EbInterfaceReaderBuilder <Object> (eDocType, Object.class);
+    return new EbInterfaceReaderBuilder <> (eDocType, Object.class);
   }
 }

@@ -60,6 +60,6 @@ public class EbInterfaceWriterBuilder <JAXBTYPE>
   @Nonnull
   public static <T> EbInterfaceWriterBuilder <T> create (@Nonnull final Class <T> aClass)
   {
-    return new EbInterfaceWriterBuilder <T> (aClass);
+    return new EbInterfaceWriterBuilder <> (aClass);
   }
 }

@@ -54,6 +54,6 @@ public class EbInterfaceValidatorBuilder <JAXBTYPE> extends
   @Nonnull
   public static <T> EbInterfaceValidatorBuilder <T> create (@Nonnull final Class <T> aClass)
   {
-    return new EbInterfaceValidatorBuilder <T> (aClass);
+    return new EbInterfaceValidatorBuilder <> (aClass);
   }
 }
