@@ -41,7 +41,6 @@ public final class WikiSignatureENFuncTest
    * @return true if no signature is contained, or if a signature is contained
    *         and valid. false only is a signature is contained and invalid
    */
-  @Nonnull
   public static boolean hasSignatureAndIsValid (@Nonnull final Document aDoc)
   {
     if (!XMLDSigValidator.containsSignature (aDoc))

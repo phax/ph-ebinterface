@@ -209,7 +209,6 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
    *         nicht auf die Platte geschrieben werden kann.
    */
-  @Nonnull
   public static void writeEbInterface30File (@Nonnull final Ebi30InvoiceType aInvoice, @Nonnull final File aFile)
   {
     if (new EbInterface30Marshaller ().write (aInvoice, aFile).isFailure ())
@@ -248,7 +247,6 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
    *         nicht auf die Platte geschrieben werden kann.
    */
-  @Nonnull
   public static void writeEbInterface302File (@Nonnull final Ebi302InvoiceType aInvoice, @Nonnull final File aFile)
   {
     if (new EbInterface302Marshaller ().write (aInvoice, aFile).isFailure ())
@@ -287,7 +285,6 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
    *         nicht auf die Platte geschrieben werden kann.
    */
-  @Nonnull
   public static void writeEbInterface40File (@Nonnull final Ebi40InvoiceType aInvoice, @Nonnull final File aFile)
   {
     if (new EbInterface40Marshaller ().write (aInvoice, aFile).isFailure ())
@@ -326,7 +323,6 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
    *         nicht auf die Platte geschrieben werden kann.
    */
-  @Nonnull
   public static void writeEbInterface41File (@Nonnull final Ebi41InvoiceType aInvoice, @Nonnull final File aFile)
   {
     if (new EbInterface41Marshaller ().write (aInvoice, aFile).isFailure ())
@@ -365,7 +361,6 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
    *         nicht auf die Platte geschrieben werden kann.
    */
-  @Nonnull
   public static void writeEbInterface42File (@Nonnull final Ebi42InvoiceType aInvoice, @Nonnull final File aFile)
   {
     if (new EbInterface42Marshaller ().write (aInvoice, aFile).isFailure ())

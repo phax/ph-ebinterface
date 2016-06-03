@@ -41,7 +41,6 @@ public final class WikiSignatureDEFuncTest
    *         gültige Signatur enthalten ist. false wird nur dann zurückgeliefert
    *         wenn eine Signatur enthalten ist, und diese ungültig ist.
    */
-  @Nonnull
   public static boolean hasSignatureAndIsValid (@Nonnull final Document aDoc)
   {
     if (!XMLDSigValidator.containsSignature (aDoc))
