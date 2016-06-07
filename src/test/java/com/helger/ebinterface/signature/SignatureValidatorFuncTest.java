@@ -30,9 +30,9 @@ import org.xml.sax.SAXException;
 
 import com.helger.commons.io.file.iterate.FileSystemRecursiveIterator;
 import com.helger.commons.io.resource.ClassPathResource;
-import com.helger.commons.xml.sax.DoNothingSAXErrorHandler;
-import com.helger.commons.xml.serialize.read.DOMReader;
-import com.helger.commons.xml.serialize.read.DOMReaderSettings;
+import com.helger.xml.sax.DoNothingSAXErrorHandler;
+import com.helger.xml.serialize.read.DOMReader;
+import com.helger.xml.serialize.read.DOMReaderSettings;
 import com.helger.xmldsig.XMLDSigValidationResult;
 import com.helger.xmldsig.XMLDSigValidator;
 

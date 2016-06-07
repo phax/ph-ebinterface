@@ -25,7 +25,6 @@ import org.xml.sax.SAXException;
 
 import com.helger.commons.io.resource.IReadableResource;
 import com.helger.commons.mock.CommonsTestHelper;
-import com.helger.commons.xml.serialize.read.DOMReader;
 import com.helger.ebinterface.EEbInterfaceTestFiles;
 import com.helger.ebinterface.EEbInterfaceVersion;
 import com.helger.ebinterface.v30.Ebi30InvoiceType;
@@ -33,6 +32,7 @@ import com.helger.ebinterface.v302.Ebi302InvoiceType;
 import com.helger.ebinterface.v40.Ebi40InvoiceType;
 import com.helger.ebinterface.v41.Ebi41InvoiceType;
 import com.helger.ebinterface.v42.Ebi42InvoiceType;
+import com.helger.xml.serialize.read.DOMReader;
 
 /**
  * Test class for class {@link EbInterfaceReaderTest}.

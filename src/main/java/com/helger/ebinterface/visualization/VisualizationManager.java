@@ -39,11 +39,11 @@ import com.helger.commons.collection.ext.ICommonsMap;
 import com.helger.commons.concurrent.SimpleReadWriteLock;
 import com.helger.commons.io.resource.IReadableResource;
 import com.helger.commons.state.ESuccess;
-import com.helger.commons.xml.XMLFactory;
-import com.helger.commons.xml.transform.TransformResultFactory;
-import com.helger.commons.xml.transform.TransformSourceFactory;
-import com.helger.commons.xml.transform.XMLTransformerFactory;
 import com.helger.ebinterface.EEbInterfaceVersion;
+import com.helger.xml.XMLFactory;
+import com.helger.xml.transform.TransformResultFactory;
+import com.helger.xml.transform.TransformSourceFactory;
+import com.helger.xml.transform.XMLTransformerFactory;
 
 /**
  * This class is responsible for visualizing ebInterface documents as HTML

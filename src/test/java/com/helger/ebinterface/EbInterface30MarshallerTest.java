@@ -27,8 +27,8 @@ import org.xml.sax.SAXException;
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.io.resource.IReadableResource;
 import com.helger.commons.mock.CommonsTestHelper;
-import com.helger.commons.xml.serialize.read.DOMReader;
 import com.helger.ebinterface.v30.Ebi30InvoiceType;
+import com.helger.xml.serialize.read.DOMReader;
 import com.helger.xmldsig.XMLDSigValidationResult;
 import com.helger.xmldsig.XMLDSigValidator;
 
