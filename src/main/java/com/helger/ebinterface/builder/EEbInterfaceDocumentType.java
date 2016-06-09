@@ -57,7 +57,7 @@ public enum EEbInterfaceDocumentType implements IJAXBDocumentType
   {
     m_aDocType = new JAXBDocumentType (aClass,
                                        CollectionHelper.newListMapped (aXSDPaths, IReadableResource::getPath),
-                                       s -> StringHelper.trimEnd (s, "Type"));
+                                       x -> StringHelper.trimEnd (x, "Type"));
   }
 
   @Nonnull

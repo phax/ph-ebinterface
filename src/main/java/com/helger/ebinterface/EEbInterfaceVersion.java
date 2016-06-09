@@ -21,6 +21,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.io.resource.IReadableResource;
+import com.helger.commons.lang.EnumHelper;
 import com.helger.commons.string.StringHelper;
 
 /**
@@ -45,8 +46,7 @@ public enum EEbInterfaceVersion
   private final String m_sNamespaceURI;
   private final IReadableResource m_aXSLTRes;
 
-  private EEbInterfaceVersion (@Nonnull @Nonempty final String sNamespaceURI,
-                               @Nonnull final IReadableResource aXSLTRes)
+  private EEbInterfaceVersion (@Nonnull @Nonempty final String sNamespaceURI, @Nonnull final IReadableResource aXSLTRes)
   {
     m_sNamespaceURI = sNamespaceURI;
     m_aXSLTRes = aXSLTRes;
@@ -83,10 +83,8 @@ public enum EEbInterfaceVersion
   @Nullable
   public static EEbInterfaceVersion getFromNamespaceURIOrNull (@Nullable final String sNamespaceURI)
   {
-    if (StringHelper.hasText (sNamespaceURI))
-      for (final EEbInterfaceVersion eVersion : values ())
-        if (sNamespaceURI.equals (eVersion.getNamespaceURI ()))
-          return eVersion;
-    return null;
+    if (StringHelper.hasNoText (sNamespaceURI))
+      return null;
+    return EnumHelper.findFirst (EEbInterfaceVersion.class, x -> x.getNamespaceURI ().equals (sNamespaceURI));
   }
 }
