@@ -22,7 +22,7 @@
   <parent>
     <groupId>com.helger</groupId>
     <artifactId>parent-pom</artifactId>
-    <version>1.9.0</version>
+    <version>1.9.1</version>
   </parent>
   <artifactId>ph-ebinterface</artifactId>
   <version>5.0.1-SNAPSHOT</version>
@@ -80,6 +80,13 @@
         <version>3.0.0</version>
       </dependency>
       <dependency>
+        <groupId>com.helger</groupId>
+        <artifactId>ph-xsds-parent-pom</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
         <groupId>org.bouncycastle</groupId>
         <artifactId>bcprov-jdk15on</artifactId>
         <version>${bc.version}</version>
@@ -121,6 +128,10 @@
     <dependency>
       <groupId>javax.validation</groupId>
       <artifactId>validation-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.helger</groupId>
+      <artifactId>ph-xsds-xmldsig</artifactId>
     </dependency>
 
     <dependency>
@@ -201,6 +212,12 @@
             <arg>-Xph-csu</arg>
             <arg>-Xph-cloneable</arg>
           </args>
+          <episodes>
+            <episode>
+              <groupId>com.helger</groupId>
+              <artifactId>ph-xsds-xmldsig</artifactId>
+            </episode>
+          </episodes>
         </configuration>
         <dependencies>
           <dependency>
@@ -209,6 +226,25 @@
             <version>2.2.11.7</version>
           </dependency>
         </dependencies>
+      </plugin>
+      <!-- Delete the directory with only ObjectFactory 
+           Source: http://stackoverflow.com/questions/32635137
+      -->
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>process-sources</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <delete dir="${basedir}/target/generated-sources/xjc/com/helger/xsds/" />
+              </target>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

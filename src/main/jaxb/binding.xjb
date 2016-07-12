@@ -119,9 +119,4 @@
       </nameXmlTransform>
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/ebinterface/xmldsig-core-schema.xsd" node="/xs:schema">
-    <schemaBindings>
-      <package name="com.helger.ebinterface.xmldsig" />
-    </schemaBindings>
-  </bindings>
 </bindings>
