@@ -6,7 +6,7 @@
            targetNamespace="http://www.ebinterface.at/schema/4p1/" 
            elementFormDefault="qualified" 
            attributeFormDefault="qualified">
-  <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema.xsd"/>
+  <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" />
   <xs:import namespace="http://www.ebinterface.at/schema/4p1/extensions/ext" schemaLocation="ebInterfaceExtension-4.1.xsd"/>
   <xs:annotation>
     <xs:documentation>

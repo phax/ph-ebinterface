@@ -194,8 +194,8 @@
           <bindingDirectory>${basedir}/src/main/jaxb</bindingDirectory>
           <schemaDirectory>${basedir}/src/main/resources/schemas/ebinterface</schemaDirectory>
           <extension>true</extension>
-          <verbose>false</verbose>
-          <debug>false</debug>
+          <strict>false</strict>
+          <catalog>${basedir}/src/main/jaxb/catalog.txt</catalog>
           <args>
             <arg>-no-header</arg>
             <arg>-Xph-default-locale</arg>

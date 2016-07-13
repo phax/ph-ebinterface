@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns="http://www.ebinterface.at/schema/4p0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:ext="http://www.ebinterface.at/schema/4p0/extensions/ext" targetNamespace="http://www.ebinterface.at/schema/4p0/" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema.xsd" />
+	<xs:import namespace="http://www.w3.org/2000/09/xmldsig#" />
 	<xs:import namespace="http://www.ebinterface.at/schema/4p0/extensions/ext" schemaLocation="ebInterfaceExtension-4.0.xsd"/>
 	<xs:annotation>
 		<xs:documentation>

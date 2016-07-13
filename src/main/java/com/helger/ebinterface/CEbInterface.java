@@ -34,7 +34,7 @@ import com.helger.commons.io.resource.IReadableResource;
 public final class CEbInterface
 {
   /** XML Schema resource for XMLDSig */
-  public static final ClassPathResource XSD_XMLDSIG_RESOURCE = new ClassPathResource ("/schemas/ebinterface/xmldsig-core-schema.xsd");
+  public static final ClassPathResource XSD_XMLDSIG_RESOURCE = new ClassPathResource ("/schemas/xmldsig-core-schema.xsd");
 
   /** XML Schema resources for ebInterface 3.0 */
   public static final List <? extends IReadableResource> EBINTERFACE_30_XSDS = CollectionHelper.makeUnmodifiable (XSD_XMLDSIG_RESOURCE,
