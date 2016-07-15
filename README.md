@@ -15,15 +15,18 @@ Features:
   * Visualize ebInterface documents as HTML documents
   
 News and noteworthy:
-  * Version 5.0.0:
+  * Version 5.0.1 - 2016-07-15
+    * Using a separate artefact for XMLDSig JAXB artefacts for easier reuse (ph-xsds-xmldsig)
+  * Version 5.0.0 - 2016-06-11
     * Requires Java 1.8
-  * Version 4.0.3
+  * Version 4.0.3 - 2015-11-25
     * Made the `BIC` element in `SEPADirectDebit` of ebInterface 4.2 optional
     * update to BouncyCastle 1.54
-  * Version 4.0.2
+  * Version 4.0.2 - 2015-11-25
     * Added support for ebInterface 4.2
-  * Version 4.0.1
+  * Version 4.0.1 - 2015-10-19
     * update to BouncyCastle 1.53
+  * Version 4.0.0 - 2015-07-23   
 
 This library is used by [WWW.E-RECHNUNG.GV.AT](http://www.e-rechnung.gv.at) - the Austrian Government "E-Rechnung an die öffentliche Verwaltung" solution for reading ebInterface files!
 
@@ -36,7 +39,7 @@ This is originally the follow-on project of phloc-ebinterface originally residin
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-ebinterface</artifactId>
-  <version>5.0.0</version>
+  <version>5.0.1</version>
 </dependency>
 ```
 
