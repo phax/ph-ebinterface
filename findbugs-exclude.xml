@@ -31,6 +31,6 @@
     <Package name="com.helger.ebinterface.v41" />
   </Match>
   <Match>
-    <Package name="com.helger.ebinterface.xmldsig" />
+    <Package name="com.helger.ebinterface.v42" />
   </Match>
 </FindBugsFilter>
