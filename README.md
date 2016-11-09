@@ -14,7 +14,7 @@ Features:
   * Validate the signature of ebInterface documents
   * Visualize ebInterface documents as HTML documents
   
-News and noteworthy:
+#News and noteworthy
   * Version 5.0.1 - 2016-07-15
     * Using a separate artefact for XMLDSig JAXB artefacts for easier reuse (ph-xsds-xmldsig)
   * Version 5.0.0 - 2016-06-11
