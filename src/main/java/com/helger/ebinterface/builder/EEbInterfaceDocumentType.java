@@ -34,6 +34,7 @@ import com.helger.ebinterface.v302.Ebi302InvoiceType;
 import com.helger.ebinterface.v40.Ebi40InvoiceType;
 import com.helger.ebinterface.v41.Ebi41InvoiceType;
 import com.helger.ebinterface.v42.Ebi42InvoiceType;
+import com.helger.ebinterface.v43.Ebi43InvoiceType;
 import com.helger.jaxb.builder.IJAXBDocumentType;
 import com.helger.jaxb.builder.JAXBDocumentType;
 
@@ -48,7 +49,8 @@ public enum EEbInterfaceDocumentType implements IJAXBDocumentType
   EBI302 (Ebi302InvoiceType.class, CEbInterface.EBINTERFACE_302_XSDS),
   EBI40 (Ebi40InvoiceType.class, CEbInterface.EBINTERFACE_40_XSDS),
   EBI41 (Ebi41InvoiceType.class, CEbInterface.EBINTERFACE_41_XSDS),
-  EBI42 (Ebi42InvoiceType.class, CEbInterface.EBINTERFACE_42_XSDS);
+  EBI42 (Ebi42InvoiceType.class, CEbInterface.EBINTERFACE_42_XSDS),
+  EBI43 (Ebi43InvoiceType.class, CEbInterface.EBINTERFACE_43_XSDS);
 
   private final JAXBDocumentType m_aDocType;
 

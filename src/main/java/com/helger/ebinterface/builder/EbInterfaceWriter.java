@@ -19,26 +19,55 @@ package com.helger.ebinterface.builder;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.NotThreadSafe;
 
-import com.helger.commons.annotation.PresentForCodeCoverage;
 import com.helger.ebinterface.v30.Ebi30InvoiceType;
 import com.helger.ebinterface.v302.Ebi302InvoiceType;
 import com.helger.ebinterface.v40.Ebi40InvoiceType;
 import com.helger.ebinterface.v41.Ebi41InvoiceType;
 import com.helger.ebinterface.v42.Ebi42InvoiceType;
+import com.helger.ebinterface.v43.Ebi43InvoiceType;
+import com.helger.jaxb.builder.JAXBWriterBuilder;
+import com.helger.xml.namespace.MapBasedNamespaceContext;
 
 /**
- * Write all ebInterface document types.
+ * A writer builder for ebInterface documents.
  *
  * @author Philip Helger
+ * @param <JAXBTYPE>
+ *        The ebInterface implementation class to be read
  */
 @NotThreadSafe
-public final class EbInterfaceWriter
+public class EbInterfaceWriter <JAXBTYPE>
+                                      extends JAXBWriterBuilder <JAXBTYPE, EbInterfaceWriter <JAXBTYPE>>
 {
-  @PresentForCodeCoverage
-  private static final EbInterfaceWriter s_aInstance = new EbInterfaceWriter ();
+  public EbInterfaceWriter (@Nonnull final EEbInterfaceDocumentType eDocType)
+  {
+    super (eDocType);
 
-  private EbInterfaceWriter ()
-  {}
+    // Create a special namespace context for the passed document type
+    final MapBasedNamespaceContext aNSContext = new MapBasedNamespaceContext ();
+    aNSContext.setDefaultNamespaceURI (m_aDocType.getNamespaceURI ());
+    setNamespaceContext (aNSContext);
+  }
+
+  public EbInterfaceWriter (@Nonnull final Class <JAXBTYPE> aClass)
+  {
+    this (EbInterfaceDocumentTypes.getDocumentTypeOfImplementationClass (aClass));
+  }
+
+  /**
+   * Create a new writer builder.
+   *
+   * @param aClass
+   *        The UBL class to be written. May not be <code>null</code>.
+   * @return The new writer builder. Never <code>null</code>.
+   * @param <T>
+   *        The ebInterface document implementation type
+   */
+  @Nonnull
+  public static <T> EbInterfaceWriter <T> create (@Nonnull final Class <T> aClass)
+  {
+    return new EbInterfaceWriter <> (aClass);
+  }
 
   /**
    * Create a writer builder for Ebi30InvoiceType.
@@ -46,9 +75,9 @@ public final class EbInterfaceWriter
    * @return The builder and never <code>null</code>
    */
   @Nonnull
-  public static EbInterfaceWriterBuilder <Ebi30InvoiceType> ebInterface30 ()
+  public static EbInterfaceWriter <Ebi30InvoiceType> ebInterface30 ()
   {
-    return EbInterfaceWriterBuilder.create (Ebi30InvoiceType.class);
+    return EbInterfaceWriter.create (Ebi30InvoiceType.class);
   }
 
   /**
@@ -57,9 +86,9 @@ public final class EbInterfaceWriter
    * @return The builder and never <code>null</code>
    */
   @Nonnull
-  public static EbInterfaceWriterBuilder <Ebi302InvoiceType> ebInterface302 ()
+  public static EbInterfaceWriter <Ebi302InvoiceType> ebInterface302 ()
   {
-    return EbInterfaceWriterBuilder.create (Ebi302InvoiceType.class);
+    return EbInterfaceWriter.create (Ebi302InvoiceType.class);
   }
 
   /**
@@ -68,9 +97,9 @@ public final class EbInterfaceWriter
    * @return The builder and never <code>null</code>
    */
   @Nonnull
-  public static EbInterfaceWriterBuilder <Ebi40InvoiceType> ebInterface40 ()
+  public static EbInterfaceWriter <Ebi40InvoiceType> ebInterface40 ()
   {
-    return EbInterfaceWriterBuilder.create (Ebi40InvoiceType.class);
+    return EbInterfaceWriter.create (Ebi40InvoiceType.class);
   }
 
   /**
@@ -79,9 +108,9 @@ public final class EbInterfaceWriter
    * @return The builder and never <code>null</code>
    */
   @Nonnull
-  public static EbInterfaceWriterBuilder <Ebi41InvoiceType> ebInterface41 ()
+  public static EbInterfaceWriter <Ebi41InvoiceType> ebInterface41 ()
   {
-    return EbInterfaceWriterBuilder.create (Ebi41InvoiceType.class);
+    return EbInterfaceWriter.create (Ebi41InvoiceType.class);
   }
 
   /**
@@ -90,8 +119,19 @@ public final class EbInterfaceWriter
    * @return The builder and never <code>null</code>
    */
   @Nonnull
-  public static EbInterfaceWriterBuilder <Ebi42InvoiceType> ebInterface42 ()
+  public static EbInterfaceWriter <Ebi42InvoiceType> ebInterface42 ()
   {
-    return EbInterfaceWriterBuilder.create (Ebi42InvoiceType.class);
+    return EbInterfaceWriter.create (Ebi42InvoiceType.class);
+  }
+
+  /**
+   * Create a writer builder for Ebi43InvoiceType.
+   *
+   * @return The builder and never <code>null</code>
+   */
+  @Nonnull
+  public static EbInterfaceWriter <Ebi43InvoiceType> ebInterface43 ()
+  {
+    return EbInterfaceWriter.create (Ebi43InvoiceType.class);
   }
 }

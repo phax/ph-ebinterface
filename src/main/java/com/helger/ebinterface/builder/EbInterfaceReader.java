@@ -19,26 +19,65 @@ package com.helger.ebinterface.builder;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.NotThreadSafe;
 
-import com.helger.commons.annotation.PresentForCodeCoverage;
 import com.helger.ebinterface.v30.Ebi30InvoiceType;
 import com.helger.ebinterface.v302.Ebi302InvoiceType;
 import com.helger.ebinterface.v40.Ebi40InvoiceType;
 import com.helger.ebinterface.v41.Ebi41InvoiceType;
 import com.helger.ebinterface.v42.Ebi42InvoiceType;
+import com.helger.ebinterface.v43.Ebi43InvoiceType;
+import com.helger.jaxb.builder.JAXBReaderBuilder;
 
 /**
- * Read all ebInterface document types.
+ * A reader builder for ebInterface documents.
  *
  * @author Philip Helger
+ * @param <JAXBTYPE>
+ *        The ebInterface implementation class to be read
  */
 @NotThreadSafe
-public final class EbInterfaceReader
+public class EbInterfaceReader <JAXBTYPE>
+                                      extends JAXBReaderBuilder <JAXBTYPE, EbInterfaceReader <JAXBTYPE>>
 {
-  @PresentForCodeCoverage
-  private static final EbInterfaceReader s_aInstance = new EbInterfaceReader ();
+  public EbInterfaceReader (@Nonnull final EEbInterfaceDocumentType eDocType,
+                                   @Nonnull final Class <JAXBTYPE> aImplClass)
+  {
+    super (eDocType, aImplClass);
+  }
 
-  private EbInterfaceReader ()
-  {}
+  public EbInterfaceReader (@Nonnull final Class <JAXBTYPE> aClass)
+  {
+    this (EbInterfaceDocumentTypes.getDocumentTypeOfImplementationClass (aClass), aClass);
+  }
+
+  /**
+   * Create a new reader builder.
+   *
+   * @param aClass
+   *        The UBL class to be read. May not be <code>null</code>.
+   * @return The new reader builder. Never <code>null</code>.
+   * @param <T>
+   *        The ebInterface document implementation type
+   */
+  @Nonnull
+  public static <T> EbInterfaceReader <T> create (@Nonnull final Class <T> aClass)
+  {
+    return new EbInterfaceReader <> (aClass);
+  }
+
+  /**
+   * Create a new reader builder that is not typed, because only the document
+   * type enumeration value is available.
+   *
+   * @param eDocType
+   *        The ebInterface document type to be read. May not be
+   *        <code>null</code> .
+   * @return The new reader builder. Never <code>null</code>.
+   */
+  @Nonnull
+  public static EbInterfaceReader <?> createGeneric (@Nonnull final EEbInterfaceDocumentType eDocType)
+  {
+    return new EbInterfaceReader <> (eDocType, Object.class);
+  }
 
   /**
    * Create a reader builder for Ebi30InvoiceType.
@@ -46,9 +85,9 @@ public final class EbInterfaceReader
    * @return The builder and never <code>null</code>
    */
   @Nonnull
-  public static EbInterfaceReaderBuilder <Ebi30InvoiceType> ebInterface30 ()
+  public static EbInterfaceReader <Ebi30InvoiceType> ebInterface30 ()
   {
-    return EbInterfaceReaderBuilder.create (Ebi30InvoiceType.class);
+    return EbInterfaceReader.create (Ebi30InvoiceType.class);
   }
 
   /**
@@ -57,9 +96,9 @@ public final class EbInterfaceReader
    * @return The builder and never <code>null</code>
    */
   @Nonnull
-  public static EbInterfaceReaderBuilder <Ebi302InvoiceType> ebInterface302 ()
+  public static EbInterfaceReader <Ebi302InvoiceType> ebInterface302 ()
   {
-    return EbInterfaceReaderBuilder.create (Ebi302InvoiceType.class);
+    return EbInterfaceReader.create (Ebi302InvoiceType.class);
   }
 
   /**
@@ -68,9 +107,9 @@ public final class EbInterfaceReader
    * @return The builder and never <code>null</code>
    */
   @Nonnull
-  public static EbInterfaceReaderBuilder <Ebi40InvoiceType> ebInterface40 ()
+  public static EbInterfaceReader <Ebi40InvoiceType> ebInterface40 ()
   {
-    return EbInterfaceReaderBuilder.create (Ebi40InvoiceType.class);
+    return EbInterfaceReader.create (Ebi40InvoiceType.class);
   }
 
   /**
@@ -79,9 +118,9 @@ public final class EbInterfaceReader
    * @return The builder and never <code>null</code>
    */
   @Nonnull
-  public static EbInterfaceReaderBuilder <Ebi41InvoiceType> ebInterface41 ()
+  public static EbInterfaceReader <Ebi41InvoiceType> ebInterface41 ()
   {
-    return EbInterfaceReaderBuilder.create (Ebi41InvoiceType.class);
+    return EbInterfaceReader.create (Ebi41InvoiceType.class);
   }
 
   /**
@@ -90,8 +129,19 @@ public final class EbInterfaceReader
    * @return The builder and never <code>null</code>
    */
   @Nonnull
-  public static EbInterfaceReaderBuilder <Ebi42InvoiceType> ebInterface42 ()
+  public static EbInterfaceReader <Ebi42InvoiceType> ebInterface42 ()
   {
-    return EbInterfaceReaderBuilder.create (Ebi42InvoiceType.class);
+    return EbInterfaceReader.create (Ebi42InvoiceType.class);
+  }
+
+  /**
+   * Create a reader builder for Ebi43InvoiceType.
+   *
+   * @return The builder and never <code>null</code>
+   */
+  @Nonnull
+  public static EbInterfaceReader <Ebi43InvoiceType> ebInterface43 ()
+  {
+    return EbInterfaceReader.create (Ebi43InvoiceType.class);
   }
 }

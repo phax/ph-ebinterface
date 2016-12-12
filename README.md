@@ -1,6 +1,6 @@
 #ph-ebinterface
 
-Java library encapsulating the usage of ebInterface 3.0, 3.0.2, 4.0, 4.1 and 4.2 within your application. 
+Java library encapsulating the usage of ebInterface 3.0, 3.0.2, 4.0, 4.1, 4.2 and 4.3 within your application. 
 See [First Steps](https://github.com/phax/ph-ebinterface/wiki/FirstSteps) (English; v3.x) or 
 [Erste Schritte](https://github.com/phax/ph-ebinterface/wiki/ErsteSchritte) (Deutsch; v3.x) for some code examples on how to read and write the different ebInterface versions.
 
@@ -11,10 +11,13 @@ Features:
   * Read and write ebInterface 4.0 invoices
   * Read and write ebInterface 4.1 invoices
   * Read and write ebInterface 4.2 invoices
+  * Read and write ebInterface 4.3 invoices
   * Validate the signature of ebInterface documents
   * Visualize ebInterface documents as HTML documents
   
 #News and noteworthy
+  * Version 5.1.0
+    * Added support for ebInterface 4.3
   * Version 5.0.1 - 2016-07-15
     * Using a separate artefact for XMLDSig JAXB artefacts for easier reuse (ph-xsds-xmldsig)
   * Version 5.0.0 - 2016-06-11

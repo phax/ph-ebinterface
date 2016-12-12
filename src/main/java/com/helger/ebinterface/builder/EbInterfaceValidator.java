@@ -19,26 +19,49 @@ package com.helger.ebinterface.builder;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.NotThreadSafe;
 
-import com.helger.commons.annotation.PresentForCodeCoverage;
 import com.helger.ebinterface.v30.Ebi30InvoiceType;
 import com.helger.ebinterface.v302.Ebi302InvoiceType;
 import com.helger.ebinterface.v40.Ebi40InvoiceType;
 import com.helger.ebinterface.v41.Ebi41InvoiceType;
 import com.helger.ebinterface.v42.Ebi42InvoiceType;
+import com.helger.ebinterface.v43.Ebi43InvoiceType;
+import com.helger.jaxb.builder.JAXBValidationBuilder;
 
 /**
- * Validate all ebInterface document types.
+ * A writer builder for ebInterface documents.
  *
  * @author Philip Helger
+ * @param <JAXBTYPE>
+ *        The ebInterface implementation class to be read
  */
 @NotThreadSafe
-public final class EbInterfaceValidator
+public class EbInterfaceValidator <JAXBTYPE> extends
+                                         JAXBValidationBuilder <JAXBTYPE, EbInterfaceValidator <JAXBTYPE>>
 {
-  @PresentForCodeCoverage
-  private static final EbInterfaceValidator s_aInstance = new EbInterfaceValidator ();
+  public EbInterfaceValidator (@Nonnull final EEbInterfaceDocumentType eDocType)
+  {
+    super (eDocType);
+  }
 
-  private EbInterfaceValidator ()
-  {}
+  public EbInterfaceValidator (@Nonnull final Class <JAXBTYPE> aClass)
+  {
+    this (EbInterfaceDocumentTypes.getDocumentTypeOfImplementationClass (aClass));
+  }
+
+  /**
+   * Create a new validation builder.
+   *
+   * @param aClass
+   *        The UBL class to be validated. May not be <code>null</code>.
+   * @return The new validation builder. Never <code>null</code>.
+   * @param <T>
+   *        The ebInterface document implementation type
+   */
+  @Nonnull
+  public static <T> EbInterfaceValidator <T> create (@Nonnull final Class <T> aClass)
+  {
+    return new EbInterfaceValidator <> (aClass);
+  }
 
   /**
    * Create a validation builder for Ebi30InvoiceType.
@@ -46,9 +69,9 @@ public final class EbInterfaceValidator
    * @return The builder and never <code>null</code>
    */
   @Nonnull
-  public static EbInterfaceValidatorBuilder <Ebi30InvoiceType> ebInterface30 ()
+  public static EbInterfaceValidator <Ebi30InvoiceType> ebInterface30 ()
   {
-    return EbInterfaceValidatorBuilder.create (Ebi30InvoiceType.class);
+    return EbInterfaceValidator.create (Ebi30InvoiceType.class);
   }
 
   /**
@@ -57,9 +80,9 @@ public final class EbInterfaceValidator
    * @return The builder and never <code>null</code>
    */
   @Nonnull
-  public static EbInterfaceValidatorBuilder <Ebi302InvoiceType> ebInterface302 ()
+  public static EbInterfaceValidator <Ebi302InvoiceType> ebInterface302 ()
   {
-    return EbInterfaceValidatorBuilder.create (Ebi302InvoiceType.class);
+    return EbInterfaceValidator.create (Ebi302InvoiceType.class);
   }
 
   /**
@@ -68,9 +91,9 @@ public final class EbInterfaceValidator
    * @return The builder and never <code>null</code>
    */
   @Nonnull
-  public static EbInterfaceValidatorBuilder <Ebi40InvoiceType> ebInterface40 ()
+  public static EbInterfaceValidator <Ebi40InvoiceType> ebInterface40 ()
   {
-    return EbInterfaceValidatorBuilder.create (Ebi40InvoiceType.class);
+    return EbInterfaceValidator.create (Ebi40InvoiceType.class);
   }
 
   /**
@@ -79,9 +102,9 @@ public final class EbInterfaceValidator
    * @return The builder and never <code>null</code>
    */
   @Nonnull
-  public static EbInterfaceValidatorBuilder <Ebi41InvoiceType> ebInterface41 ()
+  public static EbInterfaceValidator <Ebi41InvoiceType> ebInterface41 ()
   {
-    return EbInterfaceValidatorBuilder.create (Ebi41InvoiceType.class);
+    return EbInterfaceValidator.create (Ebi41InvoiceType.class);
   }
 
   /**
@@ -90,8 +113,19 @@ public final class EbInterfaceValidator
    * @return The builder and never <code>null</code>
    */
   @Nonnull
-  public static EbInterfaceValidatorBuilder <Ebi42InvoiceType> ebInterface42 ()
+  public static EbInterfaceValidator <Ebi42InvoiceType> ebInterface42 ()
   {
-    return EbInterfaceValidatorBuilder.create (Ebi42InvoiceType.class);
+    return EbInterfaceValidator.create (Ebi42InvoiceType.class);
+  }
+
+  /**
+   * Create a validation builder for Ebi43InvoiceType.
+   *
+   * @return The builder and never <code>null</code>
+   */
+  @Nonnull
+  public static EbInterfaceValidator <Ebi43InvoiceType> ebInterface43 ()
+  {
+    return EbInterfaceValidator.create (Ebi43InvoiceType.class);
   }
 }

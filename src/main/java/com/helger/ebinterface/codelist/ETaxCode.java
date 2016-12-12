@@ -49,17 +49,20 @@ public enum ETaxCode implements IHasID <String>
   /** Reduced tax rate */
   REDUCED_10 ("AT029", 10, "ermäßigter Steuersatz"),
   /** Wine tax rate - valid until 31.12.2015 */
-  @Deprecated WINE_12 ("AT025", 12, "für Weinumsätze durch landwirtschaftliche Betriebe"),
+  @Deprecated
+  WINE_12 ("AT025", 12, "für Weinumsätze durch landwirtschaftliche Betriebe"),
   /** Wine tax rate per 1.1.2016 */
   REDUCED_13 ("AT006", 13, "ermäßigter Steuersatz"),
   /** Special regions. Up to 2006 only */
-  @Deprecated GERMANY_16 ("AT035", 16, "für Jungholz und Mittelberg"),
+  @Deprecated
+  GERMANY_16 ("AT035", 16, "für Jungholz und Mittelberg"),
   /** Special regions. From 2007 only */
   GERMANY_19 ("AT037", 19, "für Jungholz und Mittelberg"),
   /** Add-on tax for certain farmers only */
   ADDITIONAL_10 ("AT052", 10, "Zusatzsteuer für pauschalierte land- und forstwirtschaftliche Betriebe"),
   /** Add-on tax for certain farmers only - valid until 31.12.2015 */
-  @Deprecated ADDITIONAL_08 ("AT038", 8, "Zusatzsteuer für pauschalierte land- und forstwirtschaftliche Betriebe"),
+  @Deprecated
+  ADDITIONAL_08 ("AT038", 8, "Zusatzsteuer für pauschalierte land- und forstwirtschaftliche Betriebe"),
   /** Add-on tax for certain farmers only - valid from 1.1.2016 */
   ADDITIONAL_07 ("AT007", 7, "Zusatzsteuer für pauschalierte land- und forstwirtschaftliche Betriebe"),
   /** ebInterface 4.0 specific code */

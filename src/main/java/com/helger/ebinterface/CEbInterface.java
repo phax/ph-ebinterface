@@ -62,6 +62,12 @@ public final class CEbInterface
                                                                                                                   new ClassPathResource ("/schemas/ebinterface/ext42/ebInterfaceExtension_SV.xsd"),
                                                                                                                   new ClassPathResource ("/schemas/ebinterface/ebinterface-4.2.xsd"));
 
+  /** XML Schema resources for ebInterface 4.3 */
+  public static final List <? extends IReadableResource> EBINTERFACE_43_XSDS = CollectionHelper.makeUnmodifiable (XSD_XMLDSIG_RESOURCE,
+                                                                                                                  new ClassPathResource ("/schemas/ebinterface/ebInterfaceExtension-4.3.xsd"),
+                                                                                                                  new ClassPathResource ("/schemas/ebinterface/ext43/ebInterfaceExtension_SV.xsd"),
+                                                                                                                  new ClassPathResource ("/schemas/ebinterface/ebinterface-4.3.xsd"));
+
   /** Namespace URI for ebInterface 3.0 */
   public static final String EBINTERFACE_30_NS = "http://www.ebinterface.at/schema/3p0/";
 
@@ -77,6 +83,9 @@ public final class CEbInterface
   /** Namespace URI for ebInterface 4.2 */
   public static final String EBINTERFACE_42_NS = "http://www.ebinterface.at/schema/4p2/";
 
+  /** Namespace URI for ebInterface 4.3 */
+  public static final String EBINTERFACE_43_NS = "http://www.ebinterface.at/schema/4p3/";
+
   /** Stylesheet resource for ebInterface 3.0 */
   public static final IReadableResource EBINTERFACE_30_XSLT = new ClassPathResource ("/visualization/ebInterface-3.0.xslt");
 
@@ -91,6 +100,9 @@ public final class CEbInterface
 
   /** Stylesheet resource for ebInterface 4.2 */
   public static final IReadableResource EBINTERFACE_42_XSLT = new ClassPathResource ("/visualization/ebInterface-4.2.xslt");
+
+  /** Stylesheet resource for ebInterface 4.3 */
+  public static final IReadableResource EBINTERFACE_43_XSLT = new ClassPathResource ("/visualization/ebInterface-4.3.xslt");
 
   @PresentForCodeCoverage
   private static final CEbInterface s_aInstance = new CEbInterface ();

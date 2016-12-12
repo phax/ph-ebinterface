@@ -32,6 +32,7 @@ import com.helger.ebinterface.v302.Ebi302InvoiceType;
 import com.helger.ebinterface.v40.Ebi40InvoiceType;
 import com.helger.ebinterface.v41.Ebi41InvoiceType;
 import com.helger.ebinterface.v42.Ebi42InvoiceType;
+import com.helger.ebinterface.v43.Ebi43InvoiceType;
 import com.helger.xml.serialize.read.DOMReader;
 
 /**
@@ -181,6 +182,35 @@ public final class EbInterfaceReaderTest
 
       // Convert to domain object again
       final Ebi42InvoiceType aInvoice2 = EbInterfaceReader.ebInterface42 ().read (aDoc2);
+      assertNotNull (aExampleFile.getPath (), aInvoice2);
+
+      // Must be equals
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice.clone ());
+    }
+  }
+
+  @Test
+  public void testReadEbi43 () throws SAXException
+  {
+    for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V43.getTestResources ())
+    {
+      // Read from file as XML
+      final Document aDoc = DOMReader.readXMLDOM (aExampleFile);
+      assertNotNull (aDoc);
+
+      // Convert to domain object
+      final Ebi43InvoiceType aInvoice = EbInterfaceReader.ebInterface43 ().read (aDoc);
+      assertNotNull (aExampleFile.getPath (), aInvoice);
+
+      // Convert again to XML document
+      final Document aDoc2 = EbInterfaceWriter.ebInterface43 ().getAsDocument (aInvoice);
+      assertNotNull (aExampleFile.getPath (), aDoc2);
+      assertSame (EEbInterfaceVersion.V43,
+                  EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
+
+      // Convert to domain object again
+      final Ebi43InvoiceType aInvoice2 = EbInterfaceReader.ebInterface43 ().read (aDoc2);
       assertNotNull (aExampleFile.getPath (), aInvoice2);
 
       // Must be equals
