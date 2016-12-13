@@ -18,6 +18,14 @@
 
 -->
 <changelog xmlns="http://www.helger.com/xsd/changelog/1.0" version="1.0" component="ph-ebinterface">
+  <release date="2016-12-13" version="5.1.0" />
+  <entry date="2016-12-12" category="tech" action="update">
+    <change>
+      <text locale="en">Added support for ebInterface 4.3 draft</text>
+    </change>
+  </entry>
+  <release date="2016-07-15" version="5.0.1" />
+  <release date="2016-06-11" version="5.0.0" />
   <release date="2015-11-25" version="4.0.2" />
   <entry date="2015-11-23" category="tech" action="update">
     <change>

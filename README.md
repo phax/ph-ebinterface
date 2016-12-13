@@ -16,7 +16,7 @@ Features:
   * Visualize ebInterface documents as HTML documents
   
 #News and noteworthy
-  * Version 5.1.0
+  * Version 5.1.0 - 2016-12-13
     * Added support for ebInterface 4.3
   * Version 5.0.1 - 2016-07-15
     * Using a separate artefact for XMLDSig JAXB artefacts for easier reuse (ph-xsds-xmldsig)
@@ -42,7 +42,7 @@ This is originally the follow-on project of phloc-ebinterface originally residin
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-ebinterface</artifactId>
-  <version>5.0.1</version>
+  <version>5.1.0</version>
 </dependency>
 ```
 
