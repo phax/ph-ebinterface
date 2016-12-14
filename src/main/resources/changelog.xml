@@ -18,6 +18,12 @@
 
 -->
 <changelog xmlns="http://www.helger.com/xsd/changelog/1.0" version="1.0" component="ph-ebinterface">
+  <release date="2016-12-14" version="5.1.1" />
+  <entry date="2016-12-14" category="tech" action="fix">
+    <change>
+      <text locale="en">Fixed a case error in an internal filename</text>
+    </change>
+  </entry>
   <release date="2016-12-13" version="5.1.0" />
   <entry date="2016-12-12" category="tech" action="update">
     <change>
