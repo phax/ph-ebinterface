@@ -36,8 +36,7 @@ import com.helger.xml.namespace.MapBasedNamespaceContext;
  *        The ebInterface implementation class to be read
  */
 @NotThreadSafe
-public class EbInterfaceWriter <JAXBTYPE>
-                                      extends JAXBWriterBuilder <JAXBTYPE, EbInterfaceWriter <JAXBTYPE>>
+public class EbInterfaceWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, EbInterfaceWriter <JAXBTYPE>>
 {
   public EbInterfaceWriter (@Nonnull final EEbInterfaceDocumentType eDocType)
   {
@@ -45,7 +44,7 @@ public class EbInterfaceWriter <JAXBTYPE>
 
     // Create a special namespace context for the passed document type
     final MapBasedNamespaceContext aNSContext = new MapBasedNamespaceContext ();
-    aNSContext.setDefaultNamespaceURI (m_aDocType.getNamespaceURI ());
+    aNSContext.setMapping ("eb", m_aDocType.getNamespaceURI ());
     setNamespaceContext (aNSContext);
   }
 
@@ -66,7 +65,7 @@ public class EbInterfaceWriter <JAXBTYPE>
   @Nonnull
   public static <T> EbInterfaceWriter <T> create (@Nonnull final Class <T> aClass)
   {
-    return new EbInterfaceWriter <> (aClass);
+    return new EbInterfaceWriter<> (aClass);
   }
 
   /**
