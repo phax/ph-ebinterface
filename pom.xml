@@ -25,7 +25,7 @@
     <version>1.9.2</version>
   </parent>
   <artifactId>ph-ebinterface</artifactId>
-  <version>5.1.2-SNAPSHOT</version>
+  <version>5.1.2</version>
   <packaging>bundle</packaging>
   <name>ph-ebinterface</name>
   <description>ebInterface wrapper library to easily read and write ebInterface documents</description>
@@ -42,7 +42,7 @@
     <connection>scm:git:git@github.com:phax/ph-ebinterface.git</connection>
     <developerConnection>scm:git:git@github.com:phax/ph-ebinterface.git</developerConnection>
     <url>http://github.com/phax/ph-ebinterface</url>
-    <tag>HEAD</tag>
+    <tag>ph-ebinterface-5.1.2</tag>
   </scm>
   <organization>
     <name>Philip Helger</name>
