@@ -16,8 +16,9 @@ Features:
   * Visualize ebInterface documents as HTML documents
   
 #News and noteworthy
-  * v5.1.2
+  * v5.1.2 - 2017-01-09
     * Updated to BouncyCastle 1.56
+    * Binds to ph-commons 8.6.0
   * v5.1.1 - 2016-12-14
     * Fixed case sensitivity error in a filename
   * v5.1.0 - 2016-12-13
@@ -46,7 +47,7 @@ This is originally the follow-on project of phloc-ebinterface originally residin
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-ebinterface</artifactId>
-  <version>5.1.1</version>
+  <version>5.1.2</version>
 </dependency>
 ```
 
