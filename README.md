@@ -1,4 +1,4 @@
-#ph-ebinterface
+# ph-ebinterface
 
 Java library encapsulating the usage of ebInterface 3.0, 3.0.2, 4.0, 4.1, 4.2 and 4.3 within your application. 
 See [First Steps](https://github.com/phax/ph-ebinterface/wiki/FirstSteps) (English; v3.x) or 
@@ -15,7 +15,7 @@ Features:
   * Validate the signature of ebInterface documents
   * Visualize ebInterface documents as HTML documents
   
-#News and noteworthy
+# News and noteworthy
   * v5.1.2 - 2017-01-09
     * Updated to BouncyCastle 1.56
     * Binds to ph-commons 8.6.0
@@ -42,7 +42,7 @@ The library can e.g. be used in combination with the [E-RECHNUNG.GV.AT Webservic
 
 This is originally the follow-on project of phloc-ebinterface originally residing on Google Code. 
 
-#Usage with Maven
+# Usage with Maven
 ```xml
 <dependency>
   <groupId>com.helger</groupId>
