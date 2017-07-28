@@ -16,6 +16,9 @@ Features:
   * Visualize ebInterface documents as HTML documents
   
 # News and noteworthy
+  * v6.0.0 - work in progress
+    * Updated to BouncyCastle 1.57
+    * Updated to ph-commons 9.0.0
   * v5.1.2 - 2017-01-09
     * Updated to BouncyCastle 1.56
     * Binds to ph-commons 8.6.0
