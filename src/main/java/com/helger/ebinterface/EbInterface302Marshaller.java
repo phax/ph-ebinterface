@@ -23,15 +23,15 @@ import javax.annotation.Nonnull;
 import com.helger.commons.io.resource.IReadableResource;
 import com.helger.ebinterface.v302.Ebi302InvoiceType;
 import com.helger.ebinterface.v302.ObjectFactory;
-import com.helger.jaxb.AbstractJAXBMarshaller;
+import com.helger.jaxb.GenericJAXBMarshaller;
 
 /**
  * This is the reader and writer for ebInterface 3.0.2 documents. This class may
- * be derived to override protected methods from {@link AbstractJAXBMarshaller}.
+ * be derived to override protected methods from {@link GenericJAXBMarshaller}.
  *
  * @author Philip Helger
  */
-public class EbInterface302Marshaller extends AbstractJAXBMarshaller <Ebi302InvoiceType>
+public class EbInterface302Marshaller extends GenericJAXBMarshaller <Ebi302InvoiceType>
 {
   /**
    * Constructor

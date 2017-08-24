@@ -24,7 +24,7 @@ import javax.xml.validation.Schema;
 
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.impl.CommonsArrayList;
 import com.helger.commons.collection.impl.ICommonsList;
 import com.helger.commons.io.resource.IReadableResource;
 import com.helger.commons.string.StringHelper;
@@ -58,7 +58,7 @@ public enum EEbInterfaceDocumentType implements IJAXBDocumentType
                                     @Nonnull final List <? extends IReadableResource> aXSDPaths)
   {
     m_aDocType = new JAXBDocumentType (aClass,
-                                       CollectionHelper.newListMapped (aXSDPaths, IReadableResource::getPath),
+                                       new CommonsArrayList <> (aXSDPaths, IReadableResource::getPath),
                                        x -> StringHelper.trimEnd (x, "Type"));
   }
 
