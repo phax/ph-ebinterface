@@ -20,7 +20,7 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
-import com.helger.commons.io.resource.IReadableResource;
+import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.ebinterface.v30.Ebi30InvoiceType;
 import com.helger.ebinterface.v30.ObjectFactory;
 import com.helger.jaxb.GenericJAXBMarshaller;
@@ -47,7 +47,7 @@ public class EbInterface30Marshaller extends GenericJAXBMarshaller <Ebi30Invoice
    * @param aXSDs
    *        The XML schemas to be used. Handle with care.
    */
-  public EbInterface30Marshaller (@Nonnull final List <? extends IReadableResource> aXSDs)
+  public EbInterface30Marshaller (@Nonnull final List <ClassPathResource> aXSDs)
   {
     super (Ebi30InvoiceType.class, aXSDs, o -> new ObjectFactory ().createInvoice (o));
   }
