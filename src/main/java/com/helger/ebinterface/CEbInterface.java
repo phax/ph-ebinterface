@@ -97,6 +97,11 @@ public final class CEbInterface
                                                                                               new ClassPathResource ("/schemas/ebinterface/ebinterface-4.3.xsd",
                                                                                                                      _getCL ())).getAsUnmodifiable ();
 
+  /** XML Schema resources for ebInterface 5.0 */
+  @CodingStyleguideUnaware
+  public static final List <ClassPathResource> EBINTERFACE_50_XSDS = new CommonsArrayList <> (new ClassPathResource ("/schemas/ebinterface/ebinterface-5.0.xsd",
+                                                                                                                     _getCL ())).getAsUnmodifiable ();
+
   /** Namespace URI for ebInterface 3.0 */
   public static final String EBINTERFACE_30_NS = "http://www.ebinterface.at/schema/3p0/";
 

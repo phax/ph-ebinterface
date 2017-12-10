@@ -25,6 +25,7 @@ import com.helger.ebinterface.v40.Ebi40InvoiceType;
 import com.helger.ebinterface.v41.Ebi41InvoiceType;
 import com.helger.ebinterface.v42.Ebi42InvoiceType;
 import com.helger.ebinterface.v43.Ebi43InvoiceType;
+import com.helger.ebinterface.v50.Ebi50InvoiceType;
 import com.helger.jaxb.builder.JAXBWriterBuilder;
 import com.helger.xml.namespace.MapBasedNamespaceContext;
 
@@ -65,7 +66,7 @@ public class EbInterfaceWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, E
   @Nonnull
   public static <T> EbInterfaceWriter <T> create (@Nonnull final Class <T> aClass)
   {
-    return new EbInterfaceWriter<> (aClass);
+    return new EbInterfaceWriter <> (aClass);
   }
 
   /**
@@ -132,5 +133,16 @@ public class EbInterfaceWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, E
   public static EbInterfaceWriter <Ebi43InvoiceType> ebInterface43 ()
   {
     return EbInterfaceWriter.create (Ebi43InvoiceType.class);
+  }
+
+  /**
+   * Create a writer builder for Ebi50InvoiceType.
+   *
+   * @return The builder and never <code>null</code>
+   */
+  @Nonnull
+  public static EbInterfaceWriter <Ebi50InvoiceType> ebInterface50 ()
+  {
+    return EbInterfaceWriter.create (Ebi50InvoiceType.class);
   }
 }

@@ -25,6 +25,7 @@ import com.helger.ebinterface.v40.Ebi40InvoiceType;
 import com.helger.ebinterface.v41.Ebi41InvoiceType;
 import com.helger.ebinterface.v42.Ebi42InvoiceType;
 import com.helger.ebinterface.v43.Ebi43InvoiceType;
+import com.helger.ebinterface.v50.Ebi50InvoiceType;
 import com.helger.jaxb.builder.JAXBValidationBuilder;
 
 /**
@@ -35,8 +36,7 @@ import com.helger.jaxb.builder.JAXBValidationBuilder;
  *        The ebInterface implementation class to be read
  */
 @NotThreadSafe
-public class EbInterfaceValidator <JAXBTYPE> extends
-                                         JAXBValidationBuilder <JAXBTYPE, EbInterfaceValidator <JAXBTYPE>>
+public class EbInterfaceValidator <JAXBTYPE> extends JAXBValidationBuilder <JAXBTYPE, EbInterfaceValidator <JAXBTYPE>>
 {
   public EbInterfaceValidator (@Nonnull final EEbInterfaceDocumentType eDocType)
   {
@@ -127,5 +127,16 @@ public class EbInterfaceValidator <JAXBTYPE> extends
   public static EbInterfaceValidator <Ebi43InvoiceType> ebInterface43 ()
   {
     return EbInterfaceValidator.create (Ebi43InvoiceType.class);
+  }
+
+  /**
+   * Create a validation builder for Ebi50InvoiceType.
+   *
+   * @return The builder and never <code>null</code>
+   */
+  @Nonnull
+  public static EbInterfaceValidator <Ebi50InvoiceType> ebInterface50 ()
+  {
+    return EbInterfaceValidator.create (Ebi50InvoiceType.class);
   }
 }

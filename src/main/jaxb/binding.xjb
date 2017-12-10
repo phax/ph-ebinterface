@@ -143,4 +143,12 @@
       </nameXmlTransform>
     </schemaBindings>
   </bindings>
+  <bindings schemaLocation="../resources/schemas/ebinterface/ebinterface-5.0.xsd" node="/xs:schema">
+    <schemaBindings>
+      <package name="com.helger.ebinterface.v50" />
+      <nameXmlTransform>
+        <typeName prefix="Ebi50"/>
+      </nameXmlTransform>
+    </schemaBindings>
+  </bindings>
 </bindings>

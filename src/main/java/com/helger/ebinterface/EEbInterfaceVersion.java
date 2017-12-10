@@ -43,12 +43,15 @@ public enum EEbInterfaceVersion
   /** ebInterface 4.2 */
   V42 (CEbInterface.EBINTERFACE_42_NS, CEbInterface.EBINTERFACE_42_XSLT),
   /** ebInterface 4.3 */
-  V43 (CEbInterface.EBINTERFACE_43_NS, CEbInterface.EBINTERFACE_43_XSLT);
+  V43 (CEbInterface.EBINTERFACE_43_NS, CEbInterface.EBINTERFACE_43_XSLT),
+  /** ebInterface 5.0 */
+  V50 (CEbInterface.EBINTERFACE_50_NS, null);
 
   private final String m_sNamespaceURI;
   private final IReadableResource m_aXSLTRes;
 
-  private EEbInterfaceVersion (@Nonnull @Nonempty final String sNamespaceURI, @Nonnull final IReadableResource aXSLTRes)
+  private EEbInterfaceVersion (@Nonnull @Nonempty final String sNamespaceURI,
+                               @Nullable final IReadableResource aXSLTRes)
   {
     m_sNamespaceURI = sNamespaceURI;
     m_aXSLTRes = aXSLTRes;
@@ -66,12 +69,22 @@ public enum EEbInterfaceVersion
 
   /**
    * @return The resource to be used to visualize ebInterface invoices of this
-   *         version
+   *         version. May be <code>null</code> as not all versions have XSLTs
+   *         assigned.
    */
-  @Nonnull
+  @Nullable
   public IReadableResource getXSLTResource ()
   {
     return m_aXSLTRes;
+  }
+
+  /**
+   * @return <code>true</code> if an XSLT resource for visualization is present,
+   *         <code>false</code> if not.
+   */
+  public boolean hasXSLTResource ()
+  {
+    return m_aXSLTRes != null;
   }
 
   /**

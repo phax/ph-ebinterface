@@ -25,6 +25,7 @@ import com.helger.ebinterface.v40.Ebi40InvoiceType;
 import com.helger.ebinterface.v41.Ebi41InvoiceType;
 import com.helger.ebinterface.v42.Ebi42InvoiceType;
 import com.helger.ebinterface.v43.Ebi43InvoiceType;
+import com.helger.ebinterface.v50.Ebi50InvoiceType;
 import com.helger.jaxb.builder.JAXBReaderBuilder;
 
 /**
@@ -35,11 +36,10 @@ import com.helger.jaxb.builder.JAXBReaderBuilder;
  *        The ebInterface implementation class to be read
  */
 @NotThreadSafe
-public class EbInterfaceReader <JAXBTYPE>
-                                      extends JAXBReaderBuilder <JAXBTYPE, EbInterfaceReader <JAXBTYPE>>
+public class EbInterfaceReader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, EbInterfaceReader <JAXBTYPE>>
 {
   public EbInterfaceReader (@Nonnull final EEbInterfaceDocumentType eDocType,
-                                   @Nonnull final Class <JAXBTYPE> aImplClass)
+                            @Nonnull final Class <JAXBTYPE> aImplClass)
   {
     super (eDocType, aImplClass);
   }
@@ -143,5 +143,16 @@ public class EbInterfaceReader <JAXBTYPE>
   public static EbInterfaceReader <Ebi43InvoiceType> ebInterface43 ()
   {
     return EbInterfaceReader.create (Ebi43InvoiceType.class);
+  }
+
+  /**
+   * Create a reader builder for Ebi50InvoiceType.
+   *
+   * @return The builder and never <code>null</code>
+   */
+  @Nonnull
+  public static EbInterfaceReader <Ebi50InvoiceType> ebInterface50 ()
+  {
+    return EbInterfaceReader.create (Ebi50InvoiceType.class);
   }
 }

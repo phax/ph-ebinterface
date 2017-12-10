@@ -20,7 +20,6 @@ import javax.annotation.Nonnull;
 
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.collection.impl.CommonsArrayList;
 import com.helger.commons.collection.impl.ICommonsList;
 import com.helger.commons.io.resource.ClassPathResource;
@@ -57,31 +56,33 @@ public enum EEbInterfaceTestFiles
                         "mesonic2.xml",
                         "mesonic3-corrupted.xml",
                         "valid_and_signed.xml", }),
-  V40 ("/ebinterface/v40/", new String [] { "86516_203053.xml",
-                                            "86523_203054.xml",
-                                            "86525_203055.xml",
-                                            "86526_203056.xml",
-                                            "86528_203057.xml",
-                                            "86529_203058.xml",
-                                            // "ebinterface4-signed.xml",
-                                            "ebinterface4-test1.xml",
-                                            // "ebinterface4-test1-noprefix.xml",
-                                            "ebinterface4-test2.xml",
-                                            "handysignature.xml",
-                                            // "Rechnung-R_00156_3_00.xml",
-                                            // "testinstance-invalid-billerscontractpartnernumber.xml",
-                                            // "testinstance-invalid-schema.xml",
-                                            // "testinstance-invalid-svnr.xml",
-                                            // "testinstance-no-billerscontractpartnernumberpresent.xml",
-                                            "testinstance-no-svnr.xml",
-                                            // "testinstance-valid-billerscontractpartnernumber.xml",
-                                            "testinstance-valid-schema.xml",
-  // "testinstance-valid-sv.xml",
-  // "testinstance-valid-svnr.xml",
-  }),
+  V40 ("/ebinterface/v40/",
+       new String [] { "86516_203053.xml",
+                       "86523_203054.xml",
+                       "86525_203055.xml",
+                       "86526_203056.xml",
+                       "86528_203057.xml",
+                       "86529_203058.xml",
+                       // "ebinterface4-signed.xml",
+                       "ebinterface4-test1.xml",
+                       // "ebinterface4-test1-noprefix.xml",
+                       "ebinterface4-test2.xml",
+                       "handysignature.xml",
+                       // "Rechnung-R_00156_3_00.xml",
+                       // "testinstance-invalid-billerscontractpartnernumber.xml",
+                       // "testinstance-invalid-schema.xml",
+                       // "testinstance-invalid-svnr.xml",
+                       // "testinstance-no-billerscontractpartnernumberpresent.xml",
+                       "testinstance-no-svnr.xml",
+                       // "testinstance-valid-billerscontractpartnernumber.xml",
+                       "testinstance-valid-schema.xml",
+       // "testinstance-valid-sv.xml",
+       // "testinstance-valid-svnr.xml",
+       }),
   V41 ("/ebinterface/v41/", new String [] { "testinstance-valid-schema.xml" }),
   V42 ("/ebinterface/v42/", new String [] { "testinstance-valid-schema.xml" }),
-  V43 ("/ebinterface/v43/", new String [] { "testinstance-valid-schema.xml" });
+  V43 ("/ebinterface/v43/", new String [] { "testinstance-valid-schema.xml" }),
+  V50 ("/ebinterface/v50/", new String [] { "testinstance-valid-schema.xml" });
 
   private final ICommonsList <IReadableResource> m_aTestFiles = new CommonsArrayList <> ();
 
@@ -96,6 +97,6 @@ public enum EEbInterfaceTestFiles
   @ReturnsMutableCopy
   public ICommonsList <IReadableResource> getTestResources ()
   {
-    return CollectionHelper.newList (m_aTestFiles);
+    return m_aTestFiles.getClone ();
   }
 }
