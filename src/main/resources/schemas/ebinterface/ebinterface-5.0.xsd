@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="http://www.ebinterface.at/schema/5p0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ebinterface.at/schema/5p0/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns="http://www.ebinterface.at/schema/5p0/"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.ebinterface.at/schema/5p0/" 
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
   <xs:annotation>
     <xs:documentation>
-            Schema version: 5.0-RC1
-            Last update: 2017-12-10
-            Documentation: http://www.ebinterface.at/download/documentation/ebInvoice_5p0.pdf
-        </xs:documentation>
+        Schema version: 5.0-RC1
+        Last update: 2017-12-10
+        Documentation: http://www.ebinterface.at/download/documentation/ebInvoice_5p0.pdf
+    </xs:documentation>
   </xs:annotation>
   <!-- === Root Element === -->
   <xs:element name="Invoice" type="InvoiceType"/>
@@ -115,28 +119,6 @@
   <xs:element name="VATIdentificationNumber" type="xs:string"/>
   <xs:element name="TaxItem" type="TaxItemType"/>
   <xs:element name="ZIP" type="xs:string"/>
-  <!-- === Attribute Deklarations === -->
-  <xs:attribute name="AddressIdentifierType" type="xs:string"/>
-  <xs:attribute name="ArticleNumberType" type="ArticleNumberTypeType"/>
-  <xs:attribute name="BankCodeType" type="CountryCodeType"/>
-  <xs:attribute name="BaseQuantity" type="Decimal4Type"/>
-  <xs:attribute name="CheckSum" type="CheckSumType"/>
-  <xs:attribute name="ClassificationSchema" type="xs:string"/>
-  <xs:attribute name="ConsolidatorPayable" type="xs:boolean"/>
-  <xs:attribute name="CountryCode" type="CountryCodeType"/>
-  <xs:attribute name="Currency" type="CurrencyType"/>
-  <xs:attribute name="Date" type="xs:date"/>
-  <xs:attribute name="DocumentTitle" type="xs:string"/>
-  <xs:attribute name="DocumentType" type="DocumentTypeType"/>
-  <xs:attribute name="GeneratingSystem" type="xs:string"/>
-  <xs:attribute name="IdentificationType" type="xs:string"/>
-  <xs:attribute name="IsDuplicate" type="xs:boolean"/>
-  <xs:attribute name="InvoiceCurrency" type="CurrencyType"/>
-  <xs:attribute name="Key" type="xs:string"/>
-  <xs:attribute name="Language" type="LanguageType"/>
-  <xs:attribute name="ManualProcessing" type="xs:boolean"/>
-  <xs:attribute name="TaxCategoryCode" type="xs:string"/>
-  <xs:attribute name="Unit" type="xs:string"/>
   <!-- === Simple Types === -->
   <xs:simpleType name="AccountingAreaType">
     <xs:restriction base="xs:string">
@@ -258,7 +240,7 @@
   <xs:complexType name="AccountingCurrencyAmountType">
     <xs:simpleContent>
       <xs:extension base="Decimal2Type">
-        <xs:attribute ref="Currency" use="required"/>
+        <xs:attribute name="Currency" type="CurrencyType" use="required"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -275,14 +257,14 @@
   <xs:complexType name="AdditionalInformationType">
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute ref="Key" use="optional"/>
+        <xs:attribute name="Key" type="xs:string" use="optional"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
   <xs:complexType name="AddressIdentifierType">
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute ref="AddressIdentifierType" use="optional"/>
+        <xs:attribute name="AddressIdentifierType" type="xs:string" use="optional"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -304,14 +286,14 @@
   <xs:complexType name="ArticleNumberType">
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute ref="ArticleNumberType" use="optional"/>
+        <xs:attribute name="ArticleNumberType" type="ArticleNumberTypeType" use="optional"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
   <xs:complexType name="BankCodeType">
     <xs:simpleContent>
       <xs:extension base="xs:integer">
-        <xs:attribute ref="BankCodeType" use="required"/>
+        <xs:attribute name="BankCodeType" type="CountryCodeType" use="required"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -335,7 +317,7 @@
   <xs:complexType name="ClassificationType">
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute ref="ClassificationSchema" use="optional"/>
+        <xs:attribute name="ClassificationSchema" type="xs:string" use="optional"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -350,7 +332,7 @@
   <xs:complexType name="CountryType">
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute ref="CountryCode" use="optional"/>
+        <xs:attribute name="CountryCode" type="CountryCodeType" use="optional"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -383,7 +365,7 @@
   <xs:complexType name="FurtherIdentificationType">
     <xs:simpleContent>
       <xs:extension base="IDType">
-        <xs:attribute ref="IdentificationType" use="required"/>
+        <xs:attribute name="IdentificationType" type="xs:string" use="required"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -409,13 +391,13 @@
       <xs:element ref="PaymentConditions" minOccurs="0"/>
       <xs:element ref="Comment" minOccurs="0"/>
     </xs:sequence>
-    <xs:attribute ref="GeneratingSystem" use="required"/>
-    <xs:attribute ref="DocumentType" use="required"/>
-    <xs:attribute ref="InvoiceCurrency" use="required"/>
-    <xs:attribute ref="ManualProcessing" use="optional"/>
-    <xs:attribute ref="DocumentTitle" use="optional"/>
-    <xs:attribute ref="Language" use="optional"/>
-    <xs:attribute ref="IsDuplicate" use="optional"/>
+    <xs:attribute name="GeneratingSystem" type="xs:string" use="required"/>
+    <xs:attribute name="DocumentType" type="DocumentTypeType" use="required"/>
+    <xs:attribute name="InvoiceCurrency" type="CurrencyType" use="required"/>
+    <xs:attribute name="ManualProcessing" type="xs:boolean" use="optional"/>
+    <xs:attribute name="DocumentTitle" type="xs:string" use="optional"/>
+    <xs:attribute name="Language" type="LanguageType" use="optional"/>
+    <xs:attribute name="IsDuplicate" type="xs:boolean" use="optional"/>
   </xs:complexType>
   <xs:complexType name="InvoiceRecipientType">
     <xs:complexContent>
@@ -528,7 +510,7 @@
   <xs:complexType name="PaymentReferenceType">
     <xs:simpleContent>
       <xs:extension base="ID35Type">
-        <xs:attribute ref="CheckSum" use="optional"/>
+        <xs:attribute name="CheckSum" type="CheckSumType" use="optional"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -591,10 +573,19 @@
       <xs:element ref="DebitCollectionDate" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="TaxItemType">
+    <xs:sequence>
+      <xs:element ref="TaxableAmount"/>
+      <xs:element ref="TaxPercent"/>
+      <xs:element ref="TaxAmount" minOccurs="0"/>
+      <xs:element ref="AccountingCurrencyAmount" minOccurs="0"/>
+      <xs:element ref="Comment" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="TaxPercentType">
     <xs:simpleContent>
       <xs:extension base="PercentageType">
-        <xs:attribute ref="TaxCategoryCode" use="required"/>
+        <xs:attribute name="TaxCategoryCode" type="xs:token" use="required"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -607,14 +598,14 @@
   <xs:complexType name="UnitType">
     <xs:simpleContent>
       <xs:extension base="Decimal4Type">
-        <xs:attribute ref="Unit" use="required"/>
+        <xs:attribute name="Unit" type="xs:string" use="required"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
   <xs:complexType name="UnitPriceType">
     <xs:simpleContent>
       <xs:extension base="Decimal4Type">
-        <xs:attribute ref="BaseQuantity" use="optional"/>
+        <xs:attribute name="BaseQuantity" type="Decimal4Type" use="optional"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -623,15 +614,6 @@
       <xs:element ref="BeneficiaryAccount" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element ref="PaymentReference" minOccurs="0"/>
     </xs:sequence>
-    <xs:attribute ref="ConsolidatorPayable" use="optional"/>
-  </xs:complexType>
-  <xs:complexType name="TaxItemType">
-    <xs:sequence>
-      <xs:element ref="TaxableAmount"/>
-      <xs:element ref="TaxPercent"/>
-      <xs:element ref="TaxAmount" minOccurs="0"/>
-      <xs:element ref="AccountingCurrencyAmount" minOccurs="0"/>
-      <xs:element ref="Comment" minOccurs="0" />
-    </xs:sequence>
+    <xs:attribute name="ConsolidatorPayable" type="xs:boolean" use="optional"/>
   </xs:complexType>
 </xs:schema>
