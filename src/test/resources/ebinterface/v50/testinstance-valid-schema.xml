@@ -1,84 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Invoice xmlns:eb="http://www.ebinterface.at/schema/5p0/" GeneratingSystem="Test file" DocumentType="Invoice" InvoiceCurrency="EUR" DocumentTitle="DEMO-Rechnung" Language="ger">
-  <InvoiceNumber>2017-0001</InvoiceNumber>
-  <InvoiceDate>2017-12-10</InvoiceDate>
-  <Delivery>
-    <Date>2011-09-12</Date>
-  </Delivery>
-  <Biller>
-    <VATIdentificationNumber>ATU62698637</VATIdentificationNumber>
-    <Address>
-      <Name>Bogad &amp; Partner Consulting OG</Name>
-      <Street>Steinbachstraße 17</Street>
-      <Town>Mauerbach</Town>
-      <ZIP>3001</ZIP>
-      <Country>AT</Country>
-      <Phone>+43 (699) 17925908</Phone>
-      <Email>josef@bogad.at</Email>
-      <Contact>Josef Bogad</Contact>
-    </Address>
-  </Biller>
-  <InvoiceRecipient>
-    <VATIdentificationNumber>00000000</VATIdentificationNumber>
-    <Address>
-      <Salutation>Firma</Salutation>
-      <Name>Max Mustermann</Name>
-      <Street>Kundenstrasse 1</Street>
-      <Town>Kaufort</Town>
-      <ZIP>1234</ZIP>
-      <Country>AT</Country>
-      <Contact>Max Mustermann</Contact>
-    </Address>
-    <BillersInvoiceRecipientID>123123</BillersInvoiceRecipientID>
-  </InvoiceRecipient>
-  <Details>
-    <HeaderDescription>Wir erlauben uns wie folgt zu verrechnen.</HeaderDescription>
-    <ItemList>
-      <ListLineItem>
-        <PositionNumber>1</PositionNumber>
-        <Description>ebInterface Beratung</Description>
-        <ArticleNumber>4711</ArticleNumber>
-        <Quantity Unit="Tag">0.50</Quantity>
-        <UnitPrice>400.00</UnitPrice>
-        <VATRate TaxCode="AT060">20.00</VATRate>
-        <DiscountFlag>false</DiscountFlag>
-        <ReductionAndSurchargeListLineItemDetails>
-          <ReductionListLineItem>
-            <BaseAmount>200.00</BaseAmount>
-            <Percentage>0.00</Percentage>
-          </ReductionListLineItem>
-        </ReductionAndSurchargeListLineItemDetails>
-        <LineItemAmount>200.00</LineItemAmount>
-      </ListLineItem>
-    </ItemList>
-    <FooterDescription>Wir danken für Ihren Auftrag.</FooterDescription>
-  </Details>
-  <Tax>
-    <VAT>
-      <VATItem>
-        <TaxedAmount>200.00</TaxedAmount>
-        <VATRate TaxCode="AT060">20.00</VATRate>
-        <Amount>40.00</Amount>
-      </VATItem>
-    </VAT>
-  </Tax>
-  <TotalGrossAmount>240.00</TotalGrossAmount>
-  <PayableAmount>240.00</PayableAmount>
-  <PaymentMethod>
-    <UniversalBankTransaction>
-      <BeneficiaryAccount>
-        <BankName>Volksbank Wien</BankName>
-        <BankCode BankCodeType="AT">43000</BankCode>
-        <BankAccountNr>40813033004 </BankAccountNr>
-        <BankAccountOwner>Bogad &amp; Partner Consulting OG</BankAccountOwner>
-      </BeneficiaryAccount>
-    </UniversalBankTransaction>
-  </PaymentMethod>
-  <PaymentConditions>
-    <DueDate>2011-09-12</DueDate>
-  </PaymentConditions>
-  <PresentationDetails>
-    <URL>www.austriapro.at</URL>
-    <SuppressZero>true</SuppressZero>
-  </PresentationDetails>
-</Invoice>
+<eb:Invoice xmlns:eb="http://www.ebinterface.at/schema/5p0/" eb:GeneratingSystem="Test file" eb:DocumentType="Invoice" eb:InvoiceCurrency="EUR" eb:DocumentTitle="DEMO-Rechnung" eb:Language="ger">
+  <eb:InvoiceNumber>2017-0001</eb:InvoiceNumber>
+  <eb:InvoiceDate>2017-12-10</eb:InvoiceDate>
+  <eb:Delivery>
+    <eb:Date>2016-12-10</eb:Date>
+  </eb:Delivery>
+  <eb:Biller>
+    <eb:VATIdentificationNumber>ATU62698637</eb:VATIdentificationNumber>
+    <eb:Address>
+      <eb:Name>Bogad &amp; Partner Consulting OG</eb:Name>
+      <eb:Street>Steinbachstraße 17</eb:Street>
+      <eb:Town>Mauerbach</eb:Town>
+      <eb:ZIP>3001</eb:ZIP>
+      <eb:Country>AT</eb:Country>
+      <eb:Phone>+43 (699) 17925908</eb:Phone>
+      <eb:Email>office@bogad.at</eb:Email>
+    </eb:Address>
+    <eb:Contact>
+      <eb:Name>Josef Bogad</eb:Name>
+      <eb:Email>josef@bogad.at</eb:Email>
+    </eb:Contact>
+  </eb:Biller>
+  <eb:InvoiceRecipient>
+    <eb:VATIdentificationNumber>00000000</eb:VATIdentificationNumber>
+    <eb:Address>
+      <eb:Name>Max Mustermann</eb:Name>
+      <eb:Street>Kundenstrasse 1</eb:Street>
+      <eb:Town>Kaufort</eb:Town>
+      <eb:ZIP>1234</eb:ZIP>
+      <eb:Country>AT</eb:Country>
+    </eb:Address>
+    <eb:Contact>
+      <eb:Salutation>Firma</eb:Salutation>
+      <eb:Name>Max Mustermann</eb:Name>
+    </eb:Contact>
+    <eb:BillersInvoiceRecipientID>123123</eb:BillersInvoiceRecipientID>
+  </eb:InvoiceRecipient>
+  <eb:Details>
+    <eb:HeaderDescription>Wir erlauben uns wie folgt zu verrechnen.</eb:HeaderDescription>
+    <eb:ItemList>
+      <eb:ListLineItem>
+        <eb:PositionNumber>1</eb:PositionNumber>
+        <eb:Description>ebInterface Beratung</eb:Description>
+        <eb:ArticleNumber>4711</eb:ArticleNumber>
+        <eb:Quantity eb:Unit="Tag">0.50</eb:Quantity>
+        <eb:UnitPrice>400.00</eb:UnitPrice>
+        <eb:DiscountFlag>false</eb:DiscountFlag>
+        <eb:ReductionAndSurchargeListLineItemDetails>
+          <eb:ReductionListLineItem>
+            <eb:BaseAmount>200.00</eb:BaseAmount>
+            <eb:Percentage>0.00</eb:Percentage>
+          </eb:ReductionListLineItem>
+        </eb:ReductionAndSurchargeListLineItemDetails>
+        <eb:LineItemAmount>200.00</eb:LineItemAmount>
+        <eb:TaxItem>
+          <eb:TaxableAmount>200.00</eb:TaxableAmount>
+          <eb:TaxPercent eb:TaxCategoryCode="S">20</eb:TaxPercent>
+          <eb:TaxAmount>40.00</eb:TaxAmount>
+        </eb:TaxItem>
+      </eb:ListLineItem>
+    </eb:ItemList>
+    <eb:FooterDescription>Wir danken für Ihren Auftrag.</eb:FooterDescription>
+  </eb:Details>
+  <eb:Tax>
+    <eb:TaxItem>
+      <eb:TaxableAmount>200.00</eb:TaxableAmount>
+      <eb:TaxPercent eb:TaxCategoryCode="S">20</eb:TaxPercent>
+      <eb:TaxAmount>40.00</eb:TaxAmount>
+    </eb:TaxItem>
+  </eb:Tax>
+  <eb:TotalGrossAmount>240.00</eb:TotalGrossAmount>
+  <eb:PrepaidAmount>2</eb:PrepaidAmount>
+  <eb:PayableAmount>238.00</eb:PayableAmount>
+  <eb:PaymentMethod>
+    <eb:UniversalBankTransaction>
+      <eb:BeneficiaryAccount>
+        <eb:BankName>Volksbank Wien</eb:BankName>
+        <eb:BankCode eb:BankCodeType="AT">43000</eb:BankCode>
+        <eb:BankAccountNr>40813033004</eb:BankAccountNr>
+        <eb:BankAccountOwner>Bogad &amp; Partner Consulting OG</eb:BankAccountOwner>
+      </eb:BeneficiaryAccount>
+    </eb:UniversalBankTransaction>
+  </eb:PaymentMethod>
+  <eb:PaymentConditions>
+    <eb:DueDate>2011-09-12</eb:DueDate>
+  </eb:PaymentConditions>
+</eb:Invoice>

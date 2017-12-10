@@ -26,6 +26,7 @@ import org.xml.sax.SAXException;
 import com.helger.commons.io.resource.IReadableResource;
 import com.helger.commons.mock.CommonsTestHelper;
 import com.helger.ebinterface.v50.Ebi50InvoiceType;
+import com.helger.jaxb.validation.LoggingValidationEventHandler;
 import com.helger.xml.serialize.read.DOMReader;
 
 /**
@@ -45,6 +46,7 @@ public final class EbInterface50MarshallerTest
       assertNotNull (aDoc);
 
       final EbInterface50Marshaller aMarshaller = new EbInterface50Marshaller ();
+      aMarshaller.setValidationEventHandlerFactory (m -> new LoggingValidationEventHandler ().andThen (m));
 
       // Convert to domain object
       final Ebi50InvoiceType aInvoice = aMarshaller.read (aDoc);
