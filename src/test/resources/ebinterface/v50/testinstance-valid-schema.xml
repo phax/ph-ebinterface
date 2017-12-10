@@ -29,7 +29,8 @@
   <InvoiceRecipient>
     <VATIdentificationNumber>00000000</VATIdentificationNumber>
     <Address>
-      <Name>Max Mustermann</Name>
+      <Name>Mustermaniac</Name>
+      <TradingName>Max Mustermann GmbH</TradingName>
       <Street>Kundenstrasse 1</Street>
       <Town>Kaufort</Town>
       <ZIP>1234</ZIP>
@@ -38,6 +39,7 @@
     <Contact>
       <Salutation>Firma</Salutation>
       <Name>Max Mustermann</Name>
+      <Email>max@mustermann.at</Email>
     </Contact>
     <BillersInvoiceRecipientID>123123</BillersInvoiceRecipientID>
   </InvoiceRecipient>
@@ -106,8 +108,7 @@
     <UniversalBankTransaction>
       <BeneficiaryAccount>
         <BankName>Volksbank Wien</BankName>
-        <BankCode BankCodeType="AT">43000</BankCode>
-        <BankAccountNr>40813033004</BankAccountNr>
+        <IBAN>AT611904300234573201</IBAN>
         <BankAccountOwner>Bogad &amp; Partner Consulting OG</BankAccountOwner>
       </BeneficiaryAccount>
     </UniversalBankTransaction>
