@@ -12,34 +12,35 @@ Features:
   * Read and write ebInterface 4.1 invoices
   * Read and write ebInterface 4.2 invoices
   * Read and write ebInterface 4.3 invoices
-  * Read and write ebInterface 5.0 invoices
+  * Read and write ebInterface 5.0 (RC) invoices
   * Validate the signature of ebInterface documents
   * Visualize ebInterface documents as HTML documents
   
 # News and noteworthy
-  * v6.0.0 - work in progress
-    * Updated to BouncyCastle 1.58
-    * Updated to ph-commons 9.0.0
-    * Added support for ebInterface 5.0 (when finished)
-  * v5.1.2 - 2017-01-09
-    * Updated to BouncyCastle 1.56
-    * Binds to ph-commons 8.6.0
-  * v5.1.1 - 2016-12-14
-    * Fixed case sensitivity error in a filename
-  * v5.1.0 - 2016-12-13
-    * Added support for ebInterface 4.3
-  * v5.0.1 - 2016-07-15
-    * Using a separate artefact for XMLDSig JAXB artefacts for easier reuse (ph-xsds-xmldsig)
-  * v5.0.0 - 2016-06-11
-    * Requires Java 1.8
-  * v4.0.3 - 2015-11-25
-    * Made the `BIC` element in `SEPADirectDebit` of ebInterface 4.2 optional
-    * update to BouncyCastle 1.54
-  * v4.0.2 - 2015-11-25
-    * Added support for ebInterface 4.2
-  * v4.0.1 - 2015-10-19
-    * update to BouncyCastle 1.53
-  * v4.0.0 - 2015-07-23   
+
+* v6.0.0 - 2018-01-05
+  * Updated to BouncyCastle 1.58
+  * Updated to ph-commons 9.0.0
+  * Added support for ebInterface 5.0 (RC)
+* v5.1.2 - 2017-01-09
+  * Updated to BouncyCastle 1.56
+  * Binds to ph-commons 8.6.0
+* v5.1.1 - 2016-12-14
+  * Fixed case sensitivity error in a filename
+* v5.1.0 - 2016-12-13
+  * Added support for ebInterface 4.3
+* v5.0.1 - 2016-07-15
+  * Using a separate artefact for XMLDSig JAXB artefacts for easier reuse (ph-xsds-xmldsig)
+* v5.0.0 - 2016-06-11
+  * Requires Java 1.8
+* v4.0.3 - 2015-11-25
+  * Made the `BIC` element in `SEPADirectDebit` of ebInterface 4.2 optional
+  * update to BouncyCastle 1.54
+* v4.0.2 - 2015-11-25
+  * Added support for ebInterface 4.2
+* v4.0.1 - 2015-10-19
+  * update to BouncyCastle 1.53
+* v4.0.0 - 2015-07-23   
 
 This library is used by [WWW.E-RECHNUNG.GV.AT](http://www.e-rechnung.gv.at) - the Austrian Government "E-Rechnung an die öffentliche Verwaltung" solution for reading ebInterface files!
 
@@ -48,11 +49,12 @@ The library can e.g. be used in combination with the [E-RECHNUNG.GV.AT Webservic
 This is originally the follow-on project of phloc-ebinterface originally residing on Google Code. 
 
 # Usage with Maven
+
 ```xml
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-ebinterface</artifactId>
-  <version>5.1.2</version>
+  <version>6.0.0</version>
 </dependency>
 ```
 
