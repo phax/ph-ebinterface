@@ -18,6 +18,8 @@ Features:
   
 # News and noteworthy
 
+* v6.0.1 - work in progress
+  * Updated to BouncyCastle 1.59
 * v6.0.0 - 2018-01-05
   * Updated to BouncyCastle 1.58
   * Updated to ph-commons 9.0.0
