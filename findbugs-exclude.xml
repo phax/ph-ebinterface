@@ -33,4 +33,10 @@
   <Match>
     <Package name="com.helger.ebinterface.v42" />
   </Match>
+  <Match>
+    <Package name="com.helger.ebinterface.v43" />
+  </Match>
+  <Match>
+    <Package name="com.helger.ebinterface.v50" />
+  </Match>
 </FindBugsFilter>
