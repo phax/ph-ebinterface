@@ -58,12 +58,12 @@
             <Percentage>0.00</Percentage>
           </ReductionListLineItem>
         </ReductionAndSurchargeListLineItemDetails>
-        <LineItemAmount>200.00</LineItemAmount>
         <TaxItem>
           <TaxableAmount>200.00</TaxableAmount>
           <TaxPercent TaxCategoryCode="S">20</TaxPercent>
           <TaxAmount>40.00</TaxAmount>
         </TaxItem>
+        <LineItemAmount>200.00</LineItemAmount>
       </ListLineItem>
       <ListLineItem>
         <PositionNumber>2</PositionNumber>
@@ -78,13 +78,13 @@
             <Comment>AttributeFormDefault-unqualified</Comment>
           </SurchargeListLineItem>
         </ReductionAndSurchargeListLineItemDetails>
-        <LineItemAmount>370.00</LineItemAmount>
         <TaxItem>
           <TaxableAmount>370.00</TaxableAmount>
           <TaxPercent TaxCategoryCode="E">0</TaxPercent>
           <TaxAmount>0</TaxAmount>
           <Comment>Steuerbefreit auf Grund von UStG §6 (1)</Comment>
         </TaxItem>
+        <LineItemAmount>370.00</LineItemAmount>
       </ListLineItem>
     </ItemList>
     <FooterDescription>Wir danken für Ihren Auftrag.</FooterDescription>

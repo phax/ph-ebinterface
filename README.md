@@ -6,15 +6,15 @@ See [First Steps](https://github.com/phax/ph-ebinterface/wiki/FirstSteps) (Engli
 
 Features:
 
-  * Read and write ebInterface 3.0 invoices
-  * Read and write ebInterface 3.0.2 invoices
-  * Read and write ebInterface 4.0 invoices
-  * Read and write ebInterface 4.1 invoices
-  * Read and write ebInterface 4.2 invoices
-  * Read and write ebInterface 4.3 invoices
-  * Read and write ebInterface 5.0 invoices
-  * Validate the signature of ebInterface documents
-  * Visualize ebInterface documents as HTML documents
+* Read and write ebInterface 3.0 invoices
+* Read and write ebInterface 3.0.2 invoices
+* Read and write ebInterface 4.0 invoices
+* Read and write ebInterface 4.1 invoices
+* Read and write ebInterface 4.2 invoices
+* Read and write ebInterface 4.3 invoices
+* Read and write ebInterface 5.0 invoices
+* Validate the signature of ebInterface documents
+* Visualize ebInterface documents as HTML documents
   
 # News and noteworthy
 
