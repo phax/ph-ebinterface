@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="http://www.ebinterface.at/schema/5p0/"
-           xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="http://www.ebinterface.at/schema/5p0/"
-           elementFormDefault="qualified"
-           attributeFormDefault="unqualified">
+<xs:schema xmlns="http://www.ebinterface.at/schema/5p0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ebinterface.at/schema/5p0/" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xs:annotation>
     <xs:documentation>
-        Schema version: 5.0-RC1
-        Last update: 2017-12-10
-        Documentation: http://www.ebinterface.at/download/documentation/ebInvoice_5p0.pdf
+      Schema version: 5.0-RC1 Last update: 2018-01-22 Documentation: http://www.ebinterface.at/download/documentation/ebInvoice_5p0.pdf
     </xs:documentation>
   </xs:annotation>
   <!-- === Root Element === -->
@@ -48,7 +42,6 @@
   <xs:element name="Description" type="xs:string"/>
   <xs:element name="Details" type="DetailsType"/>
   <xs:element name="Discount" type="DiscountType"/>
-  <xs:element name="DiscountFlag" type="xs:boolean"/>
   <xs:element name="DocumentType" type="DocumentTypeType"/>
   <xs:element name="DueDate" type="xs:date"/>
   <xs:element name="Email" type="xs:string"/>
@@ -143,7 +136,7 @@
       <xs:maxLength value="255"/>
     </xs:restriction>
   </xs:simpleType>
-  <!-- BICs either have 8  or 11 characters (ISO 9362) -->
+  <!-- BICs either have 8 or 11 characters (ISO 9362) -->
   <xs:simpleType name="BICType">
     <xs:restriction base="xs:string">
       <xs:pattern value="[0-9A-Za-z]{8}([0-9A-Za-z]{3})?"/>
@@ -190,8 +183,7 @@
       <xs:enumeration value="SubsequentDebit"/>
     </xs:restriction>
   </xs:simpleType>
-  <!-- ISO 13616 und EBS-Standard (European Banking Standard):
-        max. 34 Stellen, alphanummerisch -->
+  <!-- ISO 13616 und EBS-Standard (European Banking Standard): max. 34 Stellen, alphanummerisch -->
   <xs:simpleType name="IBANType">
     <xs:restriction base="xs:string">
       <xs:maxLength value="34"/>
@@ -278,7 +270,7 @@
       <xs:element ref="Town"/>
       <xs:element ref="ZIP"/>
       <xs:element ref="Country"/>
-      <xs:element ref="Phone" minOccurs="0"/>
+      <xs:element ref="Phone" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element ref="Email" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element ref="AddressExtension" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
@@ -344,6 +336,7 @@
         <xs:element ref="Period"/>
       </xs:choice>
       <xs:element ref="Address" minOccurs="0"/>
+      <xs:element ref="Contact" minOccurs="0"/>
       <xs:element ref="Description" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
@@ -360,6 +353,7 @@
       <xs:element ref="BaseAmount" minOccurs="0"/>
       <xs:element ref="Percentage" minOccurs="0"/>
       <xs:element ref="Amount" minOccurs="0"/>
+      <xs:element ref="Comment" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="FurtherIdentificationType">
@@ -424,15 +418,14 @@
       <xs:element ref="ArticleNumber" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element ref="Quantity"/>
       <xs:element ref="UnitPrice"/>
-      <xs:element ref="DiscountFlag" minOccurs="0"/>
       <xs:element ref="ReductionAndSurchargeListLineItemDetails" minOccurs="0"/>
       <xs:element ref="Delivery" minOccurs="0"/>
       <xs:element ref="BillersOrderReference" minOccurs="0"/>
       <xs:element ref="InvoiceRecipientsOrderReference" minOccurs="0"/>
       <xs:element ref="Classification" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element ref="AdditionalInformation" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element ref="LineItemAmount"/>
       <xs:element ref="TaxItem"/>
+      <xs:element ref="LineItemAmount"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="NoPaymentType">
@@ -579,7 +572,7 @@
       <xs:element ref="TaxPercent"/>
       <xs:element ref="TaxAmount" minOccurs="0"/>
       <xs:element ref="AccountingCurrencyAmount" minOccurs="0"/>
-      <xs:element ref="Comment" minOccurs="0" />
+      <xs:element ref="Comment" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="TaxPercentType">

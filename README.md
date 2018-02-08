@@ -12,7 +12,7 @@ Features:
   * Read and write ebInterface 4.1 invoices
   * Read and write ebInterface 4.2 invoices
   * Read and write ebInterface 4.3 invoices
-  * Read and write ebInterface 5.0 (RC) invoices
+  * Read and write ebInterface 5.0 invoices
   * Validate the signature of ebInterface documents
   * Visualize ebInterface documents as HTML documents
   
@@ -20,6 +20,7 @@ Features:
 
 * v6.0.1 - work in progress
   * Updated to BouncyCastle 1.59
+  * Updated to latest ebInterface 5.0 XSD
 * v6.0.0 - 2018-01-05
   * Updated to BouncyCastle 1.58
   * Updated to ph-commons 9.0.0
