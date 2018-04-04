@@ -18,9 +18,9 @@ Features:
   
 # News and noteworthy
 
-* v6.0.1 - work in progress
+* v6.0.1 - 2018-04-04
   * Updated to BouncyCastle 1.59
-  * Updated to latest ebInterface 5.0 XSD
+  * Updated to final ebInterface 5.0 XSD
 * v6.0.0 - 2018-01-05
   * Updated to BouncyCastle 1.58
   * Updated to ph-commons 9.0.0

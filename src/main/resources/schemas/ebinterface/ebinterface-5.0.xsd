@@ -2,7 +2,7 @@
 <xs:schema xmlns="http://www.ebinterface.at/schema/5p0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ebinterface.at/schema/5p0/" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xs:annotation>
     <xs:documentation>
-      Schema version: 5.0-RC1 Last update: 2018-01-22 Documentation: http://www.ebinterface.at/download/documentation/ebInvoice_5p0.pdf
+      Schema version: 5.0 Last update: 2018-03-22 Documentation: http://www.ebinterface.at/download/documentation/ebInvoice_5p0.pdf
     </xs:documentation>
   </xs:annotation>
   <!-- === Root Element === -->
@@ -265,7 +265,7 @@
       <xs:element ref="AddressIdentifier" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element ref="Name"/>
       <xs:element ref="TradingName" minOccurs="0"/>
-      <xs:element ref="Street"/>
+      <xs:element ref="Street" minOccurs="0"/>
       <xs:element ref="POBox" minOccurs="0"/>
       <xs:element ref="Town"/>
       <xs:element ref="ZIP"/>
