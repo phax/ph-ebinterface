@@ -61,7 +61,7 @@
       <dependency>
         <groupId>com.helger</groupId>
         <artifactId>ph-commons-parent-pom</artifactId>
-        <version>9.1.2-SNAPSHOT</version>
+        <version>9.1.2</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -75,7 +75,7 @@
       <dependency>
         <groupId>com.helger</groupId>
         <artifactId>ph-xmldsig</artifactId>
-        <version>4.0.1-SNAPSHOT</version>
+        <version>4.1.0</version>
       </dependency>
       <dependency>
         <groupId>javax.validation</groupId>
