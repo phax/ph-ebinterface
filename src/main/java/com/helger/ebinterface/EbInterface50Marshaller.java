@@ -50,5 +50,6 @@ public class EbInterface50Marshaller extends GenericJAXBMarshaller <Ebi50Invoice
   public EbInterface50Marshaller (@Nonnull final List <ClassPathResource> aXSDs)
   {
     super (Ebi50InvoiceType.class, aXSDs, o -> new ObjectFactory ().createInvoice (o));
+    setNamespaceContext (EbInterface50NamespaceContext.getInstance ());
   }
 }

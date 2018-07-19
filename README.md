@@ -19,7 +19,9 @@ Features:
 # News and noteworthy
 
 * v6.0.2 - work in progress
-  * Updated to ph-commons 9.1.2
+  * Updated to ph-commons 9.1.3
+  * Added new `EbInterface..NamespaceContext` classes for easy consistent usage.
+  * The marshaller classes, use theses namespace contexts by default
 * v6.0.1 - 2018-04-04
   * Updated to BouncyCastle 1.59
   * Updated to final ebInterface 5.0 XSD
