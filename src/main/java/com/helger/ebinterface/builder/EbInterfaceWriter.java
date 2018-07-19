@@ -19,6 +19,13 @@ package com.helger.ebinterface.builder;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.NotThreadSafe;
 
+import com.helger.ebinterface.EbInterface302NamespaceContext;
+import com.helger.ebinterface.EbInterface30NamespaceContext;
+import com.helger.ebinterface.EbInterface40NamespaceContext;
+import com.helger.ebinterface.EbInterface41NamespaceContext;
+import com.helger.ebinterface.EbInterface42NamespaceContext;
+import com.helger.ebinterface.EbInterface43NamespaceContext;
+import com.helger.ebinterface.EbInterface50NamespaceContext;
 import com.helger.ebinterface.v30.Ebi30InvoiceType;
 import com.helger.ebinterface.v302.Ebi302InvoiceType;
 import com.helger.ebinterface.v40.Ebi40InvoiceType;
@@ -43,7 +50,7 @@ public class EbInterfaceWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, E
   {
     super (eDocType);
 
-    // Create a special namespace context for the passed document type
+    // Create a default namespace context for the passed document type
     final MapBasedNamespaceContext aNSContext = new MapBasedNamespaceContext ();
     aNSContext.setMapping ("eb", m_aDocType.getNamespaceURI ());
     setNamespaceContext (aNSContext);
@@ -77,7 +84,9 @@ public class EbInterfaceWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, E
   @Nonnull
   public static EbInterfaceWriter <Ebi30InvoiceType> ebInterface30 ()
   {
-    return EbInterfaceWriter.create (Ebi30InvoiceType.class);
+    final EbInterfaceWriter <Ebi30InvoiceType> ret = EbInterfaceWriter.create (Ebi30InvoiceType.class);
+    ret.setNamespaceContext (EbInterface30NamespaceContext.getInstance ());
+    return ret;
   }
 
   /**
@@ -88,7 +97,9 @@ public class EbInterfaceWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, E
   @Nonnull
   public static EbInterfaceWriter <Ebi302InvoiceType> ebInterface302 ()
   {
-    return EbInterfaceWriter.create (Ebi302InvoiceType.class);
+    final EbInterfaceWriter <Ebi302InvoiceType> ret = EbInterfaceWriter.create (Ebi302InvoiceType.class);
+    ret.setNamespaceContext (EbInterface302NamespaceContext.getInstance ());
+    return ret;
   }
 
   /**
@@ -99,7 +110,9 @@ public class EbInterfaceWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, E
   @Nonnull
   public static EbInterfaceWriter <Ebi40InvoiceType> ebInterface40 ()
   {
-    return EbInterfaceWriter.create (Ebi40InvoiceType.class);
+    final EbInterfaceWriter <Ebi40InvoiceType> ret = EbInterfaceWriter.create (Ebi40InvoiceType.class);
+    ret.setNamespaceContext (EbInterface40NamespaceContext.getInstance ());
+    return ret;
   }
 
   /**
@@ -110,7 +123,9 @@ public class EbInterfaceWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, E
   @Nonnull
   public static EbInterfaceWriter <Ebi41InvoiceType> ebInterface41 ()
   {
-    return EbInterfaceWriter.create (Ebi41InvoiceType.class);
+    final EbInterfaceWriter <Ebi41InvoiceType> ret = EbInterfaceWriter.create (Ebi41InvoiceType.class);
+    ret.setNamespaceContext (EbInterface41NamespaceContext.getInstance ());
+    return ret;
   }
 
   /**
@@ -121,7 +136,9 @@ public class EbInterfaceWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, E
   @Nonnull
   public static EbInterfaceWriter <Ebi42InvoiceType> ebInterface42 ()
   {
-    return EbInterfaceWriter.create (Ebi42InvoiceType.class);
+    final EbInterfaceWriter <Ebi42InvoiceType> ret = EbInterfaceWriter.create (Ebi42InvoiceType.class);
+    ret.setNamespaceContext (EbInterface42NamespaceContext.getInstance ());
+    return ret;
   }
 
   /**
@@ -132,7 +149,9 @@ public class EbInterfaceWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, E
   @Nonnull
   public static EbInterfaceWriter <Ebi43InvoiceType> ebInterface43 ()
   {
-    return EbInterfaceWriter.create (Ebi43InvoiceType.class);
+    final EbInterfaceWriter <Ebi43InvoiceType> ret = EbInterfaceWriter.create (Ebi43InvoiceType.class);
+    ret.setNamespaceContext (EbInterface43NamespaceContext.getInstance ());
+    return ret;
   }
 
   /**
@@ -143,6 +162,8 @@ public class EbInterfaceWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, E
   @Nonnull
   public static EbInterfaceWriter <Ebi50InvoiceType> ebInterface50 ()
   {
-    return EbInterfaceWriter.create (Ebi50InvoiceType.class);
+    final EbInterfaceWriter <Ebi50InvoiceType> ret = EbInterfaceWriter.create (Ebi50InvoiceType.class);
+    ret.setNamespaceContext (EbInterface50NamespaceContext.getInstance ());
+    return ret;
   }
 }

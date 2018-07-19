@@ -20,6 +20,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -42,6 +44,8 @@ import com.helger.xml.serialize.read.DOMReader;
  */
 public final class EbInterfaceReaderTest
 {
+  private static final Logger LOGGER = LoggerFactory.getLogger (EbInterfaceReaderTest.class);
+
   @Test
   public void testReadEbi30 () throws SAXException
   {
@@ -77,7 +81,7 @@ public final class EbInterfaceReaderTest
     for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V302.getTestResources ())
     {
       if (true)
-        System.out.println (aExampleFile.getPath ());
+        LOGGER.info (aExampleFile.getPath ());
 
       // Read from file as XML
       final Document aDoc = DOMReader.readXMLDOM (aExampleFile);
