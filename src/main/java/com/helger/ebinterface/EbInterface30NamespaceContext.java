@@ -21,7 +21,6 @@ import javax.xml.crypto.dsig.XMLSignature;
 
 import com.helger.commons.annotation.Singleton;
 import com.helger.xml.namespace.MapBasedNamespaceContext;
-import com.helger.xmldsig.XMLDSigCreator;
 
 /**
  * The namespace context to be used as the namespace prefix mapper.
@@ -39,7 +38,7 @@ public class EbInterface30NamespaceContext extends MapBasedNamespaceContext
   protected EbInterface30NamespaceContext ()
   {
     addMapping ("eb", CEbInterface.EBINTERFACE_30_NS);
-    addMapping (XMLDSigCreator.DEFAULT_NS_PREFIX, XMLSignature.XMLNS);
+    addMapping ("dsig", XMLSignature.XMLNS);
   }
 
   @Nonnull
