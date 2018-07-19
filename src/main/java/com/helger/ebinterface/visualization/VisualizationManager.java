@@ -54,7 +54,7 @@ import com.helger.xml.transform.XMLTransformerFactory;
 @ThreadSafe
 public final class VisualizationManager
 {
-  private static final Logger s_aLogger = LoggerFactory.getLogger (VisualizationManager.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger (VisualizationManager.class);
   private static final SimpleReadWriteLock s_aRWLock = new SimpleReadWriteLock ();
   // Map<NamespaceURI, Templates>
   @GuardedBy ("s_aRWLock")
@@ -89,10 +89,10 @@ public final class VisualizationManager
         final IReadableResource aXSLTRes = eVersion.getXSLTResource ();
         ret2 = XMLTransformerFactory.newTemplates (aXSLTRes);
         if (ret2 == null)
-          s_aLogger.error ("Failed to parse XSLT template " + aXSLTRes);
+          LOGGER.error ("Failed to parse XSLT template " + aXSLTRes);
         else
-          if (s_aLogger.isDebugEnabled ())
-            s_aLogger.debug ("Compiled XSLT template " + aXSLTRes);
+          if (LOGGER.isDebugEnabled ())
+            LOGGER.debug ("Compiled XSLT template " + aXSLTRes);
         s_aTemplates.put (sNamespaceURI, ret2);
       }
       return ret2;
@@ -132,7 +132,7 @@ public final class VisualizationManager
     }
     catch (final TransformerException ex)
     {
-      s_aLogger.error ("Failed to apply transformation for ebInterface " + eVersion + " invoice", ex);
+      LOGGER.error ("Failed to apply transformation for ebInterface " + eVersion + " invoice", ex);
       return ESuccess.FAILURE;
     }
   }

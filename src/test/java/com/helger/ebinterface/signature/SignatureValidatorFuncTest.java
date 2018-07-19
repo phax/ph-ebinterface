@@ -43,7 +43,7 @@ import com.helger.xmldsig.XMLDSigValidator;
  */
 public final class SignatureValidatorFuncTest
 {
-  private static final Logger s_aLogger = LoggerFactory.getLogger (SignatureValidatorFuncTest.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger (SignatureValidatorFuncTest.class);
 
   @Ignore
   @Test
@@ -86,7 +86,7 @@ public final class SignatureValidatorFuncTest
                                               // "ebinterface/v40/ebinterface4-signed.xml",
                                               "ebinterface/v40/Rechnung-R_00156_3_00.xml" })
     {
-      s_aLogger.info (sPath);
+      LOGGER.info (sPath);
 
       // Read document
       final Document aDoc = DOMReader.readXMLDOM (new ClassPathResource (sPath));
