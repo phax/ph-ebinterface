@@ -18,6 +18,7 @@ package com.helger.ebinterface.signature;
 
 import static org.junit.Assert.assertNotNull;
 
+import java.io.File;
 import java.security.KeyPair;
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
@@ -33,6 +34,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
 import com.helger.commons.ValueEnforcer;
+import com.helger.commons.io.file.SimpleFileIO;
 import com.helger.commons.io.resource.FileSystemResource;
 import com.helger.ebinterface.EbInterface43NamespaceContext;
 import com.helger.ebinterface.builder.EbInterfaceReader;
@@ -105,9 +107,10 @@ public final class SignatureCreationFuncTest
 
     new Ebi43Signer ().signEbInterface (aRootKey.getPrivate (), aRootCert, aDoc);
 
-    if (LOGGER.isInfoEnabled ())
-      LOGGER.info (XMLWriter.getNodeAsString (aDoc,
-                                              new XMLWriterSettings ().setNamespaceContext (EbInterface43NamespaceContext.getInstance ())));
+    if (false)
+      SimpleFileIO.writeFile (new File ("ebi43-signed-ft.xml"),
+                              XMLWriter.getNodeAsBytes (aDoc,
+                                                        new XMLWriterSettings ().setNamespaceContext (EbInterface43NamespaceContext.getInstance ())));
 
     // Now check if the Ebi is still valid
     final Ebi43InvoiceType aSignedInvoice = EbInterfaceReader.ebInterface43 ().read (aDoc);
