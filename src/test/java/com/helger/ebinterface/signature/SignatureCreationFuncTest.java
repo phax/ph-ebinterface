@@ -107,6 +107,8 @@ public final class SignatureCreationFuncTest
 
     new Ebi43Signer ().signEbInterface (aRootKey.getPrivate (), aRootCert, aDoc);
 
+    LOGGER.info ("Created signed ebi 4.3 file");
+
     if (false)
       SimpleFileIO.writeFile (new File ("ebi43-signed-ft.xml"),
                               XMLWriter.getNodeAsBytes (aDoc,
