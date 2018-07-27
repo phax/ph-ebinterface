@@ -18,9 +18,9 @@ Features:
   
 # News and noteworthy
 
-* v6.0.2 - work in progress
+* v6.0.2 - 2018-07-27
   * Requires ph-commons 9.1.3
-  * Added new `EbInterface..NamespaceContext` classes for easy consistent usage.
+  * Added new `EbInterfaceXXNamespaceContext` classes for easy consistent usage.
   * The marshaller classes, use theses namespace contexts by default
 * v6.0.1 - 2018-04-04
   * Updated to BouncyCastle 1.59
@@ -61,7 +61,7 @@ This is originally the follow-on project of phloc-ebinterface originally residin
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-ebinterface</artifactId>
-  <version>6.0.1</version>
+  <version>6.0.2</version>
 </dependency>
 ```
 
