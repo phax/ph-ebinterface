@@ -26,6 +26,7 @@ import com.helger.commons.annotation.PresentForCodeCoverage;
 import com.helger.commons.collection.impl.CommonsArrayList;
 import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.commons.io.resource.IReadableResource;
+import com.helger.xsds.xmldsig.CXMLDSig;
 
 /**
  * Contains all the constants for ebInterface handling.
@@ -41,25 +42,21 @@ public final class CEbInterface
     return CEbInterface.class.getClassLoader ();
   }
 
-  /** XML Schema resource for XMLDSig */
-  public static final ClassPathResource XSD_XMLDSIG_RESOURCE = new ClassPathResource ("/schemas/xmldsig-core-schema.xsd",
-                                                                                      _getCL ());
-
   /** XML Schema resources for ebInterface 3.0 */
   @CodingStyleguideUnaware
-  public static final List <ClassPathResource> EBINTERFACE_30_XSDS = new CommonsArrayList <> (XSD_XMLDSIG_RESOURCE,
+  public static final List <ClassPathResource> EBINTERFACE_30_XSDS = new CommonsArrayList <> (CXMLDSig.getXSDResource (),
                                                                                               new ClassPathResource ("/schemas/ebinterface/ebinterface-3.0.xsd",
                                                                                                                      _getCL ())).getAsUnmodifiable ();
 
   /** XML Schema resources for ebInterface 3.0.2 */
   @CodingStyleguideUnaware
-  public static final List <ClassPathResource> EBINTERFACE_302_XSDS = new CommonsArrayList <> (XSD_XMLDSIG_RESOURCE,
+  public static final List <ClassPathResource> EBINTERFACE_302_XSDS = new CommonsArrayList <> (CXMLDSig.getXSDResource (),
                                                                                                new ClassPathResource ("/schemas/ebinterface/ebinterface-3.0.2.xsd",
                                                                                                                       _getCL ())).getAsUnmodifiable ();
 
   /** XML Schema resources for ebInterface 4.0 */
   @CodingStyleguideUnaware
-  public static final List <ClassPathResource> EBINTERFACE_40_XSDS = new CommonsArrayList <> (XSD_XMLDSIG_RESOURCE,
+  public static final List <ClassPathResource> EBINTERFACE_40_XSDS = new CommonsArrayList <> (CXMLDSig.getXSDResource (),
                                                                                               new ClassPathResource ("/schemas/ebinterface/ebInterfaceExtension-4.0.xsd",
                                                                                                                      _getCL ()),
                                                                                               new ClassPathResource ("/schemas/ebinterface/ext40/ebInterfaceExtension_SV.xsd",
@@ -69,7 +66,7 @@ public final class CEbInterface
 
   /** XML Schema resources for ebInterface 4.1 */
   @CodingStyleguideUnaware
-  public static final List <ClassPathResource> EBINTERFACE_41_XSDS = new CommonsArrayList <> (XSD_XMLDSIG_RESOURCE,
+  public static final List <ClassPathResource> EBINTERFACE_41_XSDS = new CommonsArrayList <> (CXMLDSig.getXSDResource (),
                                                                                               new ClassPathResource ("/schemas/ebinterface/ebInterfaceExtension-4.1.xsd",
                                                                                                                      _getCL ()),
                                                                                               new ClassPathResource ("/schemas/ebinterface/ext41/ebInterfaceExtension_SV.xsd",
@@ -79,7 +76,7 @@ public final class CEbInterface
 
   /** XML Schema resources for ebInterface 4.2 */
   @CodingStyleguideUnaware
-  public static final List <ClassPathResource> EBINTERFACE_42_XSDS = new CommonsArrayList <> (XSD_XMLDSIG_RESOURCE,
+  public static final List <ClassPathResource> EBINTERFACE_42_XSDS = new CommonsArrayList <> (CXMLDSig.getXSDResource (),
                                                                                               new ClassPathResource ("/schemas/ebinterface/ebInterfaceExtension-4.2.xsd",
                                                                                                                      _getCL ()),
                                                                                               new ClassPathResource ("/schemas/ebinterface/ext42/ebInterfaceExtension_SV.xsd",
@@ -89,7 +86,7 @@ public final class CEbInterface
 
   /** XML Schema resources for ebInterface 4.3 */
   @CodingStyleguideUnaware
-  public static final List <ClassPathResource> EBINTERFACE_43_XSDS = new CommonsArrayList <> (XSD_XMLDSIG_RESOURCE,
+  public static final List <ClassPathResource> EBINTERFACE_43_XSDS = new CommonsArrayList <> (CXMLDSig.getXSDResource (),
                                                                                               new ClassPathResource ("/schemas/ebinterface/ebInterfaceExtension-4.3.xsd",
                                                                                                                      _getCL ()),
                                                                                               new ClassPathResource ("/schemas/ebinterface/ext43/ebInterfaceExtension_SV.xsd",
