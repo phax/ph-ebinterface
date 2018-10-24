@@ -144,6 +144,10 @@ public final class CEbInterface
   public static final IReadableResource EBINTERFACE_43_XSLT = new ClassPathResource ("/visualization/ebInterface-4.3.xslt",
                                                                                      _getCL ());
 
+  /** Stylesheet resource for ebInterface 5.0 */
+  public static final IReadableResource EBINTERFACE_50_XSLT = new ClassPathResource ("/visualization/ebInterface-5.0.xslt",
+                                                                                     _getCL ());
+
   @PresentForCodeCoverage
   private static final CEbInterface s_aInstance = new CEbInterface ();
 

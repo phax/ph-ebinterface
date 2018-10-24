@@ -20,6 +20,7 @@ Features:
 
 * v6.1.0 - work in progress
     * Requires ph-commons 9.2.0
+    * Added ebInterface 5.0 visualization XSLT
 * v6.0.2 - 2018-07-27
     * Requires ph-commons 9.1.3
     * Added new `EbInterfaceXXNamespaceContext` classes for easy consistent usage.
