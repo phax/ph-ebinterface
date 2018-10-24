@@ -112,27 +112,8 @@ public final class EbInterfaceDocumentTypes
   @Nullable
   public static Schema getSchemaOfNamespace (@Nullable final String sNamespace)
   {
-    return getSchemaOfNamespace (sNamespace, (ClassLoader) null);
-  }
-
-  /**
-   * Get the XSD Schema object for the ebInterface document type of the passed
-   * namespace.
-   *
-   * @param sNamespace
-   *        The namespace URI of any ebInterface document type. May be
-   *        <code>null</code>.
-   * @param aClassLoader
-   *        The class loader to be used. May be <code>null</code> indicating
-   *        that the default class loader should be used.
-   * @return <code>null</code> if no such ebInterface document type exists.
-   */
-  @Nullable
-  public static Schema getSchemaOfNamespace (@Nullable final String sNamespace,
-                                             @Nullable final ClassLoader aClassLoader)
-  {
     final EEbInterfaceDocumentType eDocType = getDocumentTypeOfNamespace (sNamespace);
-    return eDocType == null ? null : eDocType.getSchema (aClassLoader);
+    return eDocType == null ? null : eDocType.getSchema ();
   }
 
   /**
@@ -165,26 +146,7 @@ public final class EbInterfaceDocumentTypes
   @Nullable
   public static Schema getSchemaOfImplementationClass (@Nullable final Class <?> aImplClass)
   {
-    return getSchemaOfImplementationClass (aImplClass, (ClassLoader) null);
-  }
-
-  /**
-   * Get the XSD Schema object for the ebInterface document type of the passed
-   * implementation class.
-   *
-   * @param aImplClass
-   *        The implementation class of any ebInterface document type. May be
-   *        <code>null</code>.
-   * @param aClassLoader
-   *        The class loader to be used. May be <code>null</code> indicating
-   *        that the default class loader should be used.
-   * @return <code>null</code> if no such ebInterface document type exists.
-   */
-  @Nullable
-  public static Schema getSchemaOfImplementationClass (@Nullable final Class <?> aImplClass,
-                                                       @Nullable final ClassLoader aClassLoader)
-  {
     final EEbInterfaceDocumentType eDocType = getDocumentTypeOfImplementationClass (aImplClass);
-    return eDocType == null ? null : eDocType.getSchema (aClassLoader);
+    return eDocType == null ? null : eDocType.getSchema ();
   }
 }

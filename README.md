@@ -18,35 +18,37 @@ Features:
   
 # News and noteworthy
 
+* v6.1.0 - work in progress
+    * Requires ph-commons 9.2.0
 * v6.0.2 - 2018-07-27
-  * Requires ph-commons 9.1.3
-  * Added new `EbInterfaceXXNamespaceContext` classes for easy consistent usage.
-  * The marshaller classes, use theses namespace contexts by default
+    * Requires ph-commons 9.1.3
+    * Added new `EbInterfaceXXNamespaceContext` classes for easy consistent usage.
+    * The marshaller classes, use theses namespace contexts by default
 * v6.0.1 - 2018-04-04
-  * Updated to BouncyCastle 1.59
-  * Updated to final ebInterface 5.0 XSD
+    * Updated to BouncyCastle 1.59
+    * Updated to final ebInterface 5.0 XSD
 * v6.0.0 - 2018-01-05
-  * Updated to BouncyCastle 1.58
-  * Updated to ph-commons 9.0.0
-  * Added support for ebInterface 5.0 (RC)
+    * Updated to BouncyCastle 1.58
+    * Updated to ph-commons 9.0.0
+    * Added support for ebInterface 5.0 (RC)
 * v5.1.2 - 2017-01-09
-  * Updated to BouncyCastle 1.56
-  * Binds to ph-commons 8.6.0
+    * Updated to BouncyCastle 1.56
+    * Binds to ph-commons 8.6.0
 * v5.1.1 - 2016-12-14
-  * Fixed case sensitivity error in a filename
+    * Fixed case sensitivity error in a filename
 * v5.1.0 - 2016-12-13
-  * Added support for ebInterface 4.3
+    * Added support for ebInterface 4.3
 * v5.0.1 - 2016-07-15
-  * Using a separate artefact for XMLDSig JAXB artefacts for easier reuse (ph-xsds-xmldsig)
+    * Using a separate artefact for XMLDSig JAXB artefacts for easier reuse (ph-xsds-xmldsig)
 * v5.0.0 - 2016-06-11
-  * Requires Java 1.8
+    * Requires Java 1.8
 * v4.0.3 - 2015-11-25
-  * Made the `BIC` element in `SEPADirectDebit` of ebInterface 4.2 optional
-  * update to BouncyCastle 1.54
+    * Made the `BIC` element in `SEPADirectDebit` of ebInterface 4.2 optional
+    * update to BouncyCastle 1.54
 * v4.0.2 - 2015-11-25
-  * Added support for ebInterface 4.2
+    * Added support for ebInterface 4.2
 * v4.0.1 - 2015-10-19
-  * update to BouncyCastle 1.53
+    * update to BouncyCastle 1.53
 * v4.0.0 - 2015-07-23   
 
 This library is used by [WWW.E-RECHNUNG.GV.AT](http://www.e-rechnung.gv.at) - the Austrian Government "E-Rechnung an die öffentliche Verwaltung" solution for reading ebInterface files!
