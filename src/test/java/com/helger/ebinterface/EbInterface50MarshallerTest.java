@@ -31,6 +31,7 @@ import com.helger.commons.mock.CommonsTestHelper;
 import com.helger.ebinterface.builder.EbInterfaceWriter;
 import com.helger.ebinterface.v50.Ebi50InvoiceType;
 import com.helger.ebinterface.v50.Ebi50ItemListType;
+import com.helger.ebinterface.v50.Ebi50ListLineItemType;
 import com.helger.jaxb.validation.LoggingValidationEventHandler;
 import com.helger.xml.serialize.read.DOMReader;
 
@@ -90,7 +91,29 @@ public final class EbInterface50MarshallerTest
         assertTrue (EqualsHelper.equals (aItemList.getFooterDescription (), aItemList2.getFooterDescription ()));
         assertTrue (EqualsHelper.equals (aItemList.getHeaderDescription (), aItemList2.getHeaderDescription ()));
         assertEquals (aItemList.getListLineItemCount (), aItemList2.getListLineItemCount ());
-        assertTrue (EqualsHelper.equals (aItemList.getListLineItem (), aItemList2.getListLineItem ()));
+        for (int j = 0; j < aItemList.getListLineItemCount (); ++j)
+        {
+          final Ebi50ListLineItemType aItem = aItemList.getListLineItemAtIndex (j);
+          final Ebi50ListLineItemType aItem2 = aItemList2.getListLineItemAtIndex (j);
+          assertTrue (EqualsHelper.equals (aItem.getAdditionalInformation (), aItem2.getAdditionalInformation ()));
+          assertTrue (EqualsHelper.equals (aItem.getArticleNumber (), aItem2.getArticleNumber ()));
+          assertTrue (EqualsHelper.equals (aItem.getBillersOrderReference (), aItem2.getBillersOrderReference ()));
+          assertTrue (EqualsHelper.equals (aItem.getClassification (), aItem2.getClassification ()));
+          assertTrue (EqualsHelper.equals (aItem.getDelivery (), aItem2.getDelivery ()));
+          assertTrue (EqualsHelper.equals (aItem.getDescription (), aItem2.getDescription ()));
+          assertTrue (EqualsHelper.equals (aItem.getInvoiceRecipientsOrderReference (),
+                                           aItem2.getInvoiceRecipientsOrderReference ()));
+          assertTrue (EqualsHelper.equals (aItem.getLineItemAmount (), aItem2.getLineItemAmount ()));
+          assertTrue (EqualsHelper.equals (aItem.getPositionNumber (), aItem2.getPositionNumber ()));
+          assertTrue (EqualsHelper.equals (aItem.getQuantity (), aItem2.getQuantity ()));
+          assertTrue (EqualsHelper.equals (aItem.getReductionAndSurchargeListLineItemDetails (),
+                                           aItem2.getReductionAndSurchargeListLineItemDetails ()));
+          assertTrue (EqualsHelper.equals (aItem.getTaxItem (), aItem2.getTaxItem ()));
+          assertTrue (EqualsHelper.equals (aItem.getUnitPrice (), aItem2.getUnitPrice ()));
+          assertEquals (aItem, aItem);
+        }
+        assertEquals (aItemList.getListLineItem (), aItemList2.getListLineItem ());
+        assertEquals (aItemList, aItemList2);
       }
       assertTrue (EqualsHelper.equals (aInvoice.getDetails ().getItemList (), aInvoice2.getDetails ().getItemList ()));
       assertTrue (EqualsHelper.equals (aInvoice.getDetails (), aInvoice2.getDetails ()));
