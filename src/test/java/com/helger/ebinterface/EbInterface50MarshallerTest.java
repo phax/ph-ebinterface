@@ -21,6 +21,10 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import java.util.List;
+
+import javax.xml.bind.JAXBElement;
+
 import org.junit.Test;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
@@ -106,6 +110,16 @@ public final class EbInterface50MarshallerTest
           assertTrue (EqualsHelper.equals (aItem.getLineItemAmount (), aItem2.getLineItemAmount ()));
           assertTrue (EqualsHelper.equals (aItem.getPositionNumber (), aItem2.getPositionNumber ()));
           assertTrue (EqualsHelper.equals (aItem.getQuantity (), aItem2.getQuantity ()));
+          final List <JAXBElement <?>> aRSLL = aItem.getReductionAndSurchargeListLineItemDetails ()
+                                                    .getReductionListLineItemOrSurchargeListLineItemOrOtherVATableTaxListLineItem ();
+          final List <JAXBElement <?>> aRSLL2 = aItem2.getReductionAndSurchargeListLineItemDetails ()
+                                                      .getReductionListLineItemOrSurchargeListLineItemOrOtherVATableTaxListLineItem ();
+          assertEquals (aRSLL.size (), aRSLL2.size ());
+          for (int k = 0; k < aRSLL.size (); ++k)
+          {
+            assertTrue (aRSLL.get (k) + "\nvs.\n" + aRSLL2.get (k),
+                        EqualsHelper.equals (aRSLL.get (k), aRSLL2.get (k)));
+          }
           assertTrue (EqualsHelper.equals (aItem.getReductionAndSurchargeListLineItemDetails (),
                                            aItem2.getReductionAndSurchargeListLineItemDetails ()));
           assertTrue (EqualsHelper.equals (aItem.getTaxItem (), aItem2.getTaxItem ()));
