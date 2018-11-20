@@ -121,6 +121,7 @@ public final class EbInterface50MarshallerTest
             assertTrue (aRSLL.get (k) + "\nvs.\n" + aRSLL2.get (k),
                         EqualsHelper.equals (aRSLL.get (k), aRSLL2.get (k)));
           }
+          assertEquals (aRSLL.getClass (), aRSLL2.getClass ());
           assertTrue (EqualsHelper.equalsCollection (aRSLL, aRSLL2));
           assertTrue (EqualsHelper.equals (aRSLL, aRSLL2));
           assertEquals (aItem.getReductionAndSurchargeListLineItemDetails ().getClass (),
