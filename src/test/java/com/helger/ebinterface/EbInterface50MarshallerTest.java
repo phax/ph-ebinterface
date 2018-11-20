@@ -55,7 +55,6 @@ public final class EbInterface50MarshallerTest
       // Convert to domain object
       final Ebi50InvoiceType aInvoice = aMarshaller.read (aDoc);
       assertNotNull (aExampleFile.getPath (), aInvoice);
-      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice.clone ());
 
       // Convert again to XML document
       final Document aDoc2 = aMarshaller.getAsDocument (aInvoice);
@@ -66,7 +65,6 @@ public final class EbInterface50MarshallerTest
       // Convert to domain object again
       final Ebi50InvoiceType aInvoice2 = aMarshaller.read (aDoc2);
       assertNotNull (aExampleFile.getPath (), aInvoice2);
-      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice2, aInvoice2.clone ());
 
       // Find the issue
       assertTrue (EqualsHelper.equals (aInvoice.getInvoiceNumber (), aInvoice2.getInvoiceNumber ()));
@@ -99,6 +97,8 @@ public final class EbInterface50MarshallerTest
       assertTrue (EqualsHelper.equals (aInvoice.isIsDuplicate (), aInvoice2.isIsDuplicate ()));
 
       // Must be equals
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice.clone ());
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice2, aInvoice2.clone ());
       assertEquals (EbInterfaceWriter.ebInterface50 ().getAsString (aInvoice),
                     EbInterfaceWriter.ebInterface50 ().getAsString (aInvoice2));
       CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
