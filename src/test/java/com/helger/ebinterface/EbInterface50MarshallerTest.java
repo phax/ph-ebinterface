@@ -117,9 +117,11 @@ public final class EbInterface50MarshallerTest
           assertEquals (aRSLL.size (), aRSLL2.size ());
           for (int k = 0; k < aRSLL.size (); ++k)
           {
+            // JAXBElement does not implement equals!
             assertTrue (aRSLL.get (k) + "\nvs.\n" + aRSLL2.get (k),
                         EqualsHelper.equals (aRSLL.get (k), aRSLL2.get (k)));
           }
+          assertTrue (EqualsHelper.equalsCollection (aRSLL, aRSLL2));
           assertTrue (EqualsHelper.equals (aRSLL, aRSLL2));
           assertEquals (aItem.getReductionAndSurchargeListLineItemDetails ().getClass (),
                         aItem2.getReductionAndSurchargeListLineItemDetails ().getClass ());
