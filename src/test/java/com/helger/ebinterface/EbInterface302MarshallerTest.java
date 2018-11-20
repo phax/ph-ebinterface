@@ -16,6 +16,7 @@
  */
 package com.helger.ebinterface;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
 
@@ -25,6 +26,7 @@ import org.xml.sax.SAXException;
 
 import com.helger.commons.io.resource.IReadableResource;
 import com.helger.commons.mock.CommonsTestHelper;
+import com.helger.ebinterface.builder.EbInterfaceWriter;
 import com.helger.ebinterface.v302.Ebi302InvoiceType;
 import com.helger.xml.serialize.read.DOMReader;
 
@@ -60,8 +62,11 @@ public final class EbInterface302MarshallerTest
       // Convert to domain object again
       final Ebi302InvoiceType aInvoice2 = aMarshaller.read (aDoc2);
       assertNotNull (aExampleFile.getPath (), aInvoice2);
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice2, aInvoice2.clone ());
 
       // Must be equals
+      assertEquals (EbInterfaceWriter.ebInterface302 ().getAsString (aInvoice),
+                    EbInterfaceWriter.ebInterface302 ().getAsString (aInvoice2));
       CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
     }
   }
