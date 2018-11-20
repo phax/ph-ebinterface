@@ -51,6 +51,7 @@ public final class EbInterface41MarshallerTest
       // Convert to domain object
       final Ebi41InvoiceType aInvoice = aMarshaller.read (aDoc);
       assertNotNull (aExampleFile.getPath (), aInvoice);
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice.clone ());
 
       // Convert again to XML document
       final Document aDoc2 = aMarshaller.getAsDocument (aInvoice);
@@ -64,7 +65,6 @@ public final class EbInterface41MarshallerTest
 
       // Must be equals
       CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
-      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice.clone ());
     }
   }
 

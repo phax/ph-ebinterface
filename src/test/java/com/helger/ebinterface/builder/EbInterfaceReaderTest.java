@@ -16,6 +16,7 @@
  */
 package com.helger.ebinterface.builder;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
 
@@ -59,6 +60,7 @@ public final class EbInterfaceReaderTest
       // Convert to domain object
       final Ebi30InvoiceType aInvoice = EbInterfaceReader.ebInterface30 ().read (aDoc);
       assertNotNull (aExampleFile.getPath (), aInvoice);
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice.clone ());
 
       // Convert again to XML document
       final Document aDoc2 = EbInterfaceWriter.ebInterface30 ().getAsDocument (aInvoice);
@@ -71,8 +73,9 @@ public final class EbInterfaceReaderTest
       assertNotNull (aExampleFile.getPath (), aInvoice2);
 
       // Must be equals
+      assertEquals (EbInterfaceWriter.ebInterface30 ().getAsString (aInvoice),
+                    EbInterfaceWriter.ebInterface30 ().getAsString (aInvoice2));
       CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
-      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice.clone ());
     }
   }
 
@@ -102,6 +105,7 @@ public final class EbInterfaceReaderTest
       // Convert to domain object again
       final Ebi302InvoiceType aInvoice2 = EbInterfaceReader.ebInterface302 ().read (aDoc2);
       assertNotNull (aExampleFile.getPath (), aInvoice2);
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice2, aInvoice2.clone ());
 
       // Must be equals
       CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
@@ -131,6 +135,7 @@ public final class EbInterfaceReaderTest
       // Convert to domain object again
       final Ebi40InvoiceType aInvoice2 = EbInterfaceReader.ebInterface40 ().read (aDoc2);
       assertNotNull (aExampleFile.getPath (), aInvoice2);
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice2, aInvoice2.clone ());
 
       // Must be equals
       CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
@@ -160,6 +165,7 @@ public final class EbInterfaceReaderTest
       // Convert to domain object again
       final Ebi41InvoiceType aInvoice2 = EbInterfaceReader.ebInterface41 ().read (aDoc2);
       assertNotNull (aExampleFile.getPath (), aInvoice2);
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice2, aInvoice2.clone ());
 
       // Must be equals
       CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
@@ -189,6 +195,7 @@ public final class EbInterfaceReaderTest
       // Convert to domain object again
       final Ebi42InvoiceType aInvoice2 = EbInterfaceReader.ebInterface42 ().read (aDoc2);
       assertNotNull (aExampleFile.getPath (), aInvoice2);
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice2, aInvoice2.clone ());
 
       // Must be equals
       CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
@@ -218,6 +225,7 @@ public final class EbInterfaceReaderTest
       // Convert to domain object again
       final Ebi43InvoiceType aInvoice2 = EbInterfaceReader.ebInterface43 ().read (aDoc2);
       assertNotNull (aExampleFile.getPath (), aInvoice2);
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice2, aInvoice2.clone ());
 
       // Must be equals
       CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
@@ -247,6 +255,7 @@ public final class EbInterfaceReaderTest
       // Convert to domain object again
       final Ebi50InvoiceType aInvoice2 = EbInterfaceReader.ebInterface50 ().read (aDoc2);
       assertNotNull (aExampleFile.getPath (), aInvoice2);
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice2, aInvoice2.clone ());
 
       // Must be equals
       CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
