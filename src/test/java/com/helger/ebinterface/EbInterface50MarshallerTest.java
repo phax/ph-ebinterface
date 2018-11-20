@@ -123,7 +123,7 @@ public final class EbInterface50MarshallerTest
           }
           assertEquals (aRSLL.getClass (), aRSLL2.getClass ());
           assertTrue (EqualsHelper.equalsCollection (aRSLL, aRSLL2));
-          assertTrue (EqualsHelper.equals (aRSLL, aRSLL2));
+          assertTrue ("Error when queue has " + aRSLL.size () + " elements", EqualsHelper.equals (aRSLL, aRSLL2));
           assertEquals (aItem.getReductionAndSurchargeListLineItemDetails ().getClass (),
                         aItem2.getReductionAndSurchargeListLineItemDetails ().getClass ());
           assertEquals (aItem.getReductionAndSurchargeListLineItemDetails (),
