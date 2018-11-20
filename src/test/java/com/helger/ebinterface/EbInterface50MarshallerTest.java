@@ -30,6 +30,7 @@ import com.helger.commons.io.resource.IReadableResource;
 import com.helger.commons.mock.CommonsTestHelper;
 import com.helger.ebinterface.builder.EbInterfaceWriter;
 import com.helger.ebinterface.v50.Ebi50InvoiceType;
+import com.helger.ebinterface.v50.Ebi50ItemListType;
 import com.helger.jaxb.validation.LoggingValidationEventHandler;
 import com.helger.xml.serialize.read.DOMReader;
 
@@ -77,6 +78,21 @@ public final class EbInterface50MarshallerTest
       assertTrue (EqualsHelper.equals (aInvoice.getBiller (), aInvoice2.getBiller ()));
       assertTrue (EqualsHelper.equals (aInvoice.getInvoiceRecipient (), aInvoice2.getInvoiceRecipient ()));
       assertTrue (EqualsHelper.equals (aInvoice.getOrderingParty (), aInvoice2.getOrderingParty ()));
+      assertTrue (EqualsHelper.equals (aInvoice.getDetails ().getFooterDescription (),
+                                       aInvoice2.getDetails ().getFooterDescription ()));
+      assertTrue (EqualsHelper.equals (aInvoice.getDetails ().getHeaderDescription (),
+                                       aInvoice2.getDetails ().getHeaderDescription ()));
+      assertEquals (aInvoice.getDetails ().getItemListCount (), aInvoice2.getDetails ().getItemListCount ());
+      for (int i = 0; i < aInvoice.getDetails ().getItemListCount (); ++i)
+      {
+        final Ebi50ItemListType aItemList = aInvoice.getDetails ().getItemListAtIndex (i);
+        final Ebi50ItemListType aItemList2 = aInvoice2.getDetails ().getItemListAtIndex (i);
+        assertTrue (EqualsHelper.equals (aItemList.getFooterDescription (), aItemList2.getFooterDescription ()));
+        assertTrue (EqualsHelper.equals (aItemList.getHeaderDescription (), aItemList2.getHeaderDescription ()));
+        assertEquals (aItemList.getListLineItemCount (), aItemList2.getListLineItemCount ());
+        assertTrue (EqualsHelper.equals (aItemList.getListLineItem (), aItemList2.getListLineItem ()));
+      }
+      assertTrue (EqualsHelper.equals (aInvoice.getDetails ().getItemList (), aInvoice2.getDetails ().getItemList ()));
       assertTrue (EqualsHelper.equals (aInvoice.getDetails (), aInvoice2.getDetails ()));
       assertTrue (EqualsHelper.equals (aInvoice.getReductionAndSurchargeDetails (),
                                        aInvoice2.getReductionAndSurchargeDetails ()));
