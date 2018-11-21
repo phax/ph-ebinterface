@@ -26,7 +26,6 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
 
 import com.helger.commons.io.file.FileSystemRecursiveIterator;
 import com.helger.commons.io.resource.ClassPathResource;
@@ -53,17 +52,9 @@ public final class SignatureValidatorFuncTest
       if (aFile.isFile () && aFile.getName ().endsWith (".xml"))
       {
         // Read document
-        Document aDoc = null;
-        try
-        {
-          aDoc = DOMReader.readXMLDOM (aFile,
-                                       new DOMReaderSettings ().setErrorHandler (new DoNothingSAXErrorHandler ()));
-          assertNotNull (aDoc);
-        }
-        catch (final SAXException ex)
-        {}
-        if (aDoc == null)
-          continue;
+        final Document aDoc = DOMReader.readXMLDOM (aFile,
+                                                    new DOMReaderSettings ().setErrorHandler (new DoNothingSAXErrorHandler ()));
+        assertNotNull (aDoc);
 
         // Validate the signature
         try

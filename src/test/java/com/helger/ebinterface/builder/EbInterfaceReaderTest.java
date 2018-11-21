@@ -24,7 +24,6 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
 
 import com.helger.commons.io.resource.IReadableResource;
 import com.helger.commons.mock.CommonsTestHelper;
@@ -49,7 +48,7 @@ public final class EbInterfaceReaderTest
   private static final Logger LOGGER = LoggerFactory.getLogger (EbInterfaceReaderTest.class);
 
   @Test
-  public void testReadEbi30 () throws SAXException
+  public void testReadEbi30 ()
   {
     for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V30.getTestResources ())
     {
@@ -80,7 +79,7 @@ public final class EbInterfaceReaderTest
   }
 
   @Test
-  public void testReadEbi302 () throws SAXException
+  public void testReadEbi302 ()
   {
     for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V302.getTestResources ())
     {
@@ -113,7 +112,7 @@ public final class EbInterfaceReaderTest
   }
 
   @Test
-  public void testReadEbi40 () throws SAXException
+  public void testReadEbi40 ()
   {
     for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V40.getTestResources ())
     {
@@ -143,7 +142,7 @@ public final class EbInterfaceReaderTest
   }
 
   @Test
-  public void testReadEbi41 () throws SAXException
+  public void testReadEbi41 ()
   {
     for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V41.getTestResources ())
     {
@@ -173,7 +172,7 @@ public final class EbInterfaceReaderTest
   }
 
   @Test
-  public void testReadEbi42 () throws SAXException
+  public void testReadEbi42 ()
   {
     for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V42.getTestResources ())
     {
@@ -203,7 +202,7 @@ public final class EbInterfaceReaderTest
   }
 
   @Test
-  public void testReadEbi43 () throws SAXException
+  public void testReadEbi43 ()
   {
     for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V43.getTestResources ())
     {
@@ -233,7 +232,7 @@ public final class EbInterfaceReaderTest
   }
 
   @Test
-  public void testReadEbi50 () throws SAXException
+  public void testReadEbi50 ()
   {
     for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V50.getTestResources ())
     {

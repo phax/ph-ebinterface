@@ -22,7 +22,6 @@ import static org.junit.Assert.assertSame;
 
 import org.junit.Test;
 import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
 
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.io.resource.IReadableResource;
@@ -40,7 +39,7 @@ import com.helger.xmldsig.XMLDSigValidator;
 public final class EbInterface30MarshallerTest
 {
   @Test
-  public void testReadValid () throws SAXException
+  public void testReadValid ()
   {
     for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V30.getTestResources ())
     {

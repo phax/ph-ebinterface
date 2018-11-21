@@ -27,7 +27,6 @@ import javax.xml.bind.JAXBElement;
 
 import org.junit.Test;
 import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
 
 import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.io.resource.IReadableResource;
@@ -47,7 +46,7 @@ import com.helger.xml.serialize.read.DOMReader;
 public final class EbInterface50MarshallerTest
 {
   @Test
-  public void testReadValid () throws SAXException
+  public void testReadValid ()
   {
     for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V50.getTestResources ())
     {
