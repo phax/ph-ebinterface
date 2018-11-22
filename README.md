@@ -1,8 +1,8 @@
 # ph-ebinterface
 
 Java library encapsulating the usage of ebInterface 3.0, 3.0.2, 4.0, 4.1, 4.2, 4.3 and 5.0 within your application. 
-See [First Steps](https://github.com/phax/ph-ebinterface/wiki/FirstSteps) (English; v3.x) or 
-[Erste Schritte](https://github.com/phax/ph-ebinterface/wiki/ErsteSchritte) (Deutsch; v3.x) for some code examples on how to read and write the different ebInterface versions.
+See [First Steps](https://github.com/phax/ph-ebinterface/wiki/FirstSteps) (English) or 
+[Erste Schritte](https://github.com/phax/ph-ebinterface/wiki/ErsteSchritte) (Deutsch) for some code examples on how to read and write the different ebInterface versions.
 
 Features:
 
@@ -18,7 +18,7 @@ Features:
   
 # News and noteworthy
 
-* v6.1.0 - work in progress
+* v6.1.0 - 2018-11-12
     * Requires ph-commons 9.2.0
     * Added ebInterface 5.0 visualization XSLT
 * v6.0.2 - 2018-07-27
@@ -64,7 +64,7 @@ This is originally the follow-on project of phloc-ebinterface originally residin
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-ebinterface</artifactId>
-  <version>6.0.2</version>
+  <version>6.1.0</version>
 </dependency>
 ```
 
