@@ -23,6 +23,7 @@ import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.io.resource.IReadableResource;
 import com.helger.commons.lang.EnumHelper;
 import com.helger.commons.string.StringHelper;
+import com.helger.commons.version.Version;
 
 /**
  * This enumeration encapsulates the supported ebInterface versions in a common
@@ -33,28 +34,31 @@ import com.helger.commons.string.StringHelper;
 public enum EEbInterfaceVersion
 {
   /** ebInterface 3.0 */
-  V30 (CEbInterface.EBINTERFACE_30_NS, CEbInterface.EBINTERFACE_30_XSLT),
+  V30 (CEbInterface.EBINTERFACE_30_NS, CEbInterface.EBINTERFACE_30_XSLT, new Version (3)),
   /** ebInterface 3.02 */
-  V302 (CEbInterface.EBINTERFACE_302_NS, CEbInterface.EBINTERFACE_302_XSLT),
+  V302 (CEbInterface.EBINTERFACE_302_NS, CEbInterface.EBINTERFACE_302_XSLT, new Version (3, 0, 2)),
   /** ebInterface 4.0 */
-  V40 (CEbInterface.EBINTERFACE_40_NS, CEbInterface.EBINTERFACE_40_XSLT),
+  V40 (CEbInterface.EBINTERFACE_40_NS, CEbInterface.EBINTERFACE_40_XSLT, new Version (4)),
   /** ebInterface 4.1 */
-  V41 (CEbInterface.EBINTERFACE_41_NS, CEbInterface.EBINTERFACE_41_XSLT),
+  V41 (CEbInterface.EBINTERFACE_41_NS, CEbInterface.EBINTERFACE_41_XSLT, new Version (4, 1)),
   /** ebInterface 4.2 */
-  V42 (CEbInterface.EBINTERFACE_42_NS, CEbInterface.EBINTERFACE_42_XSLT),
+  V42 (CEbInterface.EBINTERFACE_42_NS, CEbInterface.EBINTERFACE_42_XSLT, new Version (4, 2)),
   /** ebInterface 4.3 */
-  V43 (CEbInterface.EBINTERFACE_43_NS, CEbInterface.EBINTERFACE_43_XSLT),
+  V43 (CEbInterface.EBINTERFACE_43_NS, CEbInterface.EBINTERFACE_43_XSLT, new Version (4, 3)),
   /** ebInterface 5.0 */
-  V50 (CEbInterface.EBINTERFACE_50_NS, CEbInterface.EBINTERFACE_50_XSLT);
+  V50 (CEbInterface.EBINTERFACE_50_NS, CEbInterface.EBINTERFACE_50_XSLT, new Version (5));
 
   private final String m_sNamespaceURI;
   private final IReadableResource m_aXSLTRes;
+  private final Version m_aVersion;
 
   private EEbInterfaceVersion (@Nonnull @Nonempty final String sNamespaceURI,
-                               @Nullable final IReadableResource aXSLTRes)
+                               @Nullable final IReadableResource aXSLTRes,
+                               @Nonnull final Version aVersion)
   {
     m_sNamespaceURI = sNamespaceURI;
     m_aXSLTRes = aXSLTRes;
+    m_aVersion = aVersion;
   }
 
   /**
@@ -85,6 +89,17 @@ public enum EEbInterfaceVersion
   public boolean hasXSLTResource ()
   {
     return m_aXSLTRes != null;
+  }
+
+  /**
+   * @return The version number of this ebInterface version. Never
+   *         <code>null</code>.
+   * @since 6.1.1
+   */
+  @Nonnull
+  public Version getVersion ()
+  {
+    return m_aVersion;
   }
 
   /**
