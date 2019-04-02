@@ -33,7 +33,7 @@ import com.helger.jaxb.builder.JAXBValidationBuilder;
  *
  * @author Philip Helger
  * @param <JAXBTYPE>
- *        The ebInterface implementation class to be read
+ *        The ebInterface implementation class to be validated
  */
 @NotThreadSafe
 public class EbInterfaceValidator <JAXBTYPE> extends JAXBValidationBuilder <JAXBTYPE, EbInterfaceValidator <JAXBTYPE>>

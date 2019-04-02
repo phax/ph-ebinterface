@@ -41,7 +41,7 @@ import com.helger.xml.namespace.MapBasedNamespaceContext;
  *
  * @author Philip Helger
  * @param <JAXBTYPE>
- *        The ebInterface implementation class to be read
+ *        The ebInterface implementation class to be written
  */
 @NotThreadSafe
 public class EbInterfaceWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, EbInterfaceWriter <JAXBTYPE>>
