@@ -70,6 +70,12 @@ This is originally the follow-on project of phloc-ebinterface originally residin
 
 Technically this library requires libraries from [ph-commons](https://github.com/phax/ph-commons) and [ph-xmldsig](https://github.com/phax/ph-xmldsig)
 
+
+# Gradle considerations
+
+This project relies on JDK version based Maven profile activation.
+See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific issue. 
+
 ---
 
 My personal [Coding Styleguide](https://github.com/phax/meta/blob/master/CodingStyleguide.md) |
