@@ -18,6 +18,8 @@ Features:
   
 # News and noteworthy
 
+* v6.1.1 - 2019-06-05
+    * Added Java 12 compatibility
 * v6.1.0 - 2018-11-12
     * Requires ph-commons 9.2.0
     * Added ebInterface 5.0 visualization XSLT
@@ -54,7 +56,7 @@ Features:
 
 This library is used by [WWW.E-RECHNUNG.GV.AT](http://www.e-rechnung.gv.at) - the Austrian Government "E-Rechnung an die öffentliche Verwaltung" solution for reading ebInterface files!
 
-The library can e.g. be used in combination with the [E-RECHNUNG.GV.AT Webservice Client](https://github.com/phax/erechnung.gv.at-webservice-client) to automatically deliver invoices to the Austrian Government. Alternatively the library [ph-ubl](https://github.com/phax/ph-ubl) is available to read and write UBL 2.0 and 2.1 invoices (and other document types).
+The library can e.g. be used in combination with the [E-RECHNUNG.GV.AT Webservice Client](https://github.com/phax/erechnung.gv.at-webservice-client) to automatically deliver invoices to the Austrian Government. Alternatively the library [ph-ubl](https://github.com/phax/ph-ubl) is available to read and write UBL 2.0, 2.1 and 2.2 invoices (and other document types).
 
 This is originally the follow-on project of phloc-ebinterface originally residing on Google Code. 
 
@@ -64,7 +66,7 @@ This is originally the follow-on project of phloc-ebinterface originally residin
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-ebinterface</artifactId>
-  <version>6.1.0</version>
+  <version>6.1.1</version>
 </dependency>
 ```
 
