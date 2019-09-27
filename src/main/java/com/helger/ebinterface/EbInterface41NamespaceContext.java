@@ -39,8 +39,13 @@ public class EbInterface41NamespaceContext extends MapBasedNamespaceContext
   {
     addMapping ("eb", CEbInterface.EBINTERFACE_41_NS);
     addMapping ("dsig", XMLSignature.XMLNS);
+    // No more xsi:type usage in ebi 4.1
   }
 
+  /**
+   * @return The mutable singleton instance. Never <code>null</code>. Please
+   *         clone the result before you further modify it.
+   */
   @Nonnull
   public static EbInterface41NamespaceContext getInstance ()
   {

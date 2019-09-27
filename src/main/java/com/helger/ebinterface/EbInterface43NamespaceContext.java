@@ -41,6 +41,10 @@ public class EbInterface43NamespaceContext extends MapBasedNamespaceContext
     addMapping ("dsig", XMLSignature.XMLNS);
   }
 
+  /**
+   * @return The mutable singleton instance. Never <code>null</code>. Please
+   *         clone the result before you further modify it.
+   */
   @Nonnull
   public static EbInterface43NamespaceContext getInstance ()
   {

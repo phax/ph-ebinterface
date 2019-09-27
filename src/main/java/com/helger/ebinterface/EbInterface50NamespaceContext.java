@@ -40,6 +40,10 @@ public class EbInterface50NamespaceContext extends MapBasedNamespaceContext
     // No XMLDSig from this version on
   }
 
+  /**
+   * @return The mutable singleton instance. Never <code>null</code>. Please
+   *         clone the result before you further modify it.
+   */
   @Nonnull
   public static EbInterface50NamespaceContext getInstance ()
   {

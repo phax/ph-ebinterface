@@ -18,6 +18,8 @@ Features:
   
 # News and noteworthy
 
+* v6.1.2 - work in progress
+    * Added `xsi` default namespace prefix to the `EbInterface...NamespaceContext` classes for ebInterface 3.x and 4.0 
 * v6.1.1 - 2019-06-05
     * Added Java 12 compatibility
 * v6.1.0 - 2018-11-12

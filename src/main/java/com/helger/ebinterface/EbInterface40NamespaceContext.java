@@ -17,6 +17,7 @@
 package com.helger.ebinterface;
 
 import javax.annotation.Nonnull;
+import javax.xml.XMLConstants;
 import javax.xml.crypto.dsig.XMLSignature;
 
 import com.helger.commons.annotation.Singleton;
@@ -39,8 +40,13 @@ public class EbInterface40NamespaceContext extends MapBasedNamespaceContext
   {
     addMapping ("eb", CEbInterface.EBINTERFACE_40_NS);
     addMapping ("dsig", XMLSignature.XMLNS);
+    addMapping ("xsi", XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI);
   }
 
+  /**
+   * @return The mutable singleton instance. Never <code>null</code>. Please
+   *         clone the result before you further modify it.
+   */
   @Nonnull
   public static EbInterface40NamespaceContext getInstance ()
   {
