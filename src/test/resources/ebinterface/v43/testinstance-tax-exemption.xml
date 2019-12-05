@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../Invoice.xslt"?>
+<eb:Invoice xmlns:eb="http://www.ebinterface.at/schema/4p3/" eb:GeneratingSystem="Test file" eb:DocumentType="Invoice" eb:InvoiceCurrency="EUR" eb:DocumentTitle="DEMO-Rechnung" eb:Language="ger">
+  <eb:InvoiceNumber>2019-0001</eb:InvoiceNumber>
+  <eb:InvoiceDate>2019-12-05</eb:InvoiceDate>
+  <eb:Delivery>
+    <eb:Date>2019-09-12</eb:Date>
+  </eb:Delivery>
+  <eb:Biller>
+    <eb:VATIdentificationNumber>ATU74357509</eb:VATIdentificationNumber>
+    <eb:Address>
+      <eb:Name>Philip Helger IT Consulting e.U.</eb:Name>
+      <eb:Street>Teststraße 1</eb:Street>
+      <eb:Town>Wien</eb:Town>
+      <eb:ZIP>1140</eb:ZIP>
+      <eb:Country>AT</eb:Country>
+      <eb:Phone>+43 1 2345678</eb:Phone>
+      <eb:Email>test@example.org</eb:Email>
+      <eb:Contact>hilip Helger</eb:Contact>
+    </eb:Address>
+  </eb:Biller>
+  <eb:InvoiceRecipient>
+    <eb:VATIdentificationNumber>00000000</eb:VATIdentificationNumber>
+    <eb:Address>
+      <eb:Salutation>Firma</eb:Salutation>
+      <eb:Name>Max Mustermann</eb:Name>
+      <eb:Street>Kundenstrasse 1</eb:Street>
+      <eb:Town>Kaufort</eb:Town>
+      <eb:ZIP>1234</eb:ZIP>
+      <eb:Country>AT</eb:Country>
+      <eb:Contact>Max Mustermann</eb:Contact>
+    </eb:Address>
+    <eb:BillersInvoiceRecipientID>123123</eb:BillersInvoiceRecipientID>
+  </eb:InvoiceRecipient>
+  <eb:Details>
+    <eb:HeaderDescription>Wir erlauben uns wie folgt zu verrechnen.</eb:HeaderDescription>
+    <eb:ItemList>
+      <eb:ListLineItem>
+        <eb:PositionNumber>1</eb:PositionNumber>
+        <eb:Description>ebInterface Beratung</eb:Description>
+        <eb:ArticleNumber>4711</eb:ArticleNumber>
+        <eb:Quantity eb:Unit="Tag">0.50</eb:Quantity>
+        <eb:UnitPrice>400.00</eb:UnitPrice>
+        <eb:TaxExemption>Steuerbefreiung für die Finanzprokuratur</eb:TaxExemption>
+        <eb:DiscountFlag>false</eb:DiscountFlag>
+        <eb:ReductionAndSurchargeListLineItemDetails>
+          <eb:ReductionListLineItem>
+            <eb:BaseAmount>200.00</eb:BaseAmount>
+            <eb:Percentage>0.00</eb:Percentage>
+          </eb:ReductionListLineItem>
+        </eb:ReductionAndSurchargeListLineItemDetails>
+        <eb:LineItemAmount>200.00</eb:LineItemAmount>
+      </eb:ListLineItem>
+    </eb:ItemList>
+    <eb:FooterDescription>Wir danken für Ihren Auftrag.</eb:FooterDescription>
+  </eb:Details>
+  <eb:Tax>
+    <eb:VAT>
+      <eb:VATItem>
+        <eb:TaxedAmount>200.00</eb:TaxedAmount>
+        <eb:TaxExemption>Steuerbefreiung für die Finanzprokuratur</eb:TaxExemption>
+        <eb:Amount>0.00</eb:Amount>
+      </eb:VATItem>
+    </eb:VAT>
+  </eb:Tax>
+  <eb:TotalGrossAmount>200.00</eb:TotalGrossAmount>
+  <eb:PayableAmount>200.00</eb:PayableAmount>
+  <eb:PaymentMethod>
+    <eb:UniversalBankTransaction>
+      <eb:BeneficiaryAccount>
+        <eb:IBAN>AL47212110090000000235698741</eb:IBAN>
+        <eb:BankAccountOwner>Test fake account</eb:BankAccountOwner>
+      </eb:BeneficiaryAccount>
+    </eb:UniversalBankTransaction>
+  </eb:PaymentMethod>
+  <eb:PaymentConditions>
+    <eb:DueDate>2019-09-12</eb:DueDate>
+  </eb:PaymentConditions>
+  <eb:PresentationDetails>
+    <eb:URL>www.austriapro.at</eb:URL>
+    <eb:SuppressZero>true</eb:SuppressZero>
+  </eb:PresentationDetails>
+</eb:Invoice>
