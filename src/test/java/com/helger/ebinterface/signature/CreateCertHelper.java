@@ -132,7 +132,7 @@ public final class CreateCertHelper
   public static PKCS10CertificationRequest createCSR (final X509Certificate cert,
                                                       final KeyPair keyPair) throws Exception
   {
-    final Principal principal = cert.getSubjectDN ();
+    final Principal principal = cert.getSubjectX500Principal ();
     // generate certification request
     final X500Name x500Name = new X500Name (principal.toString ());
     final PKCS10CertificationRequestBuilder p10Builder = new JcaPKCS10CertificationRequestBuilder (x500Name,
