@@ -120,6 +120,9 @@ public final class CEbInterface
   /** Namespace URI for ebInterface 5.0 */
   public static final String EBINTERFACE_50_NS = "http://www.ebinterface.at/schema/5p0/";
 
+  /** Namespace URI for ebInterface 5.1 */
+  public static final String EBINTERFACE_51_NS = "http://www.ebinterface.at/schema/5p1/";
+
   /** Stylesheet resource for ebInterface 3.0 */
   public static final IReadableResource EBINTERFACE_30_XSLT = new ClassPathResource ("/visualization/ebInterface-3.0.xslt",
                                                                                      _getCL ());
@@ -146,6 +149,10 @@ public final class CEbInterface
 
   /** Stylesheet resource for ebInterface 5.0 */
   public static final IReadableResource EBINTERFACE_50_XSLT = new ClassPathResource ("/visualization/ebInterface-5.0.xslt",
+                                                                                     _getCL ());
+
+  /** Stylesheet resource for ebInterface 5.1 */
+  public static final IReadableResource EBINTERFACE_51_XSLT = new ClassPathResource ("/visualization/ebInterface-5.1.xslt",
                                                                                      _getCL ());
 
   @PresentForCodeCoverage

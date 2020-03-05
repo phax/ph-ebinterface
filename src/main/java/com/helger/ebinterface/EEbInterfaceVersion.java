@@ -46,7 +46,9 @@ public enum EEbInterfaceVersion
   /** ebInterface 4.3 */
   V43 (CEbInterface.EBINTERFACE_43_NS, CEbInterface.EBINTERFACE_43_XSLT, new Version (4, 3)),
   /** ebInterface 5.0 */
-  V50 (CEbInterface.EBINTERFACE_50_NS, CEbInterface.EBINTERFACE_50_XSLT, new Version (5));
+  V50 (CEbInterface.EBINTERFACE_50_NS, CEbInterface.EBINTERFACE_50_XSLT, new Version (5)),
+  /** ebInterface 5.1 */
+  V51 (CEbInterface.EBINTERFACE_51_NS, CEbInterface.EBINTERFACE_51_XSLT, new Version (5, 1));
 
   private final String m_sNamespaceURI;
   private final IReadableResource m_aXSLTRes;
