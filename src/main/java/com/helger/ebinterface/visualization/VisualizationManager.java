@@ -76,11 +76,11 @@ public final class VisualizationManager
   public static Templates getXSLTTemplates (@Nonnull final EEbInterfaceVersion eVersion)
   {
     final String sNamespaceURI = eVersion.getNamespaceURI ();
-    final Templates ret = s_aRWLock.readLocked ( () -> s_aTemplates.get (sNamespaceURI));
+    final Templates ret = s_aRWLock.readLockedGet ( () -> s_aTemplates.get (sNamespaceURI));
     if (ret != null)
       return ret;
 
-    return s_aRWLock.writeLocked ( () -> {
+    return s_aRWLock.writeLockedGet ( () -> {
       // Try again in write lock
       Templates ret2 = s_aTemplates.get (sNamespaceURI);
       if (ret2 == null)
