@@ -63,4 +63,49 @@ public final class VisualizationManagerTest
       VisualizationManager.visualizeToFile (EEbInterfaceVersion.V40, aExampleFile, _buildHTMLFileName (aExampleFile));
     }
   }
+
+  @Test
+  public void testV41 ()
+  {
+    for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V41.getTestResources ())
+    {
+      VisualizationManager.visualizeToFile (EEbInterfaceVersion.V41, aExampleFile, _buildHTMLFileName (aExampleFile));
+    }
+  }
+
+  @Test
+  public void testV42 ()
+  {
+    for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V42.getTestResources ())
+    {
+      VisualizationManager.visualizeToFile (EEbInterfaceVersion.V42, aExampleFile, _buildHTMLFileName (aExampleFile));
+    }
+  }
+
+  @Test
+  public void testV43 ()
+  {
+    for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V43.getTestResources ())
+    {
+      VisualizationManager.visualizeToFile (EEbInterfaceVersion.V43, aExampleFile, _buildHTMLFileName (aExampleFile));
+    }
+  }
+
+  @Test
+  public void testV50 ()
+  {
+    for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V50.getTestResources ())
+    {
+      VisualizationManager.visualizeToFile (EEbInterfaceVersion.V50, aExampleFile, _buildHTMLFileName (aExampleFile));
+    }
+  }
+
+  @Test
+  public void testV60 ()
+  {
+    for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V60.getTestResources ())
+    {
+      VisualizationManager.visualizeToFile (EEbInterfaceVersion.V60, aExampleFile, _buildHTMLFileName (aExampleFile));
+    }
+  }
 }

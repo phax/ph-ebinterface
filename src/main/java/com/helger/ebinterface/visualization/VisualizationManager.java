@@ -17,6 +17,7 @@
 package com.helger.ebinterface.visualization;
 
 import java.io.File;
+import java.util.Locale;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -41,6 +42,7 @@ import com.helger.commons.io.resource.IReadableResource;
 import com.helger.commons.state.ESuccess;
 import com.helger.ebinterface.EEbInterfaceVersion;
 import com.helger.xml.XMLFactory;
+import com.helger.xml.transform.LoggingTransformErrorListener;
 import com.helger.xml.transform.TransformResultFactory;
 import com.helger.xml.transform.TransformSourceFactory;
 import com.helger.xml.transform.XMLTransformerFactory;
@@ -127,6 +129,7 @@ public final class VisualizationManager
     try
     {
       final Transformer aTransformer = aTemplates.newTransformer ();
+      aTransformer.setErrorListener (new LoggingTransformErrorListener (Locale.US));
       aTransformer.transform (aSource, aResult);
       return ESuccess.SUCCESS;
     }

@@ -19,22 +19,14 @@ package com.helger.ebinterface;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
-
-import java.util.List;
-
-import javax.xml.bind.JAXBElement;
 
 import org.junit.Test;
 import org.w3c.dom.Document;
 
-import com.helger.commons.equals.EqualsHelper;
 import com.helger.commons.io.resource.IReadableResource;
 import com.helger.commons.mock.CommonsTestHelper;
 import com.helger.ebinterface.builder.EbInterfaceWriter;
 import com.helger.ebinterface.v60.Ebi60InvoiceType;
-import com.helger.ebinterface.v60.Ebi60ItemListType;
-import com.helger.ebinterface.v60.Ebi60ListLineItemType;
 import com.helger.jaxb.validation.LoggingValidationEventHandler;
 import com.helger.xml.serialize.read.DOMReader;
 
@@ -70,90 +62,6 @@ public final class EbInterface60MarshallerTest
       // Convert to domain object again
       final Ebi60InvoiceType aInvoice2 = aMarshaller.read (aDoc2);
       assertNotNull (aExampleFile.getPath (), aInvoice2);
-
-      // Find the issue
-      assertTrue (EqualsHelper.equals (aInvoice.getInvoiceNumber (), aInvoice2.getInvoiceNumber ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getInvoiceDate (), aInvoice2.getInvoiceDate ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getCancelledOriginalDocument (),
-                                       aInvoice2.getCancelledOriginalDocument ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getRelatedDocument (), aInvoice2.getRelatedDocument ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getAdditionalInformation (), aInvoice2.getAdditionalInformation ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getDelivery (), aInvoice2.getDelivery ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getBiller (), aInvoice2.getBiller ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getInvoiceRecipient (), aInvoice2.getInvoiceRecipient ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getOrderingParty (), aInvoice2.getOrderingParty ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getDetails ().getFooterDescription (),
-                                       aInvoice2.getDetails ().getFooterDescription ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getDetails ().getHeaderDescription (),
-                                       aInvoice2.getDetails ().getHeaderDescription ()));
-      assertEquals (aInvoice.getDetails ().getItemListCount (), aInvoice2.getDetails ().getItemListCount ());
-      for (int i = 0; i < aInvoice.getDetails ().getItemListCount (); ++i)
-      {
-        final Ebi60ItemListType aItemList = aInvoice.getDetails ().getItemListAtIndex (i);
-        final Ebi60ItemListType aItemList2 = aInvoice2.getDetails ().getItemListAtIndex (i);
-        assertTrue (EqualsHelper.equals (aItemList.getFooterDescription (), aItemList2.getFooterDescription ()));
-        assertTrue (EqualsHelper.equals (aItemList.getHeaderDescription (), aItemList2.getHeaderDescription ()));
-        assertEquals (aItemList.getListLineItemCount (), aItemList2.getListLineItemCount ());
-        for (int j = 0; j < aItemList.getListLineItemCount (); ++j)
-        {
-          final Ebi60ListLineItemType aItem = aItemList.getListLineItemAtIndex (j);
-          final Ebi60ListLineItemType aItem2 = aItemList2.getListLineItemAtIndex (j);
-          assertTrue (EqualsHelper.equals (aItem.getAdditionalInformation (), aItem2.getAdditionalInformation ()));
-          assertTrue (EqualsHelper.equals (aItem.getArticleNumber (), aItem2.getArticleNumber ()));
-          assertTrue (EqualsHelper.equals (aItem.getBillersOrderReference (), aItem2.getBillersOrderReference ()));
-          assertTrue (EqualsHelper.equals (aItem.getClassification (), aItem2.getClassification ()));
-          assertTrue (EqualsHelper.equals (aItem.getDelivery (), aItem2.getDelivery ()));
-          assertTrue (EqualsHelper.equals (aItem.getDescription (), aItem2.getDescription ()));
-          assertTrue (EqualsHelper.equals (aItem.getInvoiceRecipientsOrderReference (),
-                                           aItem2.getInvoiceRecipientsOrderReference ()));
-          assertTrue (EqualsHelper.equals (aItem.getLineItemAmount (), aItem2.getLineItemAmount ()));
-          assertTrue (EqualsHelper.equals (aItem.getPositionNumber (), aItem2.getPositionNumber ()));
-          assertTrue (EqualsHelper.equals (aItem.getQuantity (), aItem2.getQuantity ()));
-          final List <JAXBElement <?>> aRSLL = aItem.getReductionAndSurchargeListLineItemDetails ()
-                                                    .getReductionListLineItemOrSurchargeListLineItemOrOtherVATableTaxListLineItem ();
-          final List <JAXBElement <?>> aRSLL2 = aItem2.getReductionAndSurchargeListLineItemDetails ()
-                                                      .getReductionListLineItemOrSurchargeListLineItemOrOtherVATableTaxListLineItem ();
-          assertEquals (aRSLL.size (), aRSLL2.size ());
-          for (int k = 0; k < aRSLL.size (); ++k)
-          {
-            // JAXBElement does not implement equals!
-            assertTrue (aRSLL.get (k) + "\nvs.\n" + aRSLL2.get (k),
-                        EqualsHelper.equals (aRSLL.get (k), aRSLL2.get (k)));
-          }
-          assertEquals (aRSLL.getClass (), aRSLL2.getClass ());
-          assertTrue (EqualsHelper.equalsCollection (aRSLL, aRSLL2));
-          if (false)
-            assertTrue ("Error when list has " + aRSLL.size () + " element(s)", EqualsHelper.equals (aRSLL, aRSLL2));
-          assertEquals (aItem.getReductionAndSurchargeListLineItemDetails ().getClass (),
-                        aItem2.getReductionAndSurchargeListLineItemDetails ().getClass ());
-          assertEquals (aItem.getReductionAndSurchargeListLineItemDetails (),
-                        aItem2.getReductionAndSurchargeListLineItemDetails ());
-          assertTrue (EqualsHelper.equals (aItem.getTaxItem (), aItem2.getTaxItem ()));
-          assertTrue (EqualsHelper.equals (aItem.getUnitPrice (), aItem2.getUnitPrice ()));
-          assertEquals (aItem, aItem);
-        }
-        assertEquals (aItemList.getListLineItem (), aItemList2.getListLineItem ());
-        assertEquals (aItemList, aItemList2);
-      }
-      assertTrue (EqualsHelper.equals (aInvoice.getDetails ().getItemList (), aInvoice2.getDetails ().getItemList ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getDetails (), aInvoice2.getDetails ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getReductionAndSurchargeDetails (),
-                                       aInvoice2.getReductionAndSurchargeDetails ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getTax (), aInvoice2.getTax ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getTotalGrossAmount (), aInvoice2.getTotalGrossAmount ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getPrepaidAmount (), aInvoice2.getPrepaidAmount ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getRoundingAmount (), aInvoice2.getRoundingAmount ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getPayableAmount (), aInvoice2.getPayableAmount ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getPaymentMethod (), aInvoice2.getPaymentMethod ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getPaymentConditions (), aInvoice2.getPaymentConditions ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getComment (), aInvoice2.getComment ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getGeneratingSystem (), aInvoice2.getGeneratingSystem ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getDocumentType (), aInvoice2.getDocumentType ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getInvoiceCurrency (), aInvoice2.getInvoiceCurrency ()));
-      assertTrue (EqualsHelper.equals (aInvoice.isManualProcessing (), aInvoice2.isManualProcessing ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getDocumentTitle (), aInvoice2.getDocumentTitle ()));
-      assertTrue (EqualsHelper.equals (aInvoice.getLanguage (), aInvoice2.getLanguage ()));
-      assertTrue (EqualsHelper.equals (aInvoice.isIsDuplicate (), aInvoice2.isIsDuplicate ()));
 
       // Must be equals
       CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice.clone ());
