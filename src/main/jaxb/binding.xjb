@@ -151,11 +151,11 @@
       </nameXmlTransform>
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/ebinterface/ebinterface-5.1.xsd" node="/xs:schema">
+  <bindings schemaLocation="../resources/schemas/ebinterface/ebinterface-6.0.xsd" node="/xs:schema">
     <schemaBindings>
-      <package name="com.helger.ebinterface.v51" />
+      <package name="com.helger.ebinterface.v60" />
       <nameXmlTransform>
-        <typeName prefix="Ebi51"/>
+        <typeName prefix="Ebi60"/>
       </nameXmlTransform>
     </schemaBindings>
   </bindings>

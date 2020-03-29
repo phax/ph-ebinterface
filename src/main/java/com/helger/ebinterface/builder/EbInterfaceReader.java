@@ -26,6 +26,7 @@ import com.helger.ebinterface.v41.Ebi41InvoiceType;
 import com.helger.ebinterface.v42.Ebi42InvoiceType;
 import com.helger.ebinterface.v43.Ebi43InvoiceType;
 import com.helger.ebinterface.v50.Ebi50InvoiceType;
+import com.helger.ebinterface.v60.Ebi60InvoiceType;
 import com.helger.jaxb.builder.JAXBReaderBuilder;
 
 /**
@@ -154,5 +155,16 @@ public class EbInterfaceReader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, E
   public static EbInterfaceReader <Ebi50InvoiceType> ebInterface50 ()
   {
     return EbInterfaceReader.create (Ebi50InvoiceType.class);
+  }
+
+  /**
+   * Create a reader builder for Ebi60InvoiceType.
+   *
+   * @return The builder and never <code>null</code>
+   */
+  @Nonnull
+  public static EbInterfaceReader <Ebi60InvoiceType> ebInterface60 ()
+  {
+    return EbInterfaceReader.create (Ebi60InvoiceType.class);
   }
 }

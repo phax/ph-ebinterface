@@ -82,7 +82,11 @@ public enum EEbInterfaceTestFiles
   V41 ("/ebinterface/v41/", new String [] { "testinstance-valid-schema.xml" }),
   V42 ("/ebinterface/v42/", new String [] { "testinstance-valid-schema.xml" }),
   V43 ("/ebinterface/v43/", new String [] { "testinstance-tax-exemption.xml", "testinstance-valid-schema.xml" }),
-  V50 ("/ebinterface/v50/", new String [] { "testinstance-valid-schema.xml" });
+  V50 ("/ebinterface/v50/", new String [] { "testinstance-valid-schema.xml" }),
+  V60 ("/ebinterface/v60/",
+       new String [] { "ebinterface_6p0_sample_dokumentation.xml",
+                       "ebinterface_6p0_sample_ecosio_invalid.xml",
+                       "ebinterface_6p0_sample_ecosio.xml" });
 
   private final ICommonsList <IReadableResource> m_aTestFiles = new CommonsArrayList <> ();
 
