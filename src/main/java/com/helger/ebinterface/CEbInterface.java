@@ -112,15 +112,23 @@ public final class CEbInterface
 
   /** Namespace URI for ebInterface 4.0 */
   public static final String EBINTERFACE_40_NS = "http://www.ebinterface.at/schema/4p0/";
+  public static final String EBINTERFACE_40_NS_EXT = "http://www.ebinterface.at/schema/4p0/extensions/ext";
+  public static final String EBINTERFACE_40_NS_SV = "http://www.ebinterface.at/schema/4p0/extensions/sv";
 
   /** Namespace URI for ebInterface 4.1 */
   public static final String EBINTERFACE_41_NS = "http://www.ebinterface.at/schema/4p1/";
+  public static final String EBINTERFACE_41_NS_EXT = "http://www.ebinterface.at/schema/4p1/extensions/ext";
+  public static final String EBINTERFACE_41_NS_SV = "http://www.ebinterface.at/schema/4p1/extensions/sv";
 
   /** Namespace URI for ebInterface 4.2 */
   public static final String EBINTERFACE_42_NS = "http://www.ebinterface.at/schema/4p2/";
+  public static final String EBINTERFACE_42_NS_EXT = "http://www.ebinterface.at/schema/4p2/extensions/ext";
+  public static final String EBINTERFACE_42_NS_SV = "http://www.ebinterface.at/schema/4p2/extensions/sv";
 
   /** Namespace URI for ebInterface 4.3 */
   public static final String EBINTERFACE_43_NS = "http://www.ebinterface.at/schema/4p3/";
+  public static final String EBINTERFACE_43_NS_EXT = "http://www.ebinterface.at/schema/4p3/extensions/ext";
+  public static final String EBINTERFACE_43_NS_SV = "http://www.ebinterface.at/schema/4p3/extensions/sv";
 
   /** Namespace URI for ebInterface 5.0 */
   public static final String EBINTERFACE_50_NS = "http://www.ebinterface.at/schema/5p0/";

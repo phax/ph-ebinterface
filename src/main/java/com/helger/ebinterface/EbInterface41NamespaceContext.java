@@ -17,10 +17,10 @@
 package com.helger.ebinterface;
 
 import javax.annotation.Nonnull;
-import javax.xml.crypto.dsig.XMLSignature;
 
 import com.helger.commons.annotation.Singleton;
 import com.helger.xml.namespace.MapBasedNamespaceContext;
+import com.helger.xsds.xmldsig.CXMLDSig;
 
 /**
  * The namespace context to be used as the namespace prefix mapper.
@@ -37,9 +37,11 @@ public class EbInterface41NamespaceContext extends MapBasedNamespaceContext
 
   protected EbInterface41NamespaceContext ()
   {
-    addMapping ("eb", CEbInterface.EBINTERFACE_41_NS);
-    addMapping ("dsig", XMLSignature.XMLNS);
     // No more xsi:type usage in ebi 4.1
+    addMapping (CXMLDSig.DEFAULT_PREFIX, CXMLDSig.NAMESPACE_URI);
+    addMapping ("eb", CEbInterface.EBINTERFACE_41_NS);
+    addMapping ("ebext", CEbInterface.EBINTERFACE_41_NS_EXT);
+    addMapping ("ebsv", CEbInterface.EBINTERFACE_41_NS_SV);
   }
 
   /**

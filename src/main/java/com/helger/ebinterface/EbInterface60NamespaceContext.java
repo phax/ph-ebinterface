@@ -37,7 +37,6 @@ public class EbInterface60NamespaceContext extends MapBasedNamespaceContext
   protected EbInterface60NamespaceContext ()
   {
     addDefaultNamespaceURI (CEbInterface.EBINTERFACE_60_NS);
-    // No XMLDSig from this version on
   }
 
   /**

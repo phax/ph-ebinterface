@@ -36,8 +36,9 @@ public class EbInterface50NamespaceContext extends MapBasedNamespaceContext
 
   protected EbInterface50NamespaceContext ()
   {
-    addDefaultNamespaceURI (CEbInterface.EBINTERFACE_50_NS);
     // No XMLDSig from this version on
+    addDefaultNamespaceURI (CEbInterface.EBINTERFACE_50_NS);
+    // No more extension namespaces available
   }
 
   /**
