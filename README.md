@@ -18,7 +18,7 @@ Features:
   
 # News and noteworthy
 
-* v6.1.2 - work in progress
+* v6.1.2 - 2020-04-01
     * Added `xsi` default namespace prefix to the `EbInterface...NamespaceContext` classes for ebInterface 3.x and 4.0 
     * Added initial draft of ebInterface 6.0
     * Updated to ph-commons 9.4.0
@@ -71,7 +71,7 @@ This is originally the follow-on project of phloc-ebinterface originally residin
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-ebinterface</artifactId>
-  <version>6.1.1</version>
+  <version>6.1.2</version>
 </dependency>
 ```
 
