@@ -15,9 +15,29 @@ Features:
 * Read and write ebInterface 5.0 invoices
 * Validate the signature of ebInterface documents
 * Visualize ebInterface documents as HTML documents
+
+# Usage with Maven
+
+```xml
+<dependency>
+  <groupId>com.helger</groupId>
+  <artifactId>ph-ebinterface</artifactId>
+  <version>6.1.2</version>
+</dependency>
+```
+
+Technically this library requires libraries from [ph-commons](https://github.com/phax/ph-commons) and [ph-xmldsig](https://github.com/phax/ph-xmldsig)
+
+
+# Gradle considerations
+
+This project relies on JDK version based Maven profile activation.
+See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific issue. 
   
 # News and noteworthy
 
+* v6.1.3 - work in progress
+    * Updated to the release candidate of ebInterface 6.0 - only documentation changes
 * v6.1.2 - 2020-04-01
     * Added `xsi` default namespace prefix to the `EbInterface...NamespaceContext` classes for ebInterface 3.x and 4.0 
     * Added initial draft of ebInterface 6.0
@@ -62,26 +82,6 @@ Features:
 This library is used by [WWW.E-RECHNUNG.GV.AT](http://www.e-rechnung.gv.at) - the Austrian Government "E-Rechnung an die öffentliche Verwaltung" solution for reading ebInterface files!
 
 The library can e.g. be used in combination with the [E-RECHNUNG.GV.AT Webservice Client](https://github.com/phax/erechnung.gv.at-webservice-client) to automatically deliver invoices to the Austrian Government. Alternatively the library [ph-ubl](https://github.com/phax/ph-ubl) is available to read and write UBL 2.0, 2.1 and 2.2 invoices (and other document types).
-
-This is originally the follow-on project of phloc-ebinterface originally residing on Google Code. 
-
-# Usage with Maven
-
-```xml
-<dependency>
-  <groupId>com.helger</groupId>
-  <artifactId>ph-ebinterface</artifactId>
-  <version>6.1.2</version>
-</dependency>
-```
-
-Technically this library requires libraries from [ph-commons](https://github.com/phax/ph-commons) and [ph-xmldsig](https://github.com/phax/ph-xmldsig)
-
-
-# Gradle considerations
-
-This project relies on JDK version based Maven profile activation.
-See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific issue. 
 
 ---
 
