@@ -36,6 +36,7 @@ import com.helger.ebinterface.v41.Ebi41InvoiceType;
 import com.helger.ebinterface.v42.Ebi42InvoiceType;
 import com.helger.ebinterface.v43.Ebi43InvoiceType;
 import com.helger.ebinterface.v50.Ebi50InvoiceType;
+import com.helger.ebinterface.v60.Ebi60InvoiceType;
 import com.helger.xml.serialize.read.DOMReader;
 
 /**
@@ -253,6 +254,36 @@ public final class EbInterfaceReaderTest
 
       // Convert to domain object again
       final Ebi50InvoiceType aInvoice2 = EbInterfaceReader.ebInterface50 ().read (aDoc2);
+      assertNotNull (aExampleFile.getPath (), aInvoice2);
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice2, aInvoice2.clone ());
+
+      // Must be equals
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
+    }
+  }
+
+  @Test
+  public void testReadEbi60 ()
+  {
+    for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V60.getTestResources ())
+    {
+      // Read from file as XML
+      final Document aDoc = DOMReader.readXMLDOM (aExampleFile);
+      assertNotNull (aDoc);
+
+      // Convert to domain object
+      final Ebi60InvoiceType aInvoice = EbInterfaceReader.ebInterface60 ().read (aDoc);
+      assertNotNull (aExampleFile.getPath (), aInvoice);
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice.clone ());
+
+      // Convert again to XML document
+      final Document aDoc2 = EbInterfaceWriter.ebInterface60 ().getAsDocument (aInvoice);
+      assertNotNull (aExampleFile.getPath (), aDoc2);
+      assertSame (EEbInterfaceVersion.V60,
+                  EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
+
+      // Convert to domain object again
+      final Ebi60InvoiceType aInvoice2 = EbInterfaceReader.ebInterface60 ().read (aDoc2);
       assertNotNull (aExampleFile.getPath (), aInvoice2);
       CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice2, aInvoice2.clone ());
 
