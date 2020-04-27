@@ -65,7 +65,7 @@ import com.helger.commons.io.stream.NonBlockingByteArrayInputStream;
  */
 public final class CreateCertHelper
 {
-  private static final Provider PROVIDER = PBCProvider.getProvider ();
+  public static final Provider PROVIDER = PBCProvider.getProvider ();
   private static final int RSA_KEY_LEN = 2048;
   private static final String SIGNING_ALGO = "SHA256WithRSAEncryption";
 
@@ -113,8 +113,7 @@ public final class CreateCertHelper
     // Prepare the information required for generating an X.509 certificate.
     final X500Name owner = x500 (sCommonName, sOrganization, sCountry);
     final X509v3CertificateBuilder builder = new JcaX509v3CertificateBuilder (owner,
-                                                                              new BigInteger (64,
-                                                                                              SecureRandom.getInstanceStrong ()),
+                                                                              new BigInteger (64, SecureRandom.getInstanceStrong ()),
                                                                               now (),
                                                                               notAfter,
                                                                               owner,
@@ -129,27 +128,25 @@ public final class CreateCertHelper
   }
 
   @Nonnull
-  public static PKCS10CertificationRequest createCSR (final X509Certificate cert,
-                                                      final KeyPair keyPair) throws Exception
+  public static PKCS10CertificationRequest createCSR (@Nonnull final X509Certificate cert, @Nonnull final KeyPair keyPair) throws Exception
   {
     final Principal principal = cert.getSubjectX500Principal ();
     // generate certification request
     final X500Name x500Name = new X500Name (principal.toString ());
-    final PKCS10CertificationRequestBuilder p10Builder = new JcaPKCS10CertificationRequestBuilder (x500Name,
-                                                                                                   keyPair.getPublic ());
+    final PKCS10CertificationRequestBuilder p10Builder = new JcaPKCS10CertificationRequestBuilder (x500Name, keyPair.getPublic ());
     final JcaContentSignerBuilder csBuilder = new JcaContentSignerBuilder (SIGNING_ALGO);
     final ContentSigner signer = csBuilder.build (keyPair.getPrivate ());
     return p10Builder.build (signer);
   }
 
   @Nonnull
-  public static X509Certificate signCSR (final PKCS10CertificationRequest inputCSR,
-                                         final PrivateKey caPrivate,
-                                         final KeyPair pair,
+  public static X509Certificate signCSR (@Nonnull final PKCS10CertificationRequest inputCSR,
+                                         @Nonnull final PrivateKey caPrivate,
+                                         @Nonnull final KeyPair pair,
                                          @Nonnull @Nonempty final String sRootCommonName,
                                          @Nonnull @Nonempty final String sRootOrganization,
                                          @Nonnull @Nonempty final String sRootCountry,
-                                         final Date notAfter) throws Exception
+                                         @Nonnull final Date notAfter) throws Exception
   {
 
     final AlgorithmIdentifier sigAlgId = new DefaultSignatureAlgorithmIdentifierFinder ().find (SIGNING_ALGO);

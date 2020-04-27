@@ -12,8 +12,9 @@
 hs_err_pid*
 
 target/
-/**/.pmd
-/**/*.iml
-/.settings/ 
-/.project 
-/.classpath 
+.pmd
+*.iml
+.settings/ 
+.project 
+.classpath 
+*.jks
