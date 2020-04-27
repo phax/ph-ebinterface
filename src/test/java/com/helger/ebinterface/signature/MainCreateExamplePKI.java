@@ -55,7 +55,7 @@ public final class MainCreateExamplePKI
     }
 
     // add AS4 CA
-    final String sAS4CN = "as4";
+    final String sAS4CN = "as4-ca";
     final KeyPair aAS4Key;
     final X509Certificate aAS4Cert;
     {
@@ -66,13 +66,13 @@ public final class MainCreateExamplePKI
       aAS4Cert = CreateCertHelper.signCSR (aCSR, aRootKey.getPrivate (), aAS4Key, sRootCN, sOrganization, sCountry, aNotAfter);
 
       // Add to keystore
-      aKS.setKeyEntry (sAS4CN + "-ca", aAS4Key.getPrivate (), sPassword.toCharArray (), new Certificate [] { aAS4Cert, aRootCert });
+      aKS.setKeyEntry (sAS4CN, aAS4Key.getPrivate (), sPassword.toCharArray (), new Certificate [] { aAS4Cert, aRootCert });
       // Add to truststore
-      aTS.setCertificateEntry (sAS4CN + "-ca", aAS4Cert);
+      aTS.setCertificateEntry (sAS4CN, aAS4Cert);
     }
 
     // add SMP CA
-    final String sSMPCN = "smp";
+    final String sSMPCN = "smp-ca";
     final KeyPair aSMPKey;
     final X509Certificate aSMPCert;
     {
@@ -83,9 +83,9 @@ public final class MainCreateExamplePKI
       aSMPCert = CreateCertHelper.signCSR (aCSR, aRootKey.getPrivate (), aSMPKey, sRootCN, sOrganization, sCountry, aNotAfter);
 
       // Add to keystore
-      aKS.setKeyEntry (sSMPCN + "-ca", aSMPKey.getPrivate (), sPassword.toCharArray (), new Certificate [] { aSMPCert, aRootCert });
+      aKS.setKeyEntry (sSMPCN, aSMPKey.getPrivate (), sPassword.toCharArray (), new Certificate [] { aSMPCert, aRootCert });
       // Add to truststore
-      aTS.setCertificateEntry (sSMPCN + "-ca", aSMPCert);
+      aTS.setCertificateEntry (sSMPCN, aSMPCert);
     }
 
     // all AS4 certificates
@@ -114,9 +114,9 @@ public final class MainCreateExamplePKI
       aCert = CreateCertHelper.signCSR (aSMPCSR, aSMPKey.getPrivate (), aKey, sSMPCN, sOrganization, sCountry, aNotAfter);
 
       // Add to keystore
-      aKS.setKeyEntry (sCertName + "-key", aKey.getPrivate (), sPassword.toCharArray (), new Certificate [] { aCert, aRootCert });
+      aKS.setKeyEntry (sCertName + "-key", aKey.getPrivate (), sPassword.toCharArray (), new Certificate [] { aCert, aSMPCert, aRootCert });
       // Add to truststore
-      aTS.setCertificateEntry (sCertName + "-cert", aSMPCert);
+      aTS.setCertificateEntry (sCertName + "-cert", aCert);
     }
 
     // Write to file
