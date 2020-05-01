@@ -17,6 +17,10 @@ Features:
 * Validate the signature of ebInterface documents
 * Visualize ebInterface documents as HTML documents
 
+Note: this library is used by [WWW.E-RECHNUNG.GV.AT](http://www.e-rechnung.gv.at) - the Austrian Government "E-Rechnung an die öffentliche Verwaltung" solution for reading ebInterface files.
+
+The library can e.g. be used in combination with the [E-RECHNUNG.GV.AT Webservice Client](https://github.com/phax/erechnung.gv.at-webservice-client) to automatically deliver invoices to the Austrian Government. Alternatively the library [ph-ubl](https://github.com/phax/ph-ubl) is available to read and write UBL 2.0, 2.1 and 2.2 invoices (and other document types).
+
 # Usage with Maven
 
 ```xml
@@ -79,10 +83,6 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
 * v4.0.1 - 2015-10-19
     * update to BouncyCastle 1.53
 * v4.0.0 - 2015-07-23   
-
-This library is used by [WWW.E-RECHNUNG.GV.AT](http://www.e-rechnung.gv.at) - the Austrian Government "E-Rechnung an die öffentliche Verwaltung" solution for reading ebInterface files!
-
-The library can e.g. be used in combination with the [E-RECHNUNG.GV.AT Webservice Client](https://github.com/phax/erechnung.gv.at-webservice-client) to automatically deliver invoices to the Austrian Government. Alternatively the library [ph-ubl](https://github.com/phax/ph-ubl) is available to read and write UBL 2.0, 2.1 and 2.2 invoices (and other document types).
 
 ---
 
