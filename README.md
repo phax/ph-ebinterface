@@ -1,6 +1,6 @@
 # ph-ebinterface
 
-Java library encapsulating the usage of ebInterface 3.0, 3.0.2, 4.0, 4.1, 4.2, 4.3 and 5.0 within your application. 
+Java library encapsulating the usage of ebInterface 3.0, 3.0.2, 4.0, 4.1, 4.2, 4.3, 5.0 and 6.0 within your application. 
 See [First Steps](https://github.com/phax/ph-ebinterface/wiki/FirstSteps) (English) or 
 [Erste Schritte](https://github.com/phax/ph-ebinterface/wiki/ErsteSchritte) (Deutsch) for some code examples on how to read and write the different ebInterface versions.
 
@@ -10,9 +10,10 @@ Features:
 * Read and write ebInterface 3.0.2 invoices
 * Read and write ebInterface 4.0 invoices
 * Read and write ebInterface 4.1 invoices
-* Read and write ebInterface 4.2 invoices
-* Read and write ebInterface 4.3 invoices
-* Read and write ebInterface 5.0 invoices
+* Read and write ebInterface 4.2 invoices (since v4.0.2)
+* Read and write ebInterface 4.3 invoices (since v5.1.0)
+* Read and write ebInterface 5.0 invoices (since v6.0.1)
+* Read and write ebInterface 6.0 invoices (since v6.1.3)
 * Validate the signature of ebInterface documents
 * Visualize ebInterface documents as HTML documents
 
@@ -22,7 +23,7 @@ Features:
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-ebinterface</artifactId>
-  <version>6.1.2</version>
+  <version>6.1.3</version>
 </dependency>
 ```
 
@@ -36,8 +37,8 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
   
 # News and noteworthy
 
-* v6.1.3 - work in progress
-    * Updated to the release candidate of ebInterface 6.0 - only documentation changes
+* v6.1.3 - 2020-05-01
+    * Updated to the final version of ebInterface 6.0 - only documentation changes
 * v6.1.2 - 2020-04-01
     * Added `xsi` default namespace prefix to the `EbInterface...NamespaceContext` classes for ebInterface 3.x and 4.0 
     * Added initial draft of ebInterface 6.0
