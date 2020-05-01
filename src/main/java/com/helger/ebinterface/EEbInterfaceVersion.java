@@ -54,9 +54,9 @@ public enum EEbInterfaceVersion
   private final IReadableResource m_aXSLTRes;
   private final Version m_aVersion;
 
-  private EEbInterfaceVersion (@Nonnull @Nonempty final String sNamespaceURI,
-                               @Nullable final IReadableResource aXSLTRes,
-                               @Nonnull final Version aVersion)
+  EEbInterfaceVersion (@Nonnull @Nonempty final String sNamespaceURI,
+                       @Nullable final IReadableResource aXSLTRes,
+                       @Nonnull final Version aVersion)
   {
     m_sNamespaceURI = sNamespaceURI;
     m_aXSLTRes = aXSLTRes;

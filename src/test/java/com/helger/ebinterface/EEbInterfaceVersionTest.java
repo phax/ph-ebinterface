@@ -26,7 +26,7 @@ import org.junit.Test;
  *
  * @author Philip Helger
  */
-public class EEbInterfaceVersionTest
+public final class EEbInterfaceVersionTest
 {
   @Test
   public void testBasic ()

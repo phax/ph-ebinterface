@@ -56,8 +56,7 @@ public enum EEbInterfaceDocumentType implements IJAXBDocumentType
 
   private final JAXBDocumentType m_aDocType;
 
-  private EEbInterfaceDocumentType (@Nonnull final Class <?> aClass,
-                                    @Nonnull final List <? extends ClassPathResource> aXSDPaths)
+  EEbInterfaceDocumentType (@Nonnull final Class <?> aClass, @Nonnull final List <? extends ClassPathResource> aXSDPaths)
   {
     m_aDocType = new JAXBDocumentType (aClass, aXSDPaths, x -> StringHelper.trimEnd (x, "Type"));
   }

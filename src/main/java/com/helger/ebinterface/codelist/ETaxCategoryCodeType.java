@@ -41,7 +41,7 @@ public enum ETaxCategoryCodeType implements IHasID <String>
 
   private final String m_sID;
 
-  private ETaxCategoryCodeType (@Nonnull @Nonempty final String sID)
+  ETaxCategoryCodeType (@Nonnull @Nonempty final String sID)
   {
     m_sID = sID;
   }

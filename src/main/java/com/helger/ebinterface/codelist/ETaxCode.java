@@ -72,9 +72,7 @@ public enum ETaxCode implements IHasID <String>
   private final int m_nPerc;
   private final String m_sDesc;
 
-  private ETaxCode (@Nonnull @Nonempty final String sID,
-                    @Nonnegative final int nPerc,
-                    @Nonnull @Nonempty final String sDesc)
+  ETaxCode (@Nonnull @Nonempty final String sID, @Nonnegative final int nPerc, @Nonnull @Nonempty final String sDesc)
   {
     m_sID = sID;
     m_nPerc = nPerc;
