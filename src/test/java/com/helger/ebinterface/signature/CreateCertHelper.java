@@ -22,7 +22,6 @@ import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
 import java.security.Principal;
-import java.security.PrivateKey;
 import java.security.Provider;
 import java.security.SecureRandom;
 import java.security.cert.CertificateFactory;
@@ -33,10 +32,14 @@ import javax.annotation.Nonnull;
 
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
+import org.bouncycastle.asn1.x509.BasicConstraints;
+import org.bouncycastle.asn1.x509.Extension;
+import org.bouncycastle.asn1.x509.KeyUsage;
 import org.bouncycastle.asn1.x509.SubjectPublicKeyInfo;
 import org.bouncycastle.cert.X509CertificateHolder;
 import org.bouncycastle.cert.X509v3CertificateBuilder;
 import org.bouncycastle.cert.jcajce.JcaX509CertificateConverter;
+import org.bouncycastle.cert.jcajce.JcaX509ExtensionUtils;
 import org.bouncycastle.cert.jcajce.JcaX509v3CertificateBuilder;
 import org.bouncycastle.crypto.params.AsymmetricKeyParameter;
 import org.bouncycastle.crypto.util.PrivateKeyFactory;
@@ -102,72 +105,143 @@ public final class CreateCertHelper
     return kpg.genKeyPair ();
   }
 
-  @Nonnull
-  public static X509Certificate generateCertificate (@Nonnull @Nonempty final String sCommonName,
-                                                     @Nonnull @Nonempty final String sOrganization,
-                                                     @Nonnull @Nonempty final String sCountry,
-                                                     @Nonnull final KeyPair keypair,
-                                                     @Nonnull final Date notAfter) throws Exception
+  public static enum ECertType
   {
-    final PrivateKey key = keypair.getPrivate ();
-    // Prepare the information required for generating an X.509 certificate.
-    final X500Name owner = x500 (sCommonName, sOrganization, sCountry);
-    final X509v3CertificateBuilder builder = new JcaX509v3CertificateBuilder (owner,
-                                                                              new BigInteger (64, SecureRandom.getInstanceStrong ()),
-                                                                              now (),
-                                                                              notAfter,
-                                                                              owner,
-                                                                              keypair.getPublic ());
+    CA_ROOT (KeyUsage.keyCertSign | KeyUsage.cRLSign, true, 1),
+    CA_SUB (KeyUsage.keyCertSign | KeyUsage.cRLSign, true, 0),
+    CERTIFICATE (KeyUsage.digitalSignature | KeyUsage.keyEncipherment | KeyUsage.keyAgreement, false, -1);
 
-    final ContentSigner signer = new JcaContentSignerBuilder (SIGNING_ALGO).build (key);
-    final X509CertificateHolder certHolder = builder.build (signer);
-    final X509Certificate cert = new JcaX509CertificateConverter ().setProvider (PROVIDER).getCertificate (certHolder);
-    cert.verify (keypair.getPublic ());
+    private final int m_nKeyUsage;
+    private final boolean m_bIsCA;
+    private final int m_nCertPathLen;
 
-    return cert;
+    ECertType (final int n, final boolean bIsCA, final int nCertPathLen)
+    {
+      m_nKeyUsage = n;
+      m_bIsCA = bIsCA;
+      m_nCertPathLen = nCertPathLen;
+    }
+
+    @Nonnull
+    public KeyUsage getKeyUsage ()
+    {
+      return new KeyUsage (m_nKeyUsage);
+    }
+
+    @Nonnull
+    public BasicConstraints getBasicConstraints ()
+    {
+      return m_bIsCA ? new BasicConstraints (m_nCertPathLen) : new BasicConstraints (false);
+    }
   }
 
   @Nonnull
-  public static PKCS10CertificationRequest createCSR (@Nonnull final X509Certificate cert, @Nonnull final KeyPair keyPair) throws Exception
+  public static X509Certificate generateSelfSignedRootCertificate (@Nonnull final KeyPair aSubjectKP,
+                                                                   @Nonnull @Nonempty final String sCommonName,
+                                                                   @Nonnull @Nonempty final String sOrganization,
+                                                                   @Nonnull @Nonempty final String sCountry,
+                                                                   @Nonnull final Date aNotAfter) throws Exception
+  {
+    final ECertType eCertType = ECertType.CA_ROOT;
+    final X500Name aSubjectName = x500 (sCommonName, sOrganization, sCountry);
+    final X500Name aIssuerName = aSubjectName;
+    final X509v3CertificateBuilder aCertBuilder = new JcaX509v3CertificateBuilder (aIssuerName,
+                                                                                   new BigInteger (64, SecureRandom.getInstanceStrong ()),
+                                                                                   now (),
+                                                                                   aNotAfter,
+                                                                                   aSubjectName,
+                                                                                   aSubjectKP.getPublic ());
+    {
+      // Since no CSR is used, the extensions need to be applied immediately
+      final JcaX509ExtensionUtils extUtils = new JcaX509ExtensionUtils ();
+      aCertBuilder.addExtension (Extension.subjectKeyIdentifier, false, extUtils.createSubjectKeyIdentifier (aSubjectKP.getPublic ()));
+      aCertBuilder.addExtension (Extension.basicConstraints, true, eCertType.getBasicConstraints ());
+      aCertBuilder.addExtension (Extension.keyUsage, true, eCertType.getKeyUsage ());
+    }
+
+    final ContentSigner aSigner = new JcaContentSignerBuilder (SIGNING_ALGO).setProvider (PROVIDER).build (aSubjectKP.getPrivate ());
+    final X509CertificateHolder certHolder = aCertBuilder.build (aSigner);
+
+    final X509Certificate ret = new JcaX509CertificateConverter ().setProvider (PROVIDER).getCertificate (certHolder);
+    ret.verify (aSubjectKP.getPublic ());
+
+    return ret;
+  }
+
+  @Nonnull
+  public static X509Certificate generateCertificate (@Nonnull final X509Certificate aIssuerCert,
+                                                     @Nonnull final KeyPair aSubjectKP,
+                                                     @Nonnull @Nonempty final String sCommonName,
+                                                     @Nonnull @Nonempty final String sOrganization,
+                                                     @Nonnull @Nonempty final String sCountry,
+                                                     @Nonnull final Date aNotAfter) throws Exception
+  {
+    // Prepare the information required for generating an X.509 certificate.
+    final X500Name aSubjectName = x500 (sCommonName, sOrganization, sCountry);
+    final X500Name aIssuerName = X500Name.getInstance (aIssuerCert.getSubjectX500Principal ().getEncoded ());
+    final X509v3CertificateBuilder aCertBuilder = new JcaX509v3CertificateBuilder (aIssuerName,
+                                                                                   new BigInteger (64, SecureRandom.getInstanceStrong ()),
+                                                                                   now (),
+                                                                                   aNotAfter,
+                                                                                   aSubjectName,
+                                                                                   aSubjectKP.getPublic ());
+    // No Extensions here - they are added with the signed CSR
+
+    final ContentSigner aSigner = new JcaContentSignerBuilder (SIGNING_ALGO).setProvider (PROVIDER).build (aSubjectKP.getPrivate ());
+    final X509CertificateHolder certHolder = aCertBuilder.build (aSigner);
+
+    final X509Certificate ret = new JcaX509CertificateConverter ().setProvider (PROVIDER).getCertificate (certHolder);
+    ret.verify (aSubjectKP.getPublic ());
+
+    return ret;
+  }
+
+  @Nonnull
+  public static PKCS10CertificationRequest createCSR (@Nonnull final X509Certificate cert,
+                                                      @Nonnull final KeyPair aIssuerKP) throws Exception
   {
     final Principal principal = cert.getSubjectX500Principal ();
     // generate certification request
     final X500Name x500Name = new X500Name (principal.toString ());
-    final PKCS10CertificationRequestBuilder p10Builder = new JcaPKCS10CertificationRequestBuilder (x500Name, keyPair.getPublic ());
-    final JcaContentSignerBuilder csBuilder = new JcaContentSignerBuilder (SIGNING_ALGO);
-    final ContentSigner signer = csBuilder.build (keyPair.getPrivate ());
+    final PKCS10CertificationRequestBuilder p10Builder = new JcaPKCS10CertificationRequestBuilder (x500Name, aIssuerKP.getPublic ());
+
+    final ContentSigner signer = new JcaContentSignerBuilder (SIGNING_ALGO).build (aIssuerKP.getPrivate ());
     return p10Builder.build (signer);
   }
 
   @Nonnull
-  public static X509Certificate signCSR (@Nonnull final PKCS10CertificationRequest inputCSR,
-                                         @Nonnull final PrivateKey caPrivate,
-                                         @Nonnull final KeyPair pair,
-                                         @Nonnull @Nonempty final String sRootCommonName,
-                                         @Nonnull @Nonempty final String sRootOrganization,
-                                         @Nonnull @Nonempty final String sRootCountry,
-                                         @Nonnull final Date notAfter) throws Exception
+  public static X509Certificate signCSR (@Nonnull final KeyPair aIssuerKP,
+                                         @Nonnull final X509Certificate aIssuerCert,
+                                         @Nonnull final PKCS10CertificationRequest inputCSR,
+                                         @Nonnull final KeyPair aSubjectKP,
+                                         @Nonnull final Date aNotAfter,
+                                         @Nonnull final ECertType eCertType) throws Exception
   {
 
     final AlgorithmIdentifier sigAlgId = new DefaultSignatureAlgorithmIdentifierFinder ().find (SIGNING_ALGO);
     final AlgorithmIdentifier digAlgId = new DefaultDigestAlgorithmIdentifierFinder ().find (sigAlgId);
 
-    final AsymmetricKeyParameter foo = PrivateKeyFactory.createKey (caPrivate.getEncoded ());
-    final SubjectPublicKeyInfo keyInfo = SubjectPublicKeyInfo.getInstance (pair.getPublic ().getEncoded ());
+    final SubjectPublicKeyInfo aSubjectPubKeyInfo = SubjectPublicKeyInfo.getInstance (aSubjectKP.getPublic ().getEncoded ());
 
-    final X509v3CertificateBuilder myCertificateGenerator = new X509v3CertificateBuilder (x500 (sRootCommonName,
-                                                                                                sRootOrganization,
-                                                                                                sRootCountry),
-                                                                                          new BigInteger (64,
-                                                                                                          SecureRandom.getInstanceStrong ()),
-                                                                                          now (),
-                                                                                          notAfter,
-                                                                                          inputCSR.getSubject (),
-                                                                                          keyInfo);
+    final X509v3CertificateBuilder aCertBuilder = new X509v3CertificateBuilder (X500Name.getInstance (aIssuerCert.getSubjectX500Principal ()
+                                                                                                                 .getEncoded ()),
+                                                                                new BigInteger (64, SecureRandom.getInstanceStrong ()),
+                                                                                now (),
+                                                                                aNotAfter,
+                                                                                inputCSR.getSubject (),
+                                                                                aSubjectPubKeyInfo);
+    {
+      final JcaX509ExtensionUtils extUtils = new JcaX509ExtensionUtils ();
+      aCertBuilder.addExtension (Extension.subjectKeyIdentifier, false, extUtils.createSubjectKeyIdentifier (aSubjectKP.getPublic ()));
+      aCertBuilder.addExtension (Extension.authorityKeyIdentifier, false, extUtils.createAuthorityKeyIdentifier (aIssuerKP.getPublic ()));
+      aCertBuilder.addExtension (Extension.basicConstraints, true, eCertType.getBasicConstraints ());
+      aCertBuilder.addExtension (Extension.keyUsage, true, eCertType.getKeyUsage ());
+    }
 
+    final AsymmetricKeyParameter foo = PrivateKeyFactory.createKey (aIssuerKP.getPrivate ().getEncoded ());
     final ContentSigner sigGen = new BcRSAContentSignerBuilder (sigAlgId, digAlgId).build (foo);
 
-    final X509CertificateHolder holder = myCertificateGenerator.build (sigGen);
+    final X509CertificateHolder holder = aCertBuilder.build (sigGen);
 
     final org.bouncycastle.asn1.x509.Certificate eeX509CertificateStructure = holder.toASN1Structure ();
 
@@ -178,5 +252,20 @@ public final class CreateCertHelper
       final X509Certificate theCert = (X509Certificate) cf.generateCertificate (is1);
       return theCert;
     }
+  }
+
+  @Nonnull
+  public static X509Certificate generateSignedCertificate (@Nonnull final KeyPair aIssuerKP,
+                                                           @Nonnull final X509Certificate aIssuerCert,
+                                                           @Nonnull final KeyPair aSubjectKP,
+                                                           @Nonnull @Nonempty final String sCommonName,
+                                                           @Nonnull @Nonempty final String sOrganization,
+                                                           @Nonnull @Nonempty final String sCountry,
+                                                           @Nonnull final Date aNotAfter,
+                                                           @Nonnull final ECertType eCertType) throws Exception
+  {
+    final X509Certificate aCert = generateCertificate (aIssuerCert, aSubjectKP, sCommonName, sOrganization, sCountry, aNotAfter);
+    final PKCS10CertificationRequest aCSR = createCSR (aCert, aIssuerKP);
+    return CreateCertHelper.signCSR (aIssuerKP, aIssuerCert, aCSR, aSubjectKP, aNotAfter, eCertType);
   }
 }

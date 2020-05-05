@@ -99,10 +99,11 @@ public final class SignatureCreationFuncTest
 
     // Create cert
     final KeyPair aRootKey = CreateCertHelper.genRSAKeyPair ();
-    final X509Certificate aRootCert = CreateCertHelper.generateCertificate ("SignedEbiTest",
+    final X509Certificate aRootCert = CreateCertHelper.generateCertificate (null,
+                                                                            aRootKey,
+                                                                            "SignedEbiTest",
                                                                             "futuretrust.eu",
                                                                             "EU",
-                                                                            aRootKey,
                                                                             CreateCertHelper.plusDays (999));
 
     new Ebi43Signer ().signEbInterface (aRootKey.getPrivate (), aRootCert, aDoc);

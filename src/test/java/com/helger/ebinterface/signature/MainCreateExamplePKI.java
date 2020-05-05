@@ -8,11 +8,11 @@ import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 import java.util.Date;
 
-import org.bouncycastle.pkcs.PKCS10CertificationRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.helger.commons.io.file.FileHelper;
+import com.helger.ebinterface.signature.CreateCertHelper.ECertType;
 import com.helger.security.keystore.EKeyStoreType;
 
 /**
@@ -44,11 +44,11 @@ public final class MainCreateExamplePKI
     // Root stuff
     final String sRootCN = "FINK-Lab-Root";
     final KeyPair aRootKey = CreateCertHelper.genRSAKeyPair ();
-    final X509Certificate aRootCert = CreateCertHelper.generateCertificate (sRootCN,
-                                                                            sOrganization,
-                                                                            sCountry,
-                                                                            aRootKey,
-                                                                            CreateCertHelper.plusDays (9999));
+    final X509Certificate aRootCert = CreateCertHelper.generateSelfSignedRootCertificate (aRootKey,
+                                                                                          sRootCN,
+                                                                                          sOrganization,
+                                                                                          sCountry,
+                                                                                          CreateCertHelper.plusDays (9999));
     {
       aKS.setKeyEntry ("root-key", aRootKey.getPrivate (), sPassword.toCharArray (), new Certificate [] { aRootCert });
       aTS.setCertificateEntry ("root-cert", aRootCert);
@@ -56,36 +56,46 @@ public final class MainCreateExamplePKI
 
     // add AS4 CA
     final String sAS4CN = "as4-ca";
-    final KeyPair aAS4Key;
-    final X509Certificate aAS4Cert;
+    final KeyPair aAS4RootKey;
+    final X509Certificate aAS4RootCert;
     {
       final Date aNotAfter = CreateCertHelper.plusDays (9999);
-      aAS4Key = CreateCertHelper.genRSAKeyPair ();
-      final X509Certificate aCert = CreateCertHelper.generateCertificate (sAS4CN, sOrganization, sCountry, aAS4Key, aNotAfter);
-      final PKCS10CertificationRequest aCSR = CreateCertHelper.createCSR (aCert, aAS4Key);
-      aAS4Cert = CreateCertHelper.signCSR (aCSR, aRootKey.getPrivate (), aAS4Key, sRootCN, sOrganization, sCountry, aNotAfter);
+      aAS4RootKey = CreateCertHelper.genRSAKeyPair ();
+      aAS4RootCert = CreateCertHelper.generateSignedCertificate (aRootKey,
+                                                                 aRootCert,
+                                                                 aAS4RootKey,
+                                                                 sAS4CN,
+                                                                 sOrganization,
+                                                                 sCountry,
+                                                                 aNotAfter,
+                                                                 ECertType.CA_SUB);
 
       // Add to keystore
-      aKS.setKeyEntry (sAS4CN, aAS4Key.getPrivate (), sPassword.toCharArray (), new Certificate [] { aAS4Cert, aRootCert });
+      aKS.setKeyEntry (sAS4CN, aAS4RootKey.getPrivate (), sPassword.toCharArray (), new Certificate [] { aAS4RootCert, aRootCert });
       // Add to truststore
-      aTS.setCertificateEntry (sAS4CN, aAS4Cert);
+      aTS.setCertificateEntry (sAS4CN, aAS4RootCert);
     }
 
     // add SMP CA
     final String sSMPCN = "smp-ca";
-    final KeyPair aSMPKey;
-    final X509Certificate aSMPCert;
+    final KeyPair aSMPRootKey;
+    final X509Certificate aSMPRootCert;
     {
       final Date aNotAfter = CreateCertHelper.plusDays (9999);
-      aSMPKey = CreateCertHelper.genRSAKeyPair ();
-      final X509Certificate aCert = CreateCertHelper.generateCertificate (sSMPCN, sOrganization, sCountry, aSMPKey, aNotAfter);
-      final PKCS10CertificationRequest aCSR = CreateCertHelper.createCSR (aCert, aSMPKey);
-      aSMPCert = CreateCertHelper.signCSR (aCSR, aRootKey.getPrivate (), aSMPKey, sRootCN, sOrganization, sCountry, aNotAfter);
+      aSMPRootKey = CreateCertHelper.genRSAKeyPair ();
+      aSMPRootCert = CreateCertHelper.generateSignedCertificate (aRootKey,
+                                                                 aRootCert,
+                                                                 aSMPRootKey,
+                                                                 sSMPCN,
+                                                                 sOrganization,
+                                                                 sCountry,
+                                                                 aNotAfter,
+                                                                 ECertType.CA_SUB);
 
       // Add to keystore
-      aKS.setKeyEntry (sSMPCN, aSMPKey.getPrivate (), sPassword.toCharArray (), new Certificate [] { aSMPCert, aRootCert });
+      aKS.setKeyEntry (sSMPCN, aSMPRootKey.getPrivate (), sPassword.toCharArray (), new Certificate [] { aSMPRootCert, aRootCert });
       // Add to truststore
-      aTS.setCertificateEntry (sSMPCN, aSMPCert);
+      aTS.setCertificateEntry (sSMPCN, aSMPRootCert);
     }
 
     // all AS4 certificates
@@ -93,30 +103,46 @@ public final class MainCreateExamplePKI
     {
       final String sCertName = "as4-" + i;
       final Date aNotAfter = CreateCertHelper.plusDays (9999);
-      final KeyPair aKey = CreateCertHelper.genRSAKeyPair ();
-      X509Certificate aCert = CreateCertHelper.generateCertificate (sCertName, sOrganization, sCountry, aKey, aNotAfter);
-      final PKCS10CertificationRequest aCSR = CreateCertHelper.createCSR (aCert, aKey);
-      aCert = CreateCertHelper.signCSR (aCSR, aAS4Key.getPrivate (), aKey, sAS4CN, sOrganization, sCountry, aNotAfter);
+      final KeyPair aAS4Key = CreateCertHelper.genRSAKeyPair ();
+      final X509Certificate aAS4Cert = CreateCertHelper.generateSignedCertificate (aAS4RootKey,
+                                                                                   aAS4RootCert,
+                                                                                   aAS4Key,
+                                                                                   sCertName,
+                                                                                   sOrganization,
+                                                                                   sCountry,
+                                                                                   aNotAfter,
+                                                                                   ECertType.CERTIFICATE);
 
       // Add to keystore
-      aKS.setKeyEntry (sCertName + "-key", aKey.getPrivate (), sPassword.toCharArray (), new Certificate [] { aCert, aAS4Cert, aRootCert });
+      aKS.setKeyEntry (sCertName + "-key",
+                       aAS4Key.getPrivate (),
+                       sPassword.toCharArray (),
+                       new Certificate [] { aAS4Cert, aAS4RootCert, aRootCert });
       // Add to truststore
-      aTS.setCertificateEntry (sCertName + "-cert", aCert);
+      aTS.setCertificateEntry (sCertName + "-cert", aAS4Cert);
     }
 
     // all SMP certificates
     for (final String sCertName : new String [] { "fink-smp" })
     {
       final Date aNotAfter = CreateCertHelper.plusDays (9999);
-      final KeyPair aKey = CreateCertHelper.genRSAKeyPair ();
-      X509Certificate aCert = CreateCertHelper.generateCertificate (sCertName, sOrganization, sCountry, aKey, aNotAfter);
-      final PKCS10CertificationRequest aSMPCSR = CreateCertHelper.createCSR (aCert, aKey);
-      aCert = CreateCertHelper.signCSR (aSMPCSR, aSMPKey.getPrivate (), aKey, sSMPCN, sOrganization, sCountry, aNotAfter);
+      final KeyPair aSMPKey = CreateCertHelper.genRSAKeyPair ();
+      final X509Certificate aSMPCert = CreateCertHelper.generateSignedCertificate (aSMPRootKey,
+                                                                                   aSMPRootCert,
+                                                                                   aSMPKey,
+                                                                                   sCertName,
+                                                                                   sOrganization,
+                                                                                   sCountry,
+                                                                                   aNotAfter,
+                                                                                   ECertType.CERTIFICATE);
 
       // Add to keystore
-      aKS.setKeyEntry (sCertName + "-key", aKey.getPrivate (), sPassword.toCharArray (), new Certificate [] { aCert, aSMPCert, aRootCert });
+      aKS.setKeyEntry (sCertName + "-key",
+                       aSMPKey.getPrivate (),
+                       sPassword.toCharArray (),
+                       new Certificate [] { aSMPCert, aSMPRootCert, aRootCert });
       // Add to truststore
-      aTS.setCertificateEntry (sCertName + "-cert", aCert);
+      aTS.setCertificateEntry (sCertName + "-cert", aSMPCert);
     }
 
     // Write to file
