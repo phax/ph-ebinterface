@@ -41,6 +41,8 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
   
 # News and noteworthy
 
+* v6.1.4 - work in progress
+    * Fixed an invalid CSS link in the ebInterface 5.0 XSLT
 * v6.1.3 - 2020-05-01
     * Updated to the final version of ebInterface 6.0 - only documentation changes
 * v6.1.2 - 2020-04-01
