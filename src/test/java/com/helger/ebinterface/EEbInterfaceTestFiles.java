@@ -86,7 +86,8 @@ public enum EEbInterfaceTestFiles
   V60 ("/ebinterface/v60/",
        new String [] { "ebinterface_6p0_sample_dokumentation.xml",
                        // "ebinterface_6p0_sample_ecosio_invalid.xml",
-                       "ebinterface_6p0_sample_ecosio.xml" });
+                       "ebinterface_6p0_sample_ecosio.xml",
+                       "ebinterface_6p0_sample_ph1.xml" });
 
   private final ICommonsList <IReadableResource> m_aTestFiles = new CommonsArrayList <> ();
 
