@@ -78,6 +78,8 @@ public final class VisualizationManager
   public static Templates getXSLTTemplates (@Nonnull final EEbInterfaceVersion eVersion)
   {
     final String sNamespaceURI = eVersion.getNamespaceURI ();
+
+    // Try in read-lock first
     final Templates ret = s_aRWLock.readLockedGet ( () -> s_aTemplates.get (sNamespaceURI));
     if (ret != null)
       return ret;
@@ -87,15 +89,23 @@ public final class VisualizationManager
       Templates ret2 = s_aTemplates.get (sNamespaceURI);
       if (ret2 == null)
       {
-        // Definitely not present - init
+        // Definitely not present - compile
         final IReadableResource aXSLTRes = eVersion.getXSLTResource ();
-        ret2 = XMLTransformerFactory.newTemplates (aXSLTRes);
-        if (ret2 == null)
-          LOGGER.error ("Failed to parse XSLT template " + aXSLTRes);
+        if (aXSLTRes != null)
+        {
+          ret2 = XMLTransformerFactory.newTemplates (aXSLTRes);
+          if (ret2 == null)
+            LOGGER.error ("Failed to parse XSLT template " + aXSLTRes);
+          else
+            if (LOGGER.isDebugEnabled ())
+              LOGGER.debug ("Compiled XSLT template " + aXSLTRes);
+          s_aTemplates.put (sNamespaceURI, ret2);
+        }
         else
+        {
           if (LOGGER.isDebugEnabled ())
-            LOGGER.debug ("Compiled XSLT template " + aXSLTRes);
-        s_aTemplates.put (sNamespaceURI, ret2);
+            LOGGER.debug ("ebInterface version " + eVersion.getVersion ().getAsString () + " contains no XSLT");
+        }
       }
       return ret2;
     });
@@ -150,8 +160,7 @@ public final class VisualizationManager
    * @return <code>null</code> if the XSLT could not be applied.
    */
   @Nullable
-  public static Document visualizeToDOMDocument (@Nonnull final EEbInterfaceVersion eVersion,
-                                                 @Nonnull final Source aSource)
+  public static Document visualizeToDOMDocument (@Nonnull final EEbInterfaceVersion eVersion, @Nonnull final Source aSource)
   {
     final Document aDoc = XMLFactory.newDocument ();
     return visualize (eVersion, aSource, new DOMResult (aDoc)).isSuccess () ? aDoc : null;
@@ -167,8 +176,7 @@ public final class VisualizationManager
    * @return <code>null</code> if the XSLT could not be applied.
    */
   @Nullable
-  public static Document visualizeToDOMDocument (@Nonnull final EEbInterfaceVersion eVersion,
-                                                 @Nonnull final IReadableResource aResource)
+  public static Document visualizeToDOMDocument (@Nonnull final EEbInterfaceVersion eVersion, @Nonnull final IReadableResource aResource)
   {
     return visualizeToDOMDocument (eVersion, TransformSourceFactory.create (aResource));
   }
@@ -208,8 +216,6 @@ public final class VisualizationManager
                                           @Nonnull final IReadableResource aResource,
                                           @Nonnull final File aDestinationFile)
   {
-    return visualize (eVersion,
-                      TransformSourceFactory.create (aResource),
-                      TransformResultFactory.create (aDestinationFile));
+    return visualize (eVersion, TransformSourceFactory.create (aResource), TransformResultFactory.create (aDestinationFile));
   }
 }
