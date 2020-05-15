@@ -20,6 +20,7 @@ Features:
 Note: this library is used by [WWW.E-RECHNUNG.GV.AT](http://www.e-rechnung.gv.at) - the Austrian Government "E-Rechnung an die öffentliche Verwaltung" solution for reading ebInterface files.
 
 The library can e.g. be used in combination with the [E-RECHNUNG.GV.AT Webservice Client](https://github.com/phax/erechnung.gv.at-webservice-client) to automatically deliver invoices to the Austrian Government. Alternatively the library [ph-ubl](https://github.com/phax/ph-ubl) is available to read and write UBL 2.0, 2.1 and 2.2 invoices (and other document types).
+A converter between ebInterface and UBL is available via the [ebinterface-ubl-mapping](https://github.com/austriapro/ebinterface-ubl-mapping) library.
 
 # Usage with Maven
 
@@ -27,7 +28,7 @@ The library can e.g. be used in combination with the [E-RECHNUNG.GV.AT Webservic
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-ebinterface</artifactId>
-  <version>6.1.3</version>
+  <version>6.1.4</version>
 </dependency>
 ```
 
@@ -41,7 +42,7 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
   
 # News and noteworthy
 
-* v6.1.4 - work in progress
+* v6.1.4 - 2020-05-15
     * Fixed an invalid CSS link in the ebInterface 5.0 XSLT
 * v6.1.3 - 2020-05-01
     * Updated to the final version of ebInterface 6.0 - only documentation changes
