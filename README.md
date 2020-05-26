@@ -28,7 +28,7 @@ A converter between ebInterface and UBL is available via the [ebinterface-ubl-ma
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-ebinterface</artifactId>
-  <version>6.1.4</version>
+  <version>6.1.5</version>
 </dependency>
 ```
 
@@ -42,6 +42,8 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
   
 # News and noteworthy
 
+* v6.1.5 - 2020-05-26
+    * Updated to ph-xsds 2.3.0 (changed Maven groupId)
 * v6.1.4 - 2020-05-15
     * Fixed an invalid CSS link in the ebInterface 5.0 XSLT
 * v6.1.3 - 2020-05-01
