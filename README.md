@@ -24,11 +24,13 @@ A converter between ebInterface and UBL is available via the [ebinterface-ubl-ma
 
 # Usage with Maven
 
+To use this library with Maven, add the following artefact to your pom.xml, replacing `x.y.z` with the effective version number:
+
 ```xml
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-ebinterface</artifactId>
-  <version>6.1.5</version>
+  <version>x.y.z</version>
 </dependency>
 ```
 
@@ -42,6 +44,8 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
   
 # News and noteworthy
 
+* v6.1.6 - 2020-06-25
+    * Updated to ph-xmldsig 4.3.2 which uses XMLSec 2.2.0
 * v6.1.5 - 2020-05-26
     * Updated to ph-xsds 2.3.0 (changed Maven groupId)
 * v6.1.4 - 2020-05-15
