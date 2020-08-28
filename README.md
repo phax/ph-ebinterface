@@ -44,6 +44,9 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
   
 # News and noteworthy
 
+* v6.2.0 - work in progress
+    * Updated to ph-commons 9.4.7
+    * Using Java 8 date and time classes for JAXB created classes
 * v6.1.6 - 2020-06-25
     * Updated to ph-xmldsig 4.3.2 which uses XMLSec 2.2.0
 * v6.1.5 - 2020-05-26
