@@ -158,6 +158,8 @@
         <artifactId>license-maven-plugin</artifactId>
         <configuration>
           <excludes>
+            <exclude>**/LICENSE</exclude>
+            <exclude>**/NOTICE</exclude>
             <exclude>src/main/resources/schemas/**</exclude>
             <exclude>src/main/resources/visualization/**</exclude>
             <exclude>src/test/resources/ebinterface/**</exclude>
