@@ -104,6 +104,11 @@ public final class CEbInterface
   public static final List <ClassPathResource> EBINTERFACE_60_XSDS = new CommonsArrayList <> (new ClassPathResource ("/schemas/ebinterface/ebinterface-6.0.xsd",
                                                                                                                      _getCL ())).getAsUnmodifiable ();
 
+  /** XML Schema resources for ebInterface 6.1 */
+  @CodingStyleguideUnaware
+  public static final List <ClassPathResource> EBINTERFACE_61_XSDS = new CommonsArrayList <> (new ClassPathResource ("/schemas/ebinterface/ebinterface-6.1.xsd",
+                                                                                                                     _getCL ())).getAsUnmodifiable ();
+
   /** Namespace URI for ebInterface 3.0 */
   public static final String EBINTERFACE_30_NS = "http://www.ebinterface.at/schema/3p0/";
 
@@ -135,6 +140,9 @@ public final class CEbInterface
 
   /** Namespace URI for ebInterface 6.0 */
   public static final String EBINTERFACE_60_NS = "http://www.ebinterface.at/schema/6p0/";
+
+  /** Namespace URI for ebInterface 6.1 */
+  public static final String EBINTERFACE_61_NS = "http://www.ebinterface.at/schema/6p1/";
 
   /** Stylesheet resource for ebInterface 3.0 */
   public static final IReadableResource EBINTERFACE_30_XSLT = new ClassPathResource ("/visualization/ebInterface-3.0.xslt",
@@ -168,8 +176,12 @@ public final class CEbInterface
   public static final IReadableResource EBINTERFACE_60_XSLT = new ClassPathResource ("/visualization/ebInterface-6.0.xslt",
                                                                                      _getCL ());
 
+  /** Stylesheet resource for ebInterface 6.1 */
+  public static final IReadableResource EBINTERFACE_61_XSLT = new ClassPathResource ("/visualization/ebInterface-6.1.xslt",
+                                                                                     _getCL ());
+
   @PresentForCodeCoverage
-  private static final CEbInterface s_aInstance = new CEbInterface ();
+  private static final CEbInterface INSTANCE = new CEbInterface ();
 
   private CEbInterface ()
   {}

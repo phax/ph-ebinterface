@@ -21,24 +21,24 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import com.helger.commons.io.resource.ClassPathResource;
-import com.helger.ebinterface.v50.Ebi50InvoiceType;
-import com.helger.ebinterface.v50.ObjectFactory;
+import com.helger.ebinterface.v61.Ebi61InvoiceType;
+import com.helger.ebinterface.v61.ObjectFactory;
 import com.helger.jaxb.GenericJAXBMarshaller;
 
 /**
- * This is the reader and writer for ebInterface 5.0 documents. This class may
+ * This is the reader and writer for ebInterface 6.1 documents. This class may
  * be derived to override protected methods from {@link GenericJAXBMarshaller}.
  *
  * @author Philip Helger
  */
-public class EbInterface50Marshaller extends GenericJAXBMarshaller <Ebi50InvoiceType>
+public class EbInterface61Marshaller extends GenericJAXBMarshaller <Ebi61InvoiceType>
 {
   /**
    * Constructor
    */
-  public EbInterface50Marshaller ()
+  public EbInterface61Marshaller ()
   {
-    this (CEbInterface.EBINTERFACE_50_XSDS);
+    this (CEbInterface.EBINTERFACE_61_XSDS);
   }
 
   /**
@@ -47,9 +47,9 @@ public class EbInterface50Marshaller extends GenericJAXBMarshaller <Ebi50Invoice
    * @param aXSDs
    *        The XML schemas to be used. Handle with care.
    */
-  public EbInterface50Marshaller (@Nullable final List <ClassPathResource> aXSDs)
+  public EbInterface61Marshaller (@Nullable final List <ClassPathResource> aXSDs)
   {
-    super (Ebi50InvoiceType.class, aXSDs, new ObjectFactory ()::createInvoice);
-    setNamespaceContext (EbInterface50NamespaceContext.getInstance ());
+    super (Ebi61InvoiceType.class, aXSDs, new ObjectFactory ()::createInvoice);
+    setNamespaceContext (EbInterface61NamespaceContext.getInstance ());
   }
 }

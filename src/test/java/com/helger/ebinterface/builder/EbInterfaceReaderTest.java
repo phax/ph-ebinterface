@@ -37,6 +37,7 @@ import com.helger.ebinterface.v42.Ebi42InvoiceType;
 import com.helger.ebinterface.v43.Ebi43InvoiceType;
 import com.helger.ebinterface.v50.Ebi50InvoiceType;
 import com.helger.ebinterface.v60.Ebi60InvoiceType;
+import com.helger.ebinterface.v61.Ebi61InvoiceType;
 import com.helger.xml.serialize.read.DOMReader;
 
 /**
@@ -65,14 +66,16 @@ public final class EbInterfaceReaderTest
       // Convert again to XML document
       final Document aDoc2 = EbInterfaceWriter.ebInterface30 ().getAsDocument (aInvoice);
       assertNotNull (aExampleFile.getPath (), aDoc2);
-      assertSame (EEbInterfaceVersion.V30, EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
+      assertSame (EEbInterfaceVersion.V30,
+                  EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
 
       // Convert to domain object again
       final Ebi30InvoiceType aInvoice2 = EbInterfaceReader.ebInterface30 ().read (aDoc2);
       assertNotNull (aExampleFile.getPath (), aInvoice2);
 
       // Must be equals
-      assertEquals (EbInterfaceWriter.ebInterface30 ().getAsString (aInvoice), EbInterfaceWriter.ebInterface30 ().getAsString (aInvoice2));
+      assertEquals (EbInterfaceWriter.ebInterface30 ().getAsString (aInvoice),
+                    EbInterfaceWriter.ebInterface30 ().getAsString (aInvoice2));
       CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
     }
   }
@@ -97,7 +100,8 @@ public final class EbInterfaceReaderTest
       // Convert again to XML document
       final Document aDoc2 = EbInterfaceWriter.ebInterface302 ().getAsDocument (aInvoice);
       assertNotNull (aExampleFile.getPath (), aDoc2);
-      assertSame (EEbInterfaceVersion.V302, EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
+      assertSame (EEbInterfaceVersion.V302,
+                  EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
 
       // Convert to domain object again
       final Ebi302InvoiceType aInvoice2 = EbInterfaceReader.ebInterface302 ().read (aDoc2);
@@ -126,7 +130,8 @@ public final class EbInterfaceReaderTest
       // Convert again to XML document
       final Document aDoc2 = EbInterfaceWriter.ebInterface40 ().getAsDocument (aInvoice);
       assertNotNull (aExampleFile.getPath (), aDoc2);
-      assertSame (EEbInterfaceVersion.V40, EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
+      assertSame (EEbInterfaceVersion.V40,
+                  EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
 
       // Convert to domain object again
       final Ebi40InvoiceType aInvoice2 = EbInterfaceReader.ebInterface40 ().read (aDoc2);
@@ -155,7 +160,8 @@ public final class EbInterfaceReaderTest
       // Convert again to XML document
       final Document aDoc2 = EbInterfaceWriter.ebInterface41 ().getAsDocument (aInvoice);
       assertNotNull (aExampleFile.getPath (), aDoc2);
-      assertSame (EEbInterfaceVersion.V41, EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
+      assertSame (EEbInterfaceVersion.V41,
+                  EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
 
       // Convert to domain object again
       final Ebi41InvoiceType aInvoice2 = EbInterfaceReader.ebInterface41 ().read (aDoc2);
@@ -184,7 +190,8 @@ public final class EbInterfaceReaderTest
       // Convert again to XML document
       final Document aDoc2 = EbInterfaceWriter.ebInterface42 ().getAsDocument (aInvoice);
       assertNotNull (aExampleFile.getPath (), aDoc2);
-      assertSame (EEbInterfaceVersion.V42, EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
+      assertSame (EEbInterfaceVersion.V42,
+                  EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
 
       // Convert to domain object again
       final Ebi42InvoiceType aInvoice2 = EbInterfaceReader.ebInterface42 ().read (aDoc2);
@@ -213,7 +220,8 @@ public final class EbInterfaceReaderTest
       // Convert again to XML document
       final Document aDoc2 = EbInterfaceWriter.ebInterface43 ().getAsDocument (aInvoice);
       assertNotNull (aExampleFile.getPath (), aDoc2);
-      assertSame (EEbInterfaceVersion.V43, EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
+      assertSame (EEbInterfaceVersion.V43,
+                  EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
 
       // Convert to domain object again
       final Ebi43InvoiceType aInvoice2 = EbInterfaceReader.ebInterface43 ().read (aDoc2);
@@ -242,7 +250,8 @@ public final class EbInterfaceReaderTest
       // Convert again to XML document
       final Document aDoc2 = EbInterfaceWriter.ebInterface50 ().getAsDocument (aInvoice);
       assertNotNull (aExampleFile.getPath (), aDoc2);
-      assertSame (EEbInterfaceVersion.V50, EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
+      assertSame (EEbInterfaceVersion.V50,
+                  EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
 
       // Convert to domain object again
       final Ebi50InvoiceType aInvoice2 = EbInterfaceReader.ebInterface50 ().read (aDoc2);
@@ -272,10 +281,42 @@ public final class EbInterfaceReaderTest
       final Document aDoc2 = EbInterfaceWriter.ebInterface60 ().getAsDocument (aInvoice);
       assertNotNull (aExampleFile.getPath (), aDoc2);
       assertEquals ("Invoice", aDoc2.getDocumentElement ().getLocalName ());
-      assertSame (EEbInterfaceVersion.V60, EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
+      assertSame (EEbInterfaceVersion.V60,
+                  EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
 
       // Convert to domain object again
       final Ebi60InvoiceType aInvoice2 = EbInterfaceReader.ebInterface60 ().read (aDoc2);
+      assertNotNull (aExampleFile.getPath (), aInvoice2);
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice2, aInvoice2.clone ());
+
+      // Must be equals
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
+    }
+  }
+
+  @Test
+  public void testReadEbi61 ()
+  {
+    for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V61.getTestResources ())
+    {
+      // Read from file as XML
+      final Document aDoc = DOMReader.readXMLDOM (aExampleFile);
+      assertNotNull (aDoc);
+
+      // Convert to domain object
+      final Ebi61InvoiceType aInvoice = EbInterfaceReader.ebInterface61 ().read (aDoc);
+      assertNotNull (aExampleFile.getPath (), aInvoice);
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice.clone ());
+
+      // Convert again to XML document
+      final Document aDoc2 = EbInterfaceWriter.ebInterface61 ().getAsDocument (aInvoice);
+      assertNotNull (aExampleFile.getPath (), aDoc2);
+      assertEquals ("Invoice", aDoc2.getDocumentElement ().getLocalName ());
+      assertSame (EEbInterfaceVersion.V61,
+                  EEbInterfaceVersion.getFromNamespaceURIOrNull (aDoc2.getDocumentElement ().getNamespaceURI ()));
+
+      // Convert to domain object again
+      final Ebi61InvoiceType aInvoice2 = EbInterfaceReader.ebInterface61 ().read (aDoc2);
       assertNotNull (aExampleFile.getPath (), aInvoice2);
       CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice2, aInvoice2.clone ());
 

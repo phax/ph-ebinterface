@@ -35,6 +35,7 @@ import com.helger.ebinterface.v42.Ebi42InvoiceType;
 import com.helger.ebinterface.v43.Ebi43InvoiceType;
 import com.helger.ebinterface.v50.Ebi50InvoiceType;
 import com.helger.ebinterface.v60.Ebi60InvoiceType;
+import com.helger.ebinterface.v61.Ebi61InvoiceType;
 import com.helger.jaxb.builder.IJAXBDocumentType;
 import com.helger.jaxb.builder.JAXBDocumentType;
 
@@ -52,11 +53,13 @@ public enum EEbInterfaceDocumentType implements IJAXBDocumentType
   EBI42 (Ebi42InvoiceType.class, CEbInterface.EBINTERFACE_42_XSDS),
   EBI43 (Ebi43InvoiceType.class, CEbInterface.EBINTERFACE_43_XSDS),
   EBI50 (Ebi50InvoiceType.class, CEbInterface.EBINTERFACE_50_XSDS),
-  EBI60 (Ebi60InvoiceType.class, CEbInterface.EBINTERFACE_60_XSDS);
+  EBI60 (Ebi60InvoiceType.class, CEbInterface.EBINTERFACE_60_XSDS),
+  EBI61 (Ebi61InvoiceType.class, CEbInterface.EBINTERFACE_61_XSDS);
 
   private final JAXBDocumentType m_aDocType;
 
-  EEbInterfaceDocumentType (@Nonnull final Class <?> aClass, @Nonnull final List <? extends ClassPathResource> aXSDPaths)
+  EEbInterfaceDocumentType (@Nonnull final Class <?> aClass,
+                            @Nonnull final List <? extends ClassPathResource> aXSDPaths)
   {
     m_aDocType = new JAXBDocumentType (aClass, aXSDPaths, x -> StringHelper.trimEnd (x, "Type"));
   }

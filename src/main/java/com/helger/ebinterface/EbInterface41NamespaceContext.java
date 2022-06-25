@@ -32,7 +32,7 @@ public class EbInterface41NamespaceContext extends MapBasedNamespaceContext
 {
   private static final class SingletonHolder
   {
-    static final EbInterface41NamespaceContext s_aInstance = new EbInterface41NamespaceContext ();
+    static final EbInterface41NamespaceContext INSTANCE = new EbInterface41NamespaceContext ();
   }
 
   protected EbInterface41NamespaceContext ()
@@ -51,6 +51,6 @@ public class EbInterface41NamespaceContext extends MapBasedNamespaceContext
   @Nonnull
   public static EbInterface41NamespaceContext getInstance ()
   {
-    return SingletonHolder.s_aInstance;
+    return SingletonHolder.INSTANCE;
   }
 }

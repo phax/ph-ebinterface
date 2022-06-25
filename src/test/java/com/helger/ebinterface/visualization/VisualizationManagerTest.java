@@ -108,4 +108,13 @@ public final class VisualizationManagerTest
       VisualizationManager.visualizeToFile (EEbInterfaceVersion.V60, aExampleFile, _buildHTMLFileName (aExampleFile));
     }
   }
+
+  @Test
+  public void testV61 ()
+  {
+    for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V61.getTestResources ())
+    {
+      VisualizationManager.visualizeToFile (EEbInterfaceVersion.V61, aExampleFile, _buildHTMLFileName (aExampleFile));
+    }
+  }
 }

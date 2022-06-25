@@ -27,6 +27,7 @@ import com.helger.ebinterface.EbInterface42NamespaceContext;
 import com.helger.ebinterface.EbInterface43NamespaceContext;
 import com.helger.ebinterface.EbInterface50NamespaceContext;
 import com.helger.ebinterface.EbInterface60NamespaceContext;
+import com.helger.ebinterface.EbInterface61NamespaceContext;
 import com.helger.ebinterface.v30.Ebi30InvoiceType;
 import com.helger.ebinterface.v302.Ebi302InvoiceType;
 import com.helger.ebinterface.v40.Ebi40InvoiceType;
@@ -35,6 +36,7 @@ import com.helger.ebinterface.v42.Ebi42InvoiceType;
 import com.helger.ebinterface.v43.Ebi43InvoiceType;
 import com.helger.ebinterface.v50.Ebi50InvoiceType;
 import com.helger.ebinterface.v60.Ebi60InvoiceType;
+import com.helger.ebinterface.v61.Ebi61InvoiceType;
 import com.helger.jaxb.builder.JAXBWriterBuilder;
 import com.helger.xml.namespace.MapBasedNamespaceContext;
 
@@ -179,6 +181,19 @@ public class EbInterfaceWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, E
   {
     final EbInterfaceWriter <Ebi60InvoiceType> ret = EbInterfaceWriter.create (Ebi60InvoiceType.class);
     ret.setNamespaceContext (EbInterface60NamespaceContext.getInstance ());
+    return ret;
+  }
+
+  /**
+   * Create a writer builder for Ebi61InvoiceType.
+   *
+   * @return The builder and never <code>null</code>
+   */
+  @Nonnull
+  public static EbInterfaceWriter <Ebi61InvoiceType> ebInterface61 ()
+  {
+    final EbInterfaceWriter <Ebi61InvoiceType> ret = EbInterfaceWriter.create (Ebi61InvoiceType.class);
+    ret.setNamespaceContext (EbInterface61NamespaceContext.getInstance ());
     return ret;
   }
 }

@@ -164,4 +164,12 @@
       </nameXmlTransform>
     </schemaBindings>
   </bindings>
+  <bindings schemaLocation="../resources/schemas/ebinterface/ebinterface-6.1.xsd">
+    <schemaBindings>
+      <package name="com.helger.ebinterface.v61" />
+      <nameXmlTransform>
+        <typeName prefix="Ebi61"/>
+      </nameXmlTransform>
+    </schemaBindings>
+  </bindings>
 </bindings>

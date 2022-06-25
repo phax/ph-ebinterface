@@ -38,7 +38,7 @@ import com.helger.commons.collection.impl.ICommonsSet;
 public final class EbInterfaceDocumentTypes
 {
   /** Maps namespaces to document types */
-  private static final ICommonsMap <String, EEbInterfaceDocumentType> s_aNamespace2DocType = new CommonsHashMap <> ();
+  private static final ICommonsMap <String, EEbInterfaceDocumentType> NAMESPACE_TO_DOCTYPE = new CommonsHashMap <> ();
 
   static
   {
@@ -47,14 +47,14 @@ public final class EbInterfaceDocumentTypes
     {
       // add to namespace map
       final String sNamespace = eDocType.getNamespaceURI ();
-      if (s_aNamespace2DocType.containsKey (sNamespace))
+      if (NAMESPACE_TO_DOCTYPE.containsKey (sNamespace))
         throw new IllegalArgumentException ("The namespace '" + sNamespace + "' is already mapped!");
-      s_aNamespace2DocType.put (sNamespace, eDocType);
+      NAMESPACE_TO_DOCTYPE.put (sNamespace, eDocType);
     }
   }
 
   @PresentForCodeCoverage
-  private static final EbInterfaceDocumentTypes s_aInstance = new EbInterfaceDocumentTypes ();
+  private static final EbInterfaceDocumentTypes INSTANCE = new EbInterfaceDocumentTypes ();
 
   private EbInterfaceDocumentTypes ()
   {}
@@ -67,7 +67,7 @@ public final class EbInterfaceDocumentTypes
   @ReturnsMutableCopy
   public static ICommonsSet <String> getAllNamespaces ()
   {
-    return s_aNamespace2DocType.copyOfKeySet ();
+    return NAMESPACE_TO_DOCTYPE.copyOfKeySet ();
   }
 
   /**
@@ -82,7 +82,7 @@ public final class EbInterfaceDocumentTypes
   @Nullable
   public static EEbInterfaceDocumentType getDocumentTypeOfNamespace (@Nullable final String sNamespace)
   {
-    return s_aNamespace2DocType.get (sNamespace);
+    return NAMESPACE_TO_DOCTYPE.get (sNamespace);
   }
 
   /**

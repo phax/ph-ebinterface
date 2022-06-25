@@ -17,12 +17,9 @@
 package com.helger.ebinterface;
 
 import javax.annotation.Nonnull;
-import javax.xml.XMLConstants;
 
 import com.helger.commons.annotation.Singleton;
-import com.helger.xml.CXML;
 import com.helger.xml.namespace.MapBasedNamespaceContext;
-import com.helger.xsds.xmldsig.CXMLDSig;
 
 /**
  * The namespace context to be used as the namespace prefix mapper.
@@ -30,18 +27,16 @@ import com.helger.xsds.xmldsig.CXMLDSig;
  * @author Philip Helger
  */
 @Singleton
-public class EbInterface30NamespaceContext extends MapBasedNamespaceContext
+public class EbInterface61NamespaceContext extends MapBasedNamespaceContext
 {
   private static final class SingletonHolder
   {
-    static final EbInterface30NamespaceContext INSTANCE = new EbInterface30NamespaceContext ();
+    static final EbInterface61NamespaceContext INSTANCE = new EbInterface61NamespaceContext ();
   }
 
-  protected EbInterface30NamespaceContext ()
+  protected EbInterface61NamespaceContext ()
   {
-    addMapping (CXML.XML_NS_PREFIX_XSI, XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI);
-    addMapping (CXMLDSig.DEFAULT_PREFIX, CXMLDSig.NAMESPACE_URI);
-    addMapping ("eb", CEbInterface.EBINTERFACE_30_NS);
+    addDefaultNamespaceURI (CEbInterface.EBINTERFACE_61_NS);
   }
 
   /**
@@ -49,7 +44,7 @@ public class EbInterface30NamespaceContext extends MapBasedNamespaceContext
    *         clone the result before you further modify it.
    */
   @Nonnull
-  public static EbInterface30NamespaceContext getInstance ()
+  public static EbInterface61NamespaceContext getInstance ()
   {
     return SingletonHolder.INSTANCE;
   }

@@ -18,7 +18,7 @@ package com.helger.ebinterface;
 
 import java.util.List;
 
-import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.ebinterface.v302.Ebi302InvoiceType;
@@ -47,9 +47,9 @@ public class EbInterface302Marshaller extends GenericJAXBMarshaller <Ebi302Invoi
    * @param aXSDs
    *        The XML schemas to be used. Handle with care.
    */
-  public EbInterface302Marshaller (@Nonnull final List <ClassPathResource> aXSDs)
+  public EbInterface302Marshaller (@Nullable final List <ClassPathResource> aXSDs)
   {
-    super (Ebi302InvoiceType.class, aXSDs, o -> new ObjectFactory ().createInvoice (o));
+    super (Ebi302InvoiceType.class, aXSDs, new ObjectFactory ()::createInvoice);
     setNamespaceContext (EbInterface302NamespaceContext.getInstance ());
   }
 }
