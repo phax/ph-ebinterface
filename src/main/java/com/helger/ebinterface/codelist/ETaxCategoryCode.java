@@ -35,6 +35,7 @@ public enum ETaxCategoryCode implements IHasID <String>
   // VAT
   S ("S", ETaxCategoryCodeType.VAT),
   AA ("AA", ETaxCategoryCodeType.VAT),
+  Z ("Z", ETaxCategoryCodeType.VAT),
   // Tax exemption
   D ("D", ETaxCategoryCodeType.TAX_EXEMPTION),
   E ("E", ETaxCategoryCodeType.TAX_EXEMPTION),
@@ -44,7 +45,7 @@ public enum ETaxCategoryCode implements IHasID <String>
   J ("J", ETaxCategoryCodeType.TAX_EXEMPTION),
   K ("K", ETaxCategoryCodeType.TAX_EXEMPTION),
   // Not tax relevant
-  O ("O", ETaxCategoryCodeType.NOT_TAX_RELEVANT), // letter
+  O ("O", ETaxCategoryCodeType.NOT_TAX_RELEVANT),
   // Irrelevant
   A ("A", ETaxCategoryCodeType.IRRELEVANT),
   AB ("AB", ETaxCategoryCodeType.IRRELEVANT),
@@ -54,8 +55,7 @@ public enum ETaxCategoryCode implements IHasID <String>
   C ("C", ETaxCategoryCodeType.IRRELEVANT),
   H ("H", ETaxCategoryCodeType.IRRELEVANT),
   L ("L", ETaxCategoryCodeType.IRRELEVANT),
-  M ("M", ETaxCategoryCodeType.IRRELEVANT),
-  Z ("Z", ETaxCategoryCodeType.IRRELEVANT);
+  M ("M", ETaxCategoryCodeType.IRRELEVANT);
 
   private final String m_sID;
   private final ETaxCategoryCodeType m_eType;
