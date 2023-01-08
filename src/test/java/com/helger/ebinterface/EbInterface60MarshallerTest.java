@@ -47,7 +47,7 @@ public final class EbInterface60MarshallerTest
       assertNotNull (aDoc);
 
       final EbInterface60Marshaller aMarshaller = new EbInterface60Marshaller ();
-      aMarshaller.setValidationEventHandlerFactory (m -> new LoggingValidationEventHandler ().andThen (m));
+      aMarshaller.setValidationEventHandler (new LoggingValidationEventHandler ().andThen (aMarshaller.getValidationEventHandler ()));
 
       // Convert to domain object
       final Ebi60InvoiceType aInvoice = aMarshaller.read (aDoc);

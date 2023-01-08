@@ -23,8 +23,6 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
-import javax.xml.bind.JAXBElement;
-
 import org.junit.Test;
 import org.w3c.dom.Document;
 
@@ -37,6 +35,8 @@ import com.helger.ebinterface.v50.Ebi50ItemListType;
 import com.helger.ebinterface.v50.Ebi50ListLineItemType;
 import com.helger.jaxb.validation.LoggingValidationEventHandler;
 import com.helger.xml.serialize.read.DOMReader;
+
+import jakarta.xml.bind.JAXBElement;
 
 /**
  * Test class for class {@link EbInterface50Marshaller}.
@@ -55,7 +55,7 @@ public final class EbInterface50MarshallerTest
       assertNotNull (aDoc);
 
       final EbInterface50Marshaller aMarshaller = new EbInterface50Marshaller ();
-      aMarshaller.setValidationEventHandlerFactory (m -> new LoggingValidationEventHandler ().andThen (m));
+      aMarshaller.setValidationEventHandler (new LoggingValidationEventHandler ().andThen (aMarshaller.getValidationEventHandler ()));
 
       // Convert to domain object
       final Ebi50InvoiceType aInvoice = aMarshaller.read (aDoc);

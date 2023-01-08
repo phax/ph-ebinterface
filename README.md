@@ -44,6 +44,10 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
   
 # News and noteworthy
 
+* v7.0.0 - 2023-01-08
+    * Using Java 11 as the baseline
+    * Updated to ph-commons 11
+    * Using JAXB 4.0 as the baseline
 * v6.5.0 - 2022-08-08
     * Added support of ebInterface 6.1
 * v6.4.0 - 2021-05-02
