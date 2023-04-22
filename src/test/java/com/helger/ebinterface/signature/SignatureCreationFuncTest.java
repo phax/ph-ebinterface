@@ -93,7 +93,7 @@ public final class SignatureCreationFuncTest
   @Test
   public void testMe () throws Exception
   {
-    final Document aDoc = DOMReader.readXMLDOM (new FileSystemResource ("src/test/resources/ebinterface/v43/testinstance-valid-schema.xml"));
+    final Document aDoc = DOMReader.readXMLDOM (new FileSystemResource ("src/test/resources/external/ebinterface/v43/testinstance-valid-schema.xml"));
     assertNotNull (aDoc);
     final Ebi43InvoiceType aOriginalInvoice = new EbInterface43Marshaller ().read (aDoc);
     assertNotNull (aOriginalInvoice);

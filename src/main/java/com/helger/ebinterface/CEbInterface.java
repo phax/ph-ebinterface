@@ -164,7 +164,7 @@ public final class CEbInterface
   /** Namespace URI for ebInterface 6.1 */
   public static final String EBINTERFACE_61_NS = "http://www.ebinterface.at/schema/6p1/";
 
-  private static final String PATH_VISU = BASE + "visualization";
+  private static final String PATH_VISU = BASE + "visualization/";
 
   /** Stylesheet resource for ebInterface 3.0 */
   public static final IReadableResource EBINTERFACE_30_XSLT = new ClassPathResource (PATH_VISU + "ebInterface-3.0.xslt",

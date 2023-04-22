@@ -70,12 +70,12 @@ public final class SignatureValidatorFuncTest
   @Test
   public void testSign () throws Exception
   {
-    for (final String sPath : new String [] { "ebinterface/v30/valid6-signed.xml",
-                                              "ebinterface/v302/mesonic1.xml",
-                                              "ebinterface/v302/mesonic2.xml",
-                                              "ebinterface/v302/valid_and_signed.xml",
-                                              // "ebinterface/v40/ebinterface4-signed.xml",
-                                              "ebinterface/v40/Rechnung-R_00156_3_00.xml" })
+    for (final String sPath : new String [] { "external/ebinterface/v30/valid6-signed.xml",
+                                              "external/ebinterface/v302/mesonic1.xml",
+                                              "external/ebinterface/v302/mesonic2.xml",
+                                              "external/ebinterface/v302/valid_and_signed.xml",
+                                              // "external/ebinterface/v40/ebinterface4-signed.xml",
+                                              "external/ebinterface/v40/Rechnung-R_00156_3_00.xml" })
     {
       LOGGER.info (sPath);
 
