@@ -20,6 +20,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 import com.helger.commons.io.resource.IReadableResource;
@@ -36,6 +38,8 @@ import com.helger.xmldsig.XMLDSigValidator;
  */
 public final class EbInterface41MarshallerTest
 {
+  private static final Logger LOGGER = LoggerFactory.getLogger (EbInterface41MarshallerTest.class);
+
   @Test
   public void testReadValid ()
   {
@@ -78,7 +82,7 @@ public final class EbInterface41MarshallerTest
 
       if (XMLDSigValidator.containsSignature (aDoc))
       {
-        System.out.println (aExampleFile.getPath ());
+        LOGGER.info (aExampleFile.getPath ());
         final XMLDSigValidationResult aSVR = XMLDSigValidator.validateSignature (aDoc);
         assertNotNull (aSVR);
       }

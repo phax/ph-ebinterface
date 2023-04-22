@@ -60,7 +60,7 @@ public final class SignatureValidatorFuncTest
         try
         {
           if (XMLDSigValidator.validateSignature (aDoc).isValid ())
-            System.out.println ("OK: " + aFile.getAbsolutePath ());
+            LOGGER.info ("OK: " + aFile.getAbsolutePath ());
         }
         catch (final Exception ex)
         {}
