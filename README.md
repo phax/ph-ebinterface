@@ -14,6 +14,7 @@ Features:
 * Read and write ebInterface 4.3 invoices (since v5.1.0)
 * Read and write ebInterface 5.0 invoices (since v6.0.1)
 * Read and write ebInterface 6.0 invoices (since v6.1.3)
+* Read and write ebInterface 6.1 invoices (since v6.5.0)
 * Validate the signature of ebInterface documents
 * Visualize ebInterface documents as HTML documents
 
@@ -44,6 +45,9 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
   
 # News and noteworthy
 
+* v7.1.0 - 2023-04-22
+    * Moved XML Schema to folder `external/...`
+    * Deprecated classes `EbInterface(Reader|Writer|Validator)` and `EEbInterfaceDocumentType`
 * v7.0.0 - 2023-01-08
     * Using Java 11 as the baseline
     * Updated to ph-commons 11

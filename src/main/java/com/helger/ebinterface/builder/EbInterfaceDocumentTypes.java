@@ -35,6 +35,7 @@ import com.helger.commons.collection.impl.ICommonsSet;
  * @author Philip Helger
  */
 @Immutable
+@Deprecated (since = "7.1.0", forRemoval = true)
 public final class EbInterfaceDocumentTypes
 {
   /** Maps namespaces to document types */

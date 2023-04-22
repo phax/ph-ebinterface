@@ -48,6 +48,7 @@ import com.helger.xml.namespace.MapBasedNamespaceContext;
  *        The ebInterface implementation class to be written
  */
 @NotThreadSafe
+@Deprecated (since = "7.1.0", forRemoval = true)
 public class EbInterfaceWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, EbInterfaceWriter <JAXBTYPE>>
 {
   public EbInterfaceWriter (@Nonnull final EEbInterfaceDocumentType eDocType)

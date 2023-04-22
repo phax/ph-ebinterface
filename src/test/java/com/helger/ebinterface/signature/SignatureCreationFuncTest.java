@@ -36,6 +36,7 @@ import org.w3c.dom.NodeList;
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.io.file.SimpleFileIO;
 import com.helger.commons.io.resource.FileSystemResource;
+import com.helger.ebinterface.EbInterface43Marshaller;
 import com.helger.ebinterface.EbInterface43NamespaceContext;
 import com.helger.ebinterface.builder.EbInterfaceReader;
 import com.helger.ebinterface.v43.Ebi43InvoiceType;
@@ -94,7 +95,7 @@ public final class SignatureCreationFuncTest
   {
     final Document aDoc = DOMReader.readXMLDOM (new FileSystemResource ("src/test/resources/ebinterface/v43/testinstance-valid-schema.xml"));
     assertNotNull (aDoc);
-    final Ebi43InvoiceType aOriginalInvoice = EbInterfaceReader.ebInterface43 ().read (aDoc);
+    final Ebi43InvoiceType aOriginalInvoice = new EbInterface43Marshaller ().read (aDoc);
     assertNotNull (aOriginalInvoice);
 
     // Create cert

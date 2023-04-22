@@ -38,6 +38,7 @@ import com.helger.jaxb.builder.JAXBReaderBuilder;
  *        The ebInterface implementation class to be read
  */
 @NotThreadSafe
+@Deprecated (since = "7.1.0", forRemoval = true)
 public class EbInterfaceReader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, EbInterfaceReader <JAXBTYPE>>
 {
   public EbInterfaceReader (@Nonnull final EEbInterfaceDocumentType eDocType,

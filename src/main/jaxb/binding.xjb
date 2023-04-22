@@ -27,7 +27,7 @@
     <xjc:javaType name="com.helger.commons.datetime.XMLOffsetDate" xmlType="xsd:date" adapter="com.helger.jaxb.adapter.AdapterXMLOffsetDate" />
     <xjc:javaType name="com.helger.commons.datetime.XMLOffsetTime" xmlType="xsd:time" adapter="com.helger.jaxb.adapter.AdapterXMLOffsetTime" />
   </globalBindings>
-  <bindings schemaLocation="../resources/schemas/ebinterface/ebinterface-3.0.xsd">
+  <bindings schemaLocation="../resources/external/schemas/ebinterface/ebinterface-3.0.xsd">
     <schemaBindings>
       <package name="com.helger.ebinterface.v30" />
       <nameXmlTransform>
@@ -38,7 +38,7 @@
       <typesafeEnumMember name="NONE"/>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/ebinterface/ebinterface-3.0.2.xsd">
+  <bindings schemaLocation="../resources/external/schemas/ebinterface/ebinterface-3.0.2.xsd">
     <schemaBindings>
       <package name="com.helger.ebinterface.v302" />
       <nameXmlTransform>
@@ -49,7 +49,7 @@
       <typesafeEnumMember name="NONE"/>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/ebinterface/ebinterface-4.0.xsd">
+  <bindings schemaLocation="../resources/external/schemas/ebinterface/ebinterface-4.0.xsd">
     <schemaBindings>
       <package name="com.helger.ebinterface.v40" />
       <nameXmlTransform>
@@ -60,7 +60,7 @@
       <typesafeEnumMember name="NONE"/>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/ebinterface/ebInterfaceExtension-4.0.xsd">
+  <bindings schemaLocation="../resources/external/schemas/ebinterface/ebInterfaceExtension-4.0.xsd">
     <schemaBindings>
       <package name="com.helger.ebinterface.v40.extensions" />
       <nameXmlTransform>
@@ -68,7 +68,7 @@
       </nameXmlTransform>
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/ebinterface/ext40/ebInterfaceExtension_SV.xsd">
+  <bindings schemaLocation="../resources/external/schemas/ebinterface/ext40/ebInterfaceExtension_SV.xsd">
     <schemaBindings>
       <package name="com.helger.ebinterface.v40.extensions.sv" />
       <nameXmlTransform>
@@ -76,7 +76,7 @@
       </nameXmlTransform>
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/ebinterface/ebinterface-4.1.xsd">
+  <bindings schemaLocation="../resources/external/schemas/ebinterface/ebinterface-4.1.xsd">
     <schemaBindings>
       <package name="com.helger.ebinterface.v41" />
       <nameXmlTransform>
@@ -84,7 +84,7 @@
       </nameXmlTransform>
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/ebinterface/ebInterfaceExtension-4.1.xsd">
+  <bindings schemaLocation="../resources/external/schemas/ebinterface/ebInterfaceExtension-4.1.xsd">
     <schemaBindings>
       <package name="com.helger.ebinterface.v41.extensions" />
       <nameXmlTransform>
@@ -92,7 +92,7 @@
       </nameXmlTransform>
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/ebinterface/ext41/ebInterfaceExtension_SV.xsd">
+  <bindings schemaLocation="../resources/external/schemas/ebinterface/ext41/ebInterfaceExtension_SV.xsd">
     <schemaBindings>
       <package name="com.helger.ebinterface.v41.extensions.sv" />
       <nameXmlTransform>
@@ -100,7 +100,7 @@
       </nameXmlTransform>
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/ebinterface/ebinterface-4.2.xsd">
+  <bindings schemaLocation="../resources/external/schemas/ebinterface/ebinterface-4.2.xsd">
     <schemaBindings>
       <package name="com.helger.ebinterface.v42" />
       <nameXmlTransform>
@@ -108,7 +108,7 @@
       </nameXmlTransform>
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/ebinterface/ebInterfaceExtension-4.2.xsd">
+  <bindings schemaLocation="../resources/external/schemas/ebinterface/ebInterfaceExtension-4.2.xsd">
     <schemaBindings>
       <package name="com.helger.ebinterface.v42.extensions" />
       <nameXmlTransform>
@@ -116,7 +116,7 @@
       </nameXmlTransform>
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/ebinterface/ext42/ebInterfaceExtension_SV.xsd">
+  <bindings schemaLocation="../resources/external/schemas/ebinterface/ext42/ebInterfaceExtension_SV.xsd">
     <schemaBindings>
       <package name="com.helger.ebinterface.v42.extensions.sv" />
       <nameXmlTransform>
@@ -124,7 +124,7 @@
       </nameXmlTransform>
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/ebinterface/ebinterface-4.3.xsd">
+  <bindings schemaLocation="../resources/external/schemas/ebinterface/ebinterface-4.3.xsd">
     <schemaBindings>
       <package name="com.helger.ebinterface.v43" />
       <nameXmlTransform>
@@ -132,7 +132,7 @@
       </nameXmlTransform>
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/ebinterface/ebInterfaceExtension-4.3.xsd">
+  <bindings schemaLocation="../resources/external/schemas/ebinterface/ebInterfaceExtension-4.3.xsd">
     <schemaBindings>
       <package name="com.helger.ebinterface.v43.extensions" />
       <nameXmlTransform>
@@ -140,7 +140,7 @@
       </nameXmlTransform>
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/ebinterface/ext43/ebInterfaceExtension_SV.xsd">
+  <bindings schemaLocation="../resources/external/schemas/ebinterface/ext43/ebInterfaceExtension_SV.xsd">
     <schemaBindings>
       <package name="com.helger.ebinterface.v43.extensions.sv" />
       <nameXmlTransform>
@@ -148,7 +148,7 @@
       </nameXmlTransform>
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/ebinterface/ebinterface-5.0.xsd">
+  <bindings schemaLocation="../resources/external/schemas/ebinterface/ebinterface-5.0.xsd">
     <schemaBindings>
       <package name="com.helger.ebinterface.v50" />
       <nameXmlTransform>
@@ -156,7 +156,7 @@
       </nameXmlTransform>
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/ebinterface/ebinterface-6.0.xsd">
+  <bindings schemaLocation="../resources/external/schemas/ebinterface/ebinterface-6.0.xsd">
     <schemaBindings>
       <package name="com.helger.ebinterface.v60" />
       <nameXmlTransform>
@@ -164,7 +164,7 @@
       </nameXmlTransform>
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/ebinterface/ebinterface-6.1.xsd">
+  <bindings schemaLocation="../resources/external/schemas/ebinterface/ebinterface-6.1.xsd">
     <schemaBindings>
       <package name="com.helger.ebinterface.v61" />
       <nameXmlTransform>

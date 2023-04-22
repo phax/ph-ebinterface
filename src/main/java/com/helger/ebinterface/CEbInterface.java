@@ -42,71 +42,91 @@ public final class CEbInterface
     return CEbInterface.class.getClassLoader ();
   }
 
+  private static final String BASE = "external/";
+  private static final String PATH_XSD = BASE + "schemas/";
+
   /** XML Schema resources for ebInterface 3.0 */
   @CodingStyleguideUnaware
   public static final List <ClassPathResource> EBINTERFACE_30_XSDS = new CommonsArrayList <> (CXMLDSig.getXSDResource (),
-                                                                                              new ClassPathResource ("/schemas/ebinterface/ebinterface-3.0.xsd",
+                                                                                              new ClassPathResource (PATH_XSD +
+                                                                                                                     "ebinterface/ebinterface-3.0.xsd",
                                                                                                                      _getCL ())).getAsUnmodifiable ();
 
   /** XML Schema resources for ebInterface 3.0.2 */
   @CodingStyleguideUnaware
   public static final List <ClassPathResource> EBINTERFACE_302_XSDS = new CommonsArrayList <> (CXMLDSig.getXSDResource (),
-                                                                                               new ClassPathResource ("/schemas/ebinterface/ebinterface-3.0.2.xsd",
+                                                                                               new ClassPathResource (PATH_XSD +
+                                                                                                                      "ebinterface/ebinterface-3.0.2.xsd",
                                                                                                                       _getCL ())).getAsUnmodifiable ();
 
   /** XML Schema resources for ebInterface 4.0 */
   @CodingStyleguideUnaware
   public static final List <ClassPathResource> EBINTERFACE_40_XSDS = new CommonsArrayList <> (CXMLDSig.getXSDResource (),
-                                                                                              new ClassPathResource ("/schemas/ebinterface/ebInterfaceExtension-4.0.xsd",
+                                                                                              new ClassPathResource (PATH_XSD +
+                                                                                                                     "ebinterface/ebInterfaceExtension-4.0.xsd",
                                                                                                                      _getCL ()),
-                                                                                              new ClassPathResource ("/schemas/ebinterface/ext40/ebInterfaceExtension_SV.xsd",
+                                                                                              new ClassPathResource (PATH_XSD +
+                                                                                                                     "ebinterface/ext40/ebInterfaceExtension_SV.xsd",
                                                                                                                      _getCL ()),
-                                                                                              new ClassPathResource ("/schemas/ebinterface/ebinterface-4.0.xsd",
+                                                                                              new ClassPathResource (PATH_XSD +
+                                                                                                                     "ebinterface/ebinterface-4.0.xsd",
                                                                                                                      _getCL ())).getAsUnmodifiable ();
 
   /** XML Schema resources for ebInterface 4.1 */
   @CodingStyleguideUnaware
   public static final List <ClassPathResource> EBINTERFACE_41_XSDS = new CommonsArrayList <> (CXMLDSig.getXSDResource (),
-                                                                                              new ClassPathResource ("/schemas/ebinterface/ebInterfaceExtension-4.1.xsd",
+                                                                                              new ClassPathResource (PATH_XSD +
+                                                                                                                     "ebinterface/ebInterfaceExtension-4.1.xsd",
                                                                                                                      _getCL ()),
-                                                                                              new ClassPathResource ("/schemas/ebinterface/ext41/ebInterfaceExtension_SV.xsd",
+                                                                                              new ClassPathResource (PATH_XSD +
+                                                                                                                     "ebinterface/ext41/ebInterfaceExtension_SV.xsd",
                                                                                                                      _getCL ()),
-                                                                                              new ClassPathResource ("/schemas/ebinterface/ebinterface-4.1.xsd",
+                                                                                              new ClassPathResource (PATH_XSD +
+                                                                                                                     "ebinterface/ebinterface-4.1.xsd",
                                                                                                                      _getCL ())).getAsUnmodifiable ();
 
   /** XML Schema resources for ebInterface 4.2 */
   @CodingStyleguideUnaware
   public static final List <ClassPathResource> EBINTERFACE_42_XSDS = new CommonsArrayList <> (CXMLDSig.getXSDResource (),
-                                                                                              new ClassPathResource ("/schemas/ebinterface/ebInterfaceExtension-4.2.xsd",
+                                                                                              new ClassPathResource (PATH_XSD +
+                                                                                                                     "ebinterface/ebInterfaceExtension-4.2.xsd",
                                                                                                                      _getCL ()),
-                                                                                              new ClassPathResource ("/schemas/ebinterface/ext42/ebInterfaceExtension_SV.xsd",
+                                                                                              new ClassPathResource (PATH_XSD +
+                                                                                                                     "ebinterface/ext42/ebInterfaceExtension_SV.xsd",
                                                                                                                      _getCL ()),
-                                                                                              new ClassPathResource ("/schemas/ebinterface/ebinterface-4.2.xsd",
+                                                                                              new ClassPathResource (PATH_XSD +
+                                                                                                                     "ebinterface/ebinterface-4.2.xsd",
                                                                                                                      _getCL ())).getAsUnmodifiable ();
 
   /** XML Schema resources for ebInterface 4.3 */
   @CodingStyleguideUnaware
   public static final List <ClassPathResource> EBINTERFACE_43_XSDS = new CommonsArrayList <> (CXMLDSig.getXSDResource (),
-                                                                                              new ClassPathResource ("/schemas/ebinterface/ebInterfaceExtension-4.3.xsd",
+                                                                                              new ClassPathResource (PATH_XSD +
+                                                                                                                     "ebinterface/ebInterfaceExtension-4.3.xsd",
                                                                                                                      _getCL ()),
-                                                                                              new ClassPathResource ("/schemas/ebinterface/ext43/ebInterfaceExtension_SV.xsd",
+                                                                                              new ClassPathResource (PATH_XSD +
+                                                                                                                     "ebinterface/ext43/ebInterfaceExtension_SV.xsd",
                                                                                                                      _getCL ()),
-                                                                                              new ClassPathResource ("/schemas/ebinterface/ebinterface-4.3.xsd",
+                                                                                              new ClassPathResource (PATH_XSD +
+                                                                                                                     "ebinterface/ebinterface-4.3.xsd",
                                                                                                                      _getCL ())).getAsUnmodifiable ();
 
   /** XML Schema resources for ebInterface 5.0 */
   @CodingStyleguideUnaware
-  public static final List <ClassPathResource> EBINTERFACE_50_XSDS = new CommonsArrayList <> (new ClassPathResource ("/schemas/ebinterface/ebinterface-5.0.xsd",
+  public static final List <ClassPathResource> EBINTERFACE_50_XSDS = new CommonsArrayList <> (new ClassPathResource (PATH_XSD +
+                                                                                                                     "ebinterface/ebinterface-5.0.xsd",
                                                                                                                      _getCL ())).getAsUnmodifiable ();
 
   /** XML Schema resources for ebInterface 6.0 */
   @CodingStyleguideUnaware
-  public static final List <ClassPathResource> EBINTERFACE_60_XSDS = new CommonsArrayList <> (new ClassPathResource ("/schemas/ebinterface/ebinterface-6.0.xsd",
+  public static final List <ClassPathResource> EBINTERFACE_60_XSDS = new CommonsArrayList <> (new ClassPathResource (PATH_XSD +
+                                                                                                                     "ebinterface/ebinterface-6.0.xsd",
                                                                                                                      _getCL ())).getAsUnmodifiable ();
 
   /** XML Schema resources for ebInterface 6.1 */
   @CodingStyleguideUnaware
-  public static final List <ClassPathResource> EBINTERFACE_61_XSDS = new CommonsArrayList <> (new ClassPathResource ("/schemas/ebinterface/ebinterface-6.1.xsd",
+  public static final List <ClassPathResource> EBINTERFACE_61_XSDS = new CommonsArrayList <> (new ClassPathResource (PATH_XSD +
+                                                                                                                     "ebinterface/ebinterface-6.1.xsd",
                                                                                                                      _getCL ())).getAsUnmodifiable ();
 
   /** Namespace URI for ebInterface 3.0 */
@@ -144,40 +164,43 @@ public final class CEbInterface
   /** Namespace URI for ebInterface 6.1 */
   public static final String EBINTERFACE_61_NS = "http://www.ebinterface.at/schema/6p1/";
 
+  private static final String PATH_VISU = BASE + "visualization";
+
   /** Stylesheet resource for ebInterface 3.0 */
-  public static final IReadableResource EBINTERFACE_30_XSLT = new ClassPathResource ("/visualization/ebInterface-3.0.xslt",
+  public static final IReadableResource EBINTERFACE_30_XSLT = new ClassPathResource (PATH_VISU + "ebInterface-3.0.xslt",
                                                                                      _getCL ());
 
   /** Stylesheet resource for ebInterface 3.0.2 */
-  public static final IReadableResource EBINTERFACE_302_XSLT = new ClassPathResource ("/visualization/ebInterface-3.0.2.xslt",
+  public static final IReadableResource EBINTERFACE_302_XSLT = new ClassPathResource (PATH_VISU +
+                                                                                      "ebInterface-3.0.2.xslt",
                                                                                       _getCL ());
 
   /** Stylesheet resource for ebInterface 4.0 */
-  public static final IReadableResource EBINTERFACE_40_XSLT = new ClassPathResource ("/visualization/ebInterface-4.0.xslt",
+  public static final IReadableResource EBINTERFACE_40_XSLT = new ClassPathResource (PATH_VISU + "ebInterface-4.0.xslt",
                                                                                      _getCL ());
 
   /** Stylesheet resource for ebInterface 4.1 */
-  public static final IReadableResource EBINTERFACE_41_XSLT = new ClassPathResource ("/visualization/ebInterface-4.1.xslt",
+  public static final IReadableResource EBINTERFACE_41_XSLT = new ClassPathResource (PATH_VISU + "ebInterface-4.1.xslt",
                                                                                      _getCL ());
 
   /** Stylesheet resource for ebInterface 4.2 */
-  public static final IReadableResource EBINTERFACE_42_XSLT = new ClassPathResource ("/visualization/ebInterface-4.2.xslt",
+  public static final IReadableResource EBINTERFACE_42_XSLT = new ClassPathResource (PATH_VISU + "ebInterface-4.2.xslt",
                                                                                      _getCL ());
 
   /** Stylesheet resource for ebInterface 4.3 */
-  public static final IReadableResource EBINTERFACE_43_XSLT = new ClassPathResource ("/visualization/ebInterface-4.3.xslt",
+  public static final IReadableResource EBINTERFACE_43_XSLT = new ClassPathResource (PATH_VISU + "ebInterface-4.3.xslt",
                                                                                      _getCL ());
 
   /** Stylesheet resource for ebInterface 5.0 */
-  public static final IReadableResource EBINTERFACE_50_XSLT = new ClassPathResource ("/visualization/ebInterface-5.0.xslt",
+  public static final IReadableResource EBINTERFACE_50_XSLT = new ClassPathResource (PATH_VISU + "ebInterface-5.0.xslt",
                                                                                      _getCL ());
 
   /** Stylesheet resource for ebInterface 6.0 */
-  public static final IReadableResource EBINTERFACE_60_XSLT = new ClassPathResource ("/visualization/ebInterface-6.0.xslt",
+  public static final IReadableResource EBINTERFACE_60_XSLT = new ClassPathResource (PATH_VISU + "ebInterface-6.0.xslt",
                                                                                      _getCL ());
 
   /** Stylesheet resource for ebInterface 6.1 */
-  public static final IReadableResource EBINTERFACE_61_XSLT = new ClassPathResource ("/visualization/ebInterface-6.1.xslt",
+  public static final IReadableResource EBINTERFACE_61_XSLT = new ClassPathResource (PATH_VISU + "ebInterface-6.1.xslt",
                                                                                      _getCL ());
 
   @PresentForCodeCoverage

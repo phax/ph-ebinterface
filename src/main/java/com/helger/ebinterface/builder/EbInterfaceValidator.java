@@ -38,6 +38,7 @@ import com.helger.jaxb.builder.JAXBValidationBuilder;
  *        The ebInterface implementation class to be validated
  */
 @NotThreadSafe
+@Deprecated (since = "7.1.0", forRemoval = true)
 public class EbInterfaceValidator <JAXBTYPE> extends JAXBValidationBuilder <JAXBTYPE, EbInterfaceValidator <JAXBTYPE>>
 {
   public EbInterfaceValidator (@Nonnull final EEbInterfaceDocumentType eDocType)

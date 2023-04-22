@@ -44,6 +44,7 @@ import com.helger.jaxb.builder.JAXBDocumentType;
  *
  * @author Philip Helger
  */
+@Deprecated (since = "7.1.0", forRemoval = true)
 public enum EEbInterfaceDocumentType implements IJAXBDocumentType
 {
   EBI30 (Ebi30InvoiceType.class, CEbInterface.EBINTERFACE_30_XSDS),
