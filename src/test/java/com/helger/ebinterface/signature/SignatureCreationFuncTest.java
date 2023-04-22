@@ -38,7 +38,6 @@ import com.helger.commons.io.file.SimpleFileIO;
 import com.helger.commons.io.resource.FileSystemResource;
 import com.helger.ebinterface.EbInterface43Marshaller;
 import com.helger.ebinterface.EbInterface43NamespaceContext;
-import com.helger.ebinterface.builder.EbInterfaceReader;
 import com.helger.ebinterface.v43.Ebi43InvoiceType;
 import com.helger.xml.serialize.read.DOMReader;
 import com.helger.xml.serialize.write.XMLWriter;
@@ -116,7 +115,7 @@ public final class SignatureCreationFuncTest
                                                         new XMLWriterSettings ().setNamespaceContext (EbInterface43NamespaceContext.getInstance ())));
 
     // Now check if the Ebi is still valid
-    final Ebi43InvoiceType aSignedInvoice = EbInterfaceReader.ebInterface43 ().read (aDoc);
+    final Ebi43InvoiceType aSignedInvoice = new EbInterface43Marshaller ().read (aDoc);
     assertNotNull (aSignedInvoice);
   }
 }

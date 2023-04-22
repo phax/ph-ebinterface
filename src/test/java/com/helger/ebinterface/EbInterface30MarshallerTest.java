@@ -41,13 +41,13 @@ public final class EbInterface30MarshallerTest
   @Test
   public void testReadValid ()
   {
+    final EbInterface30Marshaller aMarshaller = new EbInterface30Marshaller ();
+
     for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V30.getTestResources ())
     {
       // Read from file as XML
       final Document aDoc = DOMReader.readXMLDOM (aExampleFile);
       assertNotNull (aDoc);
-
-      final EbInterface30Marshaller aMarshaller = new EbInterface30Marshaller ();
 
       // Convert to domain object
       final Ebi30InvoiceType aInvoice = aMarshaller.read (aDoc);

@@ -41,10 +41,11 @@ import com.helger.ebinterface.v61.Ebi61InvoiceType;
 import com.helger.xml.serialize.read.DOMReader;
 
 /**
- * Test class for class {@link EbInterfaceReaderTest}.
+ * Test class for class {@link EbInterfaceReader}.
  *
  * @author Philip Helger
  */
+@Deprecated (since = "7.1.0", forRemoval = true)
 public final class EbInterfaceReaderTest
 {
   private static final Logger LOGGER = LoggerFactory.getLogger (EbInterfaceReaderTest.class);

@@ -25,9 +25,7 @@ import org.w3c.dom.Document;
 
 import com.helger.commons.io.resource.IReadableResource;
 import com.helger.commons.mock.CommonsTestHelper;
-import com.helger.ebinterface.builder.EbInterfaceWriter;
 import com.helger.ebinterface.v61.Ebi61InvoiceType;
-import com.helger.jaxb.validation.LoggingValidationEventHandler;
 import com.helger.xml.serialize.read.DOMReader;
 
 /**
@@ -40,14 +38,13 @@ public final class EbInterface61MarshallerTest
   @Test
   public void testReadValid ()
   {
+    final EbInterface61Marshaller aMarshaller = new EbInterface61Marshaller ();
+
     for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V61.getTestResources ())
     {
       // Read from file as XML
       final Document aDoc = DOMReader.readXMLDOM (aExampleFile);
       assertNotNull (aDoc);
-
-      final EbInterface61Marshaller aMarshaller = new EbInterface61Marshaller ();
-      aMarshaller.setValidationEventHandler (new LoggingValidationEventHandler ().andThen (aMarshaller.getValidationEventHandler ()));
 
       // Convert to domain object
       final Ebi61InvoiceType aInvoice = aMarshaller.read (aDoc);
@@ -66,8 +63,7 @@ public final class EbInterface61MarshallerTest
       // Must be equals
       CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice.clone ());
       CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice2, aInvoice2.clone ());
-      assertEquals (EbInterfaceWriter.ebInterface61 ().getAsString (aInvoice),
-                    EbInterfaceWriter.ebInterface61 ().getAsString (aInvoice2));
+      assertEquals (aMarshaller.getAsString (aInvoice), aMarshaller.getAsString (aInvoice2));
       CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
     }
   }
