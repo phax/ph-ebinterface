@@ -41,8 +41,8 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:git@github.com:phax/ph-ebinterface.git</connection>
-    <developerConnection>scm:git:git@github.com:phax/ph-ebinterface.git</developerConnection>
+    <connection>scm:git:https://@github.com/phax/ph-ebinterface.git</connection>
+    <developerConnection>scm:git:https://@github.com/phax/ph-ebinterface.git</developerConnection>
     <url>http://github.com/phax/ph-ebinterface</url>
     <tag>HEAD</tag>
   </scm>
