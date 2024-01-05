@@ -45,6 +45,8 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
   
 # News and noteworthy
 
+* v7.1.1 - work in progress
+    * Switched JAXB Maven plugin to `org.jvnet.jaxb:jaxb-maven-plugin` 
 * v7.1.0 - 2023-04-22
     * Moved XML Schema to folder `external/...`
     * Deprecated classes `EbInterface(Reader|Writer|Validator)` and `EEbInterfaceDocumentType`
