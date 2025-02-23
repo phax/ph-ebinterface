@@ -22,14 +22,16 @@ import javax.annotation.Nullable;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.id.IHasID;
 import com.helger.commons.lang.EnumHelper;
+import com.helger.commons.name.IHasDisplayName;
 
 /**
  * Recommended codes for FurtherIdentification. Source: ebInterface 6.1
  * documentation
  *
  * @author Philip Helger
+ * @since 7.1.1
  */
-public enum EFurtherIdentification implements IHasID <String>
+public enum EFurtherIdentification implements IHasID <String>, IHasDisplayName
 {
   ARA ("ARA", "ARA Nummer"),
   BBG_GZ ("BBG-GZ", "Geschäftszahl/Vertragsnummer der Bundesbeschaffung"),
@@ -38,21 +40,21 @@ public enum EFurtherIdentification implements IHasID <String>
   DVR ("DVR", "DVR Nummer"),
   EORI ("EORI", "Economic Operator's Registration and Identification"),
   ERSB ("ERSB", "Ergänzungsregister Sonstige Betroffene"),
-  FN ("FN", "Firmenbuchnummer"),
-  FR ("FR", "Firmenregisternummer beim Firmengericht"),
-  HG ("HG", "Name des zuständigen Handelsgerichts"),
+  OFFICE_LOCATION ("FN", "Firmenbuchnummer"),
+  COMMERCIAL_REGISTER_NUMBER ("FR", "Firmenregisternummer beim Firmengericht"),
+  COMMERCIAL_COURT ("HG", "Name des zuständigen Handelsgerichts"),
   PAYER ("Payer", "ID des Payers"),
   FASTNR ("FASTNR", "Finanzamt-Steuernummer"),
   VID ("VID", "Verbrauchsteuernummer"),
   VN ("VN", "Vereinsregisternummer");
 
   private final String m_sID;
-  private final String m_sDesc;
+  private final String m_sDisplayName;
 
-  EFurtherIdentification (@Nonnull @Nonempty final String sID, @Nonnull @Nonempty final String sDesc)
+  EFurtherIdentification (@Nonnull @Nonempty final String sID, @Nonnull @Nonempty final String sDisplayName)
   {
     m_sID = sID;
-    m_sDesc = sDesc;
+    m_sDisplayName = sDisplayName;
   }
 
   @Nonnull
@@ -68,9 +70,9 @@ public enum EFurtherIdentification implements IHasID <String>
    */
   @Nonnull
   @Nonempty
-  public String getDescription ()
+  public String getDisplayName ()
   {
-    return m_sDesc;
+    return m_sDisplayName;
   }
 
   /**
