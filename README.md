@@ -45,7 +45,7 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
   
 # News and noteworthy
 
-* v7.1.1 - work in progress
+* v7.1.1 - 2025-05-04
     * Switched JAXB Maven plugin to `org.jvnet.jaxb:jaxb-maven-plugin`
     * Added enum `EFurtherIdentification`
 * v7.1.0 - 2023-04-22
