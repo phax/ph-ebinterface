@@ -32,6 +32,7 @@ import com.helger.ebinterface.v50.Ebi50InvoiceType;
 import com.helger.ebinterface.v50.Ebi50ItemListType;
 import com.helger.ebinterface.v50.Ebi50ListLineItemType;
 import com.helger.io.resource.IReadableResource;
+import com.helger.jaxb.adapter.JAXBHelper;
 import com.helger.unittest.support.TestHelper;
 import com.helger.xml.serialize.read.DOMReader;
 
@@ -116,10 +117,11 @@ public final class EbInterface50MarshallerTest
           {
             // JAXBElement does not implement equals!
             assertTrue (aRSLL.get (k) + "\nvs.\n" + aRSLL2.get (k),
-                        EqualsHelper.equals (aRSLL.get (k), aRSLL2.get (k)));
+                        JAXBHelper.equalJAXBElements (aRSLL.get (k), aRSLL2.get (k)));
           }
           assertEquals (aRSLL.getClass (), aRSLL2.getClass ());
-          assertTrue (CollectionEqualsHelper.equalsCollection (aRSLL, aRSLL2));
+          if (false)
+            assertTrue (CollectionEqualsHelper.equalsCollection (aRSLL, aRSLL2));
           if (false)
             assertTrue ("Error when list has " + aRSLL.size () + " element(s)", EqualsHelper.equals (aRSLL, aRSLL2));
           assertEquals (aItem.getReductionAndSurchargeListLineItemDetails ().getClass (),
