@@ -16,18 +16,17 @@
  */
 package com.helger.ebinterface;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import com.helger.annotation.Nonempty;
+import com.helger.base.lang.EnumHelper;
+import com.helger.base.string.StringHelper;
+import com.helger.base.version.Version;
+import com.helger.io.resource.IReadableResource;
 
-import com.helger.commons.annotation.Nonempty;
-import com.helger.commons.io.resource.IReadableResource;
-import com.helger.commons.lang.EnumHelper;
-import com.helger.commons.string.StringHelper;
-import com.helger.commons.version.Version;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 
 /**
- * This enumeration encapsulates the supported ebInterface versions in a common
- * way.
+ * This enumeration encapsulates the supported ebInterface versions in a common way.
  *
  * @author Philip Helger
  */
@@ -76,9 +75,8 @@ public enum EEbInterfaceVersion
   }
 
   /**
-   * @return The resource to be used to visualize ebInterface invoices of this
-   *         version. May be <code>null</code> as not all versions have XSLTs
-   *         assigned.
+   * @return The resource to be used to visualize ebInterface invoices of this version. May be
+   *         <code>null</code> as not all versions have XSLTs assigned.
    */
   @Nullable
   public IReadableResource getXSLTResource ()
@@ -87,8 +85,8 @@ public enum EEbInterfaceVersion
   }
 
   /**
-   * @return <code>true</code> if an XSLT resource for visualization is present,
-   *         <code>false</code> if not.
+   * @return <code>true</code> if an XSLT resource for visualization is present, <code>false</code>
+   *         if not.
    */
   public boolean hasXSLTResource ()
   {
@@ -96,8 +94,7 @@ public enum EEbInterfaceVersion
   }
 
   /**
-   * @return The version number of this ebInterface version. Never
-   *         <code>null</code>.
+   * @return The version number of this ebInterface version. Never <code>null</code>.
    * @since 6.1.1
    */
   @Nonnull
@@ -111,13 +108,13 @@ public enum EEbInterfaceVersion
    *
    * @param sNamespaceURI
    *        The namespace URI to resolve. May be <code>null</code>.
-   * @return <code>null</code> if the passed namespace URI could not be resolved
-   *         to a supported ebInterface version.
+   * @return <code>null</code> if the passed namespace URI could not be resolved to a supported
+   *         ebInterface version.
    */
   @Nullable
   public static EEbInterfaceVersion getFromNamespaceURIOrNull (@Nullable final String sNamespaceURI)
   {
-    if (StringHelper.hasNoText (sNamespaceURI))
+    if (StringHelper.isEmpty (sNamespaceURI))
       return null;
     return EnumHelper.findFirst (EEbInterfaceVersion.class, x -> x.getNamespaceURI ().equals (sNamespaceURI));
   }

@@ -20,10 +20,10 @@ import java.io.File;
 
 import org.junit.Test;
 
-import com.helger.commons.io.file.FilenameHelper;
-import com.helger.commons.io.resource.IReadableResource;
 import com.helger.ebinterface.EEbInterfaceTestFiles;
 import com.helger.ebinterface.EEbInterfaceVersion;
+import com.helger.io.file.FilenameHelper;
+import com.helger.io.resource.IReadableResource;
 
 /**
  * Test class for class {@link VisualizationManager}

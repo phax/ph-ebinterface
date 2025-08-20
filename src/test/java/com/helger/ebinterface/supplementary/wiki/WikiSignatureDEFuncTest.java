@@ -16,13 +16,14 @@
  */
 package com.helger.ebinterface.supplementary.wiki;
 
-import javax.annotation.Nonnull;
 import javax.xml.crypto.dsig.XMLSignatureException;
 
 import org.w3c.dom.Document;
 
 import com.helger.xmldsig.XMLDSigValidationResult;
 import com.helger.xmldsig.XMLDSigValidator;
+
+import jakarta.annotation.Nonnull;
 
 /**
  * Signatur-Routinen fürs Wiki

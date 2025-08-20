@@ -18,12 +18,9 @@ package com.helger.ebinterface.supplementary.wiki;
 
 import java.io.File;
 
-import javax.annotation.Nonnull;
-
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
-import com.helger.commons.io.resource.IReadableResource;
 import com.helger.ebinterface.EbInterface302Marshaller;
 import com.helger.ebinterface.EbInterface30Marshaller;
 import com.helger.ebinterface.EbInterface40Marshaller;
@@ -34,6 +31,9 @@ import com.helger.ebinterface.v302.Ebi302InvoiceType;
 import com.helger.ebinterface.v40.Ebi40InvoiceType;
 import com.helger.ebinterface.v41.Ebi41InvoiceType;
 import com.helger.ebinterface.v42.Ebi42InvoiceType;
+import com.helger.io.resource.IReadableResource;
+
+import jakarta.annotation.Nonnull;
 
 /**
  * The tests contained in here are meant as copy-paste examples for the project

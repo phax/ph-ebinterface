@@ -26,12 +26,13 @@ import java.util.List;
 import org.junit.Test;
 import org.w3c.dom.Document;
 
-import com.helger.commons.equals.EqualsHelper;
-import com.helger.commons.io.resource.IReadableResource;
-import com.helger.commons.mock.CommonsTestHelper;
+import com.helger.base.equals.EqualsHelper;
+import com.helger.collection.helper.CollectionEqualsHelper;
 import com.helger.ebinterface.v50.Ebi50InvoiceType;
 import com.helger.ebinterface.v50.Ebi50ItemListType;
 import com.helger.ebinterface.v50.Ebi50ListLineItemType;
+import com.helger.io.resource.IReadableResource;
+import com.helger.unittest.support.TestHelper;
 import com.helger.xml.serialize.read.DOMReader;
 
 import jakarta.xml.bind.JAXBElement;
@@ -118,7 +119,7 @@ public final class EbInterface50MarshallerTest
                         EqualsHelper.equals (aRSLL.get (k), aRSLL2.get (k)));
           }
           assertEquals (aRSLL.getClass (), aRSLL2.getClass ());
-          assertTrue (EqualsHelper.equalsCollection (aRSLL, aRSLL2));
+          assertTrue (CollectionEqualsHelper.equalsCollection (aRSLL, aRSLL2));
           if (false)
             assertTrue ("Error when list has " + aRSLL.size () + " element(s)", EqualsHelper.equals (aRSLL, aRSLL2));
           assertEquals (aItem.getReductionAndSurchargeListLineItemDetails ().getClass (),
@@ -153,10 +154,10 @@ public final class EbInterface50MarshallerTest
       assertTrue (EqualsHelper.equals (aInvoice.isIsDuplicate (), aInvoice2.isIsDuplicate ()));
 
       // Must be equals
-      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice.clone ());
-      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice2, aInvoice2.clone ());
+      TestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice.clone ());
+      TestHelper.testDefaultImplementationWithEqualContentObject (aInvoice2, aInvoice2.clone ());
       assertEquals (aMarshaller.getAsString (aInvoice), aMarshaller.getAsString (aInvoice2));
-      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
+      TestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
     }
   }
 }

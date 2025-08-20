@@ -27,8 +27,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
-import com.helger.commons.io.file.FileSystemRecursiveIterator;
-import com.helger.commons.io.resource.ClassPathResource;
+import com.helger.io.file.FileSystemRecursiveIterator;
+import com.helger.io.resource.ClassPathResource;
 import com.helger.xml.sax.DoNothingSAXErrorHandler;
 import com.helger.xml.serialize.read.DOMReader;
 import com.helger.xml.serialize.read.DOMReaderSettings;

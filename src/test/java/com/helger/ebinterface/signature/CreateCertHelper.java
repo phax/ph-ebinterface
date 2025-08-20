@@ -25,8 +25,6 @@ import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
 import java.util.Date;
 
-import javax.annotation.Nonnull;
-
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x509.BasicConstraints;
 import org.bouncycastle.asn1.x509.Extension;
@@ -39,9 +37,11 @@ import org.bouncycastle.cert.jcajce.JcaX509v3CertificateBuilder;
 import org.bouncycastle.operator.ContentSigner;
 import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
 
+import com.helger.annotation.Nonempty;
+import com.helger.base.CGlobal;
 import com.helger.bc.PBCProvider;
-import com.helger.commons.CGlobal;
-import com.helger.commons.annotation.Nonempty;
+
+import jakarta.annotation.Nonnull;
 
 /**
  * <b>DO NOT EXECUTE THIS</b><br>

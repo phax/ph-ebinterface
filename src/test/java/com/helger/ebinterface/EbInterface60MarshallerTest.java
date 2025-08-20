@@ -23,9 +23,9 @@ import static org.junit.Assert.assertSame;
 import org.junit.Test;
 import org.w3c.dom.Document;
 
-import com.helger.commons.io.resource.IReadableResource;
-import com.helger.commons.mock.CommonsTestHelper;
 import com.helger.ebinterface.v60.Ebi60InvoiceType;
+import com.helger.io.resource.IReadableResource;
+import com.helger.unittest.support.TestHelper;
 import com.helger.xml.serialize.read.DOMReader;
 
 /**
@@ -61,10 +61,10 @@ public final class EbInterface60MarshallerTest
       assertNotNull (aExampleFile.getPath (), aInvoice2);
 
       // Must be equals
-      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice.clone ());
-      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice2, aInvoice2.clone ());
+      TestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice.clone ());
+      TestHelper.testDefaultImplementationWithEqualContentObject (aInvoice2, aInvoice2.clone ());
       assertEquals (aMarshaller.getAsString (aInvoice), aMarshaller.getAsString (aInvoice2));
-      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
+      TestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
     }
   }
 }

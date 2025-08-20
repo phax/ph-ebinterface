@@ -23,7 +23,6 @@ import java.security.KeyPair;
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
 
-import javax.annotation.Nonnull;
 import javax.xml.crypto.dsig.XMLSignature;
 import javax.xml.crypto.dsig.dom.DOMSignContext;
 
@@ -33,18 +32,20 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
-import com.helger.commons.ValueEnforcer;
-import com.helger.commons.io.file.SimpleFileIO;
-import com.helger.commons.io.resource.FileSystemResource;
+import com.helger.base.enforce.ValueEnforcer;
 import com.helger.ebinterface.EbInterface43Marshaller;
 import com.helger.ebinterface.EbInterface43NamespaceContext;
 import com.helger.ebinterface.v43.Ebi43InvoiceType;
+import com.helger.io.file.SimpleFileIO;
+import com.helger.io.resource.FileSystemResource;
 import com.helger.xml.serialize.read.DOMReader;
 import com.helger.xml.serialize.write.XMLWriter;
 import com.helger.xml.serialize.write.XMLWriterSettings;
 import com.helger.xmldsig.XMLDSigCreator;
 import com.helger.xmldsig.XMLDSigSetup;
 import com.helger.xmldsig.XMLDSigValidator;
+
+import jakarta.annotation.Nonnull;
 
 /**
  * Test class for class {@link XMLDSigValidator}

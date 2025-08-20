@@ -23,9 +23,9 @@ import static org.junit.Assert.assertSame;
 import org.junit.Test;
 import org.w3c.dom.Document;
 
-import com.helger.commons.io.resource.IReadableResource;
-import com.helger.commons.mock.CommonsTestHelper;
 import com.helger.ebinterface.v302.Ebi302InvoiceType;
+import com.helger.io.resource.IReadableResource;
+import com.helger.unittest.support.TestHelper;
 import com.helger.xml.serialize.read.DOMReader;
 
 /**
@@ -49,7 +49,7 @@ public final class EbInterface302MarshallerTest
       // Convert to domain object
       final Ebi302InvoiceType aInvoice = aMarshaller.read (aDoc);
       assertNotNull (aExampleFile.getPath (), aInvoice);
-      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice.clone ());
+      TestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice.clone ());
 
       // Convert again to XML document
       final Document aDoc2 = aMarshaller.getAsDocument (aInvoice);
@@ -60,11 +60,11 @@ public final class EbInterface302MarshallerTest
       // Convert to domain object again
       final Ebi302InvoiceType aInvoice2 = aMarshaller.read (aDoc2);
       assertNotNull (aExampleFile.getPath (), aInvoice2);
-      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice2, aInvoice2.clone ());
+      TestHelper.testDefaultImplementationWithEqualContentObject (aInvoice2, aInvoice2.clone ());
 
       // Must be equals
       assertEquals (aMarshaller.getAsString (aInvoice), aMarshaller.getAsString (aInvoice2));
-      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
+      TestHelper.testDefaultImplementationWithEqualContentObject (aInvoice, aInvoice2);
     }
   }
 }
