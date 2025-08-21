@@ -27,17 +27,14 @@ import jakarta.annotation.Nullable;
 /**
  * Tax code enum for ebInterface 4.x
  * <p>
- * "AT"+UVACode. ATXXX entspricht nicht steuerbar. Die entsprechenden UVA Codes
- * sind dem U30 Formular des Bundesministeriums für Finanzen zu entnehmen
- * [BMF11]. Die Angabe des TaxCodes hat nur informativen Charakter. Normativ für
- * den Steuersatz ist die Angabe im Feld „TaxRate“.
+ * "AT"+UVACode. ATXXX entspricht nicht steuerbar. Die entsprechenden UVA Codes sind dem U30
+ * Formular des Bundesministeriums für Finanzen zu entnehmen [BMF11]. Die Angabe des TaxCodes hat
+ * nur informativen Charakter. Normativ für den Steuersatz ist die Angabe im Feld „TaxRate“.
  * </p>
  * <p>
  * Has been verified for the years 2006-2013
  * </p>
- * Source:
- * http://formulare.bmf.gv.at/service/formulare/inter-Steuern/pdfs/2010/U30.pdf
- * <br>
+ * Source: http://formulare.bmf.gv.at/service/formulare/inter-Steuern/pdfs/2010/U30.pdf <br>
  * http://formulare.bmf.gv.at/service/formulare/inter-Steuern/pdfs/2016/U30.pdf
  *
  * @author Philip Helger
@@ -49,20 +46,20 @@ public enum ETaxCode implements IHasID <String>
   /** Reduced tax rate */
   REDUCED_10 ("AT029", 10, "ermäßigter Steuersatz"),
   /** Wine tax rate - valid until 31.12.2015 */
-  @Deprecated
-  WINE_12 ("AT025", 12, "für Weinumsätze durch landwirtschaftliche Betriebe"),
+  @Deprecated (forRemoval = false)
+  WINE_12("AT025", 12, "für Weinumsätze durch landwirtschaftliche Betriebe"),
   /** Wine tax rate per 1.1.2016 */
   REDUCED_13 ("AT006", 13, "ermäßigter Steuersatz"),
   /** Special regions. Up to 2006 only */
-  @Deprecated
-  GERMANY_16 ("AT035", 16, "für Jungholz und Mittelberg"),
+  @Deprecated (forRemoval = false)
+  GERMANY_16("AT035", 16, "für Jungholz und Mittelberg"),
   /** Special regions. From 2007 only */
   GERMANY_19 ("AT037", 19, "für Jungholz und Mittelberg"),
   /** Add-on tax for certain farmers only */
   ADDITIONAL_10 ("AT052", 10, "Zusatzsteuer für pauschalierte land- und forstwirtschaftliche Betriebe"),
   /** Add-on tax for certain farmers only - valid until 31.12.2015 */
-  @Deprecated
-  ADDITIONAL_08 ("AT038", 8, "Zusatzsteuer für pauschalierte land- und forstwirtschaftliche Betriebe"),
+  @Deprecated (forRemoval = false)
+  ADDITIONAL_08("AT038", 8, "Zusatzsteuer für pauschalierte land- und forstwirtschaftliche Betriebe"),
   /** Add-on tax for certain farmers only - valid from 1.1.2016 */
   ADDITIONAL_07 ("AT007", 7, "Zusatzsteuer für pauschalierte land- und forstwirtschaftliche Betriebe"),
   /** ebInterface 4.0 specific code */
