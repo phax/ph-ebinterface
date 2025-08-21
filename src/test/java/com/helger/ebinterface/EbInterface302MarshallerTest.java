@@ -21,6 +21,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 import com.helger.ebinterface.v302.Ebi302InvoiceType;
@@ -35,6 +37,8 @@ import com.helger.xml.serialize.read.DOMReader;
  */
 public final class EbInterface302MarshallerTest
 {
+  private static final Logger LOGGER = LoggerFactory.getLogger (EbInterface302MarshallerTest.class);
+
   @Test
   public void testReadValid ()
   {
@@ -42,6 +46,9 @@ public final class EbInterface302MarshallerTest
 
     for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V302.getTestResources ())
     {
+      if (false)
+        LOGGER.info ("Reading: " + aExampleFile.getPath ());
+
       // Read from file as XML
       final Document aDoc = DOMReader.readXMLDOM (aExampleFile);
       assertNotNull (aDoc);

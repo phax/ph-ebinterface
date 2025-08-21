@@ -47,7 +47,7 @@ public final class EbInterface40MarshallerTest
 
     for (final IReadableResource aExampleFile : EEbInterfaceTestFiles.V40.getTestResources ())
     {
-      if (true)
+      if (false)
         LOGGER.info ("Reading: " + aExampleFile.getPath ());
 
       // Read from file as XML
