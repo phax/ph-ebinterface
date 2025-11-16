@@ -18,6 +18,7 @@ package com.helger.ebinterface.supplementary.wiki;
 
 import java.io.File;
 
+import org.jspecify.annotations.NonNull;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
@@ -31,8 +32,6 @@ import com.helger.ebinterface.v302.Ebi302InvoiceType;
 import com.helger.ebinterface.v40.Ebi40InvoiceType;
 import com.helger.ebinterface.v41.Ebi41InvoiceType;
 import com.helger.ebinterface.v42.Ebi42InvoiceType;
-
-import jakarta.annotation.Nonnull;
 
 /**
  * Diese Tests sind als copy-paste Beispiele fürs Wiki gedacht.
@@ -52,8 +51,8 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt der Datei keine gültige ebInterface 3.0 Rechnung
    *         ist
    */
-  @Nonnull
-  public static Ebi30InvoiceType readEbInterface30 (@Nonnull final File aFile)
+  @NonNull
+  public static Ebi30InvoiceType readEbInterface30 (@NonNull final File aFile)
   {
     final Ebi30InvoiceType aInvoice = new EbInterface30Marshaller ().read (aFile);
     if (aInvoice == null)
@@ -71,8 +70,8 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt des DOM Knotens keine gültige ebInterface 3.0
    *         Rechnung ist
    */
-  @Nonnull
-  public static Ebi30InvoiceType readEbInterface30 (@Nonnull final Node aNode)
+  @NonNull
+  public static Ebi30InvoiceType readEbInterface30 (@NonNull final Node aNode)
   {
     final Ebi30InvoiceType aInvoice = new EbInterface30Marshaller ().read (aNode);
     if (aInvoice == null)
@@ -91,8 +90,8 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt der Datei keine gültige ebInterface 3.0.2 Rechnung
    *         ist
    */
-  @Nonnull
-  public static Ebi302InvoiceType readEbInterface302 (@Nonnull final File aFile)
+  @NonNull
+  public static Ebi302InvoiceType readEbInterface302 (@NonNull final File aFile)
   {
     final Ebi302InvoiceType aInvoice = new EbInterface302Marshaller ().read (aFile);
     if (aInvoice == null)
@@ -110,8 +109,8 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt des DOM Knotens keine gültige ebInterface 3.0.2
    *         Rechnung ist
    */
-  @Nonnull
-  public static Ebi302InvoiceType readEbInterface302 (@Nonnull final Node aNode)
+  @NonNull
+  public static Ebi302InvoiceType readEbInterface302 (@NonNull final Node aNode)
   {
     final Ebi302InvoiceType aInvoice = new EbInterface302Marshaller ().read (aNode);
     if (aInvoice == null)
@@ -130,8 +129,8 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt der Datei keine gültige ebInterface 4.0 Rechnung
    *         ist
    */
-  @Nonnull
-  public static Ebi40InvoiceType readEbInterface40 (@Nonnull final File aFile)
+  @NonNull
+  public static Ebi40InvoiceType readEbInterface40 (@NonNull final File aFile)
   {
     final Ebi40InvoiceType aInvoice = new EbInterface40Marshaller ().read (aFile);
     if (aInvoice == null)
@@ -149,8 +148,8 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt des DOM Knotens keine gültige ebInterface 4.0
    *         Rechnung ist
    */
-  @Nonnull
-  public static Ebi40InvoiceType readEbInterface40 (@Nonnull final Node aNode)
+  @NonNull
+  public static Ebi40InvoiceType readEbInterface40 (@NonNull final Node aNode)
   {
     final Ebi40InvoiceType aInvoice = new EbInterface40Marshaller ().read (aNode);
     if (aInvoice == null)
@@ -169,8 +168,8 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt der Datei keine gültige ebInterface 4.1 Rechnung
    *         ist
    */
-  @Nonnull
-  public static Ebi41InvoiceType readEbInterface41 (@Nonnull final File aFile)
+  @NonNull
+  public static Ebi41InvoiceType readEbInterface41 (@NonNull final File aFile)
   {
     final Ebi41InvoiceType aInvoice = new EbInterface41Marshaller ().read (aFile);
     if (aInvoice == null)
@@ -188,8 +187,8 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt des DOM Knotens keine gültige ebInterface 4.1
    *         Rechnung ist
    */
-  @Nonnull
-  public static Ebi41InvoiceType readEbInterface41 (@Nonnull final Node aNode)
+  @NonNull
+  public static Ebi41InvoiceType readEbInterface41 (@NonNull final Node aNode)
   {
     final Ebi41InvoiceType aInvoice = new EbInterface41Marshaller ().read (aNode);
     if (aInvoice == null)
@@ -209,7 +208,7 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
    *         nicht auf die Platte geschrieben werden kann.
    */
-  public static void writeEbInterface30File (@Nonnull final Ebi30InvoiceType aInvoice, @Nonnull final File aFile)
+  public static void writeEbInterface30File (@NonNull final Ebi30InvoiceType aInvoice, @NonNull final File aFile)
   {
     if (new EbInterface30Marshaller ().write (aInvoice, aFile).isFailure ())
       throw new IllegalArgumentException ("Die angebene Rechnung ist keine valide ebInterface 3.0 Rechnung. Auf der Konsole befinden sich die Details.");
@@ -226,8 +225,8 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
    *         nicht in einen XML DOM Knoten umgewandelt werden kann.
    */
-  @Nonnull
-  public static Document getEbInterface30Document (@Nonnull final Ebi30InvoiceType aInvoice)
+  @NonNull
+  public static Document getEbInterface30Document (@NonNull final Ebi30InvoiceType aInvoice)
   {
     final Document ret = new EbInterface30Marshaller ().getAsDocument (aInvoice);
     if (ret == null)
@@ -247,7 +246,7 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
    *         nicht auf die Platte geschrieben werden kann.
    */
-  public static void writeEbInterface302File (@Nonnull final Ebi302InvoiceType aInvoice, @Nonnull final File aFile)
+  public static void writeEbInterface302File (@NonNull final Ebi302InvoiceType aInvoice, @NonNull final File aFile)
   {
     if (new EbInterface302Marshaller ().write (aInvoice, aFile).isFailure ())
       throw new IllegalArgumentException ("Die angebene Rechnung ist keine valide ebInterface 3.0.2 Rechnung. Auf der Konsole befinden sich die Details.");
@@ -264,8 +263,8 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
    *         nicht in einen XML DOM Knoten umgewandelt werden kann.
    */
-  @Nonnull
-  public static Document getEbInterface302Document (@Nonnull final Ebi302InvoiceType aInvoice)
+  @NonNull
+  public static Document getEbInterface302Document (@NonNull final Ebi302InvoiceType aInvoice)
   {
     final Document ret = new EbInterface302Marshaller ().getAsDocument (aInvoice);
     if (ret == null)
@@ -285,7 +284,7 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
    *         nicht auf die Platte geschrieben werden kann.
    */
-  public static void writeEbInterface40File (@Nonnull final Ebi40InvoiceType aInvoice, @Nonnull final File aFile)
+  public static void writeEbInterface40File (@NonNull final Ebi40InvoiceType aInvoice, @NonNull final File aFile)
   {
     if (new EbInterface40Marshaller ().write (aInvoice, aFile).isFailure ())
       throw new IllegalArgumentException ("Die angebene Rechnung ist keine valide ebInterface 4.0 Rechnung. Auf der Konsole befinden sich die Details.");
@@ -302,8 +301,8 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
    *         nicht in einen XML DOM Knoten umgewandelt werden kann.
    */
-  @Nonnull
-  public static Document getEbInterface40Document (@Nonnull final Ebi40InvoiceType aInvoice)
+  @NonNull
+  public static Document getEbInterface40Document (@NonNull final Ebi40InvoiceType aInvoice)
   {
     final Document ret = new EbInterface40Marshaller ().getAsDocument (aInvoice);
     if (ret == null)
@@ -323,7 +322,7 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
    *         nicht auf die Platte geschrieben werden kann.
    */
-  public static void writeEbInterface41File (@Nonnull final Ebi41InvoiceType aInvoice, @Nonnull final File aFile)
+  public static void writeEbInterface41File (@NonNull final Ebi41InvoiceType aInvoice, @NonNull final File aFile)
   {
     if (new EbInterface41Marshaller ().write (aInvoice, aFile).isFailure ())
       throw new IllegalArgumentException ("Die angebene Rechnung ist keine valide ebInterface 4.1 Rechnung. Auf der Konsole befinden sich die Details.");
@@ -340,8 +339,8 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
    *         nicht in einen XML DOM Knoten umgewandelt werden kann.
    */
-  @Nonnull
-  public static Document getEbInterface41Document (@Nonnull final Ebi41InvoiceType aInvoice)
+  @NonNull
+  public static Document getEbInterface41Document (@NonNull final Ebi41InvoiceType aInvoice)
   {
     final Document ret = new EbInterface41Marshaller ().getAsDocument (aInvoice);
     if (ret == null)
@@ -361,7 +360,7 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
    *         nicht auf die Platte geschrieben werden kann.
    */
-  public static void writeEbInterface42File (@Nonnull final Ebi42InvoiceType aInvoice, @Nonnull final File aFile)
+  public static void writeEbInterface42File (@NonNull final Ebi42InvoiceType aInvoice, @NonNull final File aFile)
   {
     if (new EbInterface42Marshaller ().write (aInvoice, aFile).isFailure ())
       throw new IllegalArgumentException ("Die angebene Rechnung ist keine valide ebInterface 4.2 Rechnung. Auf der Konsole befinden sich die Details.");
@@ -378,8 +377,8 @@ public final class WikiReadWriteDEFuncTest
    *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
    *         nicht in einen XML DOM Knoten umgewandelt werden kann.
    */
-  @Nonnull
-  public static Document getEbInterface42Document (@Nonnull final Ebi42InvoiceType aInvoice)
+  @NonNull
+  public static Document getEbInterface42Document (@NonNull final Ebi42InvoiceType aInvoice)
   {
     final Document ret = new EbInterface42Marshaller ().getAsDocument (aInvoice);
     if (ret == null)

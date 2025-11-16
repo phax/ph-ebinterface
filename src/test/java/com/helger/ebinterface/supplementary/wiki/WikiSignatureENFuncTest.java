@@ -18,12 +18,11 @@ package com.helger.ebinterface.supplementary.wiki;
 
 import javax.xml.crypto.dsig.XMLSignatureException;
 
+import org.jspecify.annotations.NonNull;
 import org.w3c.dom.Document;
 
 import com.helger.xmldsig.XMLDSigValidationResult;
 import com.helger.xmldsig.XMLDSigValidator;
-
-import jakarta.annotation.Nonnull;
 
 /**
  * The tests contained in here are meant as copy-paste examples for signature
@@ -42,7 +41,7 @@ public final class WikiSignatureENFuncTest
    * @return true if no signature is contained, or if a signature is contained
    *         and valid. false only is a signature is contained and invalid
    */
-  public static boolean hasSignatureAndIsValid (@Nonnull final Document aDoc)
+  public static boolean hasSignatureAndIsValid (@NonNull final Document aDoc)
   {
     if (!XMLDSigValidator.containsSignature (aDoc))
     {

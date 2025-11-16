@@ -26,6 +26,7 @@ import java.security.cert.X509Certificate;
 import javax.xml.crypto.dsig.XMLSignature;
 import javax.xml.crypto.dsig.dom.DOMSignContext;
 
+import org.jspecify.annotations.NonNull;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,8 +46,6 @@ import com.helger.xmldsig.XMLDSigCreator;
 import com.helger.xmldsig.XMLDSigSetup;
 import com.helger.xmldsig.XMLDSigValidator;
 
-import jakarta.annotation.Nonnull;
-
 /**
  * Test class for class {@link XMLDSigValidator}
  *
@@ -58,9 +57,9 @@ public final class SignatureCreationFuncTest
 
   private static final class Ebi43Signer extends XMLDSigCreator
   {
-    public void signEbInterface (@Nonnull final PrivateKey aPrivateKey,
-                                 @Nonnull final X509Certificate aCertificate,
-                                 @Nonnull final Document aDocument) throws Exception
+    public void signEbInterface (@NonNull final PrivateKey aPrivateKey,
+                                 @NonNull final X509Certificate aCertificate,
+                                 @NonNull final Document aDocument) throws Exception
     {
       ValueEnforcer.notNull (aPrivateKey, "privateKey");
       ValueEnforcer.notNull (aCertificate, "certificate");

@@ -16,12 +16,12 @@
  */
 package com.helger.ebinterface.codelist;
 
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+
 import com.helger.annotation.Nonempty;
 import com.helger.base.id.IHasID;
 import com.helger.base.lang.EnumHelper;
-
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
 
 /**
  * Tax category codes support by ebInterface 5.0 onwards. Based on UNTDID 5305
@@ -60,20 +60,20 @@ public enum ETaxCategoryCode implements IHasID <String>
   private final String m_sID;
   private final ETaxCategoryCodeType m_eType;
 
-  ETaxCategoryCode (@Nonnull @Nonempty final String sID, @Nonnull final ETaxCategoryCodeType eType)
+  ETaxCategoryCode (@NonNull @Nonempty final String sID, @NonNull final ETaxCategoryCodeType eType)
   {
     m_sID = sID;
     m_eType = eType;
   }
 
-  @Nonnull
+  @NonNull
   @Nonempty
   public String getID ()
   {
     return m_sID;
   }
 
-  @Nonnull
+  @NonNull
   public ETaxCategoryCodeType getType ()
   {
     return m_eType;

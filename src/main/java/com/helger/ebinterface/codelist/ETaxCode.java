@@ -16,13 +16,13 @@
  */
 package com.helger.ebinterface.codelist;
 
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+
 import com.helger.annotation.Nonempty;
 import com.helger.annotation.Nonnegative;
 import com.helger.base.id.IHasID;
 import com.helger.base.lang.EnumHelper;
-
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
 
 /**
  * Tax code enum for ebInterface 4.x
@@ -69,14 +69,14 @@ public enum ETaxCode implements IHasID <String>
   private final int m_nPerc;
   private final String m_sDesc;
 
-  ETaxCode (@Nonnull @Nonempty final String sID, @Nonnegative final int nPerc, @Nonnull @Nonempty final String sDesc)
+  ETaxCode (@NonNull @Nonempty final String sID, @Nonnegative final int nPerc, @NonNull @Nonempty final String sDesc)
   {
     m_sID = sID;
     m_nPerc = nPerc;
     m_sDesc = sDesc;
   }
 
-  @Nonnull
+  @NonNull
   @Nonempty
   public String getID ()
   {
@@ -95,7 +95,7 @@ public enum ETaxCode implements IHasID <String>
   /**
    * @return Description of this tax code. Never <code>null</code>.
    */
-  @Nonnull
+  @NonNull
   @Nonempty
   public String getDescription ()
   {

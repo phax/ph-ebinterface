@@ -18,12 +18,12 @@ package com.helger.ebinterface;
 
 import javax.xml.XMLConstants;
 
+import org.jspecify.annotations.NonNull;
+
 import com.helger.annotation.misc.Singleton;
 import com.helger.xml.CXML;
 import com.helger.xml.namespace.MapBasedNamespaceContext;
 import com.helger.xsds.xmldsig.CXMLDSig;
-
-import jakarta.annotation.Nonnull;
 
 /**
  * The namespace context to be used as the namespace prefix mapper.
@@ -51,7 +51,7 @@ public class EbInterface40NamespaceContext extends MapBasedNamespaceContext
    * @return The mutable singleton instance. Never <code>null</code>. Please
    *         clone the result before you further modify it.
    */
-  @Nonnull
+  @NonNull
   public static EbInterface40NamespaceContext getInstance ()
   {
     return SingletonHolder.INSTANCE;

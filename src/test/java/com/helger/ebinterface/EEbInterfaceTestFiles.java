@@ -16,14 +16,14 @@
  */
 package com.helger.ebinterface;
 
+import org.jspecify.annotations.NonNull;
+
 import com.helger.annotation.Nonempty;
 import com.helger.annotation.style.ReturnsMutableCopy;
 import com.helger.collection.commons.CommonsArrayList;
 import com.helger.collection.commons.ICommonsList;
 import com.helger.io.resource.ClassPathResource;
 import com.helger.io.resource.IReadableResource;
-
-import jakarta.annotation.Nonnull;
 
 public enum EEbInterfaceTestFiles
 {
@@ -98,13 +98,13 @@ public enum EEbInterfaceTestFiles
 
   private final ICommonsList <IReadableResource> m_aTestFiles = new CommonsArrayList <> ();
 
-  EEbInterfaceTestFiles (@Nonnull @Nonempty final String sBaseDir, @Nonnull final String [] aFiles)
+  EEbInterfaceTestFiles (@NonNull @Nonempty final String sBaseDir, @NonNull final String [] aFiles)
   {
     for (final String sFile : aFiles)
       m_aTestFiles.add (new ClassPathResource (sBaseDir + sFile));
   }
 
-  @Nonnull
+  @NonNull
   @Nonempty
   @ReturnsMutableCopy
   public ICommonsList <IReadableResource> getTestResources ()

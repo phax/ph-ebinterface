@@ -18,6 +18,8 @@ package com.helger.ebinterface;
 
 import java.util.List;
 
+import org.jspecify.annotations.NonNull;
+
 import com.helger.annotation.concurrent.Immutable;
 import com.helger.annotation.style.CodingStyleguideUnaware;
 import com.helger.annotation.style.PresentForCodeCoverage;
@@ -25,8 +27,6 @@ import com.helger.collection.commons.CommonsArrayList;
 import com.helger.io.resource.ClassPathResource;
 import com.helger.io.resource.IReadableResource;
 import com.helger.xsds.xmldsig.CXMLDSig;
-
-import jakarta.annotation.Nonnull;
 
 /**
  * Contains all the constants for ebInterface handling.
@@ -36,7 +36,7 @@ import jakarta.annotation.Nonnull;
 @Immutable
 public final class CEbInterface
 {
-  @Nonnull
+  @NonNull
   private static ClassLoader _getCL ()
   {
     return CEbInterface.class.getClassLoader ();

@@ -26,6 +26,8 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.dom.DOMResult;
 
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -44,9 +46,6 @@ import com.helger.xml.transform.LoggingTransformErrorListener;
 import com.helger.xml.transform.TransformResultFactory;
 import com.helger.xml.transform.TransformSourceFactory;
 import com.helger.xml.transform.XMLTransformerFactory;
-
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
 
 /**
  * This class is responsible for visualizing ebInterface documents as HTML
@@ -76,7 +75,7 @@ public final class VisualizationManager
    *         <code>null</code> if the template is buggy!
    */
   @Nullable
-  public static Templates getXSLTTemplates (@Nonnull final EEbInterfaceVersion eVersion)
+  public static Templates getXSLTTemplates (@NonNull final EEbInterfaceVersion eVersion)
   {
     final String sNamespaceURI = eVersion.getNamespaceURI ();
 
@@ -124,10 +123,10 @@ public final class VisualizationManager
    *        Destination
    * @return {@link ESuccess}
    */
-  @Nonnull
-  public static ESuccess visualize (@Nonnull final EEbInterfaceVersion eVersion,
-                                    @Nonnull final Source aSource,
-                                    @Nonnull final Result aResult)
+  @NonNull
+  public static ESuccess visualize (@NonNull final EEbInterfaceVersion eVersion,
+                                    @NonNull final Source aSource,
+                                    @NonNull final Result aResult)
   {
     ValueEnforcer.notNull (eVersion, "version");
 
@@ -161,7 +160,7 @@ public final class VisualizationManager
    * @return <code>null</code> if the XSLT could not be applied.
    */
   @Nullable
-  public static Document visualizeToDOMDocument (@Nonnull final EEbInterfaceVersion eVersion, @Nonnull final Source aSource)
+  public static Document visualizeToDOMDocument (@NonNull final EEbInterfaceVersion eVersion, @NonNull final Source aSource)
   {
     final Document aDoc = XMLFactory.newDocument ();
     return visualize (eVersion, aSource, new DOMResult (aDoc)).isSuccess () ? aDoc : null;
@@ -177,7 +176,7 @@ public final class VisualizationManager
    * @return <code>null</code> if the XSLT could not be applied.
    */
   @Nullable
-  public static Document visualizeToDOMDocument (@Nonnull final EEbInterfaceVersion eVersion, @Nonnull final IReadableResource aResource)
+  public static Document visualizeToDOMDocument (@NonNull final EEbInterfaceVersion eVersion, @NonNull final IReadableResource aResource)
   {
     return visualizeToDOMDocument (eVersion, TransformSourceFactory.create (aResource));
   }
@@ -194,9 +193,9 @@ public final class VisualizationManager
    * @return {@link ESuccess}
    */
   @Nullable
-  public static ESuccess visualizeToFile (@Nonnull final EEbInterfaceVersion eVersion,
-                                          @Nonnull final Source aSource,
-                                          @Nonnull final File aDestinationFile)
+  public static ESuccess visualizeToFile (@NonNull final EEbInterfaceVersion eVersion,
+                                          @NonNull final Source aSource,
+                                          @NonNull final File aDestinationFile)
   {
     return visualize (eVersion, aSource, TransformResultFactory.create (aDestinationFile));
   }
@@ -213,9 +212,9 @@ public final class VisualizationManager
    * @return {@link ESuccess}
    */
   @Nullable
-  public static ESuccess visualizeToFile (@Nonnull final EEbInterfaceVersion eVersion,
-                                          @Nonnull final IReadableResource aResource,
-                                          @Nonnull final File aDestinationFile)
+  public static ESuccess visualizeToFile (@NonNull final EEbInterfaceVersion eVersion,
+                                          @NonNull final IReadableResource aResource,
+                                          @NonNull final File aDestinationFile)
   {
     return visualize (eVersion, TransformSourceFactory.create (aResource), TransformResultFactory.create (aDestinationFile));
   }

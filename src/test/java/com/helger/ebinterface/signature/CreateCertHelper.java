@@ -36,12 +36,11 @@ import org.bouncycastle.cert.jcajce.JcaX509ExtensionUtils;
 import org.bouncycastle.cert.jcajce.JcaX509v3CertificateBuilder;
 import org.bouncycastle.operator.ContentSigner;
 import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
+import org.jspecify.annotations.NonNull;
 
 import com.helger.annotation.Nonempty;
 import com.helger.base.CGlobal;
 import com.helger.bc.PBCProvider;
-
-import jakarta.annotation.Nonnull;
 
 /**
  * <b>DO NOT EXECUTE THIS</b><br>
@@ -61,27 +60,27 @@ public final class CreateCertHelper
   private CreateCertHelper ()
   {}
 
-  @Nonnull
+  @NonNull
   public static Date now ()
   {
     return new Date (System.currentTimeMillis ());
   }
 
-  @Nonnull
+  @NonNull
   public static Date plusDays (final long nDays)
   {
     return new Date (System.currentTimeMillis () + nDays * 24 * CGlobal.MILLISECONDS_PER_HOUR);
   }
 
-  @Nonnull
-  public static X500Name x500 (@Nonnull @Nonempty final String sCommonName,
-                               @Nonnull @Nonempty final String sOrganization,
-                               @Nonnull @Nonempty final String sCountry)
+  @NonNull
+  public static X500Name x500 (@NonNull @Nonempty final String sCommonName,
+                               @NonNull @Nonempty final String sOrganization,
+                               @NonNull @Nonempty final String sCountry)
   {
     return new X500Name ("CN=" + sCommonName + ", O=" + sOrganization + ", C=" + sCountry);
   }
 
-  @Nonnull
+  @NonNull
   public static KeyPair genRSAKeyPair () throws NoSuchAlgorithmException
   {
     // Get RSA key factory:
@@ -91,12 +90,12 @@ public final class CreateCertHelper
     return kpg.genKeyPair ();
   }
 
-  @Nonnull
-  public static X509Certificate generateSelfSignedRootCertificate (@Nonnull final KeyPair aSubjectKP,
-                                                                   @Nonnull @Nonempty final String sCommonName,
-                                                                   @Nonnull @Nonempty final String sOrganization,
-                                                                   @Nonnull @Nonempty final String sCountry,
-                                                                   @Nonnull final Date aNotAfter) throws Exception
+  @NonNull
+  public static X509Certificate generateSelfSignedRootCertificate (@NonNull final KeyPair aSubjectKP,
+                                                                   @NonNull @Nonempty final String sCommonName,
+                                                                   @NonNull @Nonempty final String sOrganization,
+                                                                   @NonNull @Nonempty final String sCountry,
+                                                                   @NonNull final Date aNotAfter) throws Exception
   {
     final X500Name aSubjectName = x500 (sCommonName, sOrganization, sCountry);
     final X500Name aIssuerName = aSubjectName;

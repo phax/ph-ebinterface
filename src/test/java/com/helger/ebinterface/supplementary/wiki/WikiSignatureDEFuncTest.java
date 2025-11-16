@@ -18,12 +18,11 @@ package com.helger.ebinterface.supplementary.wiki;
 
 import javax.xml.crypto.dsig.XMLSignatureException;
 
+import org.jspecify.annotations.NonNull;
 import org.w3c.dom.Document;
 
 import com.helger.xmldsig.XMLDSigValidationResult;
 import com.helger.xmldsig.XMLDSigValidator;
-
-import jakarta.annotation.Nonnull;
 
 /**
  * Signatur-Routinen fürs Wiki
@@ -42,7 +41,7 @@ public final class WikiSignatureDEFuncTest
    *         gültige Signatur enthalten ist. false wird nur dann zurückgeliefert
    *         wenn eine Signatur enthalten ist, und diese ungültig ist.
    */
-  public static boolean hasSignatureAndIsValid (@Nonnull final Document aDoc)
+  public static boolean hasSignatureAndIsValid (@NonNull final Document aDoc)
   {
     if (!XMLDSigValidator.containsSignature (aDoc))
     {

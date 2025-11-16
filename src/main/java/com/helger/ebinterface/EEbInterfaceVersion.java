@@ -16,14 +16,14 @@
  */
 package com.helger.ebinterface;
 
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+
 import com.helger.annotation.Nonempty;
 import com.helger.base.lang.EnumHelper;
 import com.helger.base.string.StringHelper;
 import com.helger.base.version.Version;
 import com.helger.io.resource.IReadableResource;
-
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
 
 /**
  * This enumeration encapsulates the supported ebInterface versions in a common way.
@@ -55,9 +55,9 @@ public enum EEbInterfaceVersion
   private final IReadableResource m_aXSLTRes;
   private final Version m_aVersion;
 
-  EEbInterfaceVersion (@Nonnull @Nonempty final String sNamespaceURI,
+  EEbInterfaceVersion (@NonNull @Nonempty final String sNamespaceURI,
                        @Nullable final IReadableResource aXSLTRes,
-                       @Nonnull final Version aVersion)
+                       @NonNull final Version aVersion)
   {
     m_sNamespaceURI = sNamespaceURI;
     m_aXSLTRes = aXSLTRes;
@@ -67,7 +67,7 @@ public enum EEbInterfaceVersion
   /**
    * @return The namespace URI for this ebInterface version
    */
-  @Nonnull
+  @NonNull
   @Nonempty
   public String getNamespaceURI ()
   {
@@ -97,7 +97,7 @@ public enum EEbInterfaceVersion
    * @return The version number of this ebInterface version. Never <code>null</code>.
    * @since 6.1.1
    */
-  @Nonnull
+  @NonNull
   public Version getVersion ()
   {
     return m_aVersion;
