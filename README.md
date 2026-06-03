@@ -3,6 +3,8 @@
 <!-- ph-badge-start -->
 [![Sonatype Central](https://maven-badges.sml.io/sonatype-central/com.helger/ph-ebinterface/badge.svg)](https://maven-badges.sml.io/sonatype-central/com.helger/ph-ebinterface/)
 [![javadoc](https://javadoc.io/badge2/com.helger/ph-ebinterface/javadoc.svg)](https://javadoc.io/doc/com.helger/ph-ebinterface)
+
+> If this project saved you some time or made your day a little easier, a star would mean a lot — it helps others find it too.
 <!-- ph-badge-end -->
 
 Java library encapsulating the usage of ebInterface 3.0, 3.0.2, 4.0, 4.1, 4.2, 4.3, 5.0, 6.0 and 6.1 within your application. 
