@@ -35,11 +35,11 @@ public final class WikiSignatureDEFuncTest
    * Überprüfe die XML Signatur des angegebenen Dokuments
    *
    * @param aDoc
-   *        Das existierende XML DOM Dokument mit der zu überprüfenden Signatur.
-   *        Darf nicht null sein.
-   * @return true wenn entweder keine Signatur enthalten ist oder wenn eine
-   *         gültige Signatur enthalten ist. false wird nur dann zurückgeliefert
-   *         wenn eine Signatur enthalten ist, und diese ungültig ist.
+   *        Das existierende XML DOM Dokument mit der zu überprüfenden Signatur. Darf nicht null
+   *        sein.
+   * @return true wenn entweder keine Signatur enthalten ist oder wenn eine gültige Signatur
+   *         enthalten ist. false wird nur dann zurückgeliefert wenn eine Signatur enthalten ist,
+   *         und diese ungültig ist.
    */
   public static boolean hasSignatureAndIsValid (@NonNull final Document aDoc)
   {

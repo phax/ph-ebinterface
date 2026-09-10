@@ -21,8 +21,8 @@ import com.helger.ebinterface.v302.ObjectFactory;
 import com.helger.jaxb.GenericJAXBMarshaller;
 
 /**
- * This is the reader and writer for ebInterface 3.0.2 documents. This class may
- * be derived to override protected methods from {@link GenericJAXBMarshaller}.
+ * This is the reader and writer for ebInterface 3.0.2 documents. This class may be derived to
+ * override protected methods from {@link GenericJAXBMarshaller}.
  *
  * @author Philip Helger
  */

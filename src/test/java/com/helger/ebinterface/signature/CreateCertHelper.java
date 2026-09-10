@@ -45,9 +45,8 @@ import com.helger.bc.PBCProvider;
 /**
  * <b>DO NOT EXECUTE THIS</b><br>
  * Handle with care - needed once only :)<br>
- * This class creates the TOOP playground CA. It is a certificate hierarchy with
- * a self-signed root certificate (CN=playground-root) and a set of derived
- * child certificates.
+ * This class creates the TOOP playground CA. It is a certificate hierarchy with a self-signed root
+ * certificate (CN=playground-root) and a set of derived child certificates.
  *
  * @author Philip Helger
  */

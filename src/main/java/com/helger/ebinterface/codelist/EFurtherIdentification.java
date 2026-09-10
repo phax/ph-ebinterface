@@ -25,8 +25,7 @@ import com.helger.base.lang.EnumHelper;
 import com.helger.base.name.IHasDisplayName;
 
 /**
- * Recommended codes for FurtherIdentification. Source: ebInterface 6.1
- * documentation
+ * Recommended codes for FurtherIdentification. Source: ebInterface 6.1 documentation
  *
  * @author Philip Helger
  * @since 7.1.1
@@ -65,8 +64,7 @@ public enum EFurtherIdentification implements IHasID <String>, IHasDisplayName
   }
 
   /**
-   * @return Description of this further identification (in German). Never
-   *         <code>null</code>.
+   * @return Description of this further identification (in German). Never <code>null</code>.
    */
   @NonNull
   @Nonempty

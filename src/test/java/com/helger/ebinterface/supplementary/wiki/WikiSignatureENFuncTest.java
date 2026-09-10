@@ -25,8 +25,8 @@ import com.helger.xmldsig.XMLDSigValidationResult;
 import com.helger.xmldsig.XMLDSigValidator;
 
 /**
- * The tests contained in here are meant as copy-paste examples for signature
- * handling for the project Wiki.
+ * The tests contained in here are meant as copy-paste examples for signature handling for the
+ * project Wiki.
  *
  * @author Philip Helger
  */
@@ -36,10 +36,9 @@ public final class WikiSignatureENFuncTest
    * Verify the XML signature of a document
    *
    * @param aDoc
-   *        The existing XML document to validate the signature. May not be
-   *        null.
-   * @return true if no signature is contained, or if a signature is contained
-   *         and valid. false only is a signature is contained and invalid
+   *        The existing XML document to validate the signature. May not be null.
+   * @return true if no signature is contained, or if a signature is contained and valid. false only
+   *         is a signature is contained and invalid
    */
   public static boolean hasSignatureAndIsValid (@NonNull final Document aDoc)
   {

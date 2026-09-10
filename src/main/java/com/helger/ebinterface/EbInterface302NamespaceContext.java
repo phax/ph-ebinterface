@@ -46,8 +46,8 @@ public class EbInterface302NamespaceContext extends MapBasedNamespaceContext
   }
 
   /**
-   * @return The mutable singleton instance. Never <code>null</code>. Please
-   *         clone the result before you further modify it.
+   * @return The mutable singleton instance. Never <code>null</code>. Please clone the result before
+   *         you further modify it.
    */
   @NonNull
   public static EbInterface302NamespaceContext getInstance ()

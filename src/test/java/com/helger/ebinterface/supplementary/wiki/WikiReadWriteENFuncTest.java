@@ -35,8 +35,7 @@ import com.helger.ebinterface.v42.Ebi42InvoiceType;
 import com.helger.io.resource.IReadableResource;
 
 /**
- * The tests contained in here are meant as copy-paste examples for the project
- * Wiki.
+ * The tests contained in here are meant as copy-paste examples for the project Wiki.
  *
  * @author Philip Helger
  */
@@ -64,12 +63,10 @@ public final class WikiReadWriteENFuncTest
    * Read an ebInterface 3.0 invoice from the specified XML node.
    *
    * @param aNode
-   *        The existing XML node to read the invoice from. May not be
-   *        <code>null</code>.
+   *        The existing XML node to read the invoice from. May not be <code>null</code>.
    * @return The read invoice object.
    * @throws IllegalArgumentException
-   *         If the content of the passed DOM node is no valid ebInterface
-   *         document
+   *         If the content of the passed DOM node is no valid ebInterface document
    */
   @NonNull
   public static Ebi30InvoiceType readEbInterface30 (@NonNull final Node aNode)
@@ -120,12 +117,10 @@ public final class WikiReadWriteENFuncTest
    * Read an ebInterface 3.0.2 invoice from the specified XML node.
    *
    * @param aNode
-   *        The existing XML node to read the invoice from. May not be
-   *        <code>null</code>.
+   *        The existing XML node to read the invoice from. May not be <code>null</code>.
    * @return The read invoice object.
    * @throws IllegalArgumentException
-   *         If the content of the passed DOM node is no valid ebInterface
-   *         document
+   *         If the content of the passed DOM node is no valid ebInterface document
    */
   @NonNull
   public static Ebi302InvoiceType readEbInterface302 (@NonNull final Node aNode)
@@ -176,12 +171,10 @@ public final class WikiReadWriteENFuncTest
    * Read an ebInterface 4.0 invoice from the specified XML node.
    *
    * @param aNode
-   *        The existing XML node to read the invoice from. May not be
-   *        <code>null</code>.
+   *        The existing XML node to read the invoice from. May not be <code>null</code>.
    * @return The read invoice object.
    * @throws IllegalArgumentException
-   *         If the content of the passed DOM node is no valid ebInterface
-   *         document
+   *         If the content of the passed DOM node is no valid ebInterface document
    */
   @NonNull
   public static Ebi40InvoiceType readEbInterface40 (@NonNull final Node aNode)
@@ -232,12 +225,10 @@ public final class WikiReadWriteENFuncTest
    * Read an ebInterface 4.1 invoice from the specified XML node.
    *
    * @param aNode
-   *        The existing XML node to read the invoice from. May not be
-   *        <code>null</code>.
+   *        The existing XML node to read the invoice from. May not be <code>null</code>.
    * @return The read invoice object.
    * @throws IllegalArgumentException
-   *         If the content of the passed DOM node is no valid ebInterface
-   *         document
+   *         If the content of the passed DOM node is no valid ebInterface document
    */
   @NonNull
   public static Ebi41InvoiceType readEbInterface41 (@NonNull final Node aNode)
@@ -274,8 +265,7 @@ public final class WikiReadWriteENFuncTest
    * @param aFile
    *        The file to read the invoice from. May not be <code>null</code>.
    * @throws IllegalArgumentException
-   *         If the content of the passed invoice is incomplete and cannot be
-   *         written to the file
+   *         If the content of the passed invoice is incomplete and cannot be written to the file
    */
   public static void writeEbInterface30File (@NonNull final Ebi30InvoiceType aInvoice, @NonNull final File aFile)
   {
@@ -290,8 +280,7 @@ public final class WikiReadWriteENFuncTest
    *        The invoice to be written. May not be <code>null</code>.
    * @return The ebInterface document as an XML DOM Document.
    * @throws IllegalArgumentException
-   *         If the content of the passed invoice is incomplete and cannot be
-   *         converted to XML
+   *         If the content of the passed invoice is incomplete and cannot be converted to XML
    */
   @NonNull
   public static Document getEbInterface30Document (@NonNull final Ebi30InvoiceType aInvoice)
@@ -310,8 +299,7 @@ public final class WikiReadWriteENFuncTest
    * @param aFile
    *        The file to read the invoice from. May not be <code>null</code>.
    * @throws IllegalArgumentException
-   *         If the content of the passed invoice is incomplete and cannot be
-   *         written to the file
+   *         If the content of the passed invoice is incomplete and cannot be written to the file
    */
   public static void writeEbInterface302File (@NonNull final Ebi302InvoiceType aInvoice, @NonNull final File aFile)
   {
@@ -326,8 +314,7 @@ public final class WikiReadWriteENFuncTest
    *        The invoice to be written. May not be <code>null</code>.
    * @return The ebInterface document as an XML DOM Document.
    * @throws IllegalArgumentException
-   *         If the content of the passed invoice is incomplete and cannot be
-   *         converted to XML
+   *         If the content of the passed invoice is incomplete and cannot be converted to XML
    */
   @NonNull
   public static Document getEbInterface302Document (@NonNull final Ebi302InvoiceType aInvoice)
@@ -346,8 +333,7 @@ public final class WikiReadWriteENFuncTest
    * @param aFile
    *        The file to read the invoice from. May not be <code>null</code>.
    * @throws IllegalArgumentException
-   *         If the content of the passed invoice is incomplete and cannot be
-   *         written to the file
+   *         If the content of the passed invoice is incomplete and cannot be written to the file
    */
   public static void writeEbInterface40File (@NonNull final Ebi40InvoiceType aInvoice, @NonNull final File aFile)
   {
@@ -362,8 +348,7 @@ public final class WikiReadWriteENFuncTest
    *        The invoice to be written. May not be <code>null</code>.
    * @return The ebInterface document as an XML DOM Document.
    * @throws IllegalArgumentException
-   *         If the content of the passed invoice is incomplete and cannot be
-   *         converted to XML
+   *         If the content of the passed invoice is incomplete and cannot be converted to XML
    */
   @NonNull
   public static Document getEbInterface40Document (@NonNull final Ebi40InvoiceType aInvoice)
@@ -382,8 +367,7 @@ public final class WikiReadWriteENFuncTest
    * @param aFile
    *        The file to read the invoice from. May not be <code>null</code>.
    * @throws IllegalArgumentException
-   *         If the content of the passed invoice is incomplete and cannot be
-   *         written to the file
+   *         If the content of the passed invoice is incomplete and cannot be written to the file
    */
   public static void writeEbInterface41File (@NonNull final Ebi41InvoiceType aInvoice, @NonNull final File aFile)
   {
@@ -398,8 +382,7 @@ public final class WikiReadWriteENFuncTest
    *        The invoice to be written. May not be <code>null</code>.
    * @return The ebInterface document as an XML DOM Document.
    * @throws IllegalArgumentException
-   *         If the content of the passed invoice is incomplete and cannot be
-   *         converted to XML
+   *         If the content of the passed invoice is incomplete and cannot be converted to XML
    */
   @NonNull
   public static Document getEbInterface41Document (@NonNull final Ebi41InvoiceType aInvoice)
@@ -418,8 +401,7 @@ public final class WikiReadWriteENFuncTest
    * @param aFile
    *        The file to read the invoice from. May not be <code>null</code>.
    * @throws IllegalArgumentException
-   *         If the content of the passed invoice is incomplete and cannot be
-   *         written to the file
+   *         If the content of the passed invoice is incomplete and cannot be written to the file
    */
   public static void writeEbInterface42File (@NonNull final Ebi42InvoiceType aInvoice, @NonNull final File aFile)
   {
@@ -434,8 +416,7 @@ public final class WikiReadWriteENFuncTest
    *        The invoice to be written. May not be <code>null</code>.
    * @return The ebInterface document as an XML DOM Document.
    * @throws IllegalArgumentException
-   *         If the content of the passed invoice is incomplete and cannot be
-   *         converted to XML
+   *         If the content of the passed invoice is incomplete and cannot be converted to XML
    */
   @NonNull
   public static Document getEbInterface42Document (@NonNull final Ebi42InvoiceType aInvoice)

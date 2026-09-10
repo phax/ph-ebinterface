@@ -24,9 +24,8 @@ import com.helger.base.id.IHasID;
 import com.helger.base.lang.EnumHelper;
 
 /**
- * Tax category codes support by ebInterface 5.0 onwards. Based on UNTDID 5305
- * code list, version D16B:
- * https://www.unece.org/fileadmin/DAM/trade/untdid/d16b/tred/tred5305.htm
+ * Tax category codes support by ebInterface 5.0 onwards. Based on UNTDID 5305 code list, version
+ * D16B: https://www.unece.org/fileadmin/DAM/trade/untdid/d16b/tred/tred5305.htm
  *
  * @author Philip Helger
  */
@@ -80,8 +79,8 @@ public enum ETaxCategoryCode implements IHasID <String>
   }
 
   /**
-   * @return <code>true</code> if this code is relevant to Austrian taxation,
-   *         <code>false</code> if this code is not applicable in Austria.
+   * @return <code>true</code> if this code is relevant to Austrian taxation, <code>false</code> if
+   *         this code is not applicable in Austria.
    */
   public boolean isRelevantCodeAT ()
   {

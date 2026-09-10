@@ -44,12 +44,10 @@ public final class WikiReadWriteDEFuncTest
    * Lese eine ebInterface 3.0 Rechnung aus einer Datei.
    *
    * @param aFile
-   *        Die Datei aus der die Rechnung gelesen werden soll. Darf nicht null
-   *        sein.
+   *        Die Datei aus der die Rechnung gelesen werden soll. Darf nicht null sein.
    * @return Die gelesene Rechnung.
    * @throws IllegalArgumentException
-   *         Falls der Inhalt der Datei keine gültige ebInterface 3.0 Rechnung
-   *         ist
+   *         Falls der Inhalt der Datei keine gültige ebInterface 3.0 Rechnung ist
    */
   @NonNull
   public static Ebi30InvoiceType readEbInterface30 (@NonNull final File aFile)
@@ -67,8 +65,7 @@ public final class WikiReadWriteDEFuncTest
    *        Der existierende DOM Knoten. Darf nicht <code>null</code> sein.
    * @return Die gelesene Rechnung.
    * @throws IllegalArgumentException
-   *         Falls der Inhalt des DOM Knotens keine gültige ebInterface 3.0
-   *         Rechnung ist
+   *         Falls der Inhalt des DOM Knotens keine gültige ebInterface 3.0 Rechnung ist
    */
   @NonNull
   public static Ebi30InvoiceType readEbInterface30 (@NonNull final Node aNode)
@@ -83,12 +80,10 @@ public final class WikiReadWriteDEFuncTest
    * Lese eine ebInterface 3.0.2 Rechnung aus einer Datei.
    *
    * @param aFile
-   *        Die Datei aus der die Rechnung gelesen werden soll. Darf nicht null
-   *        sein.
+   *        Die Datei aus der die Rechnung gelesen werden soll. Darf nicht null sein.
    * @return Die gelesene Rechnung.
    * @throws IllegalArgumentException
-   *         Falls der Inhalt der Datei keine gültige ebInterface 3.0.2 Rechnung
-   *         ist
+   *         Falls der Inhalt der Datei keine gültige ebInterface 3.0.2 Rechnung ist
    */
   @NonNull
   public static Ebi302InvoiceType readEbInterface302 (@NonNull final File aFile)
@@ -106,8 +101,7 @@ public final class WikiReadWriteDEFuncTest
    *        Der existierende DOM Knoten. Darf nicht <code>null</code> sein.
    * @return Die gelesene Rechnung.
    * @throws IllegalArgumentException
-   *         Falls der Inhalt des DOM Knotens keine gültige ebInterface 3.0.2
-   *         Rechnung ist
+   *         Falls der Inhalt des DOM Knotens keine gültige ebInterface 3.0.2 Rechnung ist
    */
   @NonNull
   public static Ebi302InvoiceType readEbInterface302 (@NonNull final Node aNode)
@@ -122,12 +116,10 @@ public final class WikiReadWriteDEFuncTest
    * Lese eine ebInterface 4.0 Rechnung aus einer Datei.
    *
    * @param aFile
-   *        Die Datei aus der die Rechnung gelesen werden soll. Darf nicht null
-   *        sein.
+   *        Die Datei aus der die Rechnung gelesen werden soll. Darf nicht null sein.
    * @return Die gelesene Rechnung.
    * @throws IllegalArgumentException
-   *         Falls der Inhalt der Datei keine gültige ebInterface 4.0 Rechnung
-   *         ist
+   *         Falls der Inhalt der Datei keine gültige ebInterface 4.0 Rechnung ist
    */
   @NonNull
   public static Ebi40InvoiceType readEbInterface40 (@NonNull final File aFile)
@@ -145,8 +137,7 @@ public final class WikiReadWriteDEFuncTest
    *        Der existierende DOM Knoten. Darf nicht <code>null</code> sein.
    * @return Die gelesene Rechnung.
    * @throws IllegalArgumentException
-   *         Falls der Inhalt des DOM Knotens keine gültige ebInterface 4.0
-   *         Rechnung ist
+   *         Falls der Inhalt des DOM Knotens keine gültige ebInterface 4.0 Rechnung ist
    */
   @NonNull
   public static Ebi40InvoiceType readEbInterface40 (@NonNull final Node aNode)
@@ -161,12 +152,10 @@ public final class WikiReadWriteDEFuncTest
    * Lese eine ebInterface 4.1 Rechnung aus einer Datei.
    *
    * @param aFile
-   *        Die Datei aus der die Rechnung gelesen werden soll. Darf nicht null
-   *        sein.
+   *        Die Datei aus der die Rechnung gelesen werden soll. Darf nicht null sein.
    * @return Die gelesene Rechnung.
    * @throws IllegalArgumentException
-   *         Falls der Inhalt der Datei keine gültige ebInterface 4.1 Rechnung
-   *         ist
+   *         Falls der Inhalt der Datei keine gültige ebInterface 4.1 Rechnung ist
    */
   @NonNull
   public static Ebi41InvoiceType readEbInterface41 (@NonNull final File aFile)
@@ -184,8 +173,7 @@ public final class WikiReadWriteDEFuncTest
    *        Der existierende DOM Knoten. Darf nicht <code>null</code> sein.
    * @return Die gelesene Rechnung.
    * @throws IllegalArgumentException
-   *         Falls der Inhalt des DOM Knotens keine gültige ebInterface 4.1
-   *         Rechnung ist
+   *         Falls der Inhalt des DOM Knotens keine gültige ebInterface 4.1 Rechnung ist
    */
   @NonNull
   public static Ebi41InvoiceType readEbInterface41 (@NonNull final Node aNode)
@@ -202,11 +190,10 @@ public final class WikiReadWriteDEFuncTest
    * @param aInvoice
    *        Die zu schreibende Rechnung. Darf nicht <code>null</code> sein.
    * @param aFile
-   *        Die Zieldatei in die geschrieben werden soll. Darf nicht
-   *        <code>null</code> sein.
+   *        Die Zieldatei in die geschrieben werden soll. Darf nicht <code>null</code> sein.
    * @throws IllegalArgumentException
-   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
-   *         nicht auf die Platte geschrieben werden kann.
+   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher nicht auf die Platte
+   *         geschrieben werden kann.
    */
   public static void writeEbInterface30File (@NonNull final Ebi30InvoiceType aInvoice, @NonNull final File aFile)
   {
@@ -215,15 +202,14 @@ public final class WikiReadWriteDEFuncTest
   }
 
   /**
-   * Konvertiert die angegebene ebInterface 3.0 Rechnung in ein XML DOM
-   * Dokument.
+   * Konvertiert die angegebene ebInterface 3.0 Rechnung in ein XML DOM Dokument.
    *
    * @param aInvoice
    *        Die zu schreibende Rechnung. Darf nicht <code>null</code> sein.
    * @return Das ebInterface-Dokument als XML DOM Document.
    * @throws IllegalArgumentException
-   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
-   *         nicht in einen XML DOM Knoten umgewandelt werden kann.
+   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher nicht in einen XML
+   *         DOM Knoten umgewandelt werden kann.
    */
   @NonNull
   public static Document getEbInterface30Document (@NonNull final Ebi30InvoiceType aInvoice)
@@ -240,11 +226,10 @@ public final class WikiReadWriteDEFuncTest
    * @param aInvoice
    *        Die zu schreibende Rechnung. Darf nicht <code>null</code> sein.
    * @param aFile
-   *        Die Zieldatei in die geschrieben werden soll. Darf nicht
-   *        <code>null</code> sein.
+   *        Die Zieldatei in die geschrieben werden soll. Darf nicht <code>null</code> sein.
    * @throws IllegalArgumentException
-   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
-   *         nicht auf die Platte geschrieben werden kann.
+   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher nicht auf die Platte
+   *         geschrieben werden kann.
    */
   public static void writeEbInterface302File (@NonNull final Ebi302InvoiceType aInvoice, @NonNull final File aFile)
   {
@@ -253,15 +238,14 @@ public final class WikiReadWriteDEFuncTest
   }
 
   /**
-   * Konvertiert die angegebene ebInterface 3.0.2 Rechnung in ein XML DOM
-   * Dokument.
+   * Konvertiert die angegebene ebInterface 3.0.2 Rechnung in ein XML DOM Dokument.
    *
    * @param aInvoice
    *        Die zu schreibende Rechnung. Darf nicht <code>null</code> sein.
    * @return Das ebInterface-Dokument als XML DOM Document.
    * @throws IllegalArgumentException
-   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
-   *         nicht in einen XML DOM Knoten umgewandelt werden kann.
+   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher nicht in einen XML
+   *         DOM Knoten umgewandelt werden kann.
    */
   @NonNull
   public static Document getEbInterface302Document (@NonNull final Ebi302InvoiceType aInvoice)
@@ -278,11 +262,10 @@ public final class WikiReadWriteDEFuncTest
    * @param aInvoice
    *        Die zu schreibende Rechnung. Darf nicht <code>null</code> sein.
    * @param aFile
-   *        Die Zieldatei in die geschrieben werden soll. Darf nicht
-   *        <code>null</code> sein.
+   *        Die Zieldatei in die geschrieben werden soll. Darf nicht <code>null</code> sein.
    * @throws IllegalArgumentException
-   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
-   *         nicht auf die Platte geschrieben werden kann.
+   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher nicht auf die Platte
+   *         geschrieben werden kann.
    */
   public static void writeEbInterface40File (@NonNull final Ebi40InvoiceType aInvoice, @NonNull final File aFile)
   {
@@ -291,15 +274,14 @@ public final class WikiReadWriteDEFuncTest
   }
 
   /**
-   * Konvertiert die angegebene ebInterface 4.0 Rechnung in ein XML DOM
-   * Dokument.
+   * Konvertiert die angegebene ebInterface 4.0 Rechnung in ein XML DOM Dokument.
    *
    * @param aInvoice
    *        Die zu schreibende Rechnung. Darf nicht <code>null</code> sein.
    * @return Das ebInterface-Dokument als XML DOM Document.
    * @throws IllegalArgumentException
-   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
-   *         nicht in einen XML DOM Knoten umgewandelt werden kann.
+   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher nicht in einen XML
+   *         DOM Knoten umgewandelt werden kann.
    */
   @NonNull
   public static Document getEbInterface40Document (@NonNull final Ebi40InvoiceType aInvoice)
@@ -316,11 +298,10 @@ public final class WikiReadWriteDEFuncTest
    * @param aInvoice
    *        Die zu schreibende Rechnung. Darf nicht <code>null</code> sein.
    * @param aFile
-   *        Die Zieldatei in die geschrieben werden soll. Darf nicht
-   *        <code>null</code> sein.
+   *        Die Zieldatei in die geschrieben werden soll. Darf nicht <code>null</code> sein.
    * @throws IllegalArgumentException
-   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
-   *         nicht auf die Platte geschrieben werden kann.
+   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher nicht auf die Platte
+   *         geschrieben werden kann.
    */
   public static void writeEbInterface41File (@NonNull final Ebi41InvoiceType aInvoice, @NonNull final File aFile)
   {
@@ -329,15 +310,14 @@ public final class WikiReadWriteDEFuncTest
   }
 
   /**
-   * Konvertiert die angegebene ebInterface 4.1 Rechnung in ein XML DOM
-   * Dokument.
+   * Konvertiert die angegebene ebInterface 4.1 Rechnung in ein XML DOM Dokument.
    *
    * @param aInvoice
    *        Die zu schreibende Rechnung. Darf nicht <code>null</code> sein.
    * @return Das ebInterface-Dokument als XML DOM Document.
    * @throws IllegalArgumentException
-   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
-   *         nicht in einen XML DOM Knoten umgewandelt werden kann.
+   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher nicht in einen XML
+   *         DOM Knoten umgewandelt werden kann.
    */
   @NonNull
   public static Document getEbInterface41Document (@NonNull final Ebi41InvoiceType aInvoice)
@@ -354,11 +334,10 @@ public final class WikiReadWriteDEFuncTest
    * @param aInvoice
    *        Die zu schreibende Rechnung. Darf nicht <code>null</code> sein.
    * @param aFile
-   *        Die Zieldatei in die geschrieben werden soll. Darf nicht
-   *        <code>null</code> sein.
+   *        Die Zieldatei in die geschrieben werden soll. Darf nicht <code>null</code> sein.
    * @throws IllegalArgumentException
-   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
-   *         nicht auf die Platte geschrieben werden kann.
+   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher nicht auf die Platte
+   *         geschrieben werden kann.
    */
   public static void writeEbInterface42File (@NonNull final Ebi42InvoiceType aInvoice, @NonNull final File aFile)
   {
@@ -367,15 +346,14 @@ public final class WikiReadWriteDEFuncTest
   }
 
   /**
-   * Konvertiert die angegebene ebInterface 4.2 Rechnung in ein XML DOM
-   * Dokument.
+   * Konvertiert die angegebene ebInterface 4.2 Rechnung in ein XML DOM Dokument.
    *
    * @param aInvoice
    *        Die zu schreibende Rechnung. Darf nicht <code>null</code> sein.
    * @return Das ebInterface-Dokument als XML DOM Document.
    * @throws IllegalArgumentException
-   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher
-   *         nicht in einen XML DOM Knoten umgewandelt werden kann.
+   *         Falls der Inhalt der Rechnung ungültig ist und die Rechnung daher nicht in einen XML
+   *         DOM Knoten umgewandelt werden kann.
    */
   @NonNull
   public static Document getEbInterface42Document (@NonNull final Ebi42InvoiceType aInvoice)

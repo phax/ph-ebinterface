@@ -48,8 +48,7 @@ import com.helger.xml.transform.TransformSourceFactory;
 import com.helger.xml.transform.XMLTransformerFactory;
 
 /**
- * This class is responsible for visualizing ebInterface documents as HTML
- * documents.
+ * This class is responsible for visualizing ebInterface documents as HTML documents.
  *
  * @author Philip Helger
  */
@@ -66,13 +65,12 @@ public final class VisualizationManager
   {}
 
   /**
-   * Get the precompiled XSLT template to be used. It is lazily initialized upon
-   * first call.
+   * Get the precompiled XSLT template to be used. It is lazily initialized upon first call.
    *
    * @param eVersion
    *        The ebInterface version to be used. May not be <code>null</code>.
-   * @return The XSLT {@link Templates} to be used to visualize invoices or
-   *         <code>null</code> if the template is buggy!
+   * @return The XSLT {@link Templates} to be used to visualize invoices or <code>null</code> if the
+   *         template is buggy!
    */
   @Nullable
   public static Templates getXSLTTemplates (@NonNull final EEbInterfaceVersion eVersion)
@@ -80,11 +78,11 @@ public final class VisualizationManager
     final String sNamespaceURI = eVersion.getNamespaceURI ();
 
     // Try in read-lock first
-    final Templates ret = s_aRWLock.readLockedGet ( () -> s_aTemplates.get (sNamespaceURI));
+    final Templates ret = s_aRWLock.readLockedGet (() -> s_aTemplates.get (sNamespaceURI));
     if (ret != null)
       return ret;
 
-    return s_aRWLock.writeLockedGet ( () -> {
+    return s_aRWLock.writeLockedGet (() -> {
       // Try again in write lock
       Templates ret2 = s_aTemplates.get (sNamespaceURI);
       if (ret2 == null)
@@ -112,8 +110,8 @@ public final class VisualizationManager
   }
 
   /**
-   * Visualize a source to a result for a certain ebInterface version using
-   * XSLT. This is the most generic method.
+   * Visualize a source to a result for a certain ebInterface version using XSLT. This is the most
+   * generic method.
    *
    * @param eVersion
    *        ebInterface version to use.
@@ -160,7 +158,8 @@ public final class VisualizationManager
    * @return <code>null</code> if the XSLT could not be applied.
    */
   @Nullable
-  public static Document visualizeToDOMDocument (@NonNull final EEbInterfaceVersion eVersion, @NonNull final Source aSource)
+  public static Document visualizeToDOMDocument (@NonNull final EEbInterfaceVersion eVersion,
+                                                 @NonNull final Source aSource)
   {
     final Document aDoc = XMLFactory.newDocument ();
     return visualize (eVersion, aSource, new DOMResult (aDoc)).isSuccess () ? aDoc : null;
@@ -176,7 +175,8 @@ public final class VisualizationManager
    * @return <code>null</code> if the XSLT could not be applied.
    */
   @Nullable
-  public static Document visualizeToDOMDocument (@NonNull final EEbInterfaceVersion eVersion, @NonNull final IReadableResource aResource)
+  public static Document visualizeToDOMDocument (@NonNull final EEbInterfaceVersion eVersion,
+                                                 @NonNull final IReadableResource aResource)
   {
     return visualizeToDOMDocument (eVersion, TransformSourceFactory.create (aResource));
   }
@@ -216,6 +216,8 @@ public final class VisualizationManager
                                           @NonNull final IReadableResource aResource,
                                           @NonNull final File aDestinationFile)
   {
-    return visualize (eVersion, TransformSourceFactory.create (aResource), TransformResultFactory.create (aDestinationFile));
+    return visualize (eVersion,
+                      TransformSourceFactory.create (aResource),
+                      TransformResultFactory.create (aDestinationFile));
   }
 }
