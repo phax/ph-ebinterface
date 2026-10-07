@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:xdt="http://www.w3.org/2005/xpath-datatypes" xmlns:eb="http://www.ebinterface.at/schema/4p1/" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
 	<!-- 
 		XSLT for ebInterface 4.1
-		For more information on ebInterface see http://www.ebinterface.at/
+		For more information on ebInterface see https://www.ebinterface.at/
 		
 		Last update:	19.02.2014
 		Author: 			Philipp Liegl, Vienna University of Technology
@@ -16,7 +16,7 @@
 				<title>
 					<xsl:value-of select="/eb:Invoice/@eb:DocumentTitle"/>
 				</title>
-				<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+				<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
 				<meta name="viewport" content="width=device-width, initial-scale=1"/>
 			</head>
 			<body>
