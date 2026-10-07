@@ -54,6 +54,7 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
 
 v8.1.1 - work in progress
 * Removed OSGI bundling
+* The ebInterface 6.0 and 6.1 visualization XSLTs now use Bootstrap 5.3.8 including Subresource Integrity (SRI) hash
 * Updated all ebInterface visualization XSLTs from the official ones (see https://github.com/austriapro/ebinterface-standards/issues/23)
 
 v8.1.0 - 2025-11-16
